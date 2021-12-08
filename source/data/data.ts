@@ -15,7 +15,13 @@ export class ZoticaData {
     return this.json.leaf.includes(tagName);
   }
 
+  public getIdentifierChar(kind: string): string {
+    let char = this.json.identifier[kind] ?? "";
+    return char;
+  }
+
 }
 
 
+export type ZoticaDataJson = typeof ZOTICA_DATA_JSON;
 export const ZOTICA_DATA = new ZoticaData(ZOTICA_DATA_JSON);

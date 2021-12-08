@@ -12,6 +12,7 @@ import {
 const ZOTICA_ROLES = ["bin", "rel", "sbin", "srel", "del", "fun", "not", "ord", "lpar", "rpar", "cpar"];
 
 export type ZoticaRole = "bin" | "rel" | "sbin" | "srel" | "del" | "fun" | "not" | "ord" | "lpar" | "rpar" | "cpar";
+export type ZoticaFontType = "main" | "math";
 export type ZoticaCommonOptions = {
   role?: ZoticaRole,
   className?: string,
@@ -25,7 +26,7 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
     super(document);
   }
 
-  public buildNumber(content: string, options?: {}): NodeLikeOf<Document> {
+  public buildNumber(content: string, options?: ZoticaCommonOptions): NodeLikeOf<Document> {
     let self = this.createDocumentFragment();
     let element = null as Element | null;
     this.appendElement(self, "math-n", (self) => {
@@ -34,6 +35,36 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
     });
     this.applyOptions(self, options);
     this.modifyVerticalMargins(element!, "main", options);
+    return self;
+  }
+
+  public buildIdentifier(content: string, types: Array<"bf" | "rm" | "tt" | "fun" | "alt">, options?: ZoticaCommonOptions): NodeLikeOf<Document> {
+    let self = this.createDocumentFragment();
+    let element = null as Element | null;
+    let fontType = (types.includes("alt")) ? "math" : "main" as ZoticaFontType;
+    this.appendElement(self, "math-i", (self) => {
+      self.setAttribute("class", types.join(" "));
+      self.setAttribute("data-cont", content);
+      this.appendTextNode(self, content);
+      element = self;
+    });
+    this.applyOptions(self, options);
+    this.modifyVerticalMargins(element!, fontType, options);
+    return self;
+  }
+
+  public buildOperator(symbol: string, types: Array<"txt">, options?: ZoticaCommonOptions): NodeLikeOf<Document> {
+    let self = this.createDocumentFragment();
+    let element = null as Element | null;
+    let fontType = (types.includes("txt")) ? "main" : "math" as ZoticaFontType;
+    this.appendElement(self, "math-o", (self) => {
+      self.setAttribute("class", types.join(" "));
+      self.setAttribute("data-cont", symbol);
+      this.appendTextNode(self, symbol);
+      element = self;
+    });
+    this.applyOptions(self, options);
+    this.modifyVerticalMargins(element!, fontType, options);
     return self;
   }
 
@@ -56,8 +87,8 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
     }
   }
 
-  // TODO: フォントデータの設計を決めたら実装する。
-  private modifyVerticalMargins(element: Element, fontType: "main" | "math", options?: {}): void {
+  // TODO: フォントデータの設計を決めたら実装してください。
+  private modifyVerticalMargins(element: Element, fontType: ZoticaFontType, options?: {}): void {
   }
 
 }
