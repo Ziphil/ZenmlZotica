@@ -1,0 +1,761 @@
+{
+  "leaf": [
+    "n", "i", "op", "o", "bf", "rm", "bfrm", "tt",
+    "text",
+    "bb", "varbb", "cal", "scr", "frak", "varfrak"
+  ],
+  "replacement": {
+    "-": "−",
+    "*": "∗"
+  },
+  "fence": {
+    "paren": [
+      {
+        "0": "(",
+        "1": "\uDB80\uDC39", "2": "\uDB80\uDC3A", "3": "\uDB80\uDC3B", "4": "\uDB80\uDC3C", "5": "\uDB80\uDC3D", "6": "\uDB80\uDC3E",
+        "7": "\uDB80\uDC3F", "8": "\uDB80\uDC40", "9": "\uDB80\uDC41", "10": "\uDB80\uDC42", "11": "\uDB80\uDC43", "12": "\uDB80\uDC44",
+        "start": "⎛", "bar": "⎜", "end": "⎝"
+      },
+      {
+        "0": ")",
+        "1": "\uDB80\uDC45", "2": "\uDB80\uDC46", "3": "\uDB80\uDC47", "4": "\uDB80\uDC48", "5": "\uDB80\uDC49", "6": "\uDB80\uDC4A",
+        "7": "\uDB80\uDC4B", "8": "\uDB80\uDC4C", "9": "\uDB80\uDC4D", "10": "\uDB80\uDC4E", "11": "\uDB80\uDC4F", "12": "\uDB80\uDC50",
+        "start": "⎞", "bar":"⎟", "end": "⎠"
+      }
+    ],
+    "pparen": [
+      {
+        "0": "⦅",
+        "1": "\uDB80\uDE0A", "2": "\uDB80\uDE0B", "3": "\uDB80\uDE0C", "4": "\uDB80\uDE0D"
+      },
+      {
+        "0": "⦆",
+        "1": "\uDB80\uDE0E", "2": "\uDB80\uDE0F", "3": "\uDB80\uDE10", "4": "\uDB80\uDE11"
+      }
+    ],
+    "bracket": [
+      {
+        "0": "[",
+        "1": "\uDB80\uDC51", "2": "\uDB80\uDC52", "3": "\uDB80\uDC53", "4": "\uDB80\uDC54", "5": "\uDB80\uDC55", "6": "\uDB80\uDC56",
+        "7": "\uDB80\uDC57", "8": "\uDB80\uDC58", "9": "\uDB80\uDC59", "10": "\uDB80\uDC5A", "11": "\uDB80\uDC5B", "12": "\uDB80\uDC5C",
+        "start": "⎡", "bar": "⎢", "end": "⎣"
+      },
+      {
+        "0": "]",
+        "1": "\uDB80\uDC5D", "2": "\uDB80\uDC5E", "3": "\uDB80\uDC5F", "4": "\uDB80\uDC60", "5": "\uDB80\uDC61", "6": "\uDB80\uDC62",
+        "7": "\uDB80\uDC63", "8": "\uDB80\uDC64", "9": "\uDB80\uDC65", "10": "\uDB80\uDC66", "11": "\uDB80\uDC67", "12": "\uDB80\uDC68",
+        "start": "⎤", "bar": "⎥", "end": "⎦"
+      }  
+    ],
+    "bbracket": [
+      {
+        "0": "⟦",
+        "1": "\uDB80\uDDE8", "2": "\uDB80\uDDE9", "3": "\uDB80\uDDEA", "4": "\uDB80\uDDEB"
+      },
+      {
+        "0": "⟧",
+        "1": "\uDB80\uDDEC", "2": "\uDB80\uDDED", "3": "\uDB80\uDDEE", "4": "\uDB80\uDDEF"
+      }  
+    ],
+    "brace": [
+      {
+        "0": "{",
+        "1": "\uDB80\uDC69", "2": "\uDB80\uDC6A", "3": "\uDB80\uDC6B", "4": "\uDB80\uDC6C", "5": "\uDB80\uDC6D", "6": "\uDB80\uDC6E",
+        "7": "\uDB80\uDC6F", "8": "\uDB80\uDC70", "9": "\uDB80\uDC71", "10": "\uDB80\uDC72", "11": "\uDB80\uDC73", "12": "\uDB80\uDC74",
+        "start": "⎧", "bar": "⎪", "middle": "⎨", "end": "⎩"
+      },
+      {
+        "0": "}",
+        "1": "\uDB80\uDC75", "2": "\uDB80\uDC76", "3": "\uDB80\uDC77", "4": "\uDB80\uDC78", "5": "\uDB80\uDC79", "6": "\uDB80\uDC7A",
+        "7": "\uDB80\uDC7B", "8": "\uDB80\uDC7C", "9": "\uDB80\uDC7D", "10": "\uDB80\uDC7E", "11": "\uDB80\uDC7F", "12": "\uDB80\uDC80",
+        "start": "⎫", "bar": "⎪", "middle": "⎬", "end": "⎭"
+      }
+    ],
+    "bbrace": [
+      {
+        "0": "⦃",
+        "1": "\uDB80\uDE02", "2": "\uDB80\uDE03", "3": "\uDB80\uDE04", "4": "\uDB80\uDE05"
+      },
+      {
+        "0": "⦄",
+        "1": "\uDB80\uDE06", "2": "\uDB80\uDE07", "3": "\uDB80\uDE08", "4": "\uDB80\uDE09"
+      }
+    ],
+    "vert": [
+      {
+        "0": "|",
+        "bar": "|"
+      },
+      {
+        "0": "|",
+        "bar": "|"
+      }
+    ],
+    "vvert": [
+      {
+        "0": "‖",
+        "bar": "‖"
+      },
+      {
+        "0": "‖",
+        "bar": "‖"
+      }
+    ],
+    "floor": [
+      {
+        "0": "⌊",
+        "1": "\uDB80\uDD99", "2": "\uDB80\uDD9A", "3": "\uDB80\uDD9B", "4": "\uDB80\uDD9C"
+      },
+      {
+        "0": "⌋",
+        "1": "\uDB80\uDD9D", "2": "\uDB80\uDD9E", "3": "\uDB80\uDD9F", "4": "\uDB80\uDDA0"
+      }
+    ],
+    "ceil": [
+      {
+        "0": "⌈",
+        "1": "\uDB80\uDD91", "2": "\uDB80\uDD92", "3": "\uDB80\uDD93", "4": "\uDB80\uDD94"
+      },
+      {
+        "0": "⌉",
+        "1": "\uDB80\uDD95", "2": "\uDB80\uDD96", "3": "\uDB80\uDD97", "4": "\uDB80\uDD98"
+      }
+    ],
+    "angle": [
+      {
+        "0": "⟨",
+        "1": "\uDB80\uDDF0", "2": "\uDB80\uDDF1", "3": "\uDB80\uDDF2", "4": "\uDB80\uDDF3"
+      },
+      {
+        "0": "⟩",
+        "1": "\uDB80\uDDF4", "2": "\uDB80\uDDF5", "3": "\uDB80\uDDF6", "4": "\uDB80\uDDF7"
+      }
+    ],
+    "aangle": [
+      {
+        "0": "⟪",
+        "1": "\uDB80\uDDF8", "2": "\uDB80\uDDF9", "3": "\uDB80\uDDFA", "4": "\uDB80\uDDFB"
+      },
+      {
+        "0": "⟫",
+        "1": "\uDB80\uDDFC", "2": "\uDB80\uDDFD", "3": "\uDB80\uDDFE", "4": "\uDB80\uDDFF"
+      }
+    ],
+    "tort": [
+      {
+        "0": "❲",
+        "1": "\uDB80\uDDE0", "2": "\uDB80\uDDE1", "3": "\uDB80\uDDE2", "4": "\uDB80\uDDE3",
+        "start": "\uDB81\uDDA4", "bar": "\uDB81\uDDA5", "end": "\uDB81\uDDA6"
+      },
+      {
+        "0": "❳",
+        "1": "\uDB80\uDDE4", "2": "\uDB80\uDDE5", "3": "\uDB80\uDDE6", "4": "\uDB80\uDDE7",
+        "start": "\uDB81\uDDA7", "bar": "\uDB81\uDDA8", "end": "\uDB81\uDDA9"
+      }
+    ]
+  },
+  "integral": {
+    "int": ["∫", "\uDB80\uDD35"],
+    "iint": ["∬", "\uDB80\uDD3A"],
+    "iiint": ["∭", "\uDB80\uDD3F"],
+    "iiiint": ["⨌", "\uDB80\uDE24"],
+    "oint": ["∮", "\uDB80\uDD44"],
+    "oiint": ["∯", "\uDB80\uDD49"],
+    "oiiint": ["∰", "\uDB80\uDD4E"],
+    "intclock": ["∱", "\uDB80\uDD53"],
+    "intanticlock": ["⨑", "\uDB80\uDE3D"],
+    "ointclock": ["∲", "\uDB80\uDD58"],
+    "ointanticlock": ["∳", "\uDB80\uDD5D"],
+    "fint": ["⨍", "\uDB80\uDE29"]
+  },
+  "sum": {
+    "sum": ["∑", "\uDB80\uDD1A"],
+    "prod": ["∏", "\uDB80\uDD16"],
+    "coprod": ["∐", "\uDB80\uDD18"],
+    "bigoplus": ["⨁", "\uDB80\uDE15"],
+    "bigotimes": ["⨂", "\uDB80\uDE16"],
+    "bigodot": ["⨀", "\uDB80\uDE14"],
+    "bigcap": ["⋂", "\uDB80\uDD89"],
+    "bigcup": ["⋃", "\uDB80\uDD8A"],
+    "bigsqcap": ["⨅", "\uDB80\uDE19"],
+    "bigsqcup": ["⨆", "\uDB80\uDE1A"],
+    "bigwedge": ["⋀", "\uDB80\uDD87"],
+    "bigvee": ["⋁", "\uDB80\uDD88"]
+  },
+  "radical": {
+    "0": "√", "1": "\uDB80\uDD1D", "2": "\uDB80\uDD1E", "3": "\uDB80\uDD1F",
+    "height": [1486, 2102, 2623, 3100]
+  },
+  "accent": {
+    "bar": [null, "\uDB81\uDD04"],
+    "tilde": [null, "\uDB81\uDD03"],
+    "hat": [null, "\uDB81\uDD02"],
+    "check": [null, "\uDB81\uDD0C"],
+    "acute": [null, "\uDB81\uDD01"],
+    "grave": [null, "\uDB81\uDD00"],
+    "breve": [null, "\uDB81\uDD06"],
+    "invbreve": [null, "\uDB81\uDD11"],
+    "ring": [null, "\uDB81\uDD0A"],
+    "vec": [null, "\uDB81\uDD77"],
+    "invvec": [null, "\uDB81\uDD76"],
+    "dot": [null, "\uDB81\uDD07"],
+    "ddot": [null, "\uDB81\uDD08"],
+    "dddot": [null, "\uDB81\uDD7B"],
+    "ddddot": [null, "\uDB81\uDD7C"],
+    "barbelow": ["\uDB81\uDD31", null],
+    "tildebelow": ["\uDB81\uDD30", null]
+  },
+  "wide": {
+    "widetilde": [
+      null,
+      {
+        "0": "\uDB80\uDCA1", "1": "\uDB80\uDCA2", "2": "\uDB80\uDCA3", "3": "\uDB80\uDCA4", "4": "\uDB80\uDCA5",
+        "width": [1002, 1495, 1931, 2384, 10000]
+      }
+    ],
+    "widehat": [
+      null,
+      {
+        "0": "\uDB80\uDC97", "1": "\uDB80\uDC98", "2": "\uDB80\uDC99", "3": "\uDB80\uDC9A", "4": "\uDB80\uDC9B",
+        "width": [1002, 1495, 1931, 2384, 10000]
+      }
+    ],
+    "widecheck": [
+      null,
+      {
+        "0": "\uDB80\uDC9C", "1": "\uDB80\uDC9D", "2": "\uDB80\uDC9E", "3": "\uDB80\uDC9F", "4": "\uDB80\uDCA0",
+        "width": [1002, 1495, 1931, 2384, 10000]
+      }
+    ],
+    "overline": [
+      null,
+      {
+        "0": "",
+        "bar": "\uDB80\uDCB5"
+      }
+    ],
+    "overrarr": [
+      null,
+      {
+        "0": "",
+        "bar": "\uDB80\uDCE9", "end": "\uDB80\uDCEA"
+      }
+    ],
+    "overlarr": [
+      null,
+      {
+        "0": "",
+        "end": "\uDB80\uDCE4", "bar": "\uDB80\uDCE9"
+      }
+    ],
+    "overbrace": [
+      null,
+      {
+        "0": "⏞", "1": "\uDB80\uDDC7", "2": "\uDB80\uDDC8", "3": "\uDB80\uDDC9", "4": "\uDB80\uDDCA", "5": "\uDB80\uDDCB",
+        "start": "\uDB80\uDDC4", "bar": "\uDB80\uDDAA", "middle": "\uDB80\uDDC5", "end": "\uDB80\uDDC6",
+        "width": [1000, 1500, 1770, 2180, 2600, 2850]
+      }
+    ],
+    "overgroup": [
+      null,
+      {
+        "0": "",
+        "start": "\uDB80\uDDC4", "bar": "\uDB80\uDDAA", "end": "\uDB80\uDDC6"
+      }
+    ],
+    "widetildebelow": [
+      {
+        "0": "\uDB80\uDCA6", "1": "\uDB80\uDCA7", "2": "\uDB80\uDCA8", "3": "\uDB80\uDCA9", "4": "\uDB80\uDCAA",
+        "width": [1002, 1495, 1931, 2384, 10000]
+      },
+      null
+    ],
+    "underline": [
+      {
+        "0": "",
+        "bar": "\uDB80\uDC92"
+      },
+      null
+    ],
+    "underrarr": [
+      {
+        "0": "",
+        "bar": "\uDB80\uDCFE", "end": "\uDB80\uDCFF"
+      },
+      null
+    ],
+    "underlarr": [
+      {
+        "0": "",
+        "start": "\uDB80\uDCF9", "bar": "\uDB80\uDCFE"
+      },
+      null
+    ],
+    "underbrace": [
+      {
+        "0": "⏟", "1": "\uDB80\uDDCF", "2": "\uDB80\uDDD0", "3": "\uDB80\uDDD1", "4": "\uDB80\uDDD2", "5": "\uDB80\uDDD3",
+        "start": "\uDB80\uDDCC", "bar": "\uDB80\uDDB2", "middle": "\uDB80\uDDCD", "end": "\uDB80\uDDCE",
+        "width": [1000, 1500, 1770, 2180, 2600, 2850]
+      },
+      null
+    ],
+    "undergroup": [
+      {
+        "0": "",
+        "start": "\uDB80\uDDCC", "bar": "\uDB80\uDDB2", "end": "\uDB80\uDDCE"
+      },
+      null
+    ]
+  },
+  "function": [
+    "sin", "cos", "tan", "cot", "sec", "csc", "sinh", "cosh", "tanh",
+    "log", "ln", "lg", "exp",
+    "inf", "sup", "min", "max",
+    "ker", "im",
+    "lim", "colim",
+    "deg", "dim", "det", "sgn", "arg"
+  ],
+  "identifier": {
+    "varbeta": "ϐ",
+    "varepsilon": "ϵ",
+    "vartheta": "ϑ",
+    "varkappa": "ϰ",
+    "varpi": "ϖ",
+    "varrho": "ϱ",
+    "varphi": "ϕ",
+    "varcapupsilon": "ϒ",
+    "digamma": "ϝ", "capdigamma": "Ϝ",
+    "koppa": "ϙ", "capkoppa": "Ϙ",
+    "varkoppa": "ϟ", "varcapkoppa": "Ϟ",
+    "sampi": "ϡ", "capsampi": "Ϡ",
+    "varsampi": "ͳ", "varcapsampi": "Ͳ"
+  },
+  "operator": {
+    "plus": ["+", ["bin"]], 
+    "minus": ["−", ["bin"]],
+    "setminus": ["∖", ["bin"]],
+    "pm": ["±", ["bin"]],
+    "mp": ["∓", ["bin"]],
+    "times": ["×", ["bin"]],
+    "ltimes": ["⋉", ["bin"]],
+    "rtimes": ["⋊", ["bin"]],
+    "btimes": ["⨲", ["bin"]],
+    "bowtie": ["⋈", ["bin"]],
+    "lthree": ["⋋", ["bin"]],
+    "rthree": ["⋌", ["bin"]],
+    "smash": ["⨳", ["bin"]],
+    "div": ["÷", ["bin"]],
+    "cdot": ["·", ["bin"]],
+    "ast": ["∗", ["bin"]], "tast": ["∗", ["ord"]],
+    "star": ["⋆", ["bin"]], "tstar": ["⋆", ["ord"]],
+    "wr": ["≀", ["bin"]],
+    "circ": ["∘", ["bin"]],
+    "diamond": ["⋄", ["bin"]],
+    "rcomp": ["\uDB81\uDDA1", ["bin"]],
+    "lcomp": ["\uDB81\uDDA3", ["bin"]],
+    "oplus": ["⊕", ["bin"]],
+    "loplus": ["⨭", ["bin"]], "roplus": ["⨮", ["bin"]],
+    "ominus": ["⊖", ["bin"]],
+    "otimes": ["⊗", ["bin"]],
+    "lotimes": ["⨴", ["bin"]], "rotimes": ["⨵", ["bin"]],
+    "odiv": ["⨸", ["bin"]],
+    "oslash": ["⊘", ["bin"]],
+    "obackslash": ["⦸", ["bin"]],
+    "odot": ["⊙", ["bin"]],
+    "ocirc": ["⊚", ["bin"]],
+    "cast": ["⊛", ["bin"]],
+    "oeq": ["⊜", ["bin"]],
+    "box": ["◻", ["bin"]],
+    "boxplus": ["⊞", ["bin"]],
+    "boxminus": ["⊟", ["bin"]],
+    "boxtimes": ["⊠", ["bin"]],
+    "boxslash": ["⧄", ["bin"]],
+    "boxbackslash": ["⧅", ["bin"]],
+    "boxdot": ["⊡", ["bin"]],
+    "boxcirc": ["⧇", ["bin"]],
+    "boxast": ["⧆", ["bin"]],
+    "rhombus": ["⬦", ["bin"]], "trhombus": ["⬦", ["ord"]],
+    "pentagon": ["⬠", ["bin"]], "tpentagon": ["⬠", ["ord"]],
+    "hexagon": ["⬡", ["bin"]], "thexagon": ["⬡", ["ord"]],
+    "utriangle": ["▵", ["bin"]], "tutriangle": ["▵", ["ord"]],
+    "dtriangle": ["▿", ["bin"]], "tdtriangle": ["▿", ["ord"]],
+    "rtriangle": ["▹", ["bin"]], "trtriangle": ["▹", ["ord"]],
+    "ltriangle": ["◃", ["bin"]], "tltriangle": ["◃", ["ord"]],
+    "cap": ["∩", ["bin"]],
+    "cup": ["∪", ["bin"]],
+    "ccap": ["⋒", ["bin"]],
+    "ccup": ["⋓", ["bin"]],
+    "sqcap": ["⊓", ["bin"]],
+    "sqcup": ["⊔", ["bin"]],
+    "ssqcap": ["⩎", ["bin"]],
+    "ssqcup": ["⩏", ["bin"]],
+    "wedge": ["∧", ["bin"]],
+    "vee": ["∨", ["bin"]],
+    "barwedge": ["⊼", ["bin"]],
+    "barvee": ["⊽", ["bin"]],
+    "veebar": ["⊻", ["bin"]],
+    "wwedge": ["⩕", ["bin"]],
+    "vvee": ["⩖", ["bin"]],
+    "varwwedge": ["⩓", ["bin"]],
+    "varvvee": ["⩔", ["bin"]],
+    "pitchfork": ["⋔", ["bin"]],
+    "percent": ["%", ["bin", "txt"]],
+    "atsym": ["@", ["bin", "txt"]],
+    "eq": ["=", ["rel"]], "neq": ["≠", ["rel"]],
+    "asiansim": ["≒", ["rel"]],
+    "varasiansim": ["≓", ["rel"]],
+    "coloneqq": [":=", ["rel"]],
+    "eqqcolon": ["=:", ["rel"]],
+    "ccoloneqq": ["::=", ["rel"]],
+    "eqqccolon": ["=::", ["rel"]],
+    "equiv": ["≡", ["rel"]], "nequiv": ["≢", ["rel"]],
+    "colonequiv": [":≡", ["rel"]],
+    "eequiv": ["≣", ["rel"]],
+    "coloneqquiv": [":≣", ["rel"]],
+    "sim": ["∼", ["rel"]], "nsim": ["≁", ["rel"]],
+    "colonsim": [":∼", ["rel"]],
+    "simeq": ["≃", ["rel"]], "nsimeq": ["≄", ["rel"]],
+    "colonsimeq": [":≃", ["rel"]], 
+    "eqsim": ["≂", ["rel"]],
+    "coloneqsim": [":≂", ["rel"]],
+    "cong": ["≅", ["rel"]], "ncong": ["≇", ["rel"]],
+    "coloncong": [":≅", ["rel"]],
+    "approx": ["≈", ["rel"]], "napprox": ["≉", ["rel"]],
+    "colonapprox": [":≈", ["rel"]],
+    "approxeq": ["≊", ["rel"]],
+    "colonapproxeq": [":≊", ["rel"]],
+    "aapprox": ["≋", ["rel"]],
+    "colonaapprox": [":≋", ["rel"]],
+    "smile": ["\uDB81\uDDAA", ["rel"]],
+    "largesmile": ["⌣", ["rel"]],
+    "frown": ["\uDB81\uDDAB", ["rel"]],
+    "largefrown": ["⌢", ["rel"]],
+    "closure": ["\uDB81\uDDAC", ["rel"]],
+    "asymp": ["≍", ["rel"]], "nasymp": ["≭", ["rel"]],
+    "bumpeq": ["≏", ["rel"]],
+    "bumpbump": ["≎", ["rel"]],
+    "eqcirc": ["≖", ["rel"]],
+    "gt": [">", ["rel"]], "ngt": ["≯", ["rel"]],
+    "ls": ["<", ["rel"]], "nls": ["≮", ["rel"]],
+    "geq": ["≥", ["rel"]], "ngeq": ["≱", ["rel"]], "gneq": ["⪈", ["rel"]], 
+    "leq": ["≤", ["rel"]], "nleq": ["≰", ["rel"]], "lneq": ["⪇", ["rel"]],
+    "geqq": ["≧", ["rel"]], "gneqq": ["≩", ["rel"]],
+    "leqq": ["≦", ["rel"]], "lneqq": ["≨", ["rel"]],
+    "gsim": ["≳", ["rel"]], "ngsim": ["≵", ["rel"]], "gnsim": ["⋧", ["rel"]],
+    "lsim": ["≲", ["rel"]], "nlsim": ["≴", ["rel"]], "lnsim": ["⋦", ["rel"]],
+    "gapprox": ["⪆", ["rel"]], "gnapprox": ["⪊", ["rel"]],
+    "lapprox": ["⪅", ["rel"]], "lnapprox": ["⪉", ["rel"]],
+    "eqg": ["⋝", ["rel"]],
+    "eql": ["⋜", ["rel"]],
+    "eqqg": ["⪚", ["rel"]],
+    "eqql": ["⪙", ["rel"]],
+    "simg": ["⪞", ["rel"]],
+    "siml": ["⪝", ["rel"]],
+    "gl": ["≷", ["rel"]], "ngl": ["≹", ["rel"]],
+    "lg": ["≶", ["rel"]], "nlg": ["≸", ["rel"]],
+    "geql": ["⋛", ["rel"]],
+    "leqg": ["⋚", ["rel"]],
+    "geqql": ["⪌", ["rel"]],
+    "leqqg": ["⪋", ["rel"]],
+    "ggt": ["≫", ["rel"]],
+    "lls": ["≪", ["rel"]],
+    "llseq": ["⪣", ["rel"]],
+    "varggt": ["⪢", ["rel"]],
+    "varlls": ["⪡", ["rel"]],
+    "gggt": ["⋙", ["rel"]],
+    "llls": ["⋘", ["rel"]],
+    "vargggt": ["⫸", ["rel"]],
+    "varllls": ["⫷", ["rel"]],
+    "succ": ["≻", ["rel"]], "nsucc": ["⊁", ["rel"]],
+    "prec": ["≺", ["rel"]], "nprec": ["⊀", ["rel"]],
+    "succeq": ["⪰", ["rel"]], "succneq": ["⪲", ["rel"]],
+    "preceq": ["⪯", ["rel"]], "precneq": ["⪱", ["rel"]],
+    "succeqq": ["⪴", ["rel"]], "succneqq": ["⪶", ["rel"]],
+    "preceqq": ["⪳", ["rel"]], "precneqq": ["⪵", ["rel"]],
+    "succsim": ["≿", ["rel"]], "succnsim": ["⋩", ["rel"]],
+    "precsim": ["≾", ["rel"]], "precnsim": ["⋨", ["rel"]],
+    "succapprox": ["⪸", ["rel"]], "succnapprox": ["⪺", ["rel"]],
+    "precapprox": ["⪷", ["rel"]], "precnapprox": ["⪹", ["rel"]],
+    "ssucc": ["⪼", ["rel"]],
+    "pprec": ["⪻", ["rel"]],
+    "succrel": ["⊱", ["rel"]],
+    "precrel": ["⊰", ["rel"]],
+    "in": ["∈", ["rel"]], "nin": ["∉", ["rel"]],
+    "ni": ["∋", ["rel"]], "nni": ["∌", ["rel"]],
+    "ineq": ["⋸", ["rel"]],
+    "disin": ["⋲", ["rel"]],
+    "smt": ["⪪", ["rel"]],
+    "lat": ["⪫", ["rel"]],
+    "smteq": ["⪬", ["rel"]],
+    "lateq": ["⪭", ["rel"]],
+    "supset": ["⊃", ["rel"]], "nsupset": ["⊃⃒", ["rel"]],
+    "subset": ["⊂", ["rel"]], "nsubset": ["⊂⃒", ["rel"]],
+    "supseteq": ["⊇", ["rel"]], "nsupseteq": ["⊉", ["rel"]], "supsetneq": ["⊋", ["rel"]], 
+    "subseteq": ["⊆", ["rel"]], "nsubseteq": ["⊈", ["rel"]], "subsetneq": ["⊊", ["rel"]],
+    "supseteqq": ["⫆", ["rel"]], "supsetneqq": ["⫌", ["rel"]], 
+    "subseteqq": ["⫅", ["rel"]], "subsetneqq": ["⫋", ["rel"]],
+    "supsetsim": ["⫈", ["rel"]],
+    "subsetsim": ["⫇", ["rel"]],
+    "supsetapprox": ["⫊", ["rel"]],
+    "subsetapprox": ["⫉", ["rel"]],
+    "ssupset": ["⋑", ["rel"]],
+    "ssubset": ["⋐", ["rel"]],
+    "sqsupset": ["⊐", ["rel"]], "nsqsupset": ["⊐̸", ["rel"]],
+    "sqsubset": ["⊏", ["rel"]], "nsqsubset": ["⊏̸", ["rel"]],
+    "sqsupseteq": ["⊒", ["rel"]], "nsqsupseteq": ["⋣", ["rel"]], "sqsupsetneq": ["⋥", ["rel"]],
+    "sqsubseteq": ["⊑", ["rel"]], "nsqsubseteq": ["⋢", ["rel"]], "sqsubsetneq": ["⋤", ["rel"]],
+    "rhd": ["⊳", ["rel"]], "nrhd": ["⋫", ["rel"]],
+    "lhd": ["⊲", ["rel"]], "nlhd": ["⋪", ["rel"]],
+    "rhdeq": ["⊵", ["rel"]], "nrhdeq": ["⋭", ["rel"]],
+    "lhdeq": ["⊴", ["rel"]], "nlhdeq": ["⋬", ["rel"]],
+    "curverhd": ["⪧", ["rel"]],
+    "curvelhd": ["⪦", ["rel"]],
+    "barrhd": ["⩥", ["rel"]],
+    "barlhd": ["⩤", ["rel"]],
+    "vdash": ["⊢", ["rel"]], "nvdash": ["⊬", ["rel"]],
+    "vddash": ["⊨", ["rel"]], "nvddash": ["⊭", ["rel"]],
+    "vvdash": ["⊩", ["rel"]], "nvvdash": ["⊮", ["rel"]],
+    "dashv": ["⊣", ["rel"]],
+    "dashvv": ["⫣", ["rel"]],
+    "ddashv": ["⫤", ["rel"]],
+    "mid": ["∣", ["rel"]], "nmid": ["∤", ["rel"]],
+    "parallel": ["∥", ["rel"]], "nparallel": ["∦", ["rel"]],
+    "between": ["≬", ["rel"]],
+    "perp": ["⟂", ["rel"]],
+    "propto": ["∝", ["rel"]],
+    "similarto": ["∽", ["rel"]],
+    "rarr": ["→", ["rel"]], "to": ["→", ["rel"]], "brarr": ["→", ["bin"]], "bto": ["→", ["bin"]], 
+    "larr": ["←", ["rel"]], "from": ["←", ["rel"]], "blarr": ["←", ["bin"]], "bfrom": ["←", ["bin"]],
+    "lrarr": ["↔", ["rel"]], "blrarr": ["↔", ["bin"]],
+    "longrarr": ["⟶", ["rel"]], "longto": ["⟶", ["rel"]], 
+    "longlarr": ["⟵", ["rel"]], "longfrom": ["⟵", ["rel"]],
+    "longlrarr": ["⟷", ["rel"]],
+    "rmap": ["↦", ["rel"]], "mapsto": ["↦", ["rel"]], "brmap": ["↦", ["bin"]], "bmapsto": ["↦", ["bin"]],
+    "lmap": ["↤", ["rel"]], "mappedfrom": ["↤", ["rel"]], "blmap": ["↤", ["bin"]], "bmappedfrom": ["↤", ["bin"]],
+    "longrmap": ["⟼", ["rel"]], "longmapsto": ["⟼", ["rel"]],
+    "longlmap": ["⟻", ["rel"]], "longmappedfrom": ["⟻", ["rel"]],
+    "rmulti": ["⊸", ["rel"]], "brmulti": ["⊸", ["bin"]],
+    "lmulti": ["⟜", ["rel"]], "blmulti": ["⟜", ["bin"]],
+    "lrmulti": ["⧟", ["rel"]], "blrmulti": ["⧟", ["bin"]],
+    "openrarr": ["⇾", ["rel"]], "bopenrarr": ["⇾", ["bin"]],
+    "openlarr": ["⇽", ["rel"]], "bopenlarr": ["⇽", ["bin"]],
+    "lopenrarr": ["⇿", ["rel"]], "blopenrarr": ["⇿", ["bin"]],
+    "hookrarr": ["↪", ["rel"]], "bhookrarr": ["↪", ["bin"]],
+    "hooklarr": ["↩", ["rel"]], "bhooklarr": ["↩", ["bin"]],
+    "tailrarr": ["↣", ["rel"]], "btailrarr": ["↣", ["bin"]],
+    "taillarr": ["↢", ["rel"]], "btaillarr": ["↢", ["bin"]],
+    "headrarr": ["↠", ["rel"]], "bheadrarr": ["↠", ["bin"]],
+    "headlarr": ["↞", ["rel"]], "bheadlarr": ["↞", ["bin"]],
+    "tailheadrarr": ["⤖", ["rel"]], "btailheadrarr": ["⤖", ["bin"]],
+    "uharprarr": ["⇀", ["rel"]], "buharprarr": ["⇀", ["bin"]],
+    "uharplarr": ["↼", ["rel"]], "buharplarr": ["↼", ["bin"]],
+    "dharprarr": ["⇁", ["rel"]], "bdharprarr": ["⇁", ["bin"]],
+    "dharplarr": ["↽", ["rel"]], "bdharplarr": ["↽", ["bin"]],
+    "waverarr": ["↝", ["rel"]], "bwaverarr": ["↝", ["bin"]],
+    "wavelarr": ["↜", ["rel"]], "bwavelarr": ["↜", ["bin"]],
+    "wavelrarr": ["↭", ["rel"]], "bwavelrarr": ["↭", ["bin"]],
+    "squigrarr": ["⇝", ["rel"]], "bsquigrarr": ["⇝", ["bin"]],
+    "squiglarr": ["⇜", ["rel"]], "bsquiglarr": ["⇜", ["bin"]],
+    "curverarr": ["↷", ["rel"]], "bcurverarr": ["↷", ["bin"]],
+    "curvelarr": ["↶", ["rel"]], "bcurvelarr": ["↶", ["bin"]],
+    "vertrarr": ["⇸", ["rel"]], "bvertrarr": ["⇸", ["bin"]],
+    "vertlarr": ["⇷", ["rel"]], "bvertlarr": ["⇷", ["bin"]],
+    "vertlrarr": ["⇹", ["rel"]], "bvertlrarr": ["⇹", ["bin"]],
+    "vvertrarr": ["⇻", ["rel"]], "bvvertrarr": ["⇻", ["bin"]],
+    "vvertlarr": ["⇺", ["rel"]], "bvvertlarr": ["⇺", ["bin"]],
+    "vvertlrarr": ["⇼", ["rel"]], "bvvertlrarr": ["⇼", ["bin"]],
+    "circlerarr": ["↻", ["rel"]],
+    "circlelarr": ["↺", ["rel"]],
+    "raarr": ["⇒", ["rel"]], "braarr": ["⇒", ["bin"]],
+    "laarr": ["⇐", ["rel"]], "blaarr": ["⇐", ["bin"]],
+    "lraarr": ["⇔", ["rel"]], "blraarr": ["⇔", ["bin"]],
+    "rmmap": ["⤇", ["rel"]], "brmmap": ["⤇", ["bin"]],
+    "lmmap": ["⤆", ["rel"]], "blmmap": ["⤆", ["bin"]],
+    "vertraarr": ["⤃", ["rel"]], "bvertraarr": ["⤃", ["bin"]],
+    "vertlaarr": ["⤂", ["rel"]], "bvertlaarr": ["⤂", ["bin"]],
+    "vertlraarr": ["⤄", ["rel"]], "bvertlraarr": ["⤄", ["bin"]],
+    "longraarr": ["⟹", ["rel"]],
+    "longlaarr": ["⟸", ["rel"]],
+    "longlraarr": ["⟺", ["rel"]],
+    "raaarr": ["⇛", ["rel"]], "braaarr": ["⇛", ["bin"]],
+    "laaarr": ["⇚", ["rel"]], "blaaarr": ["⇚", ["bin"]],
+    "uarr": ["↑", ["rel"]], "buarr": ["↑", ["bin"]],
+    "darr": ["↓", ["rel"]], "bdarr": ["↓", ["bin"]],
+    "udarr": ["↕", ["rel"]], "budarr": ["↕", ["bin"]],
+    "uaarr": ["⇑", ["rel"]], "buaarr": ["⇑", ["bin"]],
+    "daarr": ["⇓", ["rel"]], "bdaarr": ["⇓", ["bin"]],
+    "udaarr": ["⇕", ["rel"]], "budaarr": ["⇕", ["bin"]],
+    "scand": ["AND", ["sbin", "sml"]],
+    "scor": ["OR", ["sbin", "sml"]],
+    "scimplies": ["IMPLIES", ["sbin", "sml"]],
+    "implies": ["⟹", ["srel"]],
+    "implied": ["⟸", ["srel"]],
+    "iff": ["⟺", ["srel"]],
+    "coloniff": [":⟺", ["srel"]],
+    "comma": [",", ["del", "txt"]],
+    "colon": [":", ["del", "txt"]],
+    "semicolon": [";", ["del", "txt"]],
+    "period": [".", ["ord", "txt"]],
+    "excl": ["!", ["ord", "txt"]],
+    "ques": ["?", ["ord", "txt"]],
+    "hyphen": ["-", ["ord", "txt"]],
+    "pr": ["\uDB80\uDF98", ["ord"]],
+    "ppr": ["\uDB80\uDF99", ["ord"]],
+    "pppr": ["\uDB80\uDF9A", ["ord"]],
+    "ppppr": ["\uDB80\uDF9B", ["ord"]],
+    "bpr": ["\uDB80\uDF9C", ["ord"]],
+    "bppr": ["\uDB80\uDF9D", ["ord"]],
+    "bpppr": ["\uDB80\uDF9E", ["ord"]],
+    "not": ["\u0338", ["not"]],
+    "partial": ["∂", ["ord", "txt"]],
+    "nabla": ["∇", ["ord"]],
+    "infty": ["∞", ["ord", "txt"]],
+    "empty": ["∅", ["ord"]],
+    "amp": ["&", ["ord"]],
+    "invamp": ["⅋", ["ord"]],
+    "num": ["#", ["ord", "txt"]],
+    "dollar": ["$", ["ord", "txt"]],
+    "section": ["§", ["ord", "txt"]],
+    "wp": ["℘", ["ord"]],
+    "hbar": ["ℏ", ["ord", "txt"]],
+    "sharp": ["♯", ["ord"]],
+    "flat": ["♭", ["ord"]],
+    "natural": ["♮", ["ord"]],
+    "crotchet": ["♩", ["ord"]],
+    "quaver": ["♪", ["ord"]],
+    "linkquaver": ["♫", ["ord"]],
+    "dagger": ["†", ["ord", "txt"]],
+    "ddagger": ["‡", ["ord", "txt"]],
+    "bspade": ["♠", ["ord"]],
+    "bheart": ["♥", ["ord"]],
+    "bdiamond": ["♦", ["ord"]],
+    "bclub": ["♣", ["ord"]],
+    "wspade": ["♤", ["ord"]],
+    "wheart": ["♡", ["ord"]],
+    "wdiamond": ["♢", ["ord"]],
+    "wclub": ["♧", ["ord"]],
+    "slash": ["/", ["ord"]],
+    "backslash": ["\\", ["ord"]],
+    "top": ["⊤", ["ord"]],
+    "bot": ["⊥", ["ord"]],
+    "ttop": ["⫪", ["ord"]],
+    "bbot": ["⫫", ["ord"]],
+    "neg": ["¬", ["ord"]],
+    "forall": ["∀", ["ord"]],
+    "exists": ["∃", ["ord"]], "nexists": ["∄", ["ord"]],
+    "aleph": ["ℵ", ["ord"]],
+    "beth": ["ℶ", ["ord"]],
+    "ldots": ["…", ["ord"]],
+    "cdots": ["⋯", ["ord"]],
+    "vdots": ["⋮", ["ord"]],
+    "ddots": ["⋱", ["ord"]],
+    "udots": ["⋰", ["ord"]],
+    "lparen": ["(", ["lpar"]], "rparen": [")", ["rpar"]],
+    "lpparen": ["⦅", ["lpar"]], "rpparen": ["⦆", ["rpar"]],
+    "lbracket": ["[", ["lpar"]], "rbracket": ["]", ["rpar"]],
+    "lbbracket": ["⟦", ["lpar"]], "rbbracket": ["⟧", ["rpar"]],
+    "lbrace": ["{", ["lpar"]], "rbrace": ["}", ["rpar"]],
+    "lbbrace": ["⦃", ["lpar"]], "rbbrace": ["⦄", ["rpar"]],
+    "lvert": ["|", ["lpar"]], "rvert": ["|", ["rpar"]],
+    "lvvert": ["‖", ["lpar"]], "rvvert": ["‖", ["rpar"]],
+    "lfloor": ["⌊", ["lpar"]], "rfloor": ["⌋", ["rpar"]],
+    "lceil": ["⌈", ["lpar"]], "rceil": ["⌉", ["rpar"]],
+    "langle": ["⟨", ["lpar"]], "rangle": ["⟩", ["rpar"]],
+    "laangle": ["⟪", ["lpar"]], "raangle": ["⟫", ["rpar"]],
+    "ltort": ["❲", ["lpar"]], "rtort": ["❳", ["rpar"]]
+  },
+  "arrow": {
+    "normal": {
+      "edge": "end",
+      "x": 0.3, "y": 0.18, "width": 0.3, "height": 0.36, "extrusion": 0,
+      "command": "M 0 0 L 0.3 0.18 L 0 0.36"
+    },
+    "dnormal": {
+      "edge": "end",
+      "x": 0.21, "y": 0.27, "width": 0.3, "height": 0.54, "extrusion": 0.09,
+      "command": "M 0 0 L 0.3 0.27 L 0 0.54"
+    },
+    "tnormal": {
+      "edge": "end",
+      "x": 0.15, "y": 0.36, "width": 0.3, "height": 0.72, "extrusion": 0.15,
+      "command": "M 0 0 L 0.3 0.36 L 0 0.72 M 0.15 0.36 L 0.3 0.36"
+    },
+    "head": {
+      "edge": "end",
+      "x": 0.54, "y": 0.18, "width": 0.54, "height": 0.36, "extrusion": 0,
+      "command": "M 0 0 L 0.3 0.18 L 0 0.36 M 0.24 0 L 0.54 0.18 L 0.24 0.36"
+    },
+    "tail": {
+      "edge": "start",
+      "x": 0.3, "y": 0.18, "width": 0.3, "height": 0.36, "extrusion": 0.3,
+      "command": "M 0 0 L 0.3 0.18 L 0 0.36"
+    },
+    "hook": {
+      "edge": "start",
+      "x": 0.12, "y": 0.3, "width": 0.24, "height": 0.3, "extrusion": 0.18,
+      "command": "M 0.18 0 L 0.12 0 A 0.15 0.15 0 0 0 0.12 0.3"
+    },
+    "varhook": {
+      "edge": "start",
+      "x": 0.12, "y": 0, "width": 0.24, "height": 0.3, "extrusion": 0.18,
+      "command": "M 0.12 0 A 0.15 0.15 0 0 0 0.12 0.3 L 0.18 0.3"
+    }
+  },
+  "alternative": {
+    "varbb": {
+      "a": "𝕒", "b": "𝕓", "c": "𝕔", "d": "𝕕", "e": "𝕖", "f": "𝕗", "g": "𝕘", "h": "𝕙", "i": "𝕚", "j": "𝕛", "k": "𝕜", "l": "𝕝", "m": "𝕞", 
+      "n": "𝕟", "o": "𝕠", "p": "𝕡", "q": "𝕢", "r": "𝕣", "s": "𝕤", "t": "𝕥", "u": "𝕦", "v": "𝕧", "w": "𝕨", "x": "𝕩", "y": "𝕪", "z": "𝕫",
+      "A": "𝔸", "B": "𝔹", "C": "ℂ", "D": "𝔻", "E": "𝔼", "F": "𝔽", "G": "𝔾", "H": "ℍ", "I": "𝕀", "J": "𝕁", "K": "𝕂", "L": "𝕃", "M": "𝕄", 
+      "N": "ℕ", "O": "𝕆", "P": "ℙ", "Q": "ℚ", "R": "ℝ", "S": "𝕊", "T": "𝕋", "U": "𝕌", "V": "𝕍", "W": "𝕎", "X": "𝕏", "Y": "𝕐", "Z": "ℤ",
+      "0": "𝟘", "1": "𝟙", "2": "𝟚", "3": "𝟛", "4": "𝟜", "5": "𝟝", "6": "𝟞", "7": "𝟟", "8": "𝟠", "9": "𝟡"
+    },
+    "bb": {
+      "a": "\uDB84\uDC1A", "b": "\uDB84\uDC1B", "c": "\uDB84\uDC1C", "d": "\uDB84\uDC1D", "e": "\uDB84\uDC1E", "f": "\uDB84\uDC1F", "g": "\uDB84\uDC20",
+      "h": "\uDB84\uDC21", "i": "\uDB84\uDC22", "j": "\uDB84\uDC23", "k": "\uDB84\uDC24", "l": "\uDB84\uDC25", "m": "\uDB84\uDC26", "n": "\uDB84\uDC27",
+      "o": "\uDB84\uDC28", "p": "\uDB84\uDC29", "q": "\uDB84\uDC2A", "r": "\uDB84\uDC2B", "s": "\uDB84\uDC2C", "t": "\uDB84\uDC2D", "u": "\uDB84\uDC2E",
+      "v": "\uDB84\uDC2F", "w": "\uDB84\uDC30", "x": "\uDB84\uDC31", "y": "\uDB84\uDC32", "z": "\uDB84\uDC33",
+      "A": "\uDB84\uDC00", "B": "\uDB84\uDC01", "C": "\uDB84\uDC02", "D": "\uDB84\uDC03", "E": "\uDB84\uDC04", "F": "\uDB84\uDC05", "G": "\uDB84\uDC06",
+      "H": "\uDB84\uDC07", "I": "\uDB84\uDC08", "J": "\uDB84\uDC09", "K": "\uDB84\uDC0A", "L": "\uDB84\uDC0B", "M": "\uDB84\uDC0C", "N": "\uDB84\uDC0D",
+      "O": "\uDB84\uDC0E", "P": "\uDB84\uDC0F", "Q": "\uDB84\uDC10", "R": "\uDB84\uDC11", "S": "\uDB84\uDC12", "T": "\uDB84\uDC13", "U": "\uDB84\uDC14",
+      "V": "\uDB84\uDC15", "W": "\uDB84\uDC16", "X": "\uDB84\uDC17", "Y": "\uDB84\uDC18", "Z": "\uDB84\uDC19",
+      "0": "\uDB84\uDC34", "1": "\uDB84\uDC35", "2": "\uDB84\uDC36", "3": "\uDB84\uDC37", "4": "\uDB84\uDC38",
+      "5": "\uDB84\uDC39", "6": "\uDB84\uDC3A", "7": "\uDB84\uDC3B", "8": "\uDB84\uDC3C", "9": "\uDB84\uDC3D"
+    },
+    "cal": {
+      "a": "𝒶", "b": "𝒷", "c": "𝒸", "d": "𝒹", "e": "ℯ", "f": "𝒻", "g": "ℊ", "h": "𝒽", "i": "𝒾", "j": "𝒿", "k": "𝓀", "l": "𝓁", "m": "𝓂", 
+      "n": "𝓃", "o": "ℴ", "p": "𝓅", "q": "𝓆", "r": "𝓇", "s": "𝓈", "t": "𝓉", "u": "𝓊", "v": "𝓋", "w": "𝓌", "x": "𝓍", "y": "𝓎", "z": "𝓏",
+      "A": "𝒜", "B": "ℬ", "C": "𝒞", "D": "𝒟", "E": "ℰ", "F": "ℱ", "G": "𝒢", "H": "ℋ", "I": "ℐ", "J": "𝒥", "K": "𝒦", "L": "ℒ", "M": "ℳ",
+      "N": "𝒩", "O": "𝒪", "P": "𝒫", "Q": "𝒬", "R": "ℛ", "S": "𝒮", "T": "𝒯", "U": "𝒰", "V": "𝒱", "W": "𝒲", "X": "𝒳", "Y": "𝒴", "Z": "𝒵"
+    },
+    "scr": {
+      "a": "𝒶", "b": "𝒷", "c": "𝒸", "d": "𝒹", "e": "ℯ", "f": "𝒻", "g": "ℊ", "h": "𝒽", "i": "𝒾", "j": "𝒿", "k": "𝓀", "l": "𝓁", "m": "𝓂", 
+      "n": "𝓃", "o": "ℴ", "p": "𝓅", "q": "𝓆", "r": "𝓇", "s": "𝓈", "t": "𝓉", "u": "𝓊", "v": "𝓋", "w": "𝓌", "x": "𝓍", "y": "𝓎", "z": "𝓏",
+      "A": "\uDB81\uDC98", "B": "\uDB81\uDC99", "C": "\uDB81\uDC9A", "D": "\uDB81\uDC9B", "E": "\uDB81\uDC9C", "F": "\uDB81\uDC9D", "G": "\uDB81\uDC9E",
+      "H": "\uDB81\uDC9F", "I": "\uDB81\uDCA0", "J": "\uDB81\uDCA1", "K": "\uDB81\uDCA2", "L": "\uDB81\uDCA3", "M": "\uDB81\uDCA4", "N": "\uDB81\uDCA5", 
+      "O": "\uDB81\uDCA6", "P": "\uDB81\uDCA7", "Q": "\uDB81\uDCA8", "R": "\uDB81\uDCA9", "S": "\uDB81\uDCAA", "T": "\uDB81\uDCAB", "U": "\uDB81\uDCAC", 
+      "V": "\uDB81\uDCAD", "W": "\uDB81\uDCAE", "X": "\uDB81\uDCAF", "Y": "\uDB81\uDCB0", "Z": "\uDB81\uDCB1"
+    },
+    "varfrak": {
+      "a": "𝔞", "b": "𝔟", "c": "𝔠", "d": "𝔡", "e": "𝔢", "f": "𝔣", "g": "𝔤", "h": "𝔥", "i": "𝔦", "j": "𝔧", "k": "𝔨", "l": "𝔩", "m": "𝔪", 
+      "n": "𝔫", "o": "𝔬", "p": "𝔭", "q": "𝔮", "r": "𝔯", "s": "𝔰", "t": "𝔱", "u": "𝔲", "v": "𝔳", "w": "𝔴", "x": "𝔵", "y": "𝔶", "z": "𝔷",
+      "A": "𝔄", "B": "𝔅", "C": "ℭ", "D": "𝔇", "E": "𝔈", "F": "𝔉", "G": "𝔊", "H": "ℌ", "I": "ℑ", "J": "𝔍", "K": "𝔎", "L": "𝔏", "M": "𝔐", 
+      "N": "𝔑", "O": "𝔒", "P": "𝔓", "Q": "𝔔", "R": "ℜ", "S": "𝔖", "T": "𝔗", "U": "𝔘", "V": "𝔙", "W": "𝔚", "X": "𝔛", "Y": "𝔜", "Z": "ℨ"
+    },
+    "frak": {
+      "a": "\uDB84\uDC58", "b": "\uDB84\uDC59", "c": "\uDB84\uDC5A", "d": "\uDB84\uDC5B", "e": "\uDB84\uDC5C", "f": "\uDB84\uDC5D", "g": "\uDB84\uDC5E",
+      "h": "\uDB84\uDC5F", "i": "\uDB84\uDC60", "j": "\uDB84\uDC61", "k": "\uDB84\uDC62", "l": "\uDB84\uDC63", "m": "\uDB84\uDC64", "n": "\uDB84\uDC65",
+      "o": "\uDB84\uDC66", "p": "\uDB84\uDC67", "q": "\uDB84\uDC68", "r": "\uDB84\uDC69", "s": "\uDB84\uDC6A", "t": "\uDB84\uDC6B", "u": "\uDB84\uDC6C",
+      "v": "\uDB84\uDC6D", "w": "\uDB84\uDC6E", "x": "\uDB84\uDC6F", "y": "\uDB84\uDC70", "z": "\uDB84\uDC71",
+      "A": "\uDB84\uDC3E", "B": "\uDB84\uDC3F", "C": "\uDB84\uDC40", "D": "\uDB84\uDC41", "E": "\uDB84\uDC42", "F": "\uDB84\uDC43", "G": "\uDB84\uDC44",
+      "H": "\uDB84\uDC45", "I": "\uDB84\uDC46", "J": "\uDB84\uDC47", "K": "\uDB84\uDC48", "L": "\uDB84\uDC49", "M": "\uDB84\uDC4A", "N": "\uDB84\uDC4B",
+      "O": "\uDB84\uDC4C", "P": "\uDB84\uDC4D", "Q": "\uDB84\uDC4E", "R": "\uDB84\uDC4F", "S": "\uDB84\uDC50", "T": "\uDB84\uDC51", "U": "\uDB84\uDC52",
+      "V": "\uDB84\uDC53", "W": "\uDB84\uDC54", "X": "\uDB84\uDC55", "Y": "\uDB84\uDC56", "Z": "\uDB84\uDC57"
+    }
+  },
+  "greek": {
+    "a": "α", "b": "β", "c": "ψ", "d": "δ", "e": "ε", "f": "φ", "g": "γ", "h": "η", "i": "ι", "j": "ξ", "k": "κ", "l": "λ", "m": "μ", 
+    "n": "ν", "o": "ο", "p": "π", "q": "ϕ", "r": "ρ", "s": "σ", "t": "τ", "u": "θ", "v": "ω", "w": "ς", "x": "χ", "y": "υ", "z": "ζ",
+    "A": "Α", "B": "Β", "C": "Ψ", "D": "Δ", "E": "Ε", "F": "Φ", "G": "Γ", "H": "Η", "I": "Ι", "J": "Ξ", "K": "Κ", "L": "Λ", "M": "Μ", 
+    "N": "Ν", "O": "Ο", "P": "Π", "Q": "Φ", "R": "Ρ", "S": "Σ", "T": "Τ", "U": "Θ", "V": "Ω", "W": "Σ", "X": "Χ", "Y": "Υ", "Z": "Ζ"
+  }
+}
