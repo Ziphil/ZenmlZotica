@@ -23,9 +23,14 @@ import {
 import {
   ZOTICA_DATA
 } from "source/data/data";
+import {
+  ZoticaBuilder
+} from "./builder";
 
 
 export class ZoticaParser extends ZenmlParser {
+
+  public builder!: ZoticaBuilder;
 
   public constructor(implementation: DOMImplementation, options?: ZenmlParserOptions) {
     super(implementation, options);
@@ -67,6 +72,17 @@ export class ZoticaParser extends ZenmlParser {
     }));
     return parser;
   });
+
+  protected updateDocument(): void {
+    let document = this.implementation.createDocument(null, null, null);
+    this.setDocument(document);
+  }
+
+  public setDocument(document: Document): void {
+    this.document = document;
+    this.pluginManager.updateDocument(this.document);
+    this.builder = new ZoticaBuilder(document);
+  }
 
   protected determineNextState(state: ZenmlParserState, tagName: string, marks: ZenmlMarks, attributes: ZenmlAttributes, macro: boolean): ZenmlParserState {
     let nextState = super.determineNextState(state, tagName, marks, attributes, macro) as any;
