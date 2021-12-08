@@ -5,6 +5,9 @@ import {
   NodeLikeOf
 } from "@zenml/zenml";
 import {
+  ZoticaFont
+} from "../font/font";
+import {
   isElement
 } from "../util/dom";
 
@@ -16,7 +19,8 @@ export type ZoticaFontType = "main" | "math";
 export type ZoticaCommonOptions = {
   role?: ZoticaRole,
   className?: string,
-  style?: string
+  style?: string,
+  fonts: {main: ZoticaFont, math: ZoticaFont}
 };
 
 
@@ -26,7 +30,7 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
     super(document);
   }
 
-  public buildNumber(content: string, options?: ZoticaCommonOptions): NodeLikeOf<Document> {
+  public buildNumber(content: string, options: ZoticaCommonOptions): NodeLikeOf<Document> {
     let self = this.createDocumentFragment();
     let element = null as Element | null;
     this.appendElement(self, "math-n", (self) => {
@@ -38,7 +42,7 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
     return self;
   }
 
-  public buildIdentifier(content: string, types: Array<"bf" | "rm" | "tt" | "fun" | "alt">, options?: ZoticaCommonOptions): NodeLikeOf<Document> {
+  public buildIdentifier(content: string, types: Array<"bf" | "rm" | "tt" | "fun" | "alt">, options: ZoticaCommonOptions): NodeLikeOf<Document> {
     let self = this.createDocumentFragment();
     let element = null as Element | null;
     let fontType = (types.includes("alt")) ? "math" : "main" as ZoticaFontType;
@@ -53,7 +57,7 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
     return self;
   }
 
-  public buildOperator(symbol: string, types: Array<"txt">, options?: ZoticaCommonOptions): NodeLikeOf<Document> {
+  public buildOperator(symbol: string, types: Array<"txt">, options: ZoticaCommonOptions): NodeLikeOf<Document> {
     let self = this.createDocumentFragment();
     let element = null as Element | null;
     let fontType = (types.includes("txt")) ? "main" : "math" as ZoticaFontType;
@@ -68,19 +72,19 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
     return self;
   }
 
-  private applyOptions(nodes: DocumentFragment, options?: ZoticaCommonOptions): void {
+  private applyOptions(nodes: DocumentFragment, options: ZoticaCommonOptions): void {
     for (let i = 0 ; i < nodes.childNodes.length ; i ++) {
       let node = nodes.childNodes.item(i);
       if (isElement(node)) {
-        if (options?.role !== undefined) {
+        if (options.role !== undefined) {
           let classNames = node.getAttribute("class")?.split(" ") ?? [];
           let nextClassNames = [...classNames.filter((className) => !ZOTICA_ROLES.includes(className)), options.role];
           node.setAttribute("class", nextClassNames.join(" "));
         }
-        if (options?.className !== undefined) {
+        if (options.className !== undefined) {
           node.setAttribute("class", (node.getAttribute("class") ?? "") + options.className);
         }
-        if (options?.style !== undefined) {
+        if (options.style !== undefined) {
           node.setAttribute("style", (node.getAttribute("style") ?? "") + options.style);
         }
       }
@@ -88,7 +92,7 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
   }
 
   // TODO: フォントデータの設計を決めたら実装してください。
-  private modifyVerticalMargins(element: Element, fontType: ZoticaFontType, options?: {}): void {
+  private modifyVerticalMargins(element: Element, fontType: ZoticaFontType, options: {}): void {
   }
 
 }
