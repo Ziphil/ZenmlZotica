@@ -19,7 +19,7 @@ import {
   Parser,
   alt,
   lazy
-} from "parsimmon";
+} from "@zenml/zenml/dist/parsimmon";
 import {
   ZOTICA_DATA
 } from "../data/data";
@@ -38,6 +38,7 @@ export class ZoticaParser extends ZenmlParser {
 
   public constructor(implementation: DOMImplementation, options?: ZenmlParserOptions) {
     super(implementation, options);
+    this.builder = new ZoticaBuilder(this.document);
   }
 
   private createMathElement(tagName: string, attributes: ZenmlAttributes, childrenArgs: ChildrenArgs): Nodes {
@@ -48,16 +49,16 @@ export class ZoticaParser extends ZenmlParser {
     let nodes = [];
     let options = {fonts: {main: TIMES_ZOTICA_FONT, math: MATH_ZOTICA_FONT}};
     for (let char of content) {
-      if (char.match(/\p{Number}/)) {
+      if (char.match(/\p{Number}/u)) {
         nodes.push(this.builder.buildNumber(char, options));
-      } else if (char.match(/\p{Letter}|\p{Mark}/)) {
+      } else if (char.match(/\p{Letter}|\p{Mark}/u)) {
         nodes.push(this.builder.buildIdentifier(char, [], options));
       } else if (char === "'") {
         let {symbol, types} = ZOTICA_DATA.getOperatorSymbol("pr")!;
         nodes.push(this.builder.buildSubsuper(options, (baseSelf, subSelf, superSelf) => {
           superSelf.appendChild(this.builder.buildOperator(symbol, types, options));
         }));
-      } else if (!char.match(/\s/)) {
+      } else if (!char.match(/\s/u)) {
         let replacedChar = ZOTICA_DATA.getReplacement(char) ?? char;
         let {symbol, types} = ZOTICA_DATA.getOperatorSymbolByChar(replacedChar) ?? {symbol: char, types: ["bin"]};
         nodes.push(this.builder.buildOperator(symbol, types, options));
@@ -69,6 +70,17 @@ export class ZoticaParser extends ZenmlParser {
   private createMathEscape(char: string): string {
     throw "not yet implemented";
   }
+
+  public readonly mathRoot: Parser<Nodes> = lazy(() => {
+    let parser = this.nodes({}).map((nodes) => {
+      let element = this.document.createElement("math-root");
+      for (let node of nodes) {
+        element.appendChild(node);
+      }
+      return [element];
+    });
+    return parser;
+  });
 
   public readonly fullNodes: StateParser<Nodes, ZenmlParserState> = create((state) => {
     let anyState = state as any;

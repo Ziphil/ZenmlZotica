@@ -133,7 +133,7 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
       });
     });
     this.applyOptions(self, options);
-    callback?.call(this, baseElement!, subElement!, superElement!, leftSubElement!, leftSuperElement!);
+    callback?.(baseElement!, subElement!, superElement!, leftSubElement!, leftSuperElement!);
     this.inheritRole(mainElement!, baseElement!);
     this.modifySubsuper(baseElement!, subElement!, superElement!, leftSubElement!, leftSuperElement!);
     return self;

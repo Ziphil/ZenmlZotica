@@ -12,7 +12,7 @@ import {
 } from "@zenml/zenml";
 import {
   Parser
-} from "parsimmon";
+} from "@zenml/zenml/dist/parsimmon";
 import {
   ZoticaParser
 } from "./parser";
@@ -41,7 +41,7 @@ export class ZoticaZenmlPlugin implements ZenmlPlugin {
   }
 
   public getParser(): Parser<Nodes> {
-    return this.zoticaParser.nodes({});
+    return this.zoticaParser.mathRoot;
   }
 
   public createElement(tagName: string, marks: ZenmlMarks, attributes: ZenmlAttributes, childrenArgs: ChildrenArgs): Nodes {
