@@ -15,7 +15,12 @@ import {
 const ZOTICA_ROLES = ["bin", "rel", "sbin", "srel", "del", "fun", "not", "ord", "lpar", "rpar", "cpar"];
 
 export type ZoticaRole = "bin" | "rel" | "sbin" | "srel" | "del" | "fun" | "not" | "ord" | "lpar" | "rpar" | "cpar";
+export type ZoticaIdentifierType = "bf" | "rm" | "tt" | "fun" | "alt";
+export type ZoticaOperatorType = ZoticaRole | "txt" | "sml";
 export type ZoticaFontType = "main" | "math";
+
+export type ZoticaSubsuperCallback = (baseElement: Element, subElement: Element, superElement: Element, leftSubElement?: Element, leftSuperElement?: Element) => void;
+
 export type ZoticaCommonOptions = {
   role?: ZoticaRole,
   className?: string,
@@ -42,7 +47,7 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
     return self;
   }
 
-  public buildIdentifier(content: string, types: Array<"bf" | "rm" | "tt" | "fun" | "alt">, options: ZoticaCommonOptions): NodeLikeOf<Document> {
+  public buildIdentifier(content: string, types: Array<ZoticaIdentifierType>, options: ZoticaCommonOptions): NodeLikeOf<Document> {
     let self = this.createDocumentFragment();
     let element = null as Element | null;
     let fontType = (types.includes("alt")) ? "math" : "main" as ZoticaFontType;
@@ -57,7 +62,7 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
     return self;
   }
 
-  public buildOperator(symbol: string, types: Array<"txt">, options: ZoticaCommonOptions): NodeLikeOf<Document> {
+  public buildOperator(symbol: string, types: Array<ZoticaOperatorType>, options: ZoticaCommonOptions): NodeLikeOf<Document> {
     let self = this.createDocumentFragment();
     let element = null as Element | null;
     let fontType = (types.includes("txt")) ? "main" : "math" as ZoticaFontType;
@@ -99,6 +104,71 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
     });
     this.applyOptions(self, options);
     return self;
+  }
+
+  public buildSubsuper(options: ZoticaCommonOptions, callback?: ZoticaSubsuperCallback): NodeLikeOf<Document> {
+    let self = this.createDocumentFragment();
+    let baseElement = null as Element | null;
+    let subElement = null as Element | null;
+    let superElement = null as Element | null;
+    let leftSubElement = null as Element | null;
+    let leftSuperElement = null as Element | null;
+    let mainElement = null as Element | null;
+    this.appendElement(self, "math-subsup", (self) => {
+      mainElement = self;
+      this.appendElement(self, "math-lsub", (self) => {
+        leftSubElement = self;
+      });
+      this.appendElement(self, "math-lsup", (self) => {
+        leftSuperElement = self;
+      });
+      this.appendElement(self, "math-base", (self) => {
+        baseElement = self;
+      });
+      this.appendElement(self, "math-sub", (self) => {
+        subElement = self;
+      });
+      this.appendElement(self, "math-sup", (self) => {
+        superElement = self;
+      });
+    });
+    this.applyOptions(self, options);
+    callback?.call(this, baseElement!, subElement!, superElement!, leftSubElement!, leftSuperElement!);
+    this.inheritRole(mainElement!, baseElement!);
+    this.modifySubsuper(baseElement!, subElement!, superElement!, leftSubElement!, leftSuperElement!);
+    return self;
+  }
+
+  private modifySubsuper(baseElement: Element, subElement: Element, superElement: Element, leftSubElement?: Element, leftSuperElement?: Element): void {
+    if (subElement.childNodes.length <= 0) {
+      subElement.parentNode!.removeChild(subElement);
+    }
+    if (superElement.childNodes.length <= 0) {
+      superElement.parentNode!.removeChild(superElement);
+    }
+    if (leftSubElement !== undefined && leftSubElement.childNodes.length <= 0) {
+      leftSubElement.parentNode!.removeChild(leftSubElement);
+    }
+    if (leftSuperElement && leftSuperElement.childNodes.length <= 0) {
+      leftSuperElement.parentNode!.removeChild(leftSuperElement);
+    }
+  }
+
+  private inheritRole(targetElement: Element, sourceElement: Element): void {
+    let sourceChildren = sourceElement.childNodes;
+    if (sourceChildren.length === 1) {
+      let sourceChild = sourceChildren.item(0);
+      if (isElement(sourceChild)) {
+        let sourceClassNames = sourceChild.getAttribute("class")?.split(" ") ?? [];
+        let sourceRole = sourceClassNames.find((cl) => ZOTICA_ROLES.includes(cl));
+        if (sourceRole !== undefined) {
+          let targetClasses = targetElement.getAttribute("class")?.split(" ") ?? [];
+          if (targetClasses.some((cl) => ZOTICA_ROLES.includes(cl))) {
+            targetElement.setAttribute("class", [...targetClasses, sourceRole].join(" "));
+          }
+        }
+      }
+    }
   }
 
   private applyOptions(nodes: DocumentFragment, options: ZoticaCommonOptions): void {

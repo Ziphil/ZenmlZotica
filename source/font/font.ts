@@ -13,7 +13,7 @@ export class ZoticaFont {
   }
 
   public getMetrics(codePoint: number): [number, number] | null {
-    let rawMetrics = this.json[`${codePoint}`];
+    let rawMetrics = this.json[codePoint];
     if (rawMetrics !== undefined && rawMetrics.length === 2) {
       return [rawMetrics[0], rawMetrics[1]];
     } else {
@@ -24,7 +24,7 @@ export class ZoticaFont {
 }
 
 
-export type ZoticaFontJson = {[codePoint: `${number}`]: Array<number> | undefined};
+export type ZoticaFontJson = {[codePoint: number]: Array<number> | undefined};
 
 export const TIMES_ZOTICA_FONT = new ZoticaFont(TIMES_ZOTICA_FONT_JSON);
 export const MATH_ZOTICA_FONT = new ZoticaFont(MATH_ZOTICA_FONT_JSON);

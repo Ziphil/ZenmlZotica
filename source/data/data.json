@@ -9,303 +9,303 @@
     "*": "∗"
   },
   "fence": {
-    "paren": [
-      {
+    "paren": {
+      "left": {
         "0": "(",
         "1": "\uDB80\uDC39", "2": "\uDB80\uDC3A", "3": "\uDB80\uDC3B", "4": "\uDB80\uDC3C", "5": "\uDB80\uDC3D", "6": "\uDB80\uDC3E",
         "7": "\uDB80\uDC3F", "8": "\uDB80\uDC40", "9": "\uDB80\uDC41", "10": "\uDB80\uDC42", "11": "\uDB80\uDC43", "12": "\uDB80\uDC44",
         "start": "⎛", "bar": "⎜", "end": "⎝"
       },
-      {
+      "right": {
         "0": ")",
         "1": "\uDB80\uDC45", "2": "\uDB80\uDC46", "3": "\uDB80\uDC47", "4": "\uDB80\uDC48", "5": "\uDB80\uDC49", "6": "\uDB80\uDC4A",
         "7": "\uDB80\uDC4B", "8": "\uDB80\uDC4C", "9": "\uDB80\uDC4D", "10": "\uDB80\uDC4E", "11": "\uDB80\uDC4F", "12": "\uDB80\uDC50",
         "start": "⎞", "bar":"⎟", "end": "⎠"
       }
-    ],
-    "pparen": [
-      {
+    },
+    "pparen": {
+      "left": {
         "0": "⦅",
         "1": "\uDB80\uDE0A", "2": "\uDB80\uDE0B", "3": "\uDB80\uDE0C", "4": "\uDB80\uDE0D"
       },
-      {
+      "right": {
         "0": "⦆",
         "1": "\uDB80\uDE0E", "2": "\uDB80\uDE0F", "3": "\uDB80\uDE10", "4": "\uDB80\uDE11"
       }
-    ],
-    "bracket": [
-      {
+    },
+    "bracket": {
+      "left": {
         "0": "[",
         "1": "\uDB80\uDC51", "2": "\uDB80\uDC52", "3": "\uDB80\uDC53", "4": "\uDB80\uDC54", "5": "\uDB80\uDC55", "6": "\uDB80\uDC56",
         "7": "\uDB80\uDC57", "8": "\uDB80\uDC58", "9": "\uDB80\uDC59", "10": "\uDB80\uDC5A", "11": "\uDB80\uDC5B", "12": "\uDB80\uDC5C",
         "start": "⎡", "bar": "⎢", "end": "⎣"
       },
-      {
+      "right": {
         "0": "]",
         "1": "\uDB80\uDC5D", "2": "\uDB80\uDC5E", "3": "\uDB80\uDC5F", "4": "\uDB80\uDC60", "5": "\uDB80\uDC61", "6": "\uDB80\uDC62",
         "7": "\uDB80\uDC63", "8": "\uDB80\uDC64", "9": "\uDB80\uDC65", "10": "\uDB80\uDC66", "11": "\uDB80\uDC67", "12": "\uDB80\uDC68",
         "start": "⎤", "bar": "⎥", "end": "⎦"
       }  
-    ],
-    "bbracket": [
-      {
+    },
+    "bbracket": {
+      "left": {
         "0": "⟦",
         "1": "\uDB80\uDDE8", "2": "\uDB80\uDDE9", "3": "\uDB80\uDDEA", "4": "\uDB80\uDDEB"
       },
-      {
+      "right": {
         "0": "⟧",
         "1": "\uDB80\uDDEC", "2": "\uDB80\uDDED", "3": "\uDB80\uDDEE", "4": "\uDB80\uDDEF"
       }  
-    ],
-    "brace": [
-      {
+    },
+    "brace": {
+      "left": {
         "0": "{",
         "1": "\uDB80\uDC69", "2": "\uDB80\uDC6A", "3": "\uDB80\uDC6B", "4": "\uDB80\uDC6C", "5": "\uDB80\uDC6D", "6": "\uDB80\uDC6E",
         "7": "\uDB80\uDC6F", "8": "\uDB80\uDC70", "9": "\uDB80\uDC71", "10": "\uDB80\uDC72", "11": "\uDB80\uDC73", "12": "\uDB80\uDC74",
         "start": "⎧", "bar": "⎪", "middle": "⎨", "end": "⎩"
       },
-      {
+      "right": {
         "0": "}",
         "1": "\uDB80\uDC75", "2": "\uDB80\uDC76", "3": "\uDB80\uDC77", "4": "\uDB80\uDC78", "5": "\uDB80\uDC79", "6": "\uDB80\uDC7A",
         "7": "\uDB80\uDC7B", "8": "\uDB80\uDC7C", "9": "\uDB80\uDC7D", "10": "\uDB80\uDC7E", "11": "\uDB80\uDC7F", "12": "\uDB80\uDC80",
         "start": "⎫", "bar": "⎪", "middle": "⎬", "end": "⎭"
       }
-    ],
-    "bbrace": [
-      {
+    },
+    "bbrace": {
+      "left": {
         "0": "⦃",
         "1": "\uDB80\uDE02", "2": "\uDB80\uDE03", "3": "\uDB80\uDE04", "4": "\uDB80\uDE05"
       },
-      {
+      "right": {
         "0": "⦄",
         "1": "\uDB80\uDE06", "2": "\uDB80\uDE07", "3": "\uDB80\uDE08", "4": "\uDB80\uDE09"
       }
-    ],
-    "vert": [
-      {
+    },
+    "vert": {
+      "left": {
         "0": "|",
         "bar": "|"
       },
-      {
+      "right": {
         "0": "|",
         "bar": "|"
       }
-    ],
-    "vvert": [
-      {
+    },
+    "vvert": {
+      "left": {
         "0": "‖",
         "bar": "‖"
       },
-      {
+      "right": {
         "0": "‖",
         "bar": "‖"
       }
-    ],
-    "floor": [
-      {
+    },
+    "floor": {
+      "left": {
         "0": "⌊",
         "1": "\uDB80\uDD99", "2": "\uDB80\uDD9A", "3": "\uDB80\uDD9B", "4": "\uDB80\uDD9C"
       },
-      {
+      "right": {
         "0": "⌋",
         "1": "\uDB80\uDD9D", "2": "\uDB80\uDD9E", "3": "\uDB80\uDD9F", "4": "\uDB80\uDDA0"
       }
-    ],
-    "ceil": [
-      {
+    },
+    "ceil": {
+      "left": {
         "0": "⌈",
         "1": "\uDB80\uDD91", "2": "\uDB80\uDD92", "3": "\uDB80\uDD93", "4": "\uDB80\uDD94"
       },
-      {
+      "right": {
         "0": "⌉",
         "1": "\uDB80\uDD95", "2": "\uDB80\uDD96", "3": "\uDB80\uDD97", "4": "\uDB80\uDD98"
       }
-    ],
-    "angle": [
-      {
+    },
+    "angle": {
+      "left": {
         "0": "⟨",
         "1": "\uDB80\uDDF0", "2": "\uDB80\uDDF1", "3": "\uDB80\uDDF2", "4": "\uDB80\uDDF3"
       },
-      {
+      "right": {
         "0": "⟩",
         "1": "\uDB80\uDDF4", "2": "\uDB80\uDDF5", "3": "\uDB80\uDDF6", "4": "\uDB80\uDDF7"
       }
-    ],
-    "aangle": [
-      {
+    },
+    "aangle": {
+      "left": {
         "0": "⟪",
         "1": "\uDB80\uDDF8", "2": "\uDB80\uDDF9", "3": "\uDB80\uDDFA", "4": "\uDB80\uDDFB"
       },
-      {
+      "right": {
         "0": "⟫",
         "1": "\uDB80\uDDFC", "2": "\uDB80\uDDFD", "3": "\uDB80\uDDFE", "4": "\uDB80\uDDFF"
       }
-    ],
-    "tort": [
-      {
+    },
+    "tort": {
+      "left": {
         "0": "❲",
         "1": "\uDB80\uDDE0", "2": "\uDB80\uDDE1", "3": "\uDB80\uDDE2", "4": "\uDB80\uDDE3",
         "start": "\uDB81\uDDA4", "bar": "\uDB81\uDDA5", "end": "\uDB81\uDDA6"
       },
-      {
+      "right": {
         "0": "❳",
         "1": "\uDB80\uDDE4", "2": "\uDB80\uDDE5", "3": "\uDB80\uDDE6", "4": "\uDB80\uDDE7",
         "start": "\uDB81\uDDA7", "bar": "\uDB81\uDDA8", "end": "\uDB81\uDDA9"
       }
-    ]
+    }
   },
   "integral": {
-    "int": ["∫", "\uDB80\uDD35"],
-    "iint": ["∬", "\uDB80\uDD3A"],
-    "iiint": ["∭", "\uDB80\uDD3F"],
-    "iiiint": ["⨌", "\uDB80\uDE24"],
-    "oint": ["∮", "\uDB80\uDD44"],
-    "oiint": ["∯", "\uDB80\uDD49"],
-    "oiiint": ["∰", "\uDB80\uDD4E"],
-    "intclock": ["∱", "\uDB80\uDD53"],
-    "intanticlock": ["⨑", "\uDB80\uDE3D"],
-    "ointclock": ["∲", "\uDB80\uDD58"],
-    "ointanticlock": ["∳", "\uDB80\uDD5D"],
-    "fint": ["⨍", "\uDB80\uDE29"]
+    "int": {"inl": "∫", "lrg": "\uDB80\uDD35"},
+    "iint": {"inl": "∬", "lrg": "\uDB80\uDD3A"},
+    "iiint": {"inl": "∭", "lrg": "\uDB80\uDD3F"},
+    "iiiint": {"inl": "⨌", "lrg": "\uDB80\uDE24"},
+    "oint": {"inl": "∮", "lrg": "\uDB80\uDD44"},
+    "oiint": {"inl": "∯", "lrg": "\uDB80\uDD49"},
+    "oiiint": {"inl": "∰", "lrg": "\uDB80\uDD4E"},
+    "intclock": {"inl": "∱", "lrg": "\uDB80\uDD53"},
+    "intanticlock": {"inl": "⨑", "lrg": "\uDB80\uDE3D"},
+    "ointclock": {"inl": "∲", "lrg": "\uDB80\uDD58"},
+    "ointanticlock": {"inl": "∳", "lrg": "\uDB80\uDD5D"},
+    "fint": {"inl": "⨍", "lrg": "\uDB80\uDE29"}
   },
   "sum": {
-    "sum": ["∑", "\uDB80\uDD1A"],
-    "prod": ["∏", "\uDB80\uDD16"],
-    "coprod": ["∐", "\uDB80\uDD18"],
-    "bigoplus": ["⨁", "\uDB80\uDE15"],
-    "bigotimes": ["⨂", "\uDB80\uDE16"],
-    "bigodot": ["⨀", "\uDB80\uDE14"],
-    "bigcap": ["⋂", "\uDB80\uDD89"],
-    "bigcup": ["⋃", "\uDB80\uDD8A"],
-    "bigsqcap": ["⨅", "\uDB80\uDE19"],
-    "bigsqcup": ["⨆", "\uDB80\uDE1A"],
-    "bigwedge": ["⋀", "\uDB80\uDD87"],
-    "bigvee": ["⋁", "\uDB80\uDD88"]
+    "sum": {"inl": "∑", "lrg": "\uDB80\uDD1A"},
+    "prod": {"inl": "∏", "lrg": "\uDB80\uDD16"},
+    "coprod": {"inl": "∐", "lrg": "\uDB80\uDD18"},
+    "bigoplus": {"inl": "⨁", "lrg": "\uDB80\uDE15"},
+    "bigotimes": {"inl": "⨂", "lrg": "\uDB80\uDE16"},
+    "bigodot": {"inl": "⨀", "lrg": "\uDB80\uDE14"},
+    "bigcap": {"inl": "⋂", "lrg": "\uDB80\uDD89"},
+    "bigcup": {"inl": "⋃", "lrg": "\uDB80\uDD8A"},
+    "bigsqcap": {"inl": "⨅", "lrg": "\uDB80\uDE19"},
+    "bigsqcup": {"inl": "⨆", "lrg": "\uDB80\uDE1A"},
+    "bigwedge": {"inl": "⋀", "lrg": "\uDB80\uDD87"},
+    "bigvee": {"inl": "⋁", "lrg": "\uDB80\uDD88"}
   },
   "radical": {
     "0": "√", "1": "\uDB80\uDD1D", "2": "\uDB80\uDD1E", "3": "\uDB80\uDD1F",
     "height": [1486, 2102, 2623, 3100]
   },
   "accent": {
-    "bar": [null, "\uDB81\uDD04"],
-    "tilde": [null, "\uDB81\uDD03"],
-    "hat": [null, "\uDB81\uDD02"],
-    "check": [null, "\uDB81\uDD0C"],
-    "acute": [null, "\uDB81\uDD01"],
-    "grave": [null, "\uDB81\uDD00"],
-    "breve": [null, "\uDB81\uDD06"],
-    "invbreve": [null, "\uDB81\uDD11"],
-    "ring": [null, "\uDB81\uDD0A"],
-    "vec": [null, "\uDB81\uDD77"],
-    "invvec": [null, "\uDB81\uDD76"],
-    "dot": [null, "\uDB81\uDD07"],
-    "ddot": [null, "\uDB81\uDD08"],
-    "dddot": [null, "\uDB81\uDD7B"],
-    "ddddot": [null, "\uDB81\uDD7C"],
-    "barbelow": ["\uDB81\uDD31", null],
-    "tildebelow": ["\uDB81\uDD30", null]
+    "bar": {"un": null, "ov": "\uDB81\uDD04"},
+    "tilde": {"un": null, "ov": "\uDB81\uDD03"},
+    "hat": {"un": null, "ov": "\uDB81\uDD02"},
+    "check": {"un": null, "ov": "\uDB81\uDD0C"},
+    "acute": {"un": null, "ov": "\uDB81\uDD01"},
+    "grave": {"un": null, "ov": "\uDB81\uDD00"},
+    "breve": {"un": null, "ov": "\uDB81\uDD06"},
+    "invbreve": {"un": null, "ov": "\uDB81\uDD11"},
+    "ring": {"un": null, "ov": "\uDB81\uDD0A"},
+    "vec": {"un": null, "ov": "\uDB81\uDD77"},
+    "invvec": {"un": null, "ov": "\uDB81\uDD76"},
+    "dot": {"un": null, "ov": "\uDB81\uDD07"},
+    "ddot": {"un": null, "ov": "\uDB81\uDD08"},
+    "dddot": {"un": null, "ov": "\uDB81\uDD7B"},
+    "ddddot": {"un": null, "ov": "\uDB81\uDD7C"},
+    "barbelow": {"un": "\uDB81\uDD31", "ov": null},
+    "tildebelow": {"un": "\uDB81\uDD30", "ov": null}
   },
   "wide": {
-    "widetilde": [
-      null,
-      {
+    "widetilde": {
+      "un": null,
+      "ov": {
         "0": "\uDB80\uDCA1", "1": "\uDB80\uDCA2", "2": "\uDB80\uDCA3", "3": "\uDB80\uDCA4", "4": "\uDB80\uDCA5",
         "width": [1002, 1495, 1931, 2384, 10000]
       }
-    ],
-    "widehat": [
-      null,
-      {
+    },
+    "widehat": {
+      "un": null,
+      "ov": {
         "0": "\uDB80\uDC97", "1": "\uDB80\uDC98", "2": "\uDB80\uDC99", "3": "\uDB80\uDC9A", "4": "\uDB80\uDC9B",
         "width": [1002, 1495, 1931, 2384, 10000]
       }
-    ],
-    "widecheck": [
-      null,
-      {
+    },
+    "widecheck": {
+      "un": null,
+      "ov": {
         "0": "\uDB80\uDC9C", "1": "\uDB80\uDC9D", "2": "\uDB80\uDC9E", "3": "\uDB80\uDC9F", "4": "\uDB80\uDCA0",
         "width": [1002, 1495, 1931, 2384, 10000]
       }
-    ],
-    "overline": [
-      null,
-      {
+    },
+    "overline": {
+      "un": null,
+      "ov": {
         "0": "",
         "bar": "\uDB80\uDCB5"
       }
-    ],
-    "overrarr": [
-      null,
-      {
+    },
+    "overrarr": {
+      "un": null,
+      "ov": {
         "0": "",
         "bar": "\uDB80\uDCE9", "end": "\uDB80\uDCEA"
       }
-    ],
-    "overlarr": [
-      null,
-      {
+    },
+    "overlarr": {
+      "un": null,
+      "ov": {
         "0": "",
         "end": "\uDB80\uDCE4", "bar": "\uDB80\uDCE9"
       }
-    ],
-    "overbrace": [
-      null,
-      {
+    },
+    "overbrace": {
+      "un": null,
+      "ov": {
         "0": "⏞", "1": "\uDB80\uDDC7", "2": "\uDB80\uDDC8", "3": "\uDB80\uDDC9", "4": "\uDB80\uDDCA", "5": "\uDB80\uDDCB",
         "start": "\uDB80\uDDC4", "bar": "\uDB80\uDDAA", "middle": "\uDB80\uDDC5", "end": "\uDB80\uDDC6",
         "width": [1000, 1500, 1770, 2180, 2600, 2850]
       }
-    ],
-    "overgroup": [
-      null,
-      {
+    },
+    "overgroup": {
+      "un": null,
+      "ov": {
         "0": "",
         "start": "\uDB80\uDDC4", "bar": "\uDB80\uDDAA", "end": "\uDB80\uDDC6"
       }
-    ],
-    "widetildebelow": [
-      {
+    },
+    "widetildebelow": {
+      "un": {
         "0": "\uDB80\uDCA6", "1": "\uDB80\uDCA7", "2": "\uDB80\uDCA8", "3": "\uDB80\uDCA9", "4": "\uDB80\uDCAA",
         "width": [1002, 1495, 1931, 2384, 10000]
       },
-      null
-    ],
-    "underline": [
-      {
+      "ov": null
+    },
+    "underline": {
+      "un": {
         "0": "",
         "bar": "\uDB80\uDC92"
       },
-      null
-    ],
-    "underrarr": [
-      {
+      "ov": null
+    },
+    "underrarr": {
+      "un": {
         "0": "",
         "bar": "\uDB80\uDCFE", "end": "\uDB80\uDCFF"
       },
-      null
-    ],
-    "underlarr": [
-      {
+      "ov": null
+    },
+    "underlarr": {
+      "un": {
         "0": "",
         "start": "\uDB80\uDCF9", "bar": "\uDB80\uDCFE"
       },
-      null
-    ],
-    "underbrace": [
-      {
+      "ov": null
+    },
+    "underbrace": {
+      "un": {
         "0": "⏟", "1": "\uDB80\uDDCF", "2": "\uDB80\uDDD0", "3": "\uDB80\uDDD1", "4": "\uDB80\uDDD2", "5": "\uDB80\uDDD3",
         "start": "\uDB80\uDDCC", "bar": "\uDB80\uDDB2", "middle": "\uDB80\uDDCD", "end": "\uDB80\uDDCE",
         "width": [1000, 1500, 1770, 2180, 2600, 2850]
       },
-      null
-    ],
-    "undergroup": [
-      {
+      "ov": null
+    },
+    "undergroup": {
+      "un": {
         "0": "",
         "start": "\uDB80\uDDCC", "bar": "\uDB80\uDDB2", "end": "\uDB80\uDDCE"
       },
-      null
-    ]
+      "ov": null
+    }
   },
   "function": [
     "sin", "cos", "tan", "cot", "sec", "csc", "sinh", "cosh", "tanh",
@@ -331,338 +331,338 @@
     "varsampi": "ͳ", "varcapsampi": "Ͳ"
   },
   "operator": {
-    "plus": ["+", ["bin"]], 
-    "minus": ["−", ["bin"]],
-    "setminus": ["∖", ["bin"]],
-    "pm": ["±", ["bin"]],
-    "mp": ["∓", ["bin"]],
-    "times": ["×", ["bin"]],
-    "ltimes": ["⋉", ["bin"]],
-    "rtimes": ["⋊", ["bin"]],
-    "btimes": ["⨲", ["bin"]],
-    "bowtie": ["⋈", ["bin"]],
-    "lthree": ["⋋", ["bin"]],
-    "rthree": ["⋌", ["bin"]],
-    "smash": ["⨳", ["bin"]],
-    "div": ["÷", ["bin"]],
-    "cdot": ["·", ["bin"]],
-    "ast": ["∗", ["bin"]], "tast": ["∗", ["ord"]],
-    "star": ["⋆", ["bin"]], "tstar": ["⋆", ["ord"]],
-    "wr": ["≀", ["bin"]],
-    "circ": ["∘", ["bin"]],
-    "diamond": ["⋄", ["bin"]],
-    "rcomp": ["\uDB81\uDDA1", ["bin"]],
-    "lcomp": ["\uDB81\uDDA3", ["bin"]],
-    "oplus": ["⊕", ["bin"]],
-    "loplus": ["⨭", ["bin"]], "roplus": ["⨮", ["bin"]],
-    "ominus": ["⊖", ["bin"]],
-    "otimes": ["⊗", ["bin"]],
-    "lotimes": ["⨴", ["bin"]], "rotimes": ["⨵", ["bin"]],
-    "odiv": ["⨸", ["bin"]],
-    "oslash": ["⊘", ["bin"]],
-    "obackslash": ["⦸", ["bin"]],
-    "odot": ["⊙", ["bin"]],
-    "ocirc": ["⊚", ["bin"]],
-    "cast": ["⊛", ["bin"]],
-    "oeq": ["⊜", ["bin"]],
-    "box": ["◻", ["bin"]],
-    "boxplus": ["⊞", ["bin"]],
-    "boxminus": ["⊟", ["bin"]],
-    "boxtimes": ["⊠", ["bin"]],
-    "boxslash": ["⧄", ["bin"]],
-    "boxbackslash": ["⧅", ["bin"]],
-    "boxdot": ["⊡", ["bin"]],
-    "boxcirc": ["⧇", ["bin"]],
-    "boxast": ["⧆", ["bin"]],
-    "rhombus": ["⬦", ["bin"]], "trhombus": ["⬦", ["ord"]],
-    "pentagon": ["⬠", ["bin"]], "tpentagon": ["⬠", ["ord"]],
-    "hexagon": ["⬡", ["bin"]], "thexagon": ["⬡", ["ord"]],
-    "utriangle": ["▵", ["bin"]], "tutriangle": ["▵", ["ord"]],
-    "dtriangle": ["▿", ["bin"]], "tdtriangle": ["▿", ["ord"]],
-    "rtriangle": ["▹", ["bin"]], "trtriangle": ["▹", ["ord"]],
-    "ltriangle": ["◃", ["bin"]], "tltriangle": ["◃", ["ord"]],
-    "cap": ["∩", ["bin"]],
-    "cup": ["∪", ["bin"]],
-    "ccap": ["⋒", ["bin"]],
-    "ccup": ["⋓", ["bin"]],
-    "sqcap": ["⊓", ["bin"]],
-    "sqcup": ["⊔", ["bin"]],
-    "ssqcap": ["⩎", ["bin"]],
-    "ssqcup": ["⩏", ["bin"]],
-    "wedge": ["∧", ["bin"]],
-    "vee": ["∨", ["bin"]],
-    "barwedge": ["⊼", ["bin"]],
-    "barvee": ["⊽", ["bin"]],
-    "veebar": ["⊻", ["bin"]],
-    "wwedge": ["⩕", ["bin"]],
-    "vvee": ["⩖", ["bin"]],
-    "varwwedge": ["⩓", ["bin"]],
-    "varvvee": ["⩔", ["bin"]],
-    "pitchfork": ["⋔", ["bin"]],
-    "percent": ["%", ["bin", "txt"]],
-    "atsym": ["@", ["bin", "txt"]],
-    "eq": ["=", ["rel"]], "neq": ["≠", ["rel"]],
-    "asiansim": ["≒", ["rel"]],
-    "varasiansim": ["≓", ["rel"]],
-    "coloneqq": [":=", ["rel"]],
-    "eqqcolon": ["=:", ["rel"]],
-    "ccoloneqq": ["::=", ["rel"]],
-    "eqqccolon": ["=::", ["rel"]],
-    "equiv": ["≡", ["rel"]], "nequiv": ["≢", ["rel"]],
-    "colonequiv": [":≡", ["rel"]],
-    "eequiv": ["≣", ["rel"]],
-    "coloneqquiv": [":≣", ["rel"]],
-    "sim": ["∼", ["rel"]], "nsim": ["≁", ["rel"]],
-    "colonsim": [":∼", ["rel"]],
-    "simeq": ["≃", ["rel"]], "nsimeq": ["≄", ["rel"]],
-    "colonsimeq": [":≃", ["rel"]], 
-    "eqsim": ["≂", ["rel"]],
-    "coloneqsim": [":≂", ["rel"]],
-    "cong": ["≅", ["rel"]], "ncong": ["≇", ["rel"]],
-    "coloncong": [":≅", ["rel"]],
-    "approx": ["≈", ["rel"]], "napprox": ["≉", ["rel"]],
-    "colonapprox": [":≈", ["rel"]],
-    "approxeq": ["≊", ["rel"]],
-    "colonapproxeq": [":≊", ["rel"]],
-    "aapprox": ["≋", ["rel"]],
-    "colonaapprox": [":≋", ["rel"]],
-    "smile": ["\uDB81\uDDAA", ["rel"]],
-    "largesmile": ["⌣", ["rel"]],
-    "frown": ["\uDB81\uDDAB", ["rel"]],
-    "largefrown": ["⌢", ["rel"]],
-    "closure": ["\uDB81\uDDAC", ["rel"]],
-    "asymp": ["≍", ["rel"]], "nasymp": ["≭", ["rel"]],
-    "bumpeq": ["≏", ["rel"]],
-    "bumpbump": ["≎", ["rel"]],
-    "eqcirc": ["≖", ["rel"]],
-    "gt": [">", ["rel"]], "ngt": ["≯", ["rel"]],
-    "ls": ["<", ["rel"]], "nls": ["≮", ["rel"]],
-    "geq": ["≥", ["rel"]], "ngeq": ["≱", ["rel"]], "gneq": ["⪈", ["rel"]], 
-    "leq": ["≤", ["rel"]], "nleq": ["≰", ["rel"]], "lneq": ["⪇", ["rel"]],
-    "geqq": ["≧", ["rel"]], "gneqq": ["≩", ["rel"]],
-    "leqq": ["≦", ["rel"]], "lneqq": ["≨", ["rel"]],
-    "gsim": ["≳", ["rel"]], "ngsim": ["≵", ["rel"]], "gnsim": ["⋧", ["rel"]],
-    "lsim": ["≲", ["rel"]], "nlsim": ["≴", ["rel"]], "lnsim": ["⋦", ["rel"]],
-    "gapprox": ["⪆", ["rel"]], "gnapprox": ["⪊", ["rel"]],
-    "lapprox": ["⪅", ["rel"]], "lnapprox": ["⪉", ["rel"]],
-    "eqg": ["⋝", ["rel"]],
-    "eql": ["⋜", ["rel"]],
-    "eqqg": ["⪚", ["rel"]],
-    "eqql": ["⪙", ["rel"]],
-    "simg": ["⪞", ["rel"]],
-    "siml": ["⪝", ["rel"]],
-    "gl": ["≷", ["rel"]], "ngl": ["≹", ["rel"]],
-    "lg": ["≶", ["rel"]], "nlg": ["≸", ["rel"]],
-    "geql": ["⋛", ["rel"]],
-    "leqg": ["⋚", ["rel"]],
-    "geqql": ["⪌", ["rel"]],
-    "leqqg": ["⪋", ["rel"]],
-    "ggt": ["≫", ["rel"]],
-    "lls": ["≪", ["rel"]],
-    "llseq": ["⪣", ["rel"]],
-    "varggt": ["⪢", ["rel"]],
-    "varlls": ["⪡", ["rel"]],
-    "gggt": ["⋙", ["rel"]],
-    "llls": ["⋘", ["rel"]],
-    "vargggt": ["⫸", ["rel"]],
-    "varllls": ["⫷", ["rel"]],
-    "succ": ["≻", ["rel"]], "nsucc": ["⊁", ["rel"]],
-    "prec": ["≺", ["rel"]], "nprec": ["⊀", ["rel"]],
-    "succeq": ["⪰", ["rel"]], "succneq": ["⪲", ["rel"]],
-    "preceq": ["⪯", ["rel"]], "precneq": ["⪱", ["rel"]],
-    "succeqq": ["⪴", ["rel"]], "succneqq": ["⪶", ["rel"]],
-    "preceqq": ["⪳", ["rel"]], "precneqq": ["⪵", ["rel"]],
-    "succsim": ["≿", ["rel"]], "succnsim": ["⋩", ["rel"]],
-    "precsim": ["≾", ["rel"]], "precnsim": ["⋨", ["rel"]],
-    "succapprox": ["⪸", ["rel"]], "succnapprox": ["⪺", ["rel"]],
-    "precapprox": ["⪷", ["rel"]], "precnapprox": ["⪹", ["rel"]],
-    "ssucc": ["⪼", ["rel"]],
-    "pprec": ["⪻", ["rel"]],
-    "succrel": ["⊱", ["rel"]],
-    "precrel": ["⊰", ["rel"]],
-    "in": ["∈", ["rel"]], "nin": ["∉", ["rel"]],
-    "ni": ["∋", ["rel"]], "nni": ["∌", ["rel"]],
-    "ineq": ["⋸", ["rel"]],
-    "disin": ["⋲", ["rel"]],
-    "smt": ["⪪", ["rel"]],
-    "lat": ["⪫", ["rel"]],
-    "smteq": ["⪬", ["rel"]],
-    "lateq": ["⪭", ["rel"]],
-    "supset": ["⊃", ["rel"]], "nsupset": ["⊃⃒", ["rel"]],
-    "subset": ["⊂", ["rel"]], "nsubset": ["⊂⃒", ["rel"]],
-    "supseteq": ["⊇", ["rel"]], "nsupseteq": ["⊉", ["rel"]], "supsetneq": ["⊋", ["rel"]], 
-    "subseteq": ["⊆", ["rel"]], "nsubseteq": ["⊈", ["rel"]], "subsetneq": ["⊊", ["rel"]],
-    "supseteqq": ["⫆", ["rel"]], "supsetneqq": ["⫌", ["rel"]], 
-    "subseteqq": ["⫅", ["rel"]], "subsetneqq": ["⫋", ["rel"]],
-    "supsetsim": ["⫈", ["rel"]],
-    "subsetsim": ["⫇", ["rel"]],
-    "supsetapprox": ["⫊", ["rel"]],
-    "subsetapprox": ["⫉", ["rel"]],
-    "ssupset": ["⋑", ["rel"]],
-    "ssubset": ["⋐", ["rel"]],
-    "sqsupset": ["⊐", ["rel"]], "nsqsupset": ["⊐̸", ["rel"]],
-    "sqsubset": ["⊏", ["rel"]], "nsqsubset": ["⊏̸", ["rel"]],
-    "sqsupseteq": ["⊒", ["rel"]], "nsqsupseteq": ["⋣", ["rel"]], "sqsupsetneq": ["⋥", ["rel"]],
-    "sqsubseteq": ["⊑", ["rel"]], "nsqsubseteq": ["⋢", ["rel"]], "sqsubsetneq": ["⋤", ["rel"]],
-    "rhd": ["⊳", ["rel"]], "nrhd": ["⋫", ["rel"]],
-    "lhd": ["⊲", ["rel"]], "nlhd": ["⋪", ["rel"]],
-    "rhdeq": ["⊵", ["rel"]], "nrhdeq": ["⋭", ["rel"]],
-    "lhdeq": ["⊴", ["rel"]], "nlhdeq": ["⋬", ["rel"]],
-    "curverhd": ["⪧", ["rel"]],
-    "curvelhd": ["⪦", ["rel"]],
-    "barrhd": ["⩥", ["rel"]],
-    "barlhd": ["⩤", ["rel"]],
-    "vdash": ["⊢", ["rel"]], "nvdash": ["⊬", ["rel"]],
-    "vddash": ["⊨", ["rel"]], "nvddash": ["⊭", ["rel"]],
-    "vvdash": ["⊩", ["rel"]], "nvvdash": ["⊮", ["rel"]],
-    "dashv": ["⊣", ["rel"]],
-    "dashvv": ["⫣", ["rel"]],
-    "ddashv": ["⫤", ["rel"]],
-    "mid": ["∣", ["rel"]], "nmid": ["∤", ["rel"]],
-    "parallel": ["∥", ["rel"]], "nparallel": ["∦", ["rel"]],
-    "between": ["≬", ["rel"]],
-    "perp": ["⟂", ["rel"]],
-    "propto": ["∝", ["rel"]],
-    "similarto": ["∽", ["rel"]],
-    "rarr": ["→", ["rel"]], "to": ["→", ["rel"]], "brarr": ["→", ["bin"]], "bto": ["→", ["bin"]], 
-    "larr": ["←", ["rel"]], "from": ["←", ["rel"]], "blarr": ["←", ["bin"]], "bfrom": ["←", ["bin"]],
-    "lrarr": ["↔", ["rel"]], "blrarr": ["↔", ["bin"]],
-    "longrarr": ["⟶", ["rel"]], "longto": ["⟶", ["rel"]], 
-    "longlarr": ["⟵", ["rel"]], "longfrom": ["⟵", ["rel"]],
-    "longlrarr": ["⟷", ["rel"]],
-    "rmap": ["↦", ["rel"]], "mapsto": ["↦", ["rel"]], "brmap": ["↦", ["bin"]], "bmapsto": ["↦", ["bin"]],
-    "lmap": ["↤", ["rel"]], "mappedfrom": ["↤", ["rel"]], "blmap": ["↤", ["bin"]], "bmappedfrom": ["↤", ["bin"]],
-    "longrmap": ["⟼", ["rel"]], "longmapsto": ["⟼", ["rel"]],
-    "longlmap": ["⟻", ["rel"]], "longmappedfrom": ["⟻", ["rel"]],
-    "rmulti": ["⊸", ["rel"]], "brmulti": ["⊸", ["bin"]],
-    "lmulti": ["⟜", ["rel"]], "blmulti": ["⟜", ["bin"]],
-    "lrmulti": ["⧟", ["rel"]], "blrmulti": ["⧟", ["bin"]],
-    "openrarr": ["⇾", ["rel"]], "bopenrarr": ["⇾", ["bin"]],
-    "openlarr": ["⇽", ["rel"]], "bopenlarr": ["⇽", ["bin"]],
-    "lopenrarr": ["⇿", ["rel"]], "blopenrarr": ["⇿", ["bin"]],
-    "hookrarr": ["↪", ["rel"]], "bhookrarr": ["↪", ["bin"]],
-    "hooklarr": ["↩", ["rel"]], "bhooklarr": ["↩", ["bin"]],
-    "tailrarr": ["↣", ["rel"]], "btailrarr": ["↣", ["bin"]],
-    "taillarr": ["↢", ["rel"]], "btaillarr": ["↢", ["bin"]],
-    "headrarr": ["↠", ["rel"]], "bheadrarr": ["↠", ["bin"]],
-    "headlarr": ["↞", ["rel"]], "bheadlarr": ["↞", ["bin"]],
-    "tailheadrarr": ["⤖", ["rel"]], "btailheadrarr": ["⤖", ["bin"]],
-    "uharprarr": ["⇀", ["rel"]], "buharprarr": ["⇀", ["bin"]],
-    "uharplarr": ["↼", ["rel"]], "buharplarr": ["↼", ["bin"]],
-    "dharprarr": ["⇁", ["rel"]], "bdharprarr": ["⇁", ["bin"]],
-    "dharplarr": ["↽", ["rel"]], "bdharplarr": ["↽", ["bin"]],
-    "waverarr": ["↝", ["rel"]], "bwaverarr": ["↝", ["bin"]],
-    "wavelarr": ["↜", ["rel"]], "bwavelarr": ["↜", ["bin"]],
-    "wavelrarr": ["↭", ["rel"]], "bwavelrarr": ["↭", ["bin"]],
-    "squigrarr": ["⇝", ["rel"]], "bsquigrarr": ["⇝", ["bin"]],
-    "squiglarr": ["⇜", ["rel"]], "bsquiglarr": ["⇜", ["bin"]],
-    "curverarr": ["↷", ["rel"]], "bcurverarr": ["↷", ["bin"]],
-    "curvelarr": ["↶", ["rel"]], "bcurvelarr": ["↶", ["bin"]],
-    "vertrarr": ["⇸", ["rel"]], "bvertrarr": ["⇸", ["bin"]],
-    "vertlarr": ["⇷", ["rel"]], "bvertlarr": ["⇷", ["bin"]],
-    "vertlrarr": ["⇹", ["rel"]], "bvertlrarr": ["⇹", ["bin"]],
-    "vvertrarr": ["⇻", ["rel"]], "bvvertrarr": ["⇻", ["bin"]],
-    "vvertlarr": ["⇺", ["rel"]], "bvvertlarr": ["⇺", ["bin"]],
-    "vvertlrarr": ["⇼", ["rel"]], "bvvertlrarr": ["⇼", ["bin"]],
-    "circlerarr": ["↻", ["rel"]],
-    "circlelarr": ["↺", ["rel"]],
-    "raarr": ["⇒", ["rel"]], "braarr": ["⇒", ["bin"]],
-    "laarr": ["⇐", ["rel"]], "blaarr": ["⇐", ["bin"]],
-    "lraarr": ["⇔", ["rel"]], "blraarr": ["⇔", ["bin"]],
-    "rmmap": ["⤇", ["rel"]], "brmmap": ["⤇", ["bin"]],
-    "lmmap": ["⤆", ["rel"]], "blmmap": ["⤆", ["bin"]],
-    "vertraarr": ["⤃", ["rel"]], "bvertraarr": ["⤃", ["bin"]],
-    "vertlaarr": ["⤂", ["rel"]], "bvertlaarr": ["⤂", ["bin"]],
-    "vertlraarr": ["⤄", ["rel"]], "bvertlraarr": ["⤄", ["bin"]],
-    "longraarr": ["⟹", ["rel"]],
-    "longlaarr": ["⟸", ["rel"]],
-    "longlraarr": ["⟺", ["rel"]],
-    "raaarr": ["⇛", ["rel"]], "braaarr": ["⇛", ["bin"]],
-    "laaarr": ["⇚", ["rel"]], "blaaarr": ["⇚", ["bin"]],
-    "uarr": ["↑", ["rel"]], "buarr": ["↑", ["bin"]],
-    "darr": ["↓", ["rel"]], "bdarr": ["↓", ["bin"]],
-    "udarr": ["↕", ["rel"]], "budarr": ["↕", ["bin"]],
-    "uaarr": ["⇑", ["rel"]], "buaarr": ["⇑", ["bin"]],
-    "daarr": ["⇓", ["rel"]], "bdaarr": ["⇓", ["bin"]],
-    "udaarr": ["⇕", ["rel"]], "budaarr": ["⇕", ["bin"]],
-    "scand": ["AND", ["sbin", "sml"]],
-    "scor": ["OR", ["sbin", "sml"]],
-    "scimplies": ["IMPLIES", ["sbin", "sml"]],
-    "implies": ["⟹", ["srel"]],
-    "implied": ["⟸", ["srel"]],
-    "iff": ["⟺", ["srel"]],
-    "coloniff": [":⟺", ["srel"]],
-    "comma": [",", ["del", "txt"]],
-    "colon": [":", ["del", "txt"]],
-    "semicolon": [";", ["del", "txt"]],
-    "period": [".", ["ord", "txt"]],
-    "excl": ["!", ["ord", "txt"]],
-    "ques": ["?", ["ord", "txt"]],
-    "hyphen": ["-", ["ord", "txt"]],
-    "pr": ["\uDB80\uDF98", ["ord"]],
-    "ppr": ["\uDB80\uDF99", ["ord"]],
-    "pppr": ["\uDB80\uDF9A", ["ord"]],
-    "ppppr": ["\uDB80\uDF9B", ["ord"]],
-    "bpr": ["\uDB80\uDF9C", ["ord"]],
-    "bppr": ["\uDB80\uDF9D", ["ord"]],
-    "bpppr": ["\uDB80\uDF9E", ["ord"]],
-    "not": ["\u0338", ["not"]],
-    "partial": ["∂", ["ord", "txt"]],
-    "nabla": ["∇", ["ord"]],
-    "infty": ["∞", ["ord", "txt"]],
-    "empty": ["∅", ["ord"]],
-    "amp": ["&", ["ord"]],
-    "invamp": ["⅋", ["ord"]],
-    "num": ["#", ["ord", "txt"]],
-    "dollar": ["$", ["ord", "txt"]],
-    "section": ["§", ["ord", "txt"]],
-    "wp": ["℘", ["ord"]],
-    "hbar": ["ℏ", ["ord", "txt"]],
-    "sharp": ["♯", ["ord"]],
-    "flat": ["♭", ["ord"]],
-    "natural": ["♮", ["ord"]],
-    "crotchet": ["♩", ["ord"]],
-    "quaver": ["♪", ["ord"]],
-    "linkquaver": ["♫", ["ord"]],
-    "dagger": ["†", ["ord", "txt"]],
-    "ddagger": ["‡", ["ord", "txt"]],
-    "bspade": ["♠", ["ord"]],
-    "bheart": ["♥", ["ord"]],
-    "bdiamond": ["♦", ["ord"]],
-    "bclub": ["♣", ["ord"]],
-    "wspade": ["♤", ["ord"]],
-    "wheart": ["♡", ["ord"]],
-    "wdiamond": ["♢", ["ord"]],
-    "wclub": ["♧", ["ord"]],
-    "slash": ["/", ["ord"]],
-    "backslash": ["\\", ["ord"]],
-    "top": ["⊤", ["ord"]],
-    "bot": ["⊥", ["ord"]],
-    "ttop": ["⫪", ["ord"]],
-    "bbot": ["⫫", ["ord"]],
-    "neg": ["¬", ["ord"]],
-    "forall": ["∀", ["ord"]],
-    "exists": ["∃", ["ord"]], "nexists": ["∄", ["ord"]],
-    "aleph": ["ℵ", ["ord"]],
-    "beth": ["ℶ", ["ord"]],
-    "ldots": ["…", ["ord"]],
-    "cdots": ["⋯", ["ord"]],
-    "vdots": ["⋮", ["ord"]],
-    "ddots": ["⋱", ["ord"]],
-    "udots": ["⋰", ["ord"]],
-    "lparen": ["(", ["lpar"]], "rparen": [")", ["rpar"]],
-    "lpparen": ["⦅", ["lpar"]], "rpparen": ["⦆", ["rpar"]],
-    "lbracket": ["[", ["lpar"]], "rbracket": ["]", ["rpar"]],
-    "lbbracket": ["⟦", ["lpar"]], "rbbracket": ["⟧", ["rpar"]],
-    "lbrace": ["{", ["lpar"]], "rbrace": ["}", ["rpar"]],
-    "lbbrace": ["⦃", ["lpar"]], "rbbrace": ["⦄", ["rpar"]],
-    "lvert": ["|", ["lpar"]], "rvert": ["|", ["rpar"]],
-    "lvvert": ["‖", ["lpar"]], "rvvert": ["‖", ["rpar"]],
-    "lfloor": ["⌊", ["lpar"]], "rfloor": ["⌋", ["rpar"]],
-    "lceil": ["⌈", ["lpar"]], "rceil": ["⌉", ["rpar"]],
-    "langle": ["⟨", ["lpar"]], "rangle": ["⟩", ["rpar"]],
-    "laangle": ["⟪", ["lpar"]], "raangle": ["⟫", ["rpar"]],
-    "ltort": ["❲", ["lpar"]], "rtort": ["❳", ["rpar"]]
+    "plus": {"symbol": "+", "types": ["bin"]}, 
+    "minus": {"symbol": "−", "types": ["bin"]},
+    "setminus": {"symbol": "∖", "types": ["bin"]},
+    "pm": {"symbol": "±", "types": ["bin"]},
+    "mp": {"symbol": "∓", "types": ["bin"]},
+    "times": {"symbol": "×", "types": ["bin"]},
+    "ltimes": {"symbol": "⋉", "types": ["bin"]},
+    "rtimes": {"symbol": "⋊", "types": ["bin"]},
+    "btimes": {"symbol": "⨲", "types": ["bin"]},
+    "bowtie": {"symbol": "⋈", "types": ["bin"]},
+    "lthree": {"symbol": "⋋", "types": ["bin"]},
+    "rthree": {"symbol": "⋌", "types": ["bin"]},
+    "smash": {"symbol": "⨳", "types": ["bin"]},
+    "div": {"symbol": "÷", "types": ["bin"]},
+    "cdot": {"symbol": "·", "types": ["bin"]},
+    "ast": {"symbol": "∗", "types": ["bin"]}, "tast": {"symbol": "∗", "types": ["ord"]},
+    "star": {"symbol": "⋆", "types": ["bin"]}, "tstar": {"symbol": "⋆", "types": ["ord"]},
+    "wr": {"symbol": "≀", "types": ["bin"]},
+    "circ": {"symbol": "∘", "types": ["bin"]},
+    "diamond": {"symbol": "⋄", "types": ["bin"]},
+    "rcomp": {"symbol": "\uDB81\uDDA1", "types": ["bin"]},
+    "lcomp": {"symbol": "\uDB81\uDDA3", "types": ["bin"]},
+    "oplus": {"symbol": "⊕", "types": ["bin"]},
+    "loplus": {"symbol": "⨭", "types": ["bin"]}, "roplus": {"symbol": "⨮", "types": ["bin"]},
+    "ominus": {"symbol": "⊖", "types": ["bin"]},
+    "otimes": {"symbol": "⊗", "types": ["bin"]},
+    "lotimes": {"symbol": "⨴", "types": ["bin"]}, "rotimes": {"symbol": "⨵", "types": ["bin"]},
+    "odiv": {"symbol": "⨸", "types": ["bin"]},
+    "oslash": {"symbol": "⊘", "types": ["bin"]},
+    "obackslash": {"symbol": "⦸", "types": ["bin"]},
+    "odot": {"symbol": "⊙", "types": ["bin"]},
+    "ocirc": {"symbol": "⊚", "types": ["bin"]},
+    "cast": {"symbol": "⊛", "types": ["bin"]},
+    "oeq": {"symbol": "⊜", "types": ["bin"]},
+    "box": {"symbol": "◻", "types": ["bin"]},
+    "boxplus": {"symbol": "⊞", "types": ["bin"]},
+    "boxminus": {"symbol": "⊟", "types": ["bin"]},
+    "boxtimes": {"symbol": "⊠", "types": ["bin"]},
+    "boxslash": {"symbol": "⧄", "types": ["bin"]},
+    "boxbackslash": {"symbol": "⧅", "types": ["bin"]},
+    "boxdot": {"symbol": "⊡", "types": ["bin"]},
+    "boxcirc": {"symbol": "⧇", "types": ["bin"]},
+    "boxast": {"symbol": "⧆", "types": ["bin"]},
+    "rhombus": {"symbol": "⬦", "types": ["bin"]}, "trhombus": {"symbol": "⬦", "types": ["ord"]},
+    "pentagon": {"symbol": "⬠", "types": ["bin"]}, "tpentagon": {"symbol": "⬠", "types": ["ord"]},
+    "hexagon": {"symbol": "⬡", "types": ["bin"]}, "thexagon": {"symbol": "⬡", "types": ["ord"]},
+    "utriangle": {"symbol": "▵", "types": ["bin"]}, "tutriangle": {"symbol": "▵", "types": ["ord"]},
+    "dtriangle": {"symbol": "▿", "types": ["bin"]}, "tdtriangle": {"symbol": "▿", "types": ["ord"]},
+    "rtriangle": {"symbol": "▹", "types": ["bin"]}, "trtriangle": {"symbol": "▹", "types": ["ord"]},
+    "ltriangle": {"symbol": "◃", "types": ["bin"]}, "tltriangle": {"symbol": "◃", "types": ["ord"]},
+    "cap": {"symbol": "∩", "types": ["bin"]},
+    "cup": {"symbol": "∪", "types": ["bin"]},
+    "ccap": {"symbol": "⋒", "types": ["bin"]},
+    "ccup": {"symbol": "⋓", "types": ["bin"]},
+    "sqcap": {"symbol": "⊓", "types": ["bin"]},
+    "sqcup": {"symbol": "⊔", "types": ["bin"]},
+    "ssqcap": {"symbol": "⩎", "types": ["bin"]},
+    "ssqcup": {"symbol": "⩏", "types": ["bin"]},
+    "wedge": {"symbol": "∧", "types": ["bin"]},
+    "vee": {"symbol": "∨", "types": ["bin"]},
+    "barwedge": {"symbol": "⊼", "types": ["bin"]},
+    "barvee": {"symbol": "⊽", "types": ["bin"]},
+    "veebar": {"symbol": "⊻", "types": ["bin"]},
+    "wwedge": {"symbol": "⩕", "types": ["bin"]},
+    "vvee": {"symbol": "⩖", "types": ["bin"]},
+    "varwwedge": {"symbol": "⩓", "types": ["bin"]},
+    "varvvee": {"symbol": "⩔", "types": ["bin"]},
+    "pitchfork": {"symbol": "⋔", "types": ["bin"]},
+    "percent": {"symbol": "%", "types": ["bin", "txt"]},
+    "atsym": {"symbol": "@", "types": ["bin", "txt"]},
+    "eq": {"symbol": "=", "types": ["rel"]}, "neq": {"symbol": "≠", "types": ["rel"]},
+    "asiansim": {"symbol": "≒", "types": ["rel"]},
+    "varasiansim": {"symbol": "≓", "types": ["rel"]},
+    "coloneqq": {"symbol": ":=", "types": ["rel"]},
+    "eqqcolon": {"symbol": "=:", "types": ["rel"]},
+    "ccoloneqq": {"symbol": "::=", "types": ["rel"]},
+    "eqqccolon": {"symbol": "=::", "types": ["rel"]},
+    "equiv": {"symbol": "≡", "types": ["rel"]}, "nequiv": {"symbol": "≢", "types": ["rel"]},
+    "colonequiv": {"symbol": ":≡", "types": ["rel"]},
+    "eequiv": {"symbol": "≣", "types": ["rel"]},
+    "coloneqquiv": {"symbol": ":≣", "types": ["rel"]},
+    "sim": {"symbol": "∼", "types": ["rel"]}, "nsim": {"symbol": "≁", "types": ["rel"]},
+    "colonsim": {"symbol": ":∼", "types": ["rel"]},
+    "simeq": {"symbol": "≃", "types": ["rel"]}, "nsimeq": {"symbol": "≄", "types": ["rel"]},
+    "colonsimeq": {"symbol": ":≃", "types": ["rel"]}, 
+    "eqsim": {"symbol": "≂", "types": ["rel"]},
+    "coloneqsim": {"symbol": ":≂", "types": ["rel"]},
+    "cong": {"symbol": "≅", "types": ["rel"]}, "ncong": {"symbol": "≇", "types": ["rel"]},
+    "coloncong": {"symbol": ":≅","types":  ["rel"]},
+    "approx": {"symbol": "≈", "types": ["rel"]}, "napprox": {"symbol": "≉", "types": ["rel"]},
+    "colonapprox": {"symbol": ":≈", "types": ["rel"]},
+    "approxeq": {"symbol": "≊", "types": ["rel"]},
+    "colonapproxeq": {"symbol": ":≊","types":  ["rel"]},
+    "aapprox": {"symbol": "≋", "types": ["rel"]},
+    "colonaapprox": {"symbol": ":≋","types":  ["rel"]},
+    "smile": {"symbol": "\uDB81\uDDAA", "types": ["rel"]},
+    "largesmile": {"symbol": "⌣", "types": ["rel"]},
+    "frown": {"symbol": "\uDB81\uDDAB", "types": ["rel"]},
+    "largefrown": {"symbol": "⌢", "types": ["rel"]},
+    "closure": {"symbol": "\uDB81\uDDAC", "types": ["rel"]},
+    "asymp": {"symbol": "≍", "types": ["rel"]}, "nasymp": {"symbol": "≭", "types": ["rel"]},
+    "bumpeq": {"symbol": "≏", "types": ["rel"]},
+    "bumpbump": {"symbol": "≎", "types": ["rel"]},
+    "eqcirc": {"symbol": "≖", "types": ["rel"]},
+    "gt": {"symbol": ">", "types": ["rel"]}, "ngt": {"symbol": "≯", "types": ["rel"]},
+    "ls": {"symbol": "<", "types": ["rel"]}, "nls": {"symbol": "≮", "types": ["rel"]},
+    "geq": {"symbol": "≥", "types": ["rel"]}, "ngeq": {"symbol": "≱", "types": ["rel"]}, "gneq": {"symbol": "⪈", "types": ["rel"]}, 
+    "leq": {"symbol": "≤", "types": ["rel"]}, "nleq": {"symbol": "≰", "types": ["rel"]}, "lneq": {"symbol": "⪇", "types": ["rel"]},
+    "geqq": {"symbol": "≧", "types": ["rel"]}, "gneqq": {"symbol": "≩", "types": ["rel"]},
+    "leqq": {"symbol": "≦", "types": ["rel"]}, "lneqq": {"symbol": "≨", "types": ["rel"]},
+    "gsim": {"symbol": "≳", "types": ["rel"]}, "ngsim": {"symbol": "≵", "types": ["rel"]}, "gnsim": {"symbol": "⋧", "types": ["rel"]},
+    "lsim": {"symbol": "≲", "types": ["rel"]}, "nlsim": {"symbol": "≴", "types": ["rel"]}, "lnsim": {"symbol": "⋦", "types": ["rel"]},
+    "gapprox": {"symbol": "⪆", "types": ["rel"]}, "gnapprox": {"symbol": "⪊", "types": ["rel"]},
+    "lapprox": {"symbol": "⪅", "types": ["rel"]}, "lnapprox": {"symbol": "⪉", "types": ["rel"]},
+    "eqg": {"symbol": "⋝", "types": ["rel"]},
+    "eql": {"symbol": "⋜", "types": ["rel"]},
+    "eqqg": {"symbol": "⪚", "types": ["rel"]},
+    "eqql": {"symbol": "⪙", "types": ["rel"]},
+    "simg": {"symbol": "⪞", "types": ["rel"]},
+    "siml": {"symbol": "⪝", "types": ["rel"]},
+    "gl": {"symbol": "≷", "types": ["rel"]}, "ngl": {"symbol": "≹", "types": ["rel"]},
+    "lg": {"symbol": "≶", "types": ["rel"]}, "nlg": {"symbol": "≸", "types": ["rel"]},
+    "geql": {"symbol": "⋛", "types": ["rel"]},
+    "leqg": {"symbol": "⋚", "types": ["rel"]},
+    "geqql": {"symbol": "⪌", "types": ["rel"]},
+    "leqqg": {"symbol": "⪋", "types": ["rel"]},
+    "ggt": {"symbol": "≫", "types": ["rel"]},
+    "lls": {"symbol": "≪", "types": ["rel"]},
+    "llseq": {"symbol": "⪣", "types": ["rel"]},
+    "varggt": {"symbol": "⪢", "types": ["rel"]},
+    "varlls": {"symbol": "⪡", "types": ["rel"]},
+    "gggt": {"symbol": "⋙", "types": ["rel"]},
+    "llls": {"symbol": "⋘", "types": ["rel"]},
+    "vargggt": {"symbol": "⫸", "types": ["rel"]},
+    "varllls": {"symbol": "⫷", "types": ["rel"]},
+    "succ": {"symbol": "≻", "types": ["rel"]}, "nsucc": {"symbol": "⊁", "types": ["rel"]},
+    "prec": {"symbol": "≺", "types": ["rel"]}, "nprec": {"symbol": "⊀", "types": ["rel"]},
+    "succeq": {"symbol": "⪰", "types": ["rel"]}, "succneq": {"symbol": "⪲", "types": ["rel"]},
+    "preceq": {"symbol": "⪯", "types": ["rel"]}, "precneq": {"symbol": "⪱", "types": ["rel"]},
+    "succeqq": {"symbol": "⪴", "types": ["rel"]}, "succneqq": {"symbol": "⪶", "types": ["rel"]},
+    "preceqq": {"symbol": "⪳", "types": ["rel"]}, "precneqq": {"symbol": "⪵", "types": ["rel"]},
+    "succsim": {"symbol": "≿", "types": ["rel"]}, "succnsim": {"symbol": "⋩", "types": ["rel"]},
+    "precsim": {"symbol": "≾", "types": ["rel"]}, "precnsim": {"symbol": "⋨", "types": ["rel"]},
+    "succapprox": {"symbol": "⪸", "types": ["rel"]}, "succnapprox": {"symbol": "⪺", "types": ["rel"]},
+    "precapprox": {"symbol": "⪷", "types": ["rel"]}, "precnapprox": {"symbol": "⪹", "types": ["rel"]},
+    "ssucc": {"symbol": "⪼", "types": ["rel"]},
+    "pprec": {"symbol": "⪻", "types": ["rel"]},
+    "succrel": {"symbol": "⊱", "types": ["rel"]},
+    "precrel": {"symbol": "⊰", "types": ["rel"]},
+    "in": {"symbol": "∈", "types": ["rel"]}, "nin": {"symbol": "∉", "types": ["rel"]},
+    "ni": {"symbol": "∋", "types": ["rel"]}, "nni": {"symbol": "∌", "types": ["rel"]},
+    "ineq": {"symbol": "⋸", "types": ["rel"]},
+    "disin": {"symbol": "⋲", "types": ["rel"]},
+    "smt": {"symbol": "⪪", "types": ["rel"]},
+    "lat": {"symbol": "⪫", "types": ["rel"]},
+    "smteq": {"symbol": "⪬", "types": ["rel"]},
+    "lateq": {"symbol": "⪭", "types": ["rel"]},
+    "supset": {"symbol": "⊃", "types": ["rel"]}, "nsupset": {"symbol": "⊃⃒", "types": ["rel"]},
+    "subset": {"symbol": "⊂", "types": ["rel"]}, "nsubset": {"symbol": "⊂⃒", "types": ["rel"]},
+    "supseteq": {"symbol": "⊇", "types": ["rel"]}, "nsupseteq": {"symbol": "⊉", "types": ["rel"]}, "supsetneq": {"symbol": "⊋", "types": ["rel"]}, 
+    "subseteq": {"symbol": "⊆", "types": ["rel"]}, "nsubseteq": {"symbol": "⊈", "types": ["rel"]}, "subsetneq": {"symbol": "⊊", "types": ["rel"]},
+    "supseteqq": {"symbol": "⫆", "types": ["rel"]}, "supsetneqq": {"symbol": "⫌", "types": ["rel"]}, 
+    "subseteqq": {"symbol": "⫅", "types": ["rel"]}, "subsetneqq": {"symbol": "⫋", "types": ["rel"]},
+    "supsetsim": {"symbol": "⫈", "types": ["rel"]},
+    "subsetsim": {"symbol": "⫇", "types": ["rel"]},
+    "supsetapprox": {"symbol": "⫊", "types": ["rel"]},
+    "subsetapprox": {"symbol": "⫉", "types": ["rel"]},
+    "ssupset": {"symbol": "⋑", "types": ["rel"]},
+    "ssubset": {"symbol": "⋐", "types": ["rel"]},
+    "sqsupset": {"symbol": "⊐", "types": ["rel"]}, "nsqsupset": {"symbol": "⊐̸", "types": ["rel"]},
+    "sqsubset": {"symbol": "⊏", "types": ["rel"]}, "nsqsubset": {"symbol": "⊏̸", "types": ["rel"]},
+    "sqsupseteq": {"symbol": "⊒", "types": ["rel"]}, "nsqsupseteq": {"symbol": "⋣", "types": ["rel"]}, "sqsupsetneq": {"symbol": "⋥", "types": ["rel"]},
+    "sqsubseteq": {"symbol": "⊑", "types": ["rel"]}, "nsqsubseteq": {"symbol": "⋢", "types": ["rel"]}, "sqsubsetneq": {"symbol": "⋤", "types": ["rel"]},
+    "rhd": {"symbol": "⊳", "types": ["rel"]}, "nrhd": {"symbol": "⋫", "types": ["rel"]},
+    "lhd": {"symbol": "⊲", "types": ["rel"]}, "nlhd": {"symbol": "⋪", "types": ["rel"]},
+    "rhdeq": {"symbol": "⊵", "types": ["rel"]}, "nrhdeq": {"symbol": "⋭", "types": ["rel"]},
+    "lhdeq": {"symbol": "⊴", "types": ["rel"]}, "nlhdeq": {"symbol": "⋬", "types": ["rel"]},
+    "curverhd": {"symbol": "⪧", "types": ["rel"]},
+    "curvelhd": {"symbol": "⪦", "types": ["rel"]},
+    "barrhd": {"symbol": "⩥", "types": ["rel"]},
+    "barlhd": {"symbol": "⩤", "types": ["rel"]},
+    "vdash": {"symbol": "⊢", "types": ["rel"]}, "nvdash": {"symbol": "⊬", "types": ["rel"]},
+    "vddash": {"symbol": "⊨", "types": ["rel"]}, "nvddash": {"symbol": "⊭", "types": ["rel"]},
+    "vvdash": {"symbol": "⊩", "types": ["rel"]}, "nvvdash": {"symbol": "⊮", "types": ["rel"]},
+    "dashv": {"symbol": "⊣", "types": ["rel"]},
+    "dashvv": {"symbol": "⫣", "types": ["rel"]},
+    "ddashv": {"symbol": "⫤", "types": ["rel"]},
+    "mid": {"symbol": "∣", "types": ["rel"]}, "nmid": {"symbol": "∤", "types": ["rel"]},
+    "parallel": {"symbol": "∥", "types": ["rel"]}, "nparallel": {"symbol": "∦", "types": ["rel"]},
+    "between": {"symbol": "≬", "types": ["rel"]},
+    "perp": {"symbol": "⟂", "types": ["rel"]},
+    "propto": {"symbol": "∝", "types": ["rel"]},
+    "similarto": {"symbol": "∽", "types": ["rel"]},
+    "rarr": {"symbol": "→", "types": ["rel"]}, "to": {"symbol": "→", "types": ["rel"]}, "brarr": {"symbol": "→", "types": ["bin"]}, "bto": {"symbol": "→", "types": ["bin"]}, 
+    "larr": {"symbol": "←", "types": ["rel"]}, "from": {"symbol": "←", "types": ["rel"]}, "blarr": {"symbol": "←", "types": ["bin"]}, "bfrom": {"symbol": "←", "types": ["bin"]},
+    "lrarr": {"symbol": "↔", "types": ["rel"]}, "blrarr": {"symbol": "↔", "types": ["bin"]},
+    "longrarr": {"symbol": "⟶", "types": ["rel"]}, "longto": {"symbol": "⟶", "types": ["rel"]}, 
+    "longlarr": {"symbol": "⟵", "types": ["rel"]}, "longfrom": {"symbol": "⟵", "types": ["rel"]},
+    "longlrarr": {"symbol": "⟷", "types": ["rel"]},
+    "rmap": {"symbol": "↦", "types": ["rel"]}, "mapsto": {"symbol": "↦", "types": ["rel"]}, "brmap": {"symbol": "↦", "types": ["bin"]}, "bmapsto": {"symbol": "↦", "types": ["bin"]},
+    "lmap": {"symbol": "↤", "types": ["rel"]}, "mappedfrom": {"symbol": "↤", "types": ["rel"]}, "blmap": {"symbol": "↤", "types": ["bin"]}, "bmappedfrom": {"symbol": "↤", "types": ["bin"]},
+    "longrmap": {"symbol": "⟼", "types": ["rel"]}, "longmapsto": {"symbol": "⟼", "types": ["rel"]},
+    "longlmap": {"symbol": "⟻", "types": ["rel"]}, "longmappedfrom": {"symbol": "⟻", "types": ["rel"]},
+    "rmulti": {"symbol": "⊸", "types": ["rel"]}, "brmulti": {"symbol": "⊸", "types": ["bin"]},
+    "lmulti": {"symbol": "⟜", "types": ["rel"]}, "blmulti": {"symbol": "⟜", "types": ["bin"]},
+    "lrmulti": {"symbol": "⧟", "types": ["rel"]}, "blrmulti": {"symbol": "⧟", "types": ["bin"]},
+    "openrarr": {"symbol": "⇾", "types": ["rel"]}, "bopenrarr": {"symbol": "⇾", "types": ["bin"]},
+    "openlarr": {"symbol": "⇽", "types": ["rel"]}, "bopenlarr": {"symbol": "⇽", "types": ["bin"]},
+    "lopenrarr": {"symbol": "⇿", "types": ["rel"]}, "blopenrarr": {"symbol": "⇿", "types": ["bin"]},
+    "hookrarr": {"symbol": "↪", "types": ["rel"]}, "bhookrarr": {"symbol": "↪", "types": ["bin"]},
+    "hooklarr": {"symbol": "↩", "types": ["rel"]}, "bhooklarr": {"symbol": "↩", "types": ["bin"]},
+    "tailrarr": {"symbol": "↣", "types": ["rel"]}, "btailrarr": {"symbol": "↣", "types": ["bin"]},
+    "taillarr": {"symbol": "↢", "types": ["rel"]}, "btaillarr": {"symbol": "↢", "types": ["bin"]},
+    "headrarr": {"symbol": "↠", "types": ["rel"]}, "bheadrarr": {"symbol": "↠", "types": ["bin"]},
+    "headlarr": {"symbol": "↞", "types": ["rel"]}, "bheadlarr": {"symbol": "↞", "types": ["bin"]},
+    "tailheadrarr": {"symbol": "⤖", "types": ["rel"]}, "btailheadrarr": {"symbol": "⤖", "types": ["bin"]},
+    "uharprarr": {"symbol": "⇀", "types": ["rel"]}, "buharprarr": {"symbol": "⇀", "types": ["bin"]},
+    "uharplarr": {"symbol": "↼", "types": ["rel"]}, "buharplarr": {"symbol": "↼", "types": ["bin"]},
+    "dharprarr": {"symbol": "⇁", "types": ["rel"]}, "bdharprarr": {"symbol": "⇁", "types": ["bin"]},
+    "dharplarr": {"symbol": "↽", "types": ["rel"]}, "bdharplarr": {"symbol": "↽", "types": ["bin"]},
+    "waverarr": {"symbol": "↝", "types": ["rel"]}, "bwaverarr": {"symbol": "↝", "types": ["bin"]},
+    "wavelarr": {"symbol": "↜", "types": ["rel"]}, "bwavelarr": {"symbol": "↜", "types": ["bin"]},
+    "wavelrarr": {"symbol": "↭", "types": ["rel"]}, "bwavelrarr": {"symbol": "↭", "types": ["bin"]},
+    "squigrarr": {"symbol": "⇝", "types": ["rel"]}, "bsquigrarr": {"symbol": "⇝", "types": ["bin"]},
+    "squiglarr": {"symbol": "⇜", "types": ["rel"]}, "bsquiglarr": {"symbol": "⇜", "types": ["bin"]},
+    "curverarr": {"symbol": "↷", "types": ["rel"]}, "bcurverarr": {"symbol": "↷", "types": ["bin"]},
+    "curvelarr": {"symbol": "↶", "types": ["rel"]}, "bcurvelarr": {"symbol": "↶", "types": ["bin"]},
+    "vertrarr": {"symbol": "⇸", "types": ["rel"]}, "bvertrarr": {"symbol": "⇸", "types": ["bin"]},
+    "vertlarr": {"symbol": "⇷", "types": ["rel"]}, "bvertlarr": {"symbol": "⇷", "types": ["bin"]},
+    "vertlrarr": {"symbol": "⇹", "types": ["rel"]}, "bvertlrarr": {"symbol": "⇹", "types": ["bin"]},
+    "vvertrarr": {"symbol": "⇻", "types": ["rel"]}, "bvvertrarr": {"symbol": "⇻", "types": ["bin"]},
+    "vvertlarr": {"symbol": "⇺", "types": ["rel"]}, "bvvertlarr": {"symbol": "⇺", "types": ["bin"]},
+    "vvertlrarr": {"symbol": "⇼", "types": ["rel"]}, "bvvertlrarr": {"symbol": "⇼", "types": ["bin"]},
+    "circlerarr": {"symbol": "↻", "types": ["rel"]},
+    "circlelarr": {"symbol": "↺", "types": ["rel"]},
+    "raarr": {"symbol": "⇒", "types": ["rel"]}, "braarr": {"symbol": "⇒", "types": ["bin"]},
+    "laarr": {"symbol": "⇐", "types": ["rel"]}, "blaarr": {"symbol": "⇐", "types": ["bin"]},
+    "lraarr": {"symbol": "⇔", "types": ["rel"]}, "blraarr": {"symbol": "⇔", "types": ["bin"]},
+    "rmmap": {"symbol": "⤇", "types": ["rel"]}, "brmmap": {"symbol": "⤇", "types": ["bin"]},
+    "lmmap": {"symbol": "⤆", "types": ["rel"]}, "blmmap": {"symbol": "⤆", "types": ["bin"]},
+    "vertraarr": {"symbol": "⤃", "types": ["rel"]}, "bvertraarr": {"symbol": "⤃", "types": ["bin"]},
+    "vertlaarr": {"symbol": "⤂", "types": ["rel"]}, "bvertlaarr": {"symbol": "⤂", "types": ["bin"]},
+    "vertlraarr": {"symbol": "⤄", "types": ["rel"]}, "bvertlraarr": {"symbol": "⤄", "types": ["bin"]},
+    "longraarr": {"symbol": "⟹", "types": ["rel"]},
+    "longlaarr": {"symbol": "⟸", "types": ["rel"]},
+    "longlraarr": {"symbol": "⟺", "types": ["rel"]},
+    "raaarr": {"symbol": "⇛", "types": ["rel"]}, "braaarr": {"symbol": "⇛", "types": ["bin"]},
+    "laaarr": {"symbol": "⇚", "types": ["rel"]}, "blaaarr": {"symbol": "⇚", "types": ["bin"]},
+    "uarr": {"symbol": "↑", "types": ["rel"]}, "buarr": {"symbol": "↑", "types": ["bin"]},
+    "darr": {"symbol": "↓", "types": ["rel"]}, "bdarr": {"symbol": "↓", "types": ["bin"]},
+    "udarr": {"symbol": "↕", "types": ["rel"]}, "budarr": {"symbol": "↕", "types": ["bin"]},
+    "uaarr": {"symbol": "⇑", "types": ["rel"]}, "buaarr": {"symbol": "⇑", "types": ["bin"]},
+    "daarr": {"symbol": "⇓", "types": ["rel"]}, "bdaarr": {"symbol": "⇓", "types": ["bin"]},
+    "udaarr": {"symbol": "⇕", "types": ["rel"]}, "budaarr": {"symbol": "⇕", "types": ["bin"]},
+    "scand": {"symbol": "AND", "types": ["sbin", "sml"]},
+    "scor": {"symbol": "OR", "types": ["sbin", "sml"]},
+    "scimplies": {"symbol": "IMPLIES", "types": ["sbin", "sml"]},
+    "implies": {"symbol": "⟹", "types": ["srel"]},
+    "implied": {"symbol": "⟸", "types": ["srel"]},
+    "iff": {"symbol": "⟺", "types": ["srel"]},
+    "coloniff": {"symbol": ":⟺","types":  ["srel"]},
+    "comma": {"symbol": ",", "types": ["del", "txt"]},
+    "colon": {"symbol": ":", "types": ["del", "txt"]},
+    "semicolon": {"symbol": ";", "types": ["del", "txt"]},
+    "period": {"symbol": ".", "types": ["ord", "txt"]},
+    "excl": {"symbol": "!", "types": ["ord", "txt"]},
+    "ques": {"symbol": "?", "types": ["ord", "txt"]},
+    "hyphen": {"symbol": "-", "types": ["ord", "txt"]},
+    "pr": {"symbol": "\uDB80\uDF98", "types": ["ord"]},
+    "ppr": {"symbol": "\uDB80\uDF99", "types": ["ord"]},
+    "pppr": {"symbol": "\uDB80\uDF9A", "types": ["ord"]},
+    "ppppr": {"symbol": "\uDB80\uDF9B", "types": ["ord"]},
+    "bpr": {"symbol": "\uDB80\uDF9C", "types": ["ord"]},
+    "bppr": {"symbol": "\uDB80\uDF9D", "types": ["ord"]},
+    "bpppr": {"symbol": "\uDB80\uDF9E", "types": ["ord"]},
+    "not": {"symbol": "\u0338", "types": ["not"]},
+    "partial": {"symbol": "∂", "types": ["ord", "txt"]},
+    "nabla": {"symbol": "∇", "types": ["ord"]},
+    "infty": {"symbol": "∞", "types": ["ord", "txt"]},
+    "empty": {"symbol": "∅", "types": ["ord"]},
+    "amp": {"symbol": "&", "types": ["ord"]},
+    "invamp": {"symbol": "⅋", "types": ["ord"]},
+    "num": {"symbol": "#", "types": ["ord", "txt"]},
+    "dollar": {"symbol": "$", "types": ["ord", "txt"]},
+    "section": {"symbol": "§", "types": ["ord", "txt"]},
+    "wp": {"symbol": "℘", "types": ["ord"]},
+    "hbar": {"symbol": "ℏ", "types": ["ord", "txt"]},
+    "sharp": {"symbol": "♯", "types": ["ord"]},
+    "flat": {"symbol": "♭", "types": ["ord"]},
+    "natural": {"symbol": "♮", "types": ["ord"]},
+    "crotchet": {"symbol": "♩", "types": ["ord"]},
+    "quaver": {"symbol": "♪", "types": ["ord"]},
+    "linkquaver": {"symbol": "♫", "types": ["ord"]},
+    "dagger": {"symbol": "†", "types": ["ord", "txt"]},
+    "ddagger": {"symbol": "‡", "types": ["ord", "txt"]},
+    "bspade": {"symbol": "♠", "types": ["ord"]},
+    "bheart": {"symbol": "♥", "types": ["ord"]},
+    "bdiamond": {"symbol": "♦", "types": ["ord"]},
+    "bclub": {"symbol": "♣", "types": ["ord"]},
+    "wspade": {"symbol": "♤", "types": ["ord"]},
+    "wheart": {"symbol": "♡", "types": ["ord"]},
+    "wdiamond": {"symbol": "♢", "types": ["ord"]},
+    "wclub": {"symbol": "♧", "types": ["ord"]},
+    "slash": {"symbol": "/", "types": ["ord"]},
+    "backslash": {"symbol": "\\","types":  ["ord"]},
+    "top": {"symbol": "⊤", "types": ["ord"]},
+    "bot": {"symbol": "⊥", "types": ["ord"]},
+    "ttop": {"symbol": "⫪", "types": ["ord"]},
+    "bbot": {"symbol": "⫫", "types": ["ord"]},
+    "neg": {"symbol": "¬", "types": ["ord"]},
+    "forall": {"symbol": "∀", "types": ["ord"]},
+    "exists": {"symbol": "∃", "types": ["ord"]}, "nexists": {"symbol": "∄", "types": ["ord"]},
+    "aleph": {"symbol": "ℵ", "types": ["ord"]},
+    "beth": {"symbol": "ℶ", "types": ["ord"]},
+    "ldots": {"symbol": "…", "types": ["ord"]},
+    "cdots": {"symbol": "⋯", "types": ["ord"]},
+    "vdots": {"symbol": "⋮", "types": ["ord"]},
+    "ddots": {"symbol": "⋱", "types": ["ord"]},
+    "udots": {"symbol": "⋰", "types": ["ord"]},
+    "lparen": {"symbol": "(", "types": ["lpar"]}, "rparen": {"symbol": ")", "types": ["rpar"]},
+    "lpparen": {"symbol": "⦅", "types": ["lpar"]}, "rpparen": {"symbol": "⦆", "types": ["rpar"]},
+    "lbracket": {"symbol": "[", "types": ["lpar"]}, "rbracket": {"symbol": "]", "types": ["rpar"]},
+    "lbbracket": {"symbol": "⟦", "types": ["lpar"]}, "rbbracket": {"symbol": "⟧", "types": ["rpar"]},
+    "lbrace": {"symbol": "{", "types": ["lpar"]}, "rbrace": {"symbol": "}", "types": ["rpar"]},
+    "lbbrace": {"symbol": "⦃", "types": ["lpar"]}, "rbbrace": {"symbol": "⦄", "types": ["rpar"]},
+    "lvert": {"symbol": "|", "types": ["lpar"]}, "rvert": {"symbol": "|", "types": ["rpar"]},
+    "lvvert": {"symbol": "‖", "types": ["lpar"]}, "rvvert": {"symbol": "‖", "types": ["rpar"]},
+    "lfloor": {"symbol": "⌊", "types": ["lpar"]}, "rfloor": {"symbol": "⌋", "types": ["rpar"]},
+    "lceil": {"symbol": "⌈", "types": ["lpar"]}, "rceil": {"symbol": "⌉", "types": ["rpar"]},
+    "langle": {"symbol": "⟨", "types": ["lpar"]}, "rangle": {"symbol": "⟩", "types": ["rpar"]},
+    "laangle": {"symbol": "⟪", "types": ["lpar"]}, "raangle": {"symbol": "⟫", "types": ["rpar"]},
+    "ltort": {"symbol": "❲", "types": ["lpar"]}, "rtort": {"symbol": "❳", "types": ["rpar"]}
   },
   "arrow": {
     "normal": {

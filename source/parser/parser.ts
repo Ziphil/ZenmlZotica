@@ -22,7 +22,11 @@ import {
 } from "parsimmon";
 import {
   ZOTICA_DATA
-} from "source/data/data";
+} from "../data/data";
+import {
+  MATH_ZOTICA_FONT,
+  TIMES_ZOTICA_FONT
+} from "../font/font";
 import {
   ZoticaBuilder
 } from "./builder";
@@ -41,7 +45,25 @@ export class ZoticaParser extends ZenmlParser {
   }
 
   private createMathText(content: string): Nodes {
-    throw "not yet implemented";
+    let nodes = [];
+    let options = {fonts: {main: TIMES_ZOTICA_FONT, math: MATH_ZOTICA_FONT}};
+    for (let char of content) {
+      if (char.match(/\p{Number}/)) {
+        nodes.push(this.builder.buildNumber(char, options));
+      } else if (char.match(/\p{Letter}|\p{Mark}/)) {
+        nodes.push(this.builder.buildIdentifier(char, [], options));
+      } else if (char === "'") {
+        let {symbol, types} = ZOTICA_DATA.getOperatorSymbol("pr")!;
+        nodes.push(this.builder.buildSubsuper(options, (baseSelf, subSelf, superSelf) => {
+          superSelf.appendChild(this.builder.buildOperator(symbol, types, options));
+        }));
+      } else if (!char.match(/\s/)) {
+        let replacedChar = ZOTICA_DATA.getReplacement(char) ?? char;
+        let {symbol, types} = ZOTICA_DATA.getOperatorSymbolByChar(replacedChar) ?? {symbol: char, types: ["bin"]};
+        nodes.push(this.builder.buildOperator(symbol, types, options));
+      }
+    }
+    return nodes;
   }
 
   private createMathEscape(char: string): string {
