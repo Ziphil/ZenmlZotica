@@ -17,6 +17,7 @@ const ZOTICA_ROLES = ["bin", "rel", "sbin", "srel", "del", "fun", "not", "ord", 
 export type ZoticaRole = "bin" | "rel" | "sbin" | "srel" | "del" | "fun" | "not" | "ord" | "lpar" | "rpar" | "cpar";
 export type ZoticaIdentifierType = "bf" | "rm" | "tt" | "fun" | "alt";
 export type ZoticaOperatorType = ZoticaRole | "txt" | "sml";
+export type ZoticaStrutType = "upper" | "dupper" | "lower" | "dlower" | "dfull";
 export type ZoticaFontType = "main" | "math";
 
 export type ZoticaSubsuperCallback = (baseElement: Element, subElement: Element, superElement: Element, leftSubElement?: Element, leftSuperElement?: Element) => void;
@@ -77,7 +78,7 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
     return self;
   }
 
-  public buildStrut(type: "upper" | "dupper" | "lower" | "dlower" | "dfull", options: ZoticaCommonOptions): NodeLikeOf<Document> {
+  public buildStrut(type: ZoticaStrutType, options: ZoticaCommonOptions): NodeLikeOf<Document> {
     let self = this.createDocumentFragment();
     this.appendElement(self, "math-strut", (self) => {
       let style = self.getAttribute("style") ?? "";
