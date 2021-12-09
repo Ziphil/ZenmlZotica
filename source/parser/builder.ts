@@ -72,6 +72,35 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
     return self;
   }
 
+  public buildStrut(type: "upper" | "dupper" | "lower" | "dlower" | "dfull", options: ZoticaCommonOptions): NodeLikeOf<Document> {
+    let self = this.createDocumentFragment();
+    this.appendElement(self, "math-strut", (self) => {
+      let style = self.getAttribute("style") ?? "";
+      let [bottomMargin, topMargin] = options.fonts.main.getMetrics(72) ?? [0, 0];
+      if (type === "upper" || type === "dupper") {
+        style += "margin-bottom: -0.5em;";
+      } else if (type === "dlower" || type === "dfull") {
+        style += "margin-bottom: -0em;";
+      } else {
+        style += `margin-bottom: ${bottomMargin}em;`;
+      }
+      if (type === "lower" || type === "dlower") {
+        style += "margin-top: -0.5em;";
+      } else if (type === "dupper" || type === "dfull") {
+        style += "margin-top: -0em;";
+      } else {
+        style += `margin-top: ${topMargin}em;`;
+      }
+      self.setAttribute("style", style);
+      this.appendElement(self, "math-text", (self) => {
+        self.setAttribute("style", (self.getAttribute("style") ?? "") + "line-height: 1;");
+        this.appendTextNode(self, " ");
+      });
+    });
+    this.applyOptions(self, options);
+    return self;
+  }
+
   private applyOptions(nodes: DocumentFragment, options: ZoticaCommonOptions): void {
     for (let i = 0 ; i < nodes.childNodes.length ; i ++) {
       let node = nodes.childNodes.item(i);
@@ -106,9 +135,9 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
       }
     }
     let style = element.getAttribute("style") ?? "";
-    style += "line-height: 1; ";
-    style += `margin-top: ${maxTopMargin}em; `;
-    style += `margin-bottom: ${maxBottomMargin}em; `;
+    style += "line-height: 1;";
+    style += `margin-top: ${maxTopMargin}em;`;
+    style += `margin-bottom: ${maxBottomMargin}em;`;
     element.setAttribute("style", style);
   }
 
