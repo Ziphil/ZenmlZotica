@@ -91,8 +91,25 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
     }
   }
 
-  // TODO: フォントデータの設計を決めたら実装してください。
-  private modifyVerticalMargins(element: Element, fontType: ZoticaFontType, options: {}): void {
+  private modifyVerticalMargins(element: Element, fontType: ZoticaFontType, options: ZoticaCommonOptions): void {
+    let content = element.textContent ?? "";
+    let maxTopMargin = -2;
+    let maxBottomMargin = -2;
+    for (let char of content) {
+      let codePoint = char.codePointAt(0)!;
+      let [bottomMargin, topMargin] = options.fonts[fontType].getMetrics(codePoint) ?? [0, 0];
+      if (topMargin > maxTopMargin) {
+        maxTopMargin = topMargin;
+      }
+      if (bottomMargin > maxBottomMargin) {
+        maxBottomMargin = bottomMargin;
+      }
+    }
+    let style = element.getAttribute("style") ?? "";
+    style += "line-height: 1; ";
+    style += `margin-top: ${maxTopMargin}em; `;
+    style += `margin-bottom: ${maxBottomMargin}em; `;
+    element.setAttribute("style", style);
   }
 
 }
