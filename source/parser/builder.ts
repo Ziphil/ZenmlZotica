@@ -150,7 +150,7 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
     if (leftSubElement !== undefined && leftSubElement.childNodes.length <= 0) {
       leftSubElement.parentNode!.removeChild(leftSubElement);
     }
-    if (leftSuperElement && leftSuperElement.childNodes.length <= 0) {
+    if (leftSuperElement !== undefined && leftSuperElement.childNodes.length <= 0) {
       leftSuperElement.parentNode!.removeChild(leftSuperElement);
     }
   }
