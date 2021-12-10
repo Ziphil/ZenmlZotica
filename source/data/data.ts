@@ -14,8 +14,8 @@ export class ZoticaData {
     this.json = json;
   }
 
-  public isLeafTagName(tagName: string): boolean {
-    return this.json.leaf.includes(tagName);
+  public isLeafKind(kind: string): boolean {
+    return this.json.leaf.includes(kind);
   }
 
   public isFunctionKind(kind: string): boolean {
@@ -35,12 +35,12 @@ export class ZoticaData {
     return this.json.operator[kind] !== undefined;
   }
 
-  public getOperatorSymbol(kind: string): {symbol: string, types: Array<ZoticaOperatorType | string>} | null {
+  public getOperatorSymbolSpec(kind: string): ZoticaOperatorSymbolSpec | null {
     let symbolSpec = this.json.operator[kind] ?? null;
     return symbolSpec;
   }
 
-  public getOperatorSymbolByChar(char: string): {symbol: string, types: Array<ZoticaOperatorType | string>} | null {
+  public getOperatorSymbolSpecByChar(char: string): ZoticaOperatorSymbolSpec | null {
     let operatorEntries = Object.entries(this.json.operator);
     let symbol = operatorEntries.find(([, symbolSpec]) => char === symbolSpec?.symbol)?.[1] ?? null;
     return symbol;
@@ -51,9 +51,9 @@ export class ZoticaData {
     return replacement;
   }
 
-  public getAlternativeIdentifierText(kind: string, text: string): string {
-    let nextText = [...text].map((char) => this.json.alternative[kind]?.[char] ?? "").join("");
-    return nextText;
+  public getAlternativeIdentifierContent(kind: string, content: string): string {
+    let nextContent = [...content].map((char) => this.json.alternative[kind]?.[char] ?? "").join("");
+    return nextContent;
   }
 
   public getGreekChar(char: string): string | null {
@@ -63,6 +63,8 @@ export class ZoticaData {
 
 }
 
+
+export type ZoticaOperatorSymbolSpec = {symbol: string, types: Array<ZoticaOperatorType | string>};
 
 export type ZoticaDataJson = {
   leaf: Array<string>,
