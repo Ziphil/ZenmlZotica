@@ -205,7 +205,7 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
         numeratorElement = self;
       });
       this.appendElement(self, "math-denwrap", (self) => {
-        this.appendElement(self, "math-line")
+        this.appendElement(self, "math-line");
         this.appendElement(self, "math-den", (self) => {
           denominatorElement = self;
         });
@@ -329,7 +329,7 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
   public buildText(content: string, options: ZoticaCommonOptions): DocumentFragment {
     let self = this.createDocumentFragment();
     this.appendElement(self, "math-text", (self) => {
-      this.appendTextNode(self, content)
+      this.appendTextNode(self, content);
     });
     this.applyOptions(self, options);
     return self;

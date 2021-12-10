@@ -91,7 +91,7 @@ export class ZoticaParser extends ZenmlParser {
       nodes.push(this.builder.buildOperator(symbol, types, options));
     } else if (tagName === "text") {
       let content = childrenArgs[0]?.[0]?.textContent ?? "";
-      nodes.push(this.builder.buildText(content, options)); 
+      nodes.push(this.builder.buildText(content, options));
     }
     return nodes;
   }
