@@ -8,6 +8,7 @@ import {
   ZoticaFont
 } from "../font/font";
 import {
+  insertFirst,
   isElement
 } from "../util/dom";
 
@@ -36,7 +37,7 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
     super(document);
   }
 
-  public buildNumber(content: string, options: ZoticaCommonOptions): NodeLikeOf<Document> {
+  public buildNumber(content: string, options: ZoticaCommonOptions): DocumentFragment {
     let self = this.createDocumentFragment();
     let element = null as Element | null;
     this.appendElement(self, "math-n", (self) => {
@@ -48,7 +49,7 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
     return self;
   }
 
-  public buildIdentifier(content: string, types: Array<ZoticaIdentifierType | string>, options: ZoticaCommonOptions): NodeLikeOf<Document> {
+  public buildIdentifier(content: string, types: Array<ZoticaIdentifierType | string>, options: ZoticaCommonOptions): DocumentFragment {
     let self = this.createDocumentFragment();
     let element = null as Element | null;
     let fontType = (types.includes("alt")) ? "math" : "main" as ZoticaFontType;
@@ -63,7 +64,7 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
     return self;
   }
 
-  public buildOperator(symbol: string, types: Array<ZoticaOperatorType | string>, options: ZoticaCommonOptions): NodeLikeOf<Document> {
+  public buildOperator(symbol: string, types: Array<ZoticaOperatorType | string>, options: ZoticaCommonOptions): DocumentFragment {
     let self = this.createDocumentFragment();
     let element = null as Element | null;
     let fontType = (types.includes("txt")) ? "main" : "math" as ZoticaFontType;
@@ -78,7 +79,7 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
     return self;
   }
 
-  public buildStrut(type: ZoticaStrutType, options: ZoticaCommonOptions): NodeLikeOf<Document> {
+  public buildStrut(type: ZoticaStrutType, options: ZoticaCommonOptions): DocumentFragment {
     let self = this.createDocumentFragment();
     this.appendElement(self, "math-strut", (self) => {
       let style = self.getAttribute("style") ?? "";
@@ -107,7 +108,11 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
     return self;
   }
 
-  public buildSubsuper(options: ZoticaCommonOptions, callback?: ZoticaSubsuperCallback): NodeLikeOf<Document> {
+  private insertStrut(element: Element, type: ZoticaStrutType, options: ZoticaCommonOptions): void {
+    insertFirst(element, this.buildStrut(type, options).childNodes[0]);
+  }
+
+  public buildSubsuper(options: ZoticaCommonOptions, callback?: ZoticaSubsuperCallback): DocumentFragment {
     let self = this.createDocumentFragment();
     let baseElement = null as Element | null;
     let subElement = null as Element | null;
@@ -152,6 +157,103 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
     }
     if (leftSuperElement !== undefined && leftSuperElement.childNodes.length <= 0) {
       leftSuperElement.parentNode!.removeChild(leftSuperElement);
+    }
+  }
+
+  public buildUnderover(options: ZoticaCommonOptions, callback?: any): DocumentFragment {
+    let self = this.createDocumentFragment();
+    let baseElement = null as Element | null;
+    let underElement = null as Element | null;
+    let overElement = null as Element | null;
+    let mainElement = null as Element | null;
+    this.appendElement(self, "math-underover", (self) => {
+      mainElement = self
+      this.appendElement(self, "math-over", (self) => {
+        overElement = self
+      });
+      this.appendElement(self, "math-basewrap", (self) => {
+        this.appendElement(self, "math-base", (self) => {
+          baseElement = self
+        });
+        this.appendElement(self, "math-under", (self) => {
+          underElement = self
+        });
+      });
+    });
+    this.applyOptions(self, options)
+    callback?.(baseElement!, underElement!, overElement!);
+    this.inheritRole(mainElement!, baseElement!);
+    this.modifyUnderover(underElement!, overElement!);
+    return self;
+  }
+
+  private modifyUnderover(underElement: Element, overElement: Element): void {
+    if (underElement.childNodes.length <= 0) {
+      underElement.parentNode!.removeChild(underElement);
+    }
+    if (overElement.childNodes.length <= 0) {
+      overElement.parentNode!.removeChild(overElement);
+    }
+  }
+
+  public buildFraction(options: ZoticaCommonOptions, callback?: any): DocumentFragment {
+    let self = this.createDocumentFragment();
+    let numeratorElement = null as Element | null;
+    let denominatorElement = null as Element | null;
+    this.appendElement(self, "math-frac", (self) => {
+      this.appendElement(self, "math-num", (self) => {
+        numeratorElement = self
+      });
+      this.appendElement(self, "math-denwrap", (self) => {
+        this.appendElement(self, "math-line")
+        this.appendElement(self, "math-den", (self) => {
+          denominatorElement = self
+        });
+      });
+    });
+    this.applyOptions(self, options)
+    callback?.(numeratorElement!, denominatorElement!)
+    this.modifyFraction(numeratorElement!, denominatorElement!, options)
+    return self;
+  }
+
+  private modifyFraction(numeratorElement: Element, denominatorElement: Element, options: ZoticaCommonOptions): void {
+    this.insertStrut(numeratorElement, "dlower", options);
+    this.insertStrut(denominatorElement, "upper", options);
+  }
+
+  public buildRadical(symbol: string, modify: boolean, options: ZoticaCommonOptions, callback?: any): DocumentFragment {
+    let self = this.createDocumentFragment();
+    let contentElement = null as Element | null;
+    let indexElement = null as Element | null;
+    this.appendElement(self, "math-rad", (self) => {
+      if (modify) {
+        self.setAttribute("class", "mod");
+      }
+      this.appendElement(self, "math-index", (self) => {
+        indexElement = self;
+      });
+      this.appendElement(self, "math-sqrt", (self) => {
+        this.appendElement(self, "math-surd", (self) => {
+          this.appendElement(self, "math-o", (self) => {
+            this.appendTextNode(self, symbol);
+          });
+        });
+        this.appendElement(self, "math-cont", (self) => {
+          contentElement = self;
+        });
+      });
+    });
+    this.applyOptions(self, options);
+    callback?.(contentElement!, indexElement!);
+    this.modifyRadical(contentElement!, indexElement!, options);
+    return self;
+  }
+
+  private modifyRadical(contentElement: Element, indexElement: Element, options: ZoticaCommonOptions): void {
+    this.insertStrut(contentElement, "upper", options);
+    if (indexElement.childNodes.length <= 0) {
+      indexElement.parentNode!.removeChild(indexElement);
     }
   }
 
