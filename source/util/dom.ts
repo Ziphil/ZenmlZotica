@@ -17,3 +17,9 @@ export function insertFirst(parent: Node, child: Node): void {
     parent.appendChild(child);
   }
 }
+
+export function appendChildren(parent: Node, children: Array<Node>): void {
+  for (let child of children) {
+    parent.appendChild(child);
+  }
+}

@@ -22,6 +22,9 @@ export type ZoticaStrutType = "upper" | "dupper" | "lower" | "dlower" | "dfull";
 export type ZoticaFontType = "main" | "math";
 
 export type ZoticaSubsuperCallback = (baseElement: Element, subElement: Element, superElement: Element, leftSubElement?: Element, leftSuperElement?: Element) => void;
+export type ZoticaRadicalCallback = (contentElement: Element, indexElement: Element) => void;
+export type ZoticaFenceCallback = (contentElement: Element) => void;
+export type ZoticaSetCallback = (leftElement: Element, rightElement: Element) => void;
 
 export type ZoticaCommonOptions = {
   role?: ZoticaRole,
@@ -222,7 +225,7 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
     this.insertStrut(denominatorElement, "upper", options);
   }
 
-  public buildRadical(symbol: string, modify: boolean, options: ZoticaCommonOptions, callback?: any): DocumentFragment {
+  public buildRadical(symbol: string, modify: boolean, options: ZoticaCommonOptions, callback?: ZoticaRadicalCallback): DocumentFragment {
     let self = this.createDocumentFragment();
     let contentElement = null as Element | null;
     let indexElement = null as Element | null;
@@ -257,7 +260,7 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
     }
   }
 
-  public buildFence(leftKind: string, rightKind: string, leftSymbol: string, rightSymbol: string, modify: boolean, options: ZoticaCommonOptions, callback?: any): DocumentFragment {
+  public buildFence(leftKind: string, rightKind: string, leftSymbol: string, rightSymbol: string, modify: boolean, options: ZoticaCommonOptions, callback?: ZoticaFenceCallback): DocumentFragment {
     let self = this.createDocumentFragment();
     let contentElement = null as Element | null;
     this.appendElement(self, "math-fence", (self) => {
@@ -286,7 +289,7 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
     return self;
   }
 
-  public buildSet(leftKind: string, rightKind: string, centerKind: string, leftSymbol: string, rightSymbol: string, centerSymbol: string, modify: boolean, options: ZoticaCommonOptions, callback?: any): DocumentFragment {
+  public buildSet(leftKind: string, rightKind: string, centerKind: string, leftSymbol: string, rightSymbol: string, centerSymbol: string, modify: boolean, options: ZoticaCommonOptions, callback?: ZoticaSetCallback): DocumentFragment {
     let self = this.createDocumentFragment();
     let leftElement = null as Element | null;
     let rightElement = null as Element | null;

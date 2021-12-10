@@ -46,6 +46,20 @@ export class ZoticaData {
     return symbol;
   }
 
+  public isFenceKind(kind: string): boolean {
+    return this.json.fence[kind] !== undefined;
+  }
+
+  public getLeftFenceSymbol(kind: string, level: number): string | null {
+    let symbol = this.json.fence[kind]?.left?.[level] ?? null;
+    return symbol;
+  }
+
+  public getRightFenceSymbol(kind: string, level: number): string | null {
+    let symbol = this.json.fence[kind]?.left?.[level] ?? null;
+    return symbol;
+  }
+
   public getReplacement(char: string): string | null {
     let replacement = this.json.replacement[char] ?? null;
     return replacement;

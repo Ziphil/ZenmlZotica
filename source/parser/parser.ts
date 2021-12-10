@@ -28,6 +28,9 @@ import {
   TIMES_ZOTICA_FONT
 } from "../font/font";
 import {
+  appendChildren
+} from "../util/dom";
+import {
   ZOTICA_ROLES,
   ZoticaBuilder,
   ZoticaRole
@@ -92,6 +95,37 @@ export class ZoticaParser extends ZenmlParser {
     } else if (tagName === "text") {
       let content = childrenArgs[0]?.[0]?.textContent ?? "";
       nodes.push(this.builder.buildText(content, options));
+    } else if (tagName === "fence") {
+      let level = parseInt(attributes.get("s") ?? "0");
+      let leftKind = attributes.get("l") ?? "paren";
+      let rightKind = attributes.get("r") ?? "paren";
+      let leftSymbol = ZOTICA_DATA.getLeftFenceSymbol(leftKind, level) ?? "";
+      let rightSymbol = ZOTICA_DATA.getRightFenceSymbol(rightKind, level) ?? "";
+      let modify = !attributes.has("s");
+      nodes.push(this.builder.buildFence(leftKind, rightKind, leftSymbol, rightSymbol, modify, options, (contentSelf) => {
+        appendChildren(contentSelf, childrenArgs[0] ?? []);
+      }));
+    } else if (tagName === "set") {
+      let level = parseInt(attributes.get("s") ?? "0");
+      let leftKind = attributes.get("l") ?? "brace";
+      let rightKind = attributes.get("r") ?? "brace";
+      let centerKind = attributes.get("c") ?? "vert";
+      let leftSymbol = ZOTICA_DATA.getLeftFenceSymbol(leftKind, level) ?? "";
+      let rightSymbol = ZOTICA_DATA.getRightFenceSymbol(rightKind, level) ?? "";
+      let centerSymbol = ZOTICA_DATA.getLeftFenceSymbol(centerKind, level) ?? "";
+      let modify = !attributes.has("s");
+      nodes.push(this.builder.buildSet(leftKind, rightKind, centerKind, leftSymbol, rightSymbol, centerSymbol, modify, options, (leftSelf, rightSelf) => {
+        appendChildren(leftSelf, childrenArgs[0] ?? []);
+        appendChildren(rightSelf, childrenArgs[1] ?? []);
+      }));
+    } else if (ZOTICA_DATA.isFenceKind(tagName)) {
+      let level = parseInt(attributes.get("s") ?? "0");
+      let leftSymbol = ZOTICA_DATA.getLeftFenceSymbol(tagName, level)!;
+      let rightSymbol = ZOTICA_DATA.getRightFenceSymbol(tagName, level)!;
+      let modify = !attributes.has("s");
+      nodes.push(this.builder.buildFence(tagName, tagName, leftSymbol, rightSymbol, modify, options, (contentSelf) => {
+        appendChildren(contentSelf, childrenArgs[0] ?? []);
+      }));
     }
     return nodes;
   }
