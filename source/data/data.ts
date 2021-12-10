@@ -29,13 +29,24 @@ export class ZoticaData {
   }
 
   public getOperatorSymbolByChar(char: string): {symbol: string, types: Array<ZoticaOperatorType>} | null {
-    let symbol = Object.entries(this.json.operator).find(([, symbolSpec]) => char === symbolSpec?.symbol)?.[1] ?? null;
+    let operatorEntries = Object.entries(this.json.operator);
+    let symbol = operatorEntries.find(([, symbolSpec]) => char === symbolSpec?.symbol)?.[1] ?? null;
     return symbol as any;
   }
 
   public getReplacement(char: string): string | null {
     let replacement = this.json.replacement[char] ?? null;
     return replacement;
+  }
+
+  public getAlternativeIdentifierText(kind: string, text: string): string {
+    let nextText = [...text].map((char) => this.json.alternative[kind]?.[char] ?? "").join("");
+    return nextText;
+  }
+
+  public getGreekChar(char: string): string | null {
+    let greekChar = this.json.greek[char] ?? null;
+    return greekChar;
   }
 
 }

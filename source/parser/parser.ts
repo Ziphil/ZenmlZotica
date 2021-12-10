@@ -28,7 +28,9 @@ import {
   TIMES_ZOTICA_FONT
 } from "../font/font";
 import {
-  ZoticaBuilder
+  ZOTICA_ROLES,
+  ZoticaBuilder,
+  ZoticaRole
 } from "./builder";
 
 
@@ -42,7 +44,41 @@ export class ZoticaParser extends ZenmlParser {
   }
 
   private createMathElement(tagName: string, attributes: ZenmlAttributes, childrenArgs: ChildrenArgs): Nodes {
-    throw "not yet implemented";
+    let nodes = [];
+    let options = {
+      role: this.determineRole(attributes),
+      className: attributes.get("class"),
+      style: attributes.get("style"),
+      fonts: {main: TIMES_ZOTICA_FONT, math: MATH_ZOTICA_FONT}
+    };
+    if (tagName === "n") {
+      let content = childrenArgs[0]?.[0]?.textContent ?? "";
+      nodes.push(this.builder.buildNumber(content, options));
+    } else if (tagName === "i") {
+      let types = attributes.get("t")?.split(/\s*,\s*/) ?? [];
+      let text = childrenArgs[0]?.[0]?.textContent ?? "";
+      nodes.push(this.builder.buildIdentifier(text, types, options));
+    } else if (tagName === "bf") {
+      let text = childrenArgs[0]?.[0]?.textContent ?? "";
+      nodes.push(this.builder.buildIdentifier(text, ["bf"], options));
+    } else if (tagName === "rm") {
+      let text = childrenArgs[0]?.[0]?.textContent ?? "";
+      nodes.push(this.builder.buildIdentifier(text, ["rm"], options));
+    } else if (tagName === "bfrm") {
+      let text = childrenArgs[0]?.[0]?.textContent ?? "";
+      nodes.push(this.builder.buildIdentifier(text, ["bf", "rm"], options));
+    } else if (tagName === "tt") {
+      let text = childrenArgs[0]?.[0]?.textContent ?? "";
+      nodes.push(this.builder.buildIdentifier(text, ["tt"], options));
+    } else if (["bb", "varbb", "cal", "scr", "frak", "varfrak"].includes(tagName)) {
+      let text = childrenArgs[0]?.[0]?.textContent ?? "";
+      let nextText = ZOTICA_DATA.getAlternativeIdentifierText(tagName, text);
+      nodes.push(this.builder.buildIdentifier(nextText, ["alt"], options));
+    } else if (tagName === "op") {
+      let text = childrenArgs[0]?.[0]?.textContent ?? "";
+      nodes.push(this.builder.buildIdentifier(text, ["fun", "rm"], options));
+    }
+    return nodes;
   }
 
   private createMathText(content: string): Nodes {
@@ -68,7 +104,17 @@ export class ZoticaParser extends ZenmlParser {
   }
 
   private createMathEscape(char: string): string {
-    throw "not yet implemented";
+    let nextChar = ZOTICA_DATA.getGreekChar(char) ?? char;
+    return nextChar;
+  }
+
+  private determineRole(attributes: ZenmlAttributes): ZoticaRole | undefined {
+    for (let role of ZOTICA_ROLES) {
+      if (attributes.has(role)) {
+        return role as ZoticaRole;
+      }
+    }
+    return undefined;
   }
 
   public readonly mathRoot: Parser<Nodes> = lazy(() => {

@@ -12,7 +12,7 @@ import {
 } from "../util/dom";
 
 
-const ZOTICA_ROLES = ["bin", "rel", "sbin", "srel", "del", "fun", "not", "ord", "lpar", "rpar", "cpar"];
+export const ZOTICA_ROLES = ["bin", "rel", "sbin", "srel", "del", "fun", "not", "ord", "lpar", "rpar", "cpar"];
 
 export type ZoticaRole = "bin" | "rel" | "sbin" | "srel" | "del" | "fun" | "not" | "ord" | "lpar" | "rpar" | "cpar";
 export type ZoticaIdentifierType = "bf" | "rm" | "tt" | "fun" | "alt";
@@ -161,10 +161,10 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
       let sourceChild = sourceChildren.item(0);
       if (isElement(sourceChild)) {
         let sourceClassNames = sourceChild.getAttribute("class")?.split(" ") ?? [];
-        let sourceRole = sourceClassNames.find((cl) => ZOTICA_ROLES.includes(cl));
+        let sourceRole = sourceClassNames.find((className) => ZOTICA_ROLES.includes(className));
         if (sourceRole !== undefined) {
           let targetClasses = targetElement.getAttribute("class")?.split(" ") ?? [];
-          if (targetClasses.some((cl) => ZOTICA_ROLES.includes(cl))) {
+          if (targetClasses.some((className) => ZOTICA_ROLES.includes(className))) {
             targetElement.setAttribute("class", [...targetClasses, sourceRole].join(" "));
           }
         }
