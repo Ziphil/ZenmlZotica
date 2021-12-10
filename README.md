@@ -28,6 +28,23 @@ Install via [npm](https://www.npmjs.com/package/@zenml/zotica).
 npm i @zenml/zotica
 ```
 
+## About the math font
+The math font used in Zotica is a modified version of [STIX Two Math](https://www.stixfonts.org/) (version 2.00 b137) for use in HTML.
+It is available [here](https://github.com/Ziphil/ZenithalMathWeb/tree/master/source/zotica/resource/font.otf) and you are free to use it under [SIL Open Font License](http://scripts.sil.org/OFL).
+You can also obtain the same font by making the following modifications to the original font:
+
+First, in order to give special codepoints to the additionally registered glyphs (`.notdef`–`zeroinferior.per`), copy these glyphs to U+F0000–U+F04DB.
+The codepoints mentioned below will be those after performing this copy.
+
+Since some of the large operators are displayed slightly higher without modifications, move the glyphs at U+F0187–U+F018A and U+F0214–U+F021D downward by 540.
+
+In order to display the radical symbols correctly without adjustments by CSS, it is necessary to change the position of the glyphs for radical symbols.
+Move the glyphs at U+F011D, U+F011E, U+F011F downward by 667, 1183, 1704 respectively.
+
+To save the repositioned accent symbols to different codepoints, first copy the glyphs U+0300–U+036F and U+20D0–U+20FF to U+F0500–U+F056F and U+F0570–U+F059F respectively.
+Then for each glyph copied, set the X coordinate of the left edge of the glyph to 0, and set the character width to match the glyph width.
+For example, move the entire glyph at U+F0500 to the right by 338, and set the character width to 162.
+
 ## Implementaion notes (for my future self)
 `builder.ts` と `data.ts` の型定義部分に `| string` が書かれている箇所がいくつかありますが、これは厳密な型チェックの実装を後回しにしてとりあえずコンパイルが通るようにするための暫定的な記述です。
 将来的には、厳密な型チェックを実装するなり、設計を見直すなりして、`| string` は削除すべきです。
