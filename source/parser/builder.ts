@@ -167,20 +167,20 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
     let overElement = null as Element | null;
     let mainElement = null as Element | null;
     this.appendElement(self, "math-underover", (self) => {
-      mainElement = self
+      mainElement = self;
       this.appendElement(self, "math-over", (self) => {
-        overElement = self
+        overElement = self;
       });
       this.appendElement(self, "math-basewrap", (self) => {
         this.appendElement(self, "math-base", (self) => {
-          baseElement = self
+          baseElement = self;
         });
         this.appendElement(self, "math-under", (self) => {
-          underElement = self
+          underElement = self;
         });
       });
     });
-    this.applyOptions(self, options)
+    this.applyOptions(self, options);
     callback?.(baseElement!, underElement!, overElement!);
     this.inheritRole(mainElement!, baseElement!);
     this.modifyUnderover(underElement!, overElement!);
@@ -202,18 +202,18 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
     let denominatorElement = null as Element | null;
     this.appendElement(self, "math-frac", (self) => {
       this.appendElement(self, "math-num", (self) => {
-        numeratorElement = self
+        numeratorElement = self;
       });
       this.appendElement(self, "math-denwrap", (self) => {
         this.appendElement(self, "math-line")
         this.appendElement(self, "math-den", (self) => {
-          denominatorElement = self
+          denominatorElement = self;
         });
       });
     });
-    this.applyOptions(self, options)
-    callback?.(numeratorElement!, denominatorElement!)
-    this.modifyFraction(numeratorElement!, denominatorElement!, options)
+    this.applyOptions(self, options);
+    callback?.(numeratorElement!, denominatorElement!);
+    this.modifyFraction(numeratorElement!, denominatorElement!, options);
     return self;
   }
 
@@ -255,6 +255,75 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
     if (indexElement.childNodes.length <= 0) {
       indexElement.parentNode!.removeChild(indexElement);
     }
+  }
+
+  public buildFence(leftKind: string, rightKind: string, leftSymbol: string, rightSymbol: string, modify: boolean, options: ZoticaCommonOptions, callback?: any): DocumentFragment {
+    let self = this.createDocumentFragment();
+    let contentElement = null as Element | null;
+    this.appendElement(self, "math-fence", (self) => {
+      self.setAttribute("class", "par");
+      if (modify) {
+        self.setAttribute("class", (self.getAttribute("class") ?? "") + " mod");
+        self.setAttribute("data-left", leftKind);
+        self.setAttribute("data-right", rightKind);
+      }
+      this.appendElement(self, "math-left", (self) => {
+        this.appendElement(self, "math-o", (self) => {
+          this.appendTextNode(self, leftSymbol);
+        });
+      });
+      this.appendElement(self, "math-cont", (self) => {
+        contentElement = self;
+      });
+      this.appendElement(self, "math-right", (self) => {
+        this.appendElement(self, "math-o", (self) => {
+          this.appendTextNode(self, rightSymbol);
+        });
+      });
+    });
+    this.applyOptions(self, options);
+    callback?.(contentElement!);
+    return self;
+  }
+
+  public buildSet(leftKind: string, rightKind: string, centerKind: string, leftSymbol: string, rightSymbol: string, centerSymbol: string, modify: boolean, options: ZoticaCommonOptions, callback?: any): DocumentFragment {
+    let self = this.createDocumentFragment();
+    let leftElement = null as Element | null;
+    let rightElement = null as Element | null;
+    this.appendElement(self, "math-fence", (self) => {
+      self.setAttribute("class", "par");
+      if (modify) {
+        self.setAttribute("class", (self.getAttribute("class") ?? "") + " mod");
+        self.setAttribute("data-left", leftKind);
+        self.setAttribute("data-right", rightKind);
+        self.setAttribute("data-center", centerKind);
+      }
+      this.appendElement(self, "math-left", (self) => {
+        this.appendElement(self, "math-o", (self) => {
+          this.appendTextNode(self, leftSymbol);
+        });
+      });
+      this.appendElement(self, "math-cont", (self) => {
+        leftElement = self;
+      });
+      this.appendElement(self, "math-center", (self) => {
+        self.setAttribute("class", "cpar");
+        this.appendElement(self, "math-o", (self) => {
+          this.appendTextNode(self, centerSymbol);
+        });
+      });
+      this.appendElement(self, "math-cont", (self) => {
+        rightElement = self;
+      });
+      this.appendElement(self, "math-right", (self) => {
+        this.appendElement(self, "math-o", (self) => {
+          this.appendTextNode(self, rightSymbol);
+        });
+      });
+    });
+    this.applyOptions(self, options);
+    callback?.(leftElement!, rightElement!);
+    return self;
   }
 
   private inheritRole(targetElement: Element, sourceElement: Element): void {
