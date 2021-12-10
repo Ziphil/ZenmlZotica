@@ -18,9 +18,21 @@ export class ZoticaData {
     return this.json.leaf.includes(tagName);
   }
 
+  public isFunctionKind(kind: string): boolean {
+    return this.json.function.includes(kind);
+  }
+
+  public isIdentifierKind(kind: string): boolean {
+    return this.json.identifier[kind] !== undefined;
+  }
+
   public getIdentifierChar(kind: string): string | null {
     let char = this.json.identifier[kind] ?? null;
     return char;
+  }
+
+  public isOperatorKind(kind: string): boolean {
+    return this.json.operator[kind] !== undefined;
   }
 
   public getOperatorSymbol(kind: string): {symbol: string, types: Array<ZoticaOperatorType | string>} | null {

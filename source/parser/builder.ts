@@ -326,6 +326,15 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
     return self;
   }
 
+  public buildText(content: string, options: ZoticaCommonOptions): DocumentFragment {
+    let self = this.createDocumentFragment();
+    this.appendElement(self, "math-text", (self) => {
+      this.appendTextNode(self, content)
+    });
+    this.applyOptions(self, options);
+    return self;
+  }
+
   private inheritRole(targetElement: Element, sourceElement: Element): void {
     let sourceChildren = sourceElement.childNodes;
     if (sourceChildren.length === 1) {

@@ -77,6 +77,21 @@ export class ZoticaParser extends ZenmlParser {
     } else if (tagName === "op") {
       let text = childrenArgs[0]?.[0]?.textContent ?? "";
       nodes.push(this.builder.buildIdentifier(text, ["fun", "rm"], options));
+    } else if (ZOTICA_DATA.isIdentifierKind(tagName)) {
+      let char = ZOTICA_DATA.getIdentifierChar(tagName)!;
+      nodes.push(this.builder.buildIdentifier(char, [], options));
+    } else if (ZOTICA_DATA.isFunctionKind(tagName)) {
+      nodes.push(this.builder.buildIdentifier(tagName, ["fun", "rm"], options));
+    } else if (tagName === "o") {
+      let types = attributes.get("t")?.split(/\s*,\s*/) ?? ["ord"];
+      let symbol = childrenArgs[0]?.[0]?.textContent ?? "";
+      nodes.push(this.builder.buildOperator(symbol, types, options));
+    } else if (ZOTICA_DATA.isOperatorKind(tagName)) {
+      let {symbol, types} = ZOTICA_DATA.getOperatorSymbol(tagName)!;
+      nodes.push(this.builder.buildOperator(symbol, types, options));
+    } else if (tagName === "text") {
+      let content = childrenArgs[0]?.[0]?.textContent ?? "";
+      nodes.push(this.builder.buildText(content, options)); 
     }
     return nodes;
   }
