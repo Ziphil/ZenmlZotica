@@ -48,7 +48,7 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
     return self;
   }
 
-  public buildIdentifier(content: string, types: Array<ZoticaIdentifierType>, options: ZoticaCommonOptions): NodeLikeOf<Document> {
+  public buildIdentifier(content: string, types: Array<ZoticaIdentifierType | string>, options: ZoticaCommonOptions): NodeLikeOf<Document> {
     let self = this.createDocumentFragment();
     let element = null as Element | null;
     let fontType = (types.includes("alt")) ? "math" : "main" as ZoticaFontType;
@@ -63,7 +63,7 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
     return self;
   }
 
-  public buildOperator(symbol: string, types: Array<ZoticaOperatorType>, options: ZoticaCommonOptions): NodeLikeOf<Document> {
+  public buildOperator(symbol: string, types: Array<ZoticaOperatorType | string>, options: ZoticaCommonOptions): NodeLikeOf<Document> {
     let self = this.createDocumentFragment();
     let element = null as Element | null;
     let fontType = (types.includes("txt")) ? "main" : "math" as ZoticaFontType;

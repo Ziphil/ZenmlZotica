@@ -23,15 +23,15 @@ export class ZoticaData {
     return char;
   }
 
-  public getOperatorSymbol(kind: string): {symbol: string, types: Array<ZoticaOperatorType>} | null {
+  public getOperatorSymbol(kind: string): {symbol: string, types: Array<ZoticaOperatorType | string>} | null {
     let symbolSpec = this.json.operator[kind] ?? null;
-    return symbolSpec as any;
+    return symbolSpec;
   }
 
-  public getOperatorSymbolByChar(char: string): {symbol: string, types: Array<ZoticaOperatorType>} | null {
+  public getOperatorSymbolByChar(char: string): {symbol: string, types: Array<ZoticaOperatorType | string>} | null {
     let operatorEntries = Object.entries(this.json.operator);
     let symbol = operatorEntries.find(([, symbolSpec]) => char === symbolSpec?.symbol)?.[1] ?? null;
-    return symbol as any;
+    return symbol;
   }
 
   public getReplacement(char: string): string | null {
