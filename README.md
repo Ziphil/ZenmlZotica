@@ -27,3 +27,7 @@ Install via [npm](https://www.npmjs.com/package/@zenml/zotica).
 ```
 npm i @zenml/zotica
 ```
+
+## Implementaion notes (for my future self)
+`builder.ts` と `data.ts` の型定義部分に `| string` が書かれている箇所がいくつかありますが、これは厳密な型チェックの実装を後回しにしてとりあえずコンパイルが通るようにするための暫定的な記述です。
+将来的には、厳密な型チェックを実装するなり、設計を見直すなりして、`| string` は削除すべきです。
