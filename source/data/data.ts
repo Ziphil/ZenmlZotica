@@ -46,6 +46,11 @@ export class ZoticaData {
     return symbol;
   }
 
+  public getRadicalSymbol(level: number): string | null {
+    let symbol = this.json.radical[level] ?? null;
+    return symbol;
+  }
+
   public isFenceKind(kind: string): boolean {
     return this.json.fence[kind] !== undefined;
   }

@@ -22,6 +22,7 @@ export type ZoticaStrutType = "upper" | "dupper" | "lower" | "dlower" | "dfull";
 export type ZoticaFontType = "main" | "math";
 
 export type ZoticaSubsuperCallback = (baseElement: Element, subElement: Element, superElement: Element, leftSubElement?: Element, leftSuperElement?: Element) => void;
+export type ZoticaFractionCallback = (numeratorElement: Element, denominatorElement: Element) => void;
 export type ZoticaRadicalCallback = (contentElement: Element, indexElement: Element) => void;
 export type ZoticaFenceCallback = (contentElement: Element) => void;
 export type ZoticaSetCallback = (leftElement: Element, rightElement: Element) => void;
@@ -199,7 +200,7 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
     }
   }
 
-  public buildFraction(options: ZoticaCommonOptions, callback?: any): DocumentFragment {
+  public buildFraction(options: ZoticaCommonOptions, callback?: ZoticaFractionCallback): DocumentFragment {
     let self = this.createDocumentFragment();
     let numeratorElement = null as Element | null;
     let denominatorElement = null as Element | null;

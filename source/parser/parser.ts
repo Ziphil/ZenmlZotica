@@ -61,6 +61,10 @@ export class ZoticaParser extends ZenmlParser {
       let types = attributes.get("t")?.split(/\s*,\s*/) ?? [];
       let content = childrenArgs[0]?.[0]?.textContent ?? "";
       nodes.push(this.builder.buildIdentifier(content, types, options));
+    } else if (tagName === "o") {
+      let types = attributes.get("t")?.split(/\s*,\s*/) ?? ["ord"];
+      let symbol = childrenArgs[0]?.[0]?.textContent ?? "";
+      nodes.push(this.builder.buildOperator(symbol, types, options));
     } else if (tagName === "bf") {
       let content = childrenArgs[0]?.[0]?.textContent ?? "";
       nodes.push(this.builder.buildIdentifier(content, ["bf"], options));
@@ -85,16 +89,25 @@ export class ZoticaParser extends ZenmlParser {
       nodes.push(this.builder.buildIdentifier(char, [], options));
     } else if (ZOTICA_DATA.isFunctionKind(tagName)) {
       nodes.push(this.builder.buildIdentifier(tagName, ["fun", "rm"], options));
-    } else if (tagName === "o") {
-      let types = attributes.get("t")?.split(/\s*,\s*/) ?? ["ord"];
-      let symbol = childrenArgs[0]?.[0]?.textContent ?? "";
-      nodes.push(this.builder.buildOperator(symbol, types, options));
     } else if (ZOTICA_DATA.isOperatorKind(tagName)) {
       let {symbol, types} = ZOTICA_DATA.getOperatorSymbolSpec(tagName)!;
       nodes.push(this.builder.buildOperator(symbol, types, options));
     } else if (tagName === "text") {
       let content = childrenArgs[0]?.[0]?.textContent ?? "";
       nodes.push(this.builder.buildText(content, options));
+    } else if (tagName === "frac") {
+      nodes.push(this.builder.buildFraction(options, (numeratorSelf, denominatorSelf) => {
+        appendChildren(numeratorSelf, childrenArgs[0] ?? []);
+        appendChildren(denominatorSelf, childrenArgs[1] ?? []);
+      }));
+    } else if (tagName === "sqrt") {
+      let level = parseInt(attributes.get("s") ?? "0");
+      let symbol = ZOTICA_DATA.getRadicalSymbol(level) ?? "";
+      let modify = !attributes.has("s");
+      nodes.push(this.builder.buildRadical(symbol, modify, options, (contentSelf, indexSelf) => {
+        appendChildren(contentSelf, childrenArgs[0] ?? []);
+        appendChildren(indexSelf, childrenArgs[1] ?? []);
+      }));
     } else if (tagName === "fence") {
       let level = parseInt(attributes.get("s") ?? "0");
       let leftKind = attributes.get("l") ?? "paren";
