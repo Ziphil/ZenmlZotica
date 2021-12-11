@@ -1,6 +1,6 @@
 node_modules
 dist
-tdist
+out
 coverage
 test
 *.code-workspace
