@@ -21,7 +21,8 @@ export type ZoticaOperatorType = ZoticaRole | "txt" | "sml";
 export type ZoticaStrutType = "upper" | "dupper" | "lower" | "dlower" | "dfull";
 export type ZoticaFontType = "main" | "math";
 
-export type ZoticaSubsuperCallback = (baseElement: Element, subElement: Element, superElement: Element, leftSubElement?: Element, leftSuperElement?: Element) => void;
+export type ZoticaSubsuperCallback = (baseElement: Element, subElement: Element, superElement: Element, leftSubElement: Element, leftSuperElement: Element) => void;
+export type ZoticaUnderoverCallback = (baseElement: Element, underElement: Element, overElement: Element) => void;
 export type ZoticaFractionCallback = (numeratorElement: Element, denominatorElement: Element) => void;
 export type ZoticaRadicalCallback = (contentElement: Element, indexElement: Element) => void;
 export type ZoticaFenceCallback = (contentElement: Element) => void;
@@ -149,7 +150,7 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
     return self;
   }
 
-  private modifySubsuper(baseElement: Element, subElement: Element, superElement: Element, leftSubElement?: Element, leftSuperElement?: Element): void {
+  private modifySubsuper(baseElement: Element, subElement: Element, superElement: Element, leftSubElement: Element, leftSuperElement: Element): void {
     if (subElement.childNodes.length <= 0) {
       subElement.parentNode!.removeChild(subElement);
     }
@@ -164,7 +165,7 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
     }
   }
 
-  public buildUnderover(options: ZoticaCommonOptions, callback?: any): DocumentFragment {
+  public buildUnderover(options: ZoticaCommonOptions, callback?: ZoticaUnderoverCallback): DocumentFragment {
     let self = this.createDocumentFragment();
     let baseElement = null as Element | null;
     let underElement = null as Element | null;

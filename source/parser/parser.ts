@@ -95,6 +95,46 @@ export class ZoticaParser extends ZenmlParser {
     } else if (tagName === "text") {
       let content = childrenArgs[0]?.[0]?.textContent ?? "";
       nodes.push(this.builder.buildText(content, options));
+    } else if (tagName === "multi") {
+      nodes.push(this.builder.buildSubsuper(options, (baseSelf, subSelf, superSelf, leftSubSelf, leftSuperSelf) => {
+        appendChildren(baseSelf, childrenArgs[0] ?? []);
+        appendChildren(subSelf, childrenArgs[1] ?? []);
+        appendChildren(superSelf, childrenArgs[2] ?? []);
+        appendChildren(leftSubSelf, childrenArgs[3] ?? []);
+        appendChildren(leftSuperSelf, childrenArgs[4] ?? []);
+      }));
+    } else if (tagName === "sbsp") {
+      nodes.push(this.builder.buildSubsuper(options, (baseSelf, subSelf, superSelf, leftSubSelf, leftSuperSelf) => {
+        appendChildren(baseSelf, childrenArgs[0] ?? []);
+        appendChildren(subSelf, childrenArgs[1] ?? []);
+        appendChildren(superSelf, childrenArgs[2] ?? []);
+      }));
+    } else if (tagName === "sb") {
+      nodes.push(this.builder.buildSubsuper(options, (baseSelf, subSelf, superSelf, leftSubSelf, leftSuperSelf) => {
+        appendChildren(baseSelf, childrenArgs[0] ?? []);
+        appendChildren(subSelf, childrenArgs[1] ?? []);
+      }));
+    } else if (tagName === "sp") {
+      nodes.push(this.builder.buildSubsuper(options, (baseSelf, subSelf, superSelf, leftSubSelf, leftSuperSelf) => {
+        appendChildren(baseSelf, childrenArgs[0] ?? []);
+        appendChildren(superSelf, childrenArgs[1] ?? []);
+      }));
+    } else if (tagName === "unov") {
+      nodes.push(this.builder.buildUnderover(options, (baseSelf, underSelf, overSelf) => {
+        appendChildren(baseSelf, childrenArgs[0] ?? []);
+        appendChildren(underSelf, childrenArgs[1] ?? []);
+        appendChildren(overSelf, childrenArgs[2] ?? []);
+      }));
+    } else if (tagName === "un") {
+      nodes.push(this.builder.buildUnderover(options, (baseSelf, underSelf, overSelf) => {
+        appendChildren(baseSelf, childrenArgs[0] ?? []);
+        appendChildren(underSelf, childrenArgs[1] ?? []);
+      }));
+    } else if (tagName === "ov") {
+      nodes.push(this.builder.buildUnderover(options, (baseSelf, underSelf, overSelf) => {
+        appendChildren(baseSelf, childrenArgs[0] ?? []);
+        appendChildren(overSelf, childrenArgs[1] ?? []);
+      }));
     } else if (tagName === "frac") {
       nodes.push(this.builder.buildFraction(options, (numeratorSelf, denominatorSelf) => {
         appendChildren(numeratorSelf, childrenArgs[0] ?? []);
