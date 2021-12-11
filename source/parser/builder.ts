@@ -543,7 +543,7 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
         let sourceRole = sourceClassNames.find((className) => ZOTICA_ROLES.includes(className));
         if (sourceRole !== undefined) {
           let targetClasses = targetElement.getAttribute("class")?.split(" ") ?? [];
-          if (targetClasses.some((className) => ZOTICA_ROLES.includes(className))) {
+          if (targetClasses.every((className) => !ZOTICA_ROLES.includes(className))) {
             targetElement.setAttribute("class", [...targetClasses, sourceRole].join(" "));
           }
         }
