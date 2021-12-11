@@ -134,12 +134,12 @@ export type ZoticaOperatorSymbolSpec = {symbol: string, types: Array<ZoticaOpera
 export type ZoticaDataJson = {
   leaf: Array<string>,
   replacement: {[C in string]?: string},
-  fence: {[K in string]?: {left: ZoticaDataFenceJson, right: ZoticaDataFenceJson}},
+  fence: {[K in string]?: {left: ZoticaFenceDataJson, right: ZoticaFenceDataJson}},
   integral: {[K in string]?: {inl: string, lrg: string}},
   sum: {[K in string]?: {inl: string, lrg: string}},
   radical: {[L in number]?: string | undefined} & {height: Array<number>},
   accent: {[K in string]?: {un: string | null, ov: string | null}},
-  wide: {[K in string]?: {un: ZoticaDataWideJson | null, ov: ZoticaDataWideJson | null}},
+  wide: {[K in string]?: {un: ZoticaWideDataJson | null, ov: ZoticaWideDataJson | null}},
   function: Array<string>,
   identifier: {[K in string]?: string},
   operator: {[K in string]?: {symbol: string, types: Array<string>}},
@@ -147,7 +147,7 @@ export type ZoticaDataJson = {
   alternative: {[K in string]?: {[C in string]?: string}},
   greek: {[C in string]?: string}
 };
-type ZoticaDataFenceJson = {[L in number]?: string} & {start?: string, bar?: string, middle?: string, end?: string};
-type ZoticaDataWideJson = ({[L in number]?: string} & {start?: string, bar?: string, middle?: string, end?: string, width?: Array<number>});
+type ZoticaFenceDataJson = {[L in number]?: string} & {start?: string, bar?: string, middle?: string, end?: string};
+type ZoticaWideDataJson = ({[L in number]?: string} & {start?: string, bar?: string, middle?: string, end?: string, width?: Array<number>});
 
 export const ZOTICA_DATA = new ZoticaData(ZOTICA_DATA_JSON);
