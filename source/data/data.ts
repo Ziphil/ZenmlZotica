@@ -83,6 +83,34 @@ export class ZoticaData {
     return symbol;
   }
 
+  public isAccentKind(kind: string): boolean {
+    return this.json.accent[kind] !== undefined;
+  }
+
+  public getUnderAccentSymbol(kind: string): string | null {
+    let symbol = this.json.accent[kind]?.un ?? null;
+    return symbol;
+  }
+
+  public getOverAccentSymbol(kind: string): string | null {
+    let symbol = this.json.accent[kind]?.ov ?? null;
+    return symbol;
+  }
+
+  public isWideKind(kind: string): boolean {
+    return this.json.wide[kind] !== undefined;
+  }
+
+  public getUnderWideSymbol(kind: string, level: number): string | null {
+    let symbol = this.json.wide[kind]?.un?.[level] ?? null;
+    return symbol;
+  }
+
+  public getOverWideSymbol(kind: string, level: number): string | null {
+    let symbol = this.json.wide[kind]?.ov?.[level] ?? null;
+    return symbol;
+  }
+
   public getReplacement(char: string): string | null {
     let replacement = this.json.replacement[char] ?? null;
     return replacement;
@@ -120,6 +148,6 @@ export type ZoticaDataJson = {
   greek: {[C in string]?: string}
 };
 type ZoticaDataFenceJson = {[L in number]?: string} & {start?: string, bar?: string, middle?: string, end?: string};
-type ZoticaDataWideJson = ({[L in number]?: string} & {0: string} & {start?: string, bar?: string, middle?: string, end?: string, width: Array<number>}) | {start?: string, bar?: string, end?: string};
+type ZoticaDataWideJson = ({[L in number]?: string} & {start?: string, bar?: string, middle?: string, end?: string, width?: Array<number>});
 
 export const ZOTICA_DATA = new ZoticaData(ZOTICA_DATA_JSON);

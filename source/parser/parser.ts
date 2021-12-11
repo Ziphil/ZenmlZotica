@@ -210,6 +210,36 @@ export class ZoticaParser extends ZenmlParser {
       nodes.push(this.builder.buildFence(tagName, tagName, leftSymbol, rightSymbol, modify, options, (contentSelf) => {
         appendChildren(contentSelf, childrenArgs[0] ?? []);
       }));
+    } else if (tagName === "accent") {
+      let kind = attributes.get("k") ?? "tilde";
+      let underSymbol = ZOTICA_DATA.getUnderAccentSymbol(kind);
+      let overSymbol = ZOTICA_DATA.getOverAccentSymbol(kind);
+      nodes.push(this.builder.buildAccent(underSymbol, overSymbol, options, (baseSelf) => {
+        appendChildren(baseSelf, childrenArgs[0] ?? []);
+      }));
+    } else if (ZOTICA_DATA.isAccentKind(tagName)) {
+      let underSymbol = ZOTICA_DATA.getUnderAccentSymbol(tagName)!;
+      let overSymbol = ZOTICA_DATA.getOverAccentSymbol(tagName)!;
+      nodes.push(this.builder.buildAccent(underSymbol, overSymbol, options, (baseSelf) => {
+        appendChildren(baseSelf, childrenArgs[0] ?? []);
+      }));
+    } else if (tagName === "wide") {
+      let kind = attributes.get("k") ?? "widetilde";
+      let level = parseInt(attributes.get("s") ?? "0");
+      let underSymbol = ZOTICA_DATA.getUnderWideSymbol(kind, level);
+      let overSymbol = ZOTICA_DATA.getOverWideSymbol(kind, level);
+      let modify = !attributes.has("s");
+      nodes.push(this.builder.buildWide(kind, underSymbol, overSymbol, modify, options, (baseSelf) => {
+        appendChildren(baseSelf, childrenArgs[0] ?? []);
+      }));
+    } else if (ZOTICA_DATA.isWideKind(tagName)) {
+      let level = parseInt(attributes.get("s") ?? "0");
+      let underSymbol = ZOTICA_DATA.getUnderWideSymbol(tagName, level);
+      let overSymbol = ZOTICA_DATA.getOverWideSymbol(tagName, level);
+      let modify = !attributes.has("s");
+      nodes.push(this.builder.buildWide(tagName, underSymbol, overSymbol, modify, options, (baseSelf) => {
+        appendChildren(baseSelf, childrenArgs[0] ?? []);
+      }));
     }
     return nodes;
   }

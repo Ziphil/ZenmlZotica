@@ -1,8 +1,7 @@
 //
 
 import {
-  BaseBuilder,
-  NodeLikeOf
+  BaseBuilder
 } from "@zenml/zenml";
 import {
   ZoticaFont
@@ -30,6 +29,8 @@ export type ZoticaIntegralCallback = (subElement: Element, superElement: Element
 export type ZoticaSumCallback = (underElement: Element, overElement: Element) => void;
 export type ZoticaFenceCallback = (contentElement: Element) => void;
 export type ZoticaSetCallback = (leftElement: Element, rightElement: Element) => void;
+export type ZoticaAccentCallback = (baseElement: Element) => void;
+export type ZoticaWideCallback = (baseElement: Element) => void;
 
 export type ZoticaCommonOptions = {
   role?: ZoticaRole,
@@ -425,6 +426,111 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
     });
     this.applyOptions(self, options);
     callback?.(leftElement!, rightElement!);
+    return self;
+  }
+
+  public buildAccent(underSymbol: string | null, overSymbol: string | null, options: ZoticaCommonOptions, callback?: ZoticaAccentCallback): DocumentFragment {
+    let self = this.document.createDocumentFragment();
+    let baseElement = null as Element | null;
+    let underElement = null as Element | null;
+    let overElement = null as Element | null;
+    let mainElement = null as Element | null;
+    this.appendElement(self, "math-underover", (self) => {
+      mainElement = self;
+      self.setAttribute("class", "acc");
+      this.appendElement(self, "math-over", (self) => {
+        overElement = self;
+        if (overSymbol !== null) {
+          this.appendElement(self, "math-o", (self) => {
+            self.setAttribute("class", "acc");
+            this.appendTextNode(self, overSymbol);
+          });
+        }
+      });
+      this.appendElement(self, "math-basewrap", (self) => {
+        this.appendElement(self, "math-base", (self) => {
+          baseElement = self;
+        });
+        this.appendElement(self, "math-under", (self) => {
+          underElement = self;
+          if (underSymbol !== null) {
+            this.appendElement(self, "math-o", (self) => {
+              self.setAttribute("class", "acc");
+              this.appendTextNode(self, underSymbol);
+            });
+          }
+        });
+      });
+    });
+    this.applyOptions(self, options);
+    callback?.(baseElement!);
+    this.inheritRole(mainElement!, baseElement!);
+    this.modifyUnderover(underElement!, overElement!);
+    this.modifyAccent(baseElement!, underElement!, overElement!);
+    return self;
+  }
+
+  private modifyAccent(baseElement: Element, underElement: Element, overElement: Element): void {
+    let children = baseElement.childNodes;
+    if (children.length === 1) {
+      let child = children.item(0);
+      if (isElement(child)) {
+        let classNames = child.getAttribute("class")?.split(" ") ?? [];
+        if (child.tagName === "math-i" && classNames.every((className) => className !== "rm" && className !== "alt")) {
+          let underSymbolElement = underElement.childNodes.item(0);
+          let overSymbolElement = overElement.childNodes.item(0);
+          if (underSymbolElement && isElement(underSymbolElement)) {
+            underSymbolElement.setAttribute("class", (underSymbolElement.getAttribute("class") ?? "") + " it");
+          }
+          if (overSymbolElement && isElement(overSymbolElement)) {
+            overSymbolElement.setAttribute("class", (overSymbolElement.getAttribute("class") ?? "") + " it");
+          }
+        }
+      }
+    }
+  }
+
+  public buildWide(kind: string, underSymbol: string | null, overSymbol: string | null, modify: boolean, options: ZoticaCommonOptions, callback?: ZoticaWideCallback): DocumentFragment {
+    let self = this.createDocumentFragment();
+    let baseElement = null as Element | null;
+    let underElement = null as Element | null;
+    let overElement = null as Element | null;
+    let mainElement = null as Element | null;
+    this.appendElement(self, "math-underover", (self) => {
+      mainElement = self;
+      self.setAttribute("class", "wid");
+      if (modify) {
+        self.setAttribute("class", (self.getAttribute("class") ?? "") + " mod");
+        self.setAttribute("data-kind", kind);
+      }
+      this.appendElement(self, "math-over", (self) => {
+        overElement = self;
+        if (overSymbol !== null) {
+          this.appendElement(self, "math-o", (self) => {
+            self.setAttribute("class", "wid");
+            this.appendTextNode(self, overSymbol);
+          });
+        }
+      });
+      this.appendElement(self, "math-basewrap", (self) => {
+        this.appendElement(self, "math-base", (self) => {
+          baseElement = self;
+        });
+        this.appendElement(self, "math-under", (self) => {
+          underElement = self;
+          if (underSymbol !== null) {
+            this.appendElement(self, "math-o", (self) => {
+              self.setAttribute("class", "wid");
+              this.appendTextNode(self, underSymbol);
+            });
+          }
+        });
+      });
+    });
+    this.applyOptions(self, options);
+    callback?.(baseElement!);
+    this.inheritRole(mainElement!, baseElement!);
+    this.modifyUnderover(underElement!, overElement!);
     return self;
   }
 
