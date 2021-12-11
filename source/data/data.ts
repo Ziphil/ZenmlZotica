@@ -51,6 +51,24 @@ export class ZoticaData {
     return symbol;
   }
 
+  public isIntegralKind(kind: string): boolean {
+    return this.json.integral[kind] !== undefined;
+  }
+
+  public getIntegralSymbol(kind: string, size: "inl" | "lrg"): string | null {
+    let symbol = this.json.integral[kind]?.[size] ?? null;
+    return symbol;
+  }
+
+  public isSumKind(kind: string): boolean {
+    return this.json.sum[kind] !== undefined;
+  }
+
+  public getSumSymbol(kind: string, size: "inl" | "lrg"): string | null {
+    let symbol = this.json.sum[kind]?.[size] ?? null;
+    return symbol;
+  }
+
   public isFenceKind(kind: string): boolean {
     return this.json.fence[kind] !== undefined;
   }

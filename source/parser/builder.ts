@@ -20,11 +20,14 @@ export type ZoticaIdentifierType = "bf" | "rm" | "tt" | "fun" | "alt";
 export type ZoticaOperatorType = ZoticaRole | "txt" | "sml";
 export type ZoticaStrutType = "upper" | "dupper" | "lower" | "dlower" | "dfull";
 export type ZoticaFontType = "main" | "math";
+export type ZoticaSymbolSize = "inl" | "lrg";
 
 export type ZoticaSubsuperCallback = (baseElement: Element, subElement: Element, superElement: Element, leftSubElement: Element, leftSuperElement: Element) => void;
 export type ZoticaUnderoverCallback = (baseElement: Element, underElement: Element, overElement: Element) => void;
 export type ZoticaFractionCallback = (numeratorElement: Element, denominatorElement: Element) => void;
 export type ZoticaRadicalCallback = (contentElement: Element, indexElement: Element) => void;
+export type ZoticaIntegralCallback = (subElement: Element, superElement: Element) => void;
+export type ZoticaSumCallback = (underElement: Element, overElement: Element) => void;
 export type ZoticaFenceCallback = (contentElement: Element) => void;
 export type ZoticaSetCallback = (leftElement: Element, rightElement: Element) => void;
 
@@ -81,6 +84,15 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
     });
     this.applyOptions(self, options);
     this.modifyVerticalMargins(element!, fontType, options);
+    return self;
+  }
+
+  public buildText(content: string, options: ZoticaCommonOptions): DocumentFragment {
+    let self = this.createDocumentFragment();
+    this.appendElement(self, "math-text", (self) => {
+      this.appendTextNode(self, content);
+    });
+    this.applyOptions(self, options);
     return self;
   }
 
@@ -150,7 +162,7 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
     return self;
   }
 
-  private modifySubsuper(baseElement: Element, subElement: Element, superElement: Element, leftSubElement: Element, leftSuperElement: Element): void {
+  private modifySubsuper(baseElement: Element, subElement: Element, superElement: Element, leftSubElement?: Element, leftSuperElement?: Element): void {
     if (subElement.childNodes.length <= 0) {
       subElement.parentNode!.removeChild(subElement);
     }
@@ -262,6 +274,91 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
     }
   }
 
+  public buildIntegral(symbol: string, size: ZoticaSymbolSize, options: ZoticaCommonOptions, callback?: ZoticaIntegralCallback): DocumentFragment {
+    let self = this.createDocumentFragment();
+    let baseElement = null as Element | null;
+    let subElement = null as Element | null;
+    let superElement = null as Element | null;
+    this.appendElement(self, "math-subsup", (self) => {
+      self.setAttribute("class", "int");
+      if (size !== "lrg") {
+        self.setAttribute("class", (self.getAttribute("class") ?? "") + ` ${size}`);
+      }
+      this.appendElement(self, "math-base", (self) => {
+        baseElement = self;
+        this.appendElement(self, "math-o", (self) => {
+          self.setAttribute("class", "int");
+          if (size !== "lrg") {
+            self.setAttribute("class", (self.getAttribute("class") ?? "") + ` ${size}`);
+          }
+          this.appendTextNode(self, symbol);
+        });
+      });
+      this.appendElement(self, "math-sub", (self) => {
+        subElement = self;
+      });
+      this.appendElement(self, "math-sup", (self) => {
+        superElement = self;
+      });
+    });
+    this.applyOptions(self, options);
+    callback?.(subElement!, superElement!);
+    this.modifySubsuper(baseElement!, subElement!, superElement!);
+    return self;
+  }
+
+  public buildSum(symbol: string, size: ZoticaSymbolSize, options: ZoticaCommonOptions, callback?: ZoticaSumCallback): DocumentFragment {
+    let self = this.createDocumentFragment();
+    if (size === "lrg") {
+      let underElement = null as Element | null;
+      let overElement = null as Element | null;
+      this.appendElement(self, "math-underover", (self) => {
+        self.setAttribute("class", "sum");
+        this.appendElement(self, "math-over", (self) => {
+          overElement = self;
+        });
+        this.appendElement(self, "math-basewrap", (self) => {
+          this.appendElement(self, "math-base", (self) => {
+            this.appendElement(self, "math-o", (self) => {
+              self.setAttribute("class", "sum");
+              this.appendTextNode(self, symbol);
+            });
+          });
+          this.appendElement(self, "math-under", (self) => {
+            underElement = self;
+          });
+        });
+      });
+      this.applyOptions(self, options);
+      callback?.(underElement!, overElement!);
+      this.modifyUnderover(underElement!, overElement!);
+    } else {
+      let baseElement = null as Element | null;
+      let subElement = null as Element | null;
+      let superElement = null as Element | null;
+      this.appendElement(self, "math-subsup", (self) => {
+        self.setAttribute("class", "sum inl");
+        this.appendElement(self, "math-base", (self) => {
+          baseElement = self;
+          this.appendElement(self, "math-o", (self) => {
+            self.setAttribute("class", "sum inl");
+            this.appendTextNode(self, symbol);
+          });
+        });
+        this.appendElement(self, "math-sub", (self) => {
+          subElement = self;
+        });
+        this.appendElement(self, "math-sup", (self) => {
+          superElement = self;
+        });
+      });
+      this.applyOptions(self, options);
+      callback?.(subElement!, superElement!);
+      this.modifySubsuper(baseElement!, subElement!, superElement!);
+    }
+    return self;
+  }
+
   public buildFence(leftKind: string, rightKind: string, leftSymbol: string, rightSymbol: string, modify: boolean, options: ZoticaCommonOptions, callback?: ZoticaFenceCallback): DocumentFragment {
     let self = this.createDocumentFragment();
     let contentElement = null as Element | null;
@@ -328,15 +425,6 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
     });
     this.applyOptions(self, options);
     callback?.(leftElement!, rightElement!);
-    return self;
-  }
-
-  public buildText(content: string, options: ZoticaCommonOptions): DocumentFragment {
-    let self = this.createDocumentFragment();
-    this.appendElement(self, "math-text", (self) => {
-      this.appendTextNode(self, content);
-    });
-    this.applyOptions(self, options);
     return self;
   }
 

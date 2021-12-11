@@ -33,7 +33,8 @@ import {
 import {
   ZOTICA_ROLES,
   ZoticaBuilder,
-  ZoticaRole
+  ZoticaRole,
+  ZoticaSymbolSize
 } from "./builder";
 
 
@@ -147,6 +148,36 @@ export class ZoticaParser extends ZenmlParser {
       nodes.push(this.builder.buildRadical(symbol, modify, options, (contentSelf, indexSelf) => {
         appendChildren(contentSelf, childrenArgs[0] ?? []);
         appendChildren(indexSelf, childrenArgs[1] ?? []);
+      }));
+    } else if (tagName === "intlike") {
+      let kind = attributes.get("k") ?? "int";
+      let size = (attributes.has("in")) ? "inl" : "lrg" as ZoticaSymbolSize;
+      let symbol = ZOTICA_DATA.getIntegralSymbol(kind, size) ?? "";
+      nodes.push(this.builder.buildIntegral(symbol, size, options, (subSelf, superSelf) => {
+        appendChildren(subSelf, childrenArgs[0] ?? []);
+        appendChildren(superSelf, childrenArgs[1] ?? []);
+      }));
+    } else if (ZOTICA_DATA.isIntegralKind(tagName)) {
+      let size = (attributes.has("in")) ? "inl" : "lrg" as ZoticaSymbolSize;
+      let symbol = ZOTICA_DATA.getIntegralSymbol(tagName, size) ?? "";
+      nodes.push(this.builder.buildIntegral(symbol, size, options, (subSelf, superSelf) => {
+        appendChildren(subSelf, childrenArgs[0] ?? []);
+        appendChildren(superSelf, childrenArgs[1] ?? []);
+      }));
+    } else if (tagName === "sumlike") {
+      let kind = attributes.get("k") ?? "sum";
+      let size = (attributes.has("in")) ? "inl" : "lrg" as ZoticaSymbolSize;
+      let symbol = ZOTICA_DATA.getSumSymbol(kind, size) ?? "";
+      nodes.push(this.builder.buildSum(symbol, size, options, (underSelf, overSelf) => {
+        appendChildren(underSelf, childrenArgs[0] ?? []);
+        appendChildren(overSelf, childrenArgs[1] ?? []);
+      }));
+    } else if (ZOTICA_DATA.isSumKind(tagName)) {
+      let size = (attributes.has("in")) ? "inl" : "lrg" as ZoticaSymbolSize;
+      let symbol = ZOTICA_DATA.getSumSymbol(tagName, size) ?? "";
+      nodes.push(this.builder.buildSum(symbol, size, options, (underSelf, overSelf) => {
+        appendChildren(underSelf, childrenArgs[0] ?? []);
+        appendChildren(overSelf, childrenArgs[1] ?? []);
       }));
     } else if (tagName === "fence") {
       let level = parseInt(attributes.get("s") ?? "0");
