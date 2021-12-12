@@ -218,8 +218,8 @@ export class ZoticaParser extends ZenmlParser {
         appendChildren(baseSelf, childrenArgs[0] ?? []);
       }));
     } else if (ZOTICA_DATA.isAccentKind(tagName)) {
-      let underSymbol = ZOTICA_DATA.getUnderAccentSymbol(tagName)!;
-      let overSymbol = ZOTICA_DATA.getOverAccentSymbol(tagName)!;
+      let underSymbol = ZOTICA_DATA.getUnderAccentSymbol(tagName);
+      let overSymbol = ZOTICA_DATA.getOverAccentSymbol(tagName);
       nodes.push(this.builder.buildAccent(underSymbol, overSymbol, options, (baseSelf) => {
         appendChildren(baseSelf, childrenArgs[0] ?? []);
       }));
