@@ -306,14 +306,14 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
     this.appendElement(self, "math-subsup", (self) => {
       self.setAttribute("class", "int");
       if (size !== "lrg") {
-        self.setAttribute("class", (self.getAttribute("class") ?? "") + ` ${size}`);
+        addAttribute(self, "class", ` ${size}`);
       }
       this.appendElement(self, "math-base", (self) => {
         baseElement = self;
         this.appendElement(self, "math-o", (self) => {
           self.setAttribute("class", "int");
           if (size !== "lrg") {
-            self.setAttribute("class", (self.getAttribute("class") ?? "") + ` ${size}`);
+            addAttribute(self, "class", ` ${size}`);
           }
           this.appendTextNode(self, symbol);
         });
@@ -389,7 +389,7 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
     this.appendElement(self, "math-fence", (self) => {
       self.setAttribute("class", "par");
       if (modify) {
-        self.setAttribute("class", (self.getAttribute("class") ?? "") + " mod");
+        addAttribute(self, "class", " mod");
         self.setAttribute("data-left", leftKind);
         self.setAttribute("data-right", rightKind);
       }
@@ -419,7 +419,7 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
     this.appendElement(self, "math-fence", (self) => {
       self.setAttribute("class", "par");
       if (modify) {
-        self.setAttribute("class", (self.getAttribute("class") ?? "") + " mod");
+        addAttribute(self, "class", " mod");
         self.setAttribute("data-left", leftKind);
         self.setAttribute("data-right", rightKind);
         self.setAttribute("data-center", centerKind);
@@ -503,10 +503,10 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
           let underSymbolElement = underElement.childNodes.item(0);
           let overSymbolElement = overElement.childNodes.item(0);
           if (underSymbolElement && isElement(underSymbolElement)) {
-            underSymbolElement.setAttribute("class", (underSymbolElement.getAttribute("class") ?? "") + " it");
+            addAttribute(underSymbolElement, "class", " it");
           }
           if (overSymbolElement && isElement(overSymbolElement)) {
-            overSymbolElement.setAttribute("class", (overSymbolElement.getAttribute("class") ?? "") + " it");
+            addAttribute(overSymbolElement, "class", " it");
           }
         }
       }
@@ -523,7 +523,7 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
       mainElement = self;
       self.setAttribute("class", "wid");
       if (modify) {
-        self.setAttribute("class", (self.getAttribute("class") ?? "") + " mod");
+        addAttribute(self, "class", " mod");
         self.setAttribute("data-kind", kind);
       }
       this.appendElement(self, "math-over", (self) => {
@@ -588,7 +588,7 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
           }
           addAttribute(child, "class", ` ${extraClass}`);
         }
-        child.setAttribute("style", (child.getAttribute("style") ?? "") + `grid-row: ${row + 1}; grid-column: ${column + 1};`);
+        addAttribute(child, "style", `grid-row: ${row + 1}; grid-column: ${column + 1};`);
         if (alignChars !== null) {
           let alignChar = alignChars[column];
           let align = (alignChar === "c") ? "center" : (alignChar === "r") ? "right" : "left";

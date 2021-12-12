@@ -25,7 +25,7 @@ export function appendChildren(parent: Node, children: Array<Node>): void {
 }
 
 export function addAttribute(element: Element, name: string, value: string): void {
-  element.setAttribute(name, (element.getAttribute(name) ?? "") + value);
+  element.setAttribute(name, ((element.getAttribute(name) ?? "") + value).trim());
 }
 
 export function getChildElement(element: Element, tagName: string): Element | null {
