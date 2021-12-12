@@ -8,12 +8,15 @@
   "main": "dist/index.js",
   "scripts": {
     "develop": "ts-node source/index.ts",
-    "build": "tsc --project tsconfig-build.json",
+    "build": "run-s build:script build:main",
+    "build:script": "webpack --config webpack-script.ts",
+    "build:main": "webpack --config webpack-main.ts",
     "test": "ts-node -r tsconfig-paths/register test/generate.ts",
-    "prepare": "tsc --project tsconfig-build.json"
+    "prepare": "npm run build"
   },
   "eslintConfig": {
     "extends": "ziphil",
+    "ignorePatterns": "webpack-*.ts",
     "rules": {
       "no-throw-literal": "off"
     }
@@ -38,6 +41,7 @@
   "devDependencies": {
     "@types/jest": "^27.0.2",
     "@types/parsimmon": "^1.10.6",
+    "@types/webpack-node-externals": "^2.5.3",
     "@typescript-eslint/eslint-plugin": "^5.1.0",
     "@typescript-eslint/parser": "^5.1.0",
     "@xmldom/xmldom": "^0.7.5",
@@ -46,12 +50,17 @@
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-jsdoc": "^36.1.1",
     "jest": "^27.3.1",
+    "npm-run-all": "^4.1.5",
+    "raw-loader": "^4.0.2",
     "ts-dedent": "^2.2.0",
     "ts-jest": "^27.0.7",
+    "ts-loader": "^9.2.6",
     "ts-node": "^10.3.0",
     "ts-node-dev": "^1.1.8",
     "tsconfig-paths": "^3.12.0",
-    "typescript": "^4.4.4"
+    "typescript": "^4.4.4",
+    "webpack-cli": "^4.9.1",
+    "webpack-node-externals": "^3.0.0"
   },
   "dependencies": {
     "@zenml/zenml": "0.0.0",
