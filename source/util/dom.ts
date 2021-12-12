@@ -23,3 +23,18 @@ export function appendChildren(parent: Node, children: Array<Node>): void {
     parent.appendChild(child);
   }
 }
+
+export function addAttribute(element: Element, name: string, value: string): void {
+  element.setAttribute(name, (element.getAttribute(name) ?? "") + value);
+}
+
+export function getChildElement(element: Element, tagName: string): Element | null {
+  let nodes = element.childNodes;
+  for (let i = 0 ; i < nodes.length ; i ++) {
+    let node = nodes.item(i)!;
+    if (isElement(node) && node.tagName === tagName) {
+      return node;
+    }
+  }
+  return null;
+}

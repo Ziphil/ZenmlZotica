@@ -240,6 +240,98 @@ export class ZoticaParser extends ZenmlParser {
       nodes.push(this.builder.buildWide(tagName, underSymbol, overSymbol, modify, options, (baseSelf) => {
         appendChildren(baseSelf, childrenArgs[0] ?? []);
       }));
+    } else if (tagName === "table") {
+      let type = attributes.get("t") ?? "std";
+      let alignCharsString = attributes.get("align") ?? null;
+      let raw = !!attributes.get("raw");
+      nodes.push(this.builder.buildTable(type, alignCharsString, raw, options, (tableSelf) => {
+        appendChildren(tableSelf, childrenArgs[0] ?? []);
+      }));
+    } else if (tagName === "array") {
+      let alignConfig = attributes.get("align") ?? null;
+      nodes.push(this.builder.buildTable("std", alignConfig, true, options, (tableSelf) => {
+        appendChildren(tableSelf, childrenArgs[0] ?? []);
+      }));
+    } else if (tagName === "matrix") {
+      nodes.push(this.builder.buildTable("mat", null, false, options, (tableSelf) => {
+        appendChildren(tableSelf, childrenArgs[0] ?? []);
+      }));
+    } else if (tagName === "case") {
+      let leftSymbol = ZOTICA_DATA.getLeftFenceSymbol("brace", 0) ?? "";
+      let rightSymbol = ZOTICA_DATA.getRightFenceSymbol("none", 0) ?? "";
+      nodes.push(this.builder.buildFence("brace", "none", leftSymbol, rightSymbol, true, options, (self) => {
+        this.builder.appendChild(self, this.builder.buildTable("cas", "ll", false, options, (tableSelf) => {
+          appendChildren(tableSelf, childrenArgs[0] ?? []);
+        }));
+      }));
+    } else if (tagName === "stack") {
+      nodes.push(this.builder.buildTable("stk", null, true, options, (tableSelf) => {
+        appendChildren(tableSelf, childrenArgs[0] ?? []);
+      }));
+    } else if (tagName === "c") {
+      nodes.push(this.builder.buildTableCell(options, (cellSelf) => {
+        appendChildren(cellSelf, childrenArgs[0] ?? []);
+      }));
+    } else if (tagName === "cc") {
+      for (let children of childrenArgs) {
+        nodes.push(this.builder.buildTableCell(options, (cellSelf) => {
+          appendChildren(cellSelf, children);
+        }));
+      }
+      nodes.push(this.builder.buildTableBreak(options));
+    } else if (tagName === "br") {
+      nodes.push(this.builder.buildTableBreak(options));
+    } else if (tagName === "diag") {
+      let verticalGapsString = attributes.get("ver") ?? null;
+      let horizontalGapsString = attributes.get("hor") ?? null;
+      let alignBaseline = attributes.has("bl");
+      nodes.push(this.builder.buildDiagram(verticalGapsString, horizontalGapsString, alignBaseline, options, (tableSelf) => {
+        appendChildren(tableSelf, childrenArgs[0] ?? []);
+      }));
+    } else if (tagName === "v") {
+      let name = attributes.get("name") ?? null;
+      nodes.push(this.builder.buildDiagramVertex(name, options, (vertexSelf) => {
+        appendChildren(vertexSelf, childrenArgs[0] ?? []);
+      }));
+    } else if (tagName === "vv") {
+      for (let children of childrenArgs) {
+        nodes.push(this.builder.buildDiagramVertex(null, options, (vertexSelf) => {
+          appendChildren(vertexSelf, children);
+        }));
+      }
+      nodes.push(this.builder.buildTableBreak(options));
+    } else if (tagName === "ar") {
+      let name = attributes.get("name") ?? null;
+      let settings = {
+        startPosition: attributes.get("s") ?? "0",
+        endPosition: attributes.get("e") ?? "0",
+        tipKinds: attributes.get("tip"),
+        bendAngle: attributes.get("bend"),
+        shift: attributes.get("shift"),
+        lineCount: attributes.get("line"),
+        dashed: attributes.has("dash"),
+        labelPosition: attributes.get("pos"),
+        inverted: attributes.has("inv"),
+        mark: attributes.has("mark")
+      };
+      nodes.push(this.builder.buildArrow(name, settings, options, (labelSelf) => {
+        appendChildren(labelSelf, childrenArgs[0] ?? []);
+      }));
+    } else if (tagName === "tree") {
+      nodes.push(this.builder.buildTree(options, (contentSelf) => {
+        appendChildren(contentSelf, childrenArgs[0] ?? []);
+      }));
+    } else if (tagName === "axm") {
+      nodes.push(this.builder.buildTreeAxiom(options, (contentSelf) => {
+        appendChildren(contentSelf, childrenArgs[0] ?? []);
+      }));
+    } else if (tagName === "infr") {
+      let number = parseInt(attributes.get("n") ?? "0");
+      nodes.push(this.builder.buildTreeInference(number, options, (contentSelf, rightLabelSelf, leftLabelSelf) => {
+        appendChildren(contentSelf, childrenArgs[0] ?? []);
+        appendChildren(rightLabelSelf, childrenArgs[1] ?? []);
+        appendChildren(leftLabelSelf, childrenArgs[2] ?? []);
+      }));
     }
     return nodes;
   }

@@ -7,6 +7,8 @@ import {
   ZoticaFont
 } from "../font/font";
 import {
+  addAttribute,
+  getChildElement,
   insertFirst,
   isElement
 } from "../util/dom";
@@ -18,6 +20,7 @@ export type ZoticaRole = "bin" | "rel" | "sbin" | "srel" | "del" | "fun" | "not"
 export type ZoticaIdentifierType = "bf" | "rm" | "tt" | "fun" | "alt";
 export type ZoticaOperatorType = ZoticaRole | "txt" | "sml";
 export type ZoticaStrutType = "upper" | "dupper" | "lower" | "dlower" | "dfull";
+export type ZoticaTableType = "std" | "mat" | "cas" | "stk" | "diag";
 export type ZoticaFontType = "main" | "math";
 export type ZoticaSymbolSize = "inl" | "lrg";
 
@@ -31,7 +34,27 @@ export type ZoticaFenceCallback = (contentElement: Element) => void;
 export type ZoticaSetCallback = (leftElement: Element, rightElement: Element) => void;
 export type ZoticaAccentCallback = (baseElement: Element) => void;
 export type ZoticaWideCallback = (baseElement: Element) => void;
+export type ZoticaTableCallback = (tableElement: Element) => void;
+export type ZoticaTableCellCallback = (cellElement: Element) => void;
+export type ZoticaDiagramCallback = (diagramElement: Element) => void;
+export type ZoticaDiagramVertexCallback = (vertexElement: Element) => void;
+export type ZoticaArrowCallback = (labelElement: Element) => void;
+export type ZoticaTreeCallback = (contentElement: Element) => void;
+export type ZoticaTreeAxiomCallback = (contentElement: Element) => void;
+export type ZoticaTreeInferenceCallback = (contentElement: Element, rightLabelElement: Element, leftLabelElement: Element) => void;
 
+export type ZoticaArrowSettings = {
+  startPosition: string,
+  endPosition: string,
+  tipKinds?: string,
+  bendAngle?: string,
+  shift?: string,
+  lineCount?: string,
+  dashed?: boolean,
+  labelPosition?: string,
+  inverted?: boolean,
+  mark?: boolean
+};
 export type ZoticaCommonOptions = {
   role?: ZoticaRole,
   className?: string,
@@ -531,6 +554,286 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
     callback?.(baseElement!);
     this.inheritRole(mainElement!, baseElement!);
     this.modifyUnderover(underElement!, overElement!);
+    return self;
+  }
+
+  public buildTable(type: ZoticaTableType | string, alignCharsString: string | null, raw: boolean, options: ZoticaCommonOptions, callback?: ZoticaTableCallback): DocumentFragment {
+    let self = this.createDocumentFragment();
+    let tableElement = null as Element | null;
+    this.appendElement(self, "math-table", (self) => {
+      self.setAttribute("class", type);
+      tableElement = self;
+    });
+    this.applyOptions(self, options);
+    callback?.(tableElement!);
+    this.modifyTable(tableElement!, type, alignCharsString, raw, options);
+    return self;
+  }
+
+  private modifyTable(tableElement: Element, type: ZoticaTableType | string, alignCharsString: string | null, raw: boolean, options: ZoticaCommonOptions): void {
+    let alignChars = (alignCharsString !== null) ? [...alignCharsString] : null;
+    let children = Array.from(tableElement.childNodes).filter((child) => isElement(child)) as Array<Element>;
+    let column = 0;
+    let row = 0;
+    for (let index = 0 ; index < children.length ; index ++) {
+      let child = children[index];
+      if (child.tagName === "math-cell" || child.tagName === "math-cellwrap") {
+        if (raw) {
+          let extraClass = "";
+          if (column !== 0) {
+            extraClass += " lpres";
+          }
+          if (children[index + 1]?.tagName !== "math-sys-br") {
+            extraClass += " rpres";
+          }
+          addAttribute(child, "class", ` ${extraClass}`);
+        }
+        child.setAttribute("style", (child.getAttribute("style") ?? "") + `grid-row: ${row + 1}; grid-column: ${column + 1};`);
+        if (alignChars !== null) {
+          let alignChar = alignChars[column];
+          let align = (alignChar === "c") ? "center" : (alignChar === "r") ? "right" : "left";
+          addAttribute(child, "style", `text-align: ${align};`);
+        }
+        if (type !== "stk" && type !== "diag") {
+          this.insertStrut(child, "dfull", options);
+        }
+        column ++;
+      } else if (child.tagName === "math-sys-br") {
+        tableElement.removeChild(child);
+        row ++;
+        column = 0;
+      }
+    }
+  }
+
+  public buildTableCell(options: ZoticaCommonOptions, callback?: ZoticaTableCellCallback): DocumentFragment {
+    let self = this.createDocumentFragment();
+    let cellElement = null as Element | null;
+    this.appendElement(self, "math-cell", (self) => {
+      cellElement = self;
+    });
+    this.applyOptions(self, options);
+    callback?.(cellElement!);
+    return self;
+  }
+
+  public buildTableBreak(options: ZoticaCommonOptions): DocumentFragment {
+    let self = this.createDocumentFragment();
+    this.appendElement(self, "math-sys-br");
+    return self;
+  }
+
+  public buildDiagram(verticalGapsString: string | null, horizontalGapsString: string | null, alignBaseline: boolean, options: ZoticaCommonOptions, callback?: ZoticaDiagramCallback): DocumentFragment {
+    let self = this.createDocumentFragment();
+    let diagramElement = null as Element | null;
+    this.appendElement(self, "math-diagram", (self) => {
+      diagramElement = self;
+      if (verticalGapsString !== null) {
+        addAttribute(self, "class", " vnon");
+      }
+      if (horizontalGapsString !== null) {
+        addAttribute(self, "class", " hnon");
+      }
+      if (alignBaseline) {
+        addAttribute(self, "class", " baseline");
+      }
+    });
+    this.applyOptions(self, options);
+    callback?.(diagramElement!);
+    this.modifyDiagram(diagramElement!, verticalGapsString, horizontalGapsString);
+    this.modifyTable(diagramElement!, "diag", null, false, options);
+    return self;
+  }
+
+  private modifyDiagram(diagramElement: Element, verticalGapsString: string | null, horizontalGapsString: string | null): void {
+    let children = Array.from(diagramElement.childNodes).filter((child) => isElement(child)) as Array<Element>;
+    let verticalGaps = verticalGapsString?.split(/\s*,\s*/) ?? null;
+    let horizontalGaps = horizontalGapsString?.split(/\s*,\s*/) ?? null;
+    let column = 0;
+    let row = 0;
+    for (let child of children) {
+      if (child.tagName === "math-cellwrap") {
+        let verticalGap = (verticalGaps !== null) ? verticalGaps[row - 1] ?? verticalGaps[verticalGaps.length - 1] : null;
+        let horizontalGap = (horizontalGaps !== null) ? horizontalGaps[column - 1] ?? horizontalGaps[horizontalGaps.length - 1] : null;
+        if (verticalGap !== null && row > 0) {
+          if (verticalGap.match(/^\-?\d+$/)) {
+            addAttribute(child, "style", `margin-top: ${parseInt(verticalGap) / 18}em;`);
+          } else {
+            addAttribute(child, "class", ` v${verticalGap}`);
+          }
+        }
+        if (horizontalGap !== null && column > 0) {
+          if (horizontalGap.match(/^\-?\d+$/)) {
+            addAttribute(child, "style", `margin-left: ${parseInt(horizontalGap) / 18}em;`);
+          } else {
+            addAttribute(child, "class", ` h${horizontalGap}`);
+          }
+        }
+        column ++;
+      } else if (child.tagName === "math-sys-br") {
+        row ++;
+        column = 0;
+      }
+    }
+  }
+
+  public buildDiagramVertex(name: string | null, options: ZoticaCommonOptions, callback?: ZoticaDiagramVertexCallback): DocumentFragment {
+    let self = this.createDocumentFragment();
+    let vertexElement = null as Element | null;
+    this.appendElement(self, "math-cellwrap", (self) => {
+      if (name !== null) {
+        self.setAttribute("data-name", name);
+      }
+      this.appendElement(self, "math-cell", (self) => {
+        vertexElement = self;
+      });
+    });
+    this.applyOptions(self, options);
+    callback?.(vertexElement!);
+    return self;
+  }
+
+  public buildArrow(name: string | null, settings: ZoticaArrowSettings, options: ZoticaCommonOptions, callback?: ZoticaArrowCallback): DocumentFragment {
+    let self = this.createDocumentFragment();
+    let labelElement = null as Element | null;
+    this.appendElement(self, "math-arrow", (self) => {
+      labelElement = self;
+      self.setAttribute("data-start", settings.startPosition);
+      self.setAttribute("data-end", settings.endPosition);
+      if (settings.tipKinds !== undefined) {
+        self.setAttribute("data-tip", settings.tipKinds);
+      }
+      if (settings.bendAngle !== undefined) {
+        self.setAttribute("data-bend", settings.bendAngle);
+      }
+      if (settings.shift !== undefined) {
+        self.setAttribute("data-shift", settings.shift);
+      }
+      if (settings.lineCount !== undefined) {
+        self.setAttribute("data-line", settings.lineCount);
+      }
+      if (settings.dashed) {
+        self.setAttribute("data-dash", "data-dash");
+      }
+      if (settings.labelPosition !== undefined) {
+        self.setAttribute("data-pos", settings.labelPosition);
+      }
+      if (settings.inverted) {
+        self.setAttribute("data-inv", "data-inv");
+      }
+      if (settings.mark) {
+        self.setAttribute("data-mark", "data-mark");
+      }
+      if (name !== null) {
+        self.setAttribute("data-name", name);
+      }
+    });
+    this.applyOptions(self, options);
+    callback?.(labelElement!);
+    return self;
+  }
+
+  public buildTree(options: ZoticaCommonOptions, callback?: ZoticaTreeCallback): DocumentFragment {
+    let self = this.createDocumentFragment();
+    let contentElement = null as Element | null;
+    this.appendElement(self, "math-tree", (self) => {
+      contentElement = self;
+    });
+    this.applyOptions(self, options);
+    callback?.(contentElement!);
+    this.modifyTree(contentElement!, options);
+    return self;
+  }
+
+  private modifyTree(element: Element, options: ZoticaCommonOptions): void {
+    let stack = [];
+    let children = Array.from(element.childNodes).filter((child) => isElement(child)) as Array<Element>;
+    for (let child of children) {
+      if (child.tagName === "math-axiom") {
+        this.insertStrut(child, "dlower", options);
+        stack.push(child);
+      } else if (child.tagName === "math-sys-infer") {
+        let number = parseInt(child.getAttribute("data-num") ?? "0");
+        let leftLabelElement = getChildElement(child, "math-sys-llabel")!;
+        let rightLabelElement = getChildElement(child, "math-sys-rlabel")!;
+        let antecedentElements = (number > 0) ? stack.splice(-number) : [];
+        let inferenceElement = this.createElement("math-infer", (self) => {
+          this.appendElement(self, "math-label", (self) => {
+            let leftLabelChildren = Array.from(leftLabelElement.childNodes);
+            if (leftLabelChildren.length <= 0) {
+              self.setAttribute("class", "non");
+            }
+            for (let leftLabelChild of leftLabelChildren) {
+              self.appendChild(leftLabelChild);
+            }
+          });
+          this.appendElement(self, "math-step", (self) => {
+            this.appendElement(self, "math-ant", (self) => {
+              for (let antecedentElement of antecedentElements) {
+                self.appendChild(antecedentElement);
+              }
+            });
+            this.appendElement(self, "math-conwrap", (self) => {
+              this.appendElement(self, "math-line");
+              this.appendElement(self, "math-con", (self) => {
+                let contentElement = getChildElement(child, "math-cont")!;
+                self.appendChild(contentElement);
+                this.insertStrut(self, "dlower", options);
+                this.insertStrut(self, "upper", options);
+              });
+            });
+          });
+          this.appendElement(self, "math-label", (self) => {
+            let rightLabelChildren = Array.from(rightLabelElement.childNodes);
+            if (rightLabelChildren.length <= 0) {
+              self.setAttribute("class", "non");
+            }
+            for (let rightLabelChild of rightLabelChildren) {
+              self.appendChild(rightLabelChild);
+            }
+          });
+        });
+        stack.push(inferenceElement);
+      }
+    }
+    while (element.firstChild !== null) {
+      element.removeChild(element.firstChild);
+    }
+    if (stack.length > 0) {
+      element.appendChild(stack[0]);
+    }
+  }
+
+  public buildTreeAxiom(options: ZoticaCommonOptions, callback?: ZoticaTreeAxiomCallback): DocumentFragment {
+    let self = this.createDocumentFragment();
+    let contentElement = null as Element | null;
+    this.appendElement(self, "math-axiom", (self) => {
+      contentElement = self;
+    });
+    this.applyOptions(self, options);
+    callback?.(contentElement!);
+    return self;
+  }
+
+  public buildTreeInference(number: number, options: ZoticaCommonOptions, callback?: ZoticaTreeInferenceCallback): DocumentFragment {
+    let self = this.createDocumentFragment();
+    let contentElement = null as Element | null;
+    let rightLabelElement = null as Element | null;
+    let leftLabelElement = null as Element | null;
+    this.appendElement(self, "math-sys-infer", (self) => {
+      self.setAttribute("data-num", number.toString());
+      this.appendElement(self, "math-cont", (self) => {
+        contentElement = self;
+      });
+      this.appendElement(self, "math-sys-rlabel", (self) => {
+        rightLabelElement = self;
+      });
+      this.appendElement(self, "math-sys-llabel", (self) => {
+        leftLabelElement = self;
+      });
+    });
+    this.applyOptions(self, options);
+    callback?.(contentElement!, rightLabelElement!, leftLabelElement!);
     return self;
   }
 
