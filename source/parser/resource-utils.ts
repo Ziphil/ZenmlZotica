@@ -1,7 +1,7 @@
 //
 
-import ZOTICA_SCRIPT_STRING from "!!raw-loader!../../dist/script.js";
-import ZOTICA_STYLE_STRING from "!!raw-loader!sass-loader!../client/style/style.scss";
+import ZOTICA_SCRIPT_STRING from "../../dist/script.js";
+import ZOTICA_STYLE_STRING from "../client/style/style.scss";
 
 
 export class ZoticaResourceUtils {

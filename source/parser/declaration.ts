@@ -1,7 +1,7 @@
 //
 
 
-declare module "!!raw-loader!*.js" {
+declare module "*.js" {
 
   let string: string;
   export default string;
@@ -9,7 +9,7 @@ declare module "!!raw-loader!*.js" {
 }
 
 
-declare module "!!raw-loader!sass-loader!*.scss" {
+declare module "*.scss" {
 
   let string: string;
   export default string;

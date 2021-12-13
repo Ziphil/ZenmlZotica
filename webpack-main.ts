@@ -33,10 +33,30 @@ let config = {
       },
       {
         test: /\.js$/,
+        exclude: path.join(__dirname, "dist/"),
         enforce: "pre",
         use: {
           loader: "source-map-loader"
         }
+      },
+      {
+        test: /\.js$/,
+        include: path.join(__dirname, "dist/"),
+        use: {
+          loader: "raw-loader"
+        }
+      },
+      {
+        test: /\.scss$/,
+        include: path.join(__dirname, "source/client/"),
+        use: [
+          {
+            loader: "raw-loader"
+          },
+          {
+            loader: "sass-loader"
+          }
+        ]
       }
     ]
   },
