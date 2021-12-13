@@ -1,8 +1,10 @@
 @charset "utf-8";
 
+@use "sass:math" as *;
+
 
 @function spacing($value) {
-  $spacing-const: 1em / 18;
+  $spacing-const: div(1em, 18);
   @return $value * $spacing-const;
 }
 
