@@ -8,6 +8,8 @@ import {
   ZenmlParser,
   ZenmlParserOptions,
   ZenmlParserState,
+  ZenmlPlugin,
+  ZenmlPluginManager,
   ZenmlSpecialElementKind
 } from "@zenml/zenml";
 import {
@@ -38,12 +40,19 @@ import {
 } from "./builder";
 
 
+export type ZoticaParserOptions = ZenmlParserOptions & {
+  parentPluginManager?: ZenmlPluginManager;
+};
+
+
 export class ZoticaParser extends ZenmlParser {
 
+  private parentPluginManager?: ZenmlPluginManager;
   public builder!: ZoticaBuilder;
 
-  public constructor(implementation: DOMImplementation, options?: ZenmlParserOptions) {
+  public constructor(implementation: DOMImplementation, options?: ZoticaParserOptions) {
     super(implementation, options);
+    this.parentPluginManager = options?.parentPluginManager;
     this.builder = new ZoticaBuilder(this.document);
   }
 
@@ -416,6 +425,11 @@ export class ZoticaParser extends ZenmlParser {
     this.document = document;
     this.pluginManager.updateDocument(this.document);
     this.builder = new ZoticaBuilder(document);
+  }
+
+  protected determinePlugin(name: string): ZenmlPlugin | null {
+    let plugin = this.pluginManager.getPlugin(name) ?? this.parentPluginManager?.getPlugin(name) ?? null;
+    return plugin;
   }
 
   protected determineNextState(state: ZenmlParserState, tagName: string, marks: ZenmlMarks, attributes: ZenmlAttributes, macro: boolean): ZenmlParserState {

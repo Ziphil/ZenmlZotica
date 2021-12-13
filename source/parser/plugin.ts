@@ -20,7 +20,6 @@ import {
 
 export class ZoticaZenmlPlugin implements ZenmlPlugin {
 
-  private zenmlParser!: ZenmlParser;
   private zoticaParser!: ZoticaParser;
   private builder!: Builder;
   private pluginFunction: ZenmlPluginFunction;
@@ -31,8 +30,8 @@ export class ZoticaZenmlPlugin implements ZenmlPlugin {
 
   // TODO: ZenML パーサーからプラグイン情報を継承するような処理を追加してください。
   public initialize(zenmlParser: ZenmlParser): void {
-    this.zenmlParser = zenmlParser;
-    this.zoticaParser = new ZoticaParser(zenmlParser.implementation);
+    let options = {parentPluginManager: zenmlParser.pluginManager};
+    this.zoticaParser = new ZoticaParser(zenmlParser.implementation, options);
   }
 
   public updateDocument(document: Document): void {
