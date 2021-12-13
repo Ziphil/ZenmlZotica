@@ -87,9 +87,9 @@ export class ZoticaParser extends ZenmlParser {
     } else if (tagName === "tt") {
       let content = childrenArgs[0]?.[0]?.textContent ?? "";
       nodes.push(this.builder.buildIdentifier(content, ["tt"], options));
-    } else if (["bb", "varbb", "cal", "scr", "frak", "varfrak"].includes(tagName)) {
+    } else if (ZOTICA_DATA.isAlternativeKind(tagName)) {
       let content = childrenArgs[0]?.[0]?.textContent ?? "";
-      let nextContent = ZOTICA_DATA.getAlternativeIdentifierContent(tagName, content);
+      let nextContent = ZOTICA_DATA.getAlternativeContent(tagName, content);
       nodes.push(this.builder.buildIdentifier(nextContent, ["alt"], options));
     } else if (tagName === "op") {
       let content = childrenArgs[0]?.[0]?.textContent ?? "";
@@ -382,8 +382,8 @@ export class ZoticaParser extends ZenmlParser {
           superSelf.appendChild(this.builder.buildOperator(symbol, types, options));
         }));
       } else if (!char.match(/\s/u)) {
-        let replacedChar = ZOTICA_DATA.getReplacement(char) ?? char;
-        let {symbol, types} = ZOTICA_DATA.getOperatorSymbolSpecByChar(replacedChar) ?? {symbol: char, types: ["bin"]};
+        let nextChar = ZOTICA_DATA.getReplacedChar(char) ?? char;
+        let {symbol, types} = ZOTICA_DATA.getOperatorSymbolSpecByChar(nextChar) ?? {symbol: char, types: ["bin"]};
         nodes.push(this.builder.buildOperator(symbol, types, options));
       }
     }

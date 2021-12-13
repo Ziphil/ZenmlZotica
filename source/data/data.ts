@@ -112,11 +112,6 @@ export class ZoticaData {
     return symbol;
   }
 
-  public getReplacement(char: string): string | null {
-    let replacement = this.json.replacement[char] ?? null;
-    return replacement;
-  }
-
   public isSpaceTagName(tagName: string): boolean {
     return this.json.space[tagName] !== undefined;
   }
@@ -126,9 +121,23 @@ export class ZoticaData {
     return type;
   }
 
-  public getAlternativeIdentifierContent(kind: string, content: string): string {
-    let nextContent = [...content].map((char) => this.json.alternative[kind]?.[char] ?? "").join("");
+  public isAlternativeKind(kind: string): boolean {
+    return this.json.alternative[kind] !== undefined;
+  }
+
+  public getAlternativeChar(kind: string, char: string): string | null {
+    let nextChar = this.json.alternative[kind]?.[char] ?? null;
+    return nextChar;
+  }
+
+  public getAlternativeContent(kind: string, content: string): string {
+    let nextContent = [...content].map((char) => this.getAlternativeChar(kind, char) ?? "").join("");
     return nextContent;
+  }
+
+  public getReplacedChar(char: string): string | null {
+    let nextChar = this.json.replaced[char] ?? null;
+    return nextChar;
   }
 
   public getGreekChar(char: string): string | null {
@@ -143,19 +152,19 @@ export type ZoticaOperatorSymbolSpec = {symbol: string, types: Array<ZoticaOpera
 
 export type ZoticaDataJson = {
   leaf: Array<string>,
-  replacement: {[C in string]?: string},
-  fence: {[K in string]?: {left: ZoticaFenceDataJson, right: ZoticaFenceDataJson}},
-  integral: {[K in string]?: {inl: string, lrg: string}},
-  sum: {[K in string]?: {inl: string, lrg: string}},
-  radical: {[L in number]?: string | undefined} & {height: Array<number>},
-  accent: {[K in string]?: {un: string | null, ov: string | null}},
-  wide: {[K in string]?: {un: ZoticaWideDataJson | null, ov: ZoticaWideDataJson | null}},
   function: Array<string>,
   identifier: {[K in string]?: string},
   operator: {[K in string]?: {symbol: string, types: Array<string>}},
+  radical: {[L in number]?: string | undefined} & {height: Array<number>},
+  integral: {[K in string]?: {inl: string, lrg: string}},
+  sum: {[K in string]?: {inl: string, lrg: string}},
+  fence: {[K in string]?: {left: ZoticaFenceDataJson, right: ZoticaFenceDataJson}},
+  accent: {[K in string]?: {un: string | null, ov: string | null}},
+  wide: {[K in string]?: {un: ZoticaWideDataJson | null, ov: ZoticaWideDataJson | null}},
   arrow: {[K in string]?: {edge: string, x: number, y: number, width: number, height: number, extrusion: number, command: string}},
   space: {[T in string]?: string},
   alternative: {[K in string]?: {[C in string]?: string}},
+  replaced: {[C in string]?: string},
   greek: {[C in string]?: string}
 };
 type ZoticaFenceDataJson = {[L in number]?: string} & {start?: string, bar?: string, middle?: string, end?: string};
