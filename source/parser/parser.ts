@@ -252,7 +252,7 @@ export class ZoticaParser extends ZenmlParser {
     } else if (tagName === "table") {
       let type = attributes.get("t") ?? "std";
       let alignCharsString = attributes.get("align") ?? null;
-      let raw = !!attributes.get("raw");
+      let raw = attributes.has("raw");
       nodes.push(this.builder.buildTable(type, alignCharsString, raw, options, (tableSelf) => {
         appendChildren(tableSelf, childrenArgs[0] ?? []);
       }));
@@ -269,7 +269,7 @@ export class ZoticaParser extends ZenmlParser {
       let leftSymbol = ZOTICA_DATA.getLeftFenceSymbol("brace", 0) ?? "";
       let rightSymbol = ZOTICA_DATA.getRightFenceSymbol("none", 0) ?? "";
       nodes.push(this.builder.buildFence("brace", "none", leftSymbol, rightSymbol, true, options, (self) => {
-        this.builder.appendChild(self, this.builder.buildTable("cas", "ll", false, options, (tableSelf) => {
+        self.appendChild(this.builder.buildTable("cas", "ll", false, options, (tableSelf) => {
           appendChildren(tableSelf, childrenArgs[0] ?? []);
         }));
       }));
