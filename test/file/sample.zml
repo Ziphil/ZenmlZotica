@@ -1,0 +1,604 @@
+\zml?|version="1.1"|;
+\xml?|version="1.0",encoding="UTF-8"|;
+
+\html|lang="ja"|<
+  \head<
+    \meta|charset="UTF-8"|;
+    \link|rel="stylesheet",type="text/css",href="math.css"|;
+    \link|rel="stylesheet",type="text/css",href="style.css"|;
+    \script|src="math.js"|;
+    \title<Zotica>
+  >
+  \body<
+
+    \div|class="title"|<Zotica>
+
+    \article<
+      \h1<Normal texts>
+      \h2<Numbers and identifiers>
+      \ul<
+        &m<1> &m<A> &m<ab> &m<3xy>
+      >
+      \h2<Operators>
+      \ul<
+        &m<X + 4> &m<P - q> &m<f * g>
+      >
+      \h2<Prime symbols>
+      \ul<
+        &m<x'>
+      >
+      \h1<Alternative lettershapes>
+      \h2<Basic>
+      \ul<
+        &m<\bb<RP>> &m<\bb<Set>> &m<\cal<F>> &m<\cal<Hom>> &m<\scr<X>> &m<\scr<Vect>> &m<\frak<S>> &m<\frak<gl>>
+      >
+      \h2<Variants>
+      \ul<
+        &m<\varbb<RP>> &m<\varbb<Set>> &m<\varfrak<S>> &m<\varfrak<gl>>
+      >
+      \h1<Operator names>
+      \h2<Basic>
+      \ul<
+        &m<\op<grad> F> &m<\op<arctan> (x + 1)>
+      >
+      \h1<Identifiers and functions>
+      \h2<Identifiers>
+      \ul<
+        &m<\varpi;> &m<\varbeta;> &m<\digamma;> &m<\sampi;> &m<\capkoppa;> &m<\varcapsampi;>
+      >
+      \h2<Functions>
+      \ul<
+        &m<\sin; a> &m<\exp; x> &m<\det; (M + N)>
+      >
+      \h1<Operators>
+      \h2<Binary operators>
+      \ul<
+        &m<x \pm; 7> &m<U \otimes; V \oplus; W> &m<A \sqcup; B \ssqcap; C> &m<\mp; 5>
+      >
+      \h2<Binary relators>
+      \ul<
+        &m<s \approx; 2> &m<z \nleq; Z \gggt; 0> &m<H \waverarr; K \curverarr; G>
+      >
+      \h2<Binary operators with wide margins>
+      \ul<
+        &m<X \rtimes; Y \scand; Z>
+      >
+      \h2<Binary relators with wide margins>
+      \ul<
+        &m<a \smash; b \neq; 0 \implies; P>
+      >
+      \h1<Subscripts and superscripts>
+      \h2<Basic>
+      \ul<
+        &m<\multi<A><1><2><3><4>> &m<\sbsp<x><A><B>> &m<\sb<a><i>> &m<\sp<V><2>> &m<\multi<\aleph;><abc><ab><abc><abcde>> &m<\multi<\beth;><a><abc><abcde><abcd>>
+      >
+      \h2<Nested>
+      \ul<
+        &m<\sb<A><\sb<B><C>>> &m<\sp<1><\sp<2><\sp<3><\sp<4><\sp<5><6>>>>>>
+      >
+      \h2<Positioning>
+      \ul<
+        &m<\multi<X><\sp<a><2>><\sb<a><1>><E><\sb<e><1> - \frac<1><4>>> &m<\sbsp<X><E><\sb<e><1> - \frac<1><4>>> &m<\sbsp<X><\frac<1><A>><\frac<1><B> + 1>>
+      >
+      \h2<Complex>
+      \ul<
+        &m<\sp<\paren<1 + \frac<1><1 + \frac<`j><2>>>><1 + \frac<1><\sp<`j><2>>> * \sb<\paren<1 + \frac<1 + \frac<`h><2>><2>>><`h + \frac<1><2>>>
+      >
+      \h1<Underscripts and overscripts>
+      \h2<Basic>
+      \ul<
+        &m<\unov<X><a><b>> &m<\un<X><t>> &m<\ov<X><y>>
+      >
+      \h2<Positioning>
+      \ul<
+        &m<\unov<X><\sp<n><2> + 2 n + 1><\sp<n><2> - 2 n>> &m<\unov<Y><\sb<\aleph;><0>><s + \frac<1><2>>>
+      >
+      \h1<Fractions>
+      \h2<Basic>
+      \ul<
+        &m<\frac<A><B>> &m<\frac<c><e> - \frac<p><k> - \frac<d><q>>
+      >
+      \h2<Complicated>
+      \ul<
+        &m<4 \pitchfork; \frac<φ \bowtie; \frac<K><2>><3 - \frac<\frac<1><xy \otimes; z> \smash; \frac<m><7 Ψ>><Δ>>>
+      >
+      \h1<Radicals>
+      \h2<Basic>
+      \ul<
+        &m<\sqrt<A>> &m<\sqrt<c>> &m<\sqrt<q>> &m<\sqrt<\frac<1><i + j>>>
+      >
+      \h2<With index>
+      \ul<
+        &m<\sqrt<A><B>> &m<\sqrt<\frac<S><T> + \frac<U><V>><3>>
+      >
+      \h2<Stretch>
+      \ul<
+        &m<\sqrt<&raw<\span|class="box",style="height:1em"|;>>>
+        &m<\sqrt<&raw<\span|class="box",style="height:1.1em"|;>>>
+        &m<\sqrt<&raw<\span|class="box",style="height:1.2em"|;>>>
+        &m<\sqrt<&raw<\span|class="box",style="height:1.3em"|;>>>
+        &m<\sqrt<&raw<\span|class="box",style="height:1.4em"|;>>>
+        &m<\sqrt<&raw<\span|class="box",style="height:1.5em"|;>>>
+        &m<\sqrt<&raw<\span|class="box",style="height:1.6em"|;>>>
+        &m<\sqrt<&raw<\span|class="box",style="height:1.7em"|;>>>
+        &m<\sqrt<&raw<\span|class="box",style="height:1.8em"|;>>>
+        &m<\sqrt<&raw<\span|class="box",style="height:1.9em"|;>>>
+        &m<\sqrt<&raw<\span|class="box",style="height:2em"|;>>>
+        &m<\sqrt<&raw<\span|class="box",style="height:2.1em"|;>>>
+        &m<\sqrt<&raw<\span|class="box",style="height:2.2em"|;>>>
+        &m<\sqrt<&raw<\span|class="box",style="height:2.3em"|;>>>
+        &m<\sqrt<&raw<\span|class="box",style="height:2.4em"|;>>>
+      >
+      \h2<Very large>
+      \ul<
+        \span<Not yet implemented>
+      >
+      \h1<Integrals>
+      \h2<Display style>
+      \ul<
+        &m<\intlike|k="intanticlock"|<A><B> f> &m<\int<A><B> f> &m<\oint<X> g>
+      >
+      \h2<Inline style>
+      \ul<
+        &m<\intlike|in,k="intanticlock"|<A><B> f> &m<\int|in|<A><B> f> &m<\oint|in|<X> g>
+      >
+      \h2<Complex>
+      \ul<
+        &m<\intlike|k="fint"|<\sp<a><3> + 3a + 1><\sp<a><4> - \frac<1><2>> g (x) dx>
+      >
+      \h1<Sums and products>
+      \h2<Display style>
+      \ul<
+        &m<\sumlike|k="bigsqcup"|<A><B> P> &m<\sum<A><B> P> &m<\bigodot<A> P>
+      >
+      \h2<Inline style>
+      \ul<
+        &m<\sumlike|in,k="bigsqcup"|<A><B> P> &m<\sum|in|<A><B> P> &m<\bigodot|in|<A> P>
+      >
+      \h2<Complex>
+      \ul<
+        &m<\varphi; (x) = \sum<n = 0><\infty;> \frac<\sp<\varphi;><(n)> (0)><n !> \sp<x><n>>
+      >
+      \h1<Fences>
+      \h2<General>
+      \ul<
+        &m<\fence<\frac<1><3>>> &m<\fence|l="brace",r="bracket"|<A + \frac<B><C + \frac<D><E>>>> &m<\fence|l="bracket",r="paren"|<- \frac<1><2>, \infty;>>
+      >
+      \h2<By shorthands>
+      \ul<
+        &m<\paren<\frac<1><12>>> &m<\vert<x - \frac<a><b>>>
+      >
+      \h2<Complicated>
+      \ul<
+        &m<4 \pitchfork; \frac<φ \bowtie; \frac<K><2>><3 - \frac<\frac<1><xy \otimes; z> \smash; \frac<m><7 Ψ>><Δ>>>
+      >
+      \h2<Stretch>
+      \ul<
+        &m<\paren<&raw<\span|class="box",style="height:1em"|;>>>
+        &m<\paren<&raw<\span|class="box",style="height:1.2em"|;>>>
+        &m<\paren<&raw<\span|class="box",style="height:1.4em"|;>>>
+        &m<\paren<&raw<\span|class="box",style="height:1.6em"|;>>>
+        &m<\paren<&raw<\span|class="box",style="height:1.8em"|;>>>
+        &m<\paren<&raw<\span|class="box",style="height:2em"|;>>>
+        &m<\paren<&raw<\span|class="box",style="height:2.2em"|;>>>
+        &m<\paren<&raw<\span|class="box",style="height:2.4em"|;>>>
+        &m<\paren<&raw<\span|class="box",style="height:2.6em"|;>>>
+        &m<\paren<&raw<\span|class="box",style="height:2.8em"|;>>>
+        &m<\paren<&raw<\span|class="box",style="height:3em"|;>>>
+        &m<\paren<&raw<\span|class="box",style="height:3.2em"|;>>>
+        &m<\paren<&raw<\span|class="box",style="height:3.4em"|;>>>
+        &m<\paren<&raw<\span|class="box",style="height:3.6em"|;>>>
+        &m<\paren<&raw<\span|class="box",style="height:3.8em"|;>>>
+        &m<\paren<&raw<\span|class="box",style="height:4em"|;>>>
+      >
+      \h2<Very large>
+      \ul<
+        &m<\paren<\frac<1 + \frac<1 + \frac<1><2>><2 + \frac<1><2>>><2 + \frac<1 + \frac<1><\frac<1><2>>><2>>>>
+        &m<\sbsp<\tort<\frac<1 + \frac<3><2 + \frac<1><2>>><2 + \frac<1 + \frac<1><1 + \frac<1><2>>><2 + \frac<1><2>>>>><A><B>>
+        &m<\sbsp<\brace<\frac<1 + \frac<1 + \frac<1 + \frac<1><2>><2>><2>><2 + \frac<1 + \frac<1><2>><2>>>><A><B>>
+      >
+      \h1<Set-like fences>
+      \h2<General>
+      \ul<
+        &m<\set<x \in; X><x `> \frac<1><3>>> &m<\set|l="aangle",c="vvert",r="floor"|<\frac<a><b>><\frac<c><d>>>
+      >
+      \h2<Complicated>
+      \ul<
+        &m<\set<\frac<n><\frac<m><\frac<k><l>>> \in; B><\frac<l + \frac<k><m>><n> \ggt; 0>>
+      >
+      \h1<Accents>
+      \h2<Basic>
+      \ul<
+        &m<\dot<A>> &m<\hat<B>> &m<\tilde<c>> &m<\accent|k="ring"|<d>> &m<\accent|k="vec"|<e>> &m<\barbelow<E>> &m<\tildebelow<F>> &m<\tildebelow<g>>
+      >
+      \h2<To symbols>
+      \ul<
+        &m<\ring<0>> &m<\tilde<\bf<K>>> &m<2 \dot<-> 3> &m<A \hat<\oplus;> B> &m<`a: D \ddot<\to;> E>
+      >
+      \h2<Position (above)>
+      \ul<
+        &m<\tilde<a>> &m<\tilde<b>> &m<\tilde<c>> &m<\tilde<d>> &m<\tilde<e>> &m<\tilde<f>> &m<\tilde<g>>
+        &m<\tilde<h>> &m<\tilde<i>> &m<\tilde<j>> &m<\tilde<k>> &m<\tilde<l>> &m<\tilde<m>> &m<\tilde<n>>
+        &m<\tilde<o>> &m<\tilde<p>> &m<\tilde<q>> &m<\tilde<r>> &m<\tilde<s>> &m<\tilde<t>> &m<\tilde<u>>
+        &m<\tilde<v>> &m<\tilde<w>> &m<\tilde<x>> &m<\tilde<y>> &m<\tilde<z>> 
+        &m<\tilde<α>> &m<\tilde<β>> &m<\tilde<γ>> &m<\tilde<δ>> &m<\tilde<ε>> &m<\tilde<ζ>> &m<\tilde<η>> 
+        &m<\tilde<θ>> &m<\tilde<ι>> &m<\tilde<κ>> &m<\tilde<λ>> &m<\tilde<μ>> &m<\tilde<ν>> &m<\tilde<ξ>> 
+        &m<\tilde<ο>> &m<\tilde<π>> &m<\tilde<ρ>> &m<\tilde<σ>> &m<\tilde<τ>> &m<\tilde<υ>> &m<\tilde<φ>> 
+        &m<\tilde<χ>> &m<\tilde<ψ>> &m<\tilde<ω>>
+      >
+      \h2<Position (below)>
+      \ul<
+        &m<\tildebelow<a>> &m<\tildebelow<b>> &m<\tildebelow<c>> &m<\tildebelow<d>> &m<\tildebelow<e>> &m<\tildebelow<f>> &m<\tildebelow<g>>
+        &m<\tildebelow<h>> &m<\tildebelow<i>> &m<\tildebelow<j>> &m<\tildebelow<k>> &m<\tildebelow<l>> &m<\tildebelow<m>> &m<\tildebelow<n>>
+        &m<\tildebelow<o>> &m<\tildebelow<p>> &m<\tildebelow<q>> &m<\tildebelow<r>> &m<\tildebelow<s>> &m<\tildebelow<t>> &m<\tildebelow<u>>
+        &m<\tildebelow<v>> &m<\tildebelow<w>> &m<\tildebelow<x>> &m<\tildebelow<y>> &m<\tildebelow<z>> 
+        &m<\tildebelow<α>> &m<\tildebelow<β>> &m<\tildebelow<γ>> &m<\tildebelow<δ>> &m<\tildebelow<ε>> &m<\tildebelow<ζ>> &m<\tildebelow<η>> 
+        &m<\tildebelow<θ>> &m<\tildebelow<ι>> &m<\tildebelow<κ>> &m<\tildebelow<λ>> &m<\tildebelow<μ>> &m<\tildebelow<ν>> &m<\tildebelow<ξ>> 
+        &m<\tildebelow<ο>> &m<\tildebelow<π>> &m<\tildebelow<ρ>> &m<\tildebelow<σ>> &m<\tildebelow<τ>> &m<\tildebelow<υ>> &m<\tildebelow<φ>> 
+        &m<\tildebelow<χ>> &m<\tildebelow<ψ>> &m<\tildebelow<ω>>
+      >
+      \h1<Wide accents>
+      \h2<Basic>
+      \ul<
+        &m<\widetilde<ABap>> &m<\widetilde<ap>> &m<\widehat<ABap>> &m<\widehat<ap>> &m<\wide|k="widecheck"|<ABap>> &m<\widetildebelow<ABap>> &m<\widetildebelow<Ee>> &m<\widetildebelow<Pp>>
+        &m<\overline<z + p - a>> &m<\wide|k="underline"|<G - g>>
+      >
+      \h2<With underscripts and overscripts>
+      \ul<
+        &m<\ov<\overbrace<A \times; A \times; \cdots; \times; A>><k \text< times>>>
+        &m<\un<\underbrace<B \times; B \times; \cdots; \times; B>><n + 2 \text< times>>>
+      >
+      \h2<Stretch (widetilde)>
+      \ul<
+        &m<\widetilde<&raw<\span|class="box",style="width:0.5em"|;>>>
+        &m<\widetilde<&raw<\span|class="box",style="width:0.6em"|;>>>
+        &m<\widetilde<&raw<\span|class="box",style="width:0.7em"|;>>>
+        &m<\widetilde<&raw<\span|class="box",style="width:0.8em"|;>>>
+        &m<\widetilde<&raw<\span|class="box",style="width:0.9em"|;>>>
+        &m<\widetilde<&raw<\span|class="box",style="width:1em"|;>>>
+        &m<\widetilde<&raw<\span|class="box",style="width:1.1em"|;>>>
+        &m<\widetilde<&raw<\span|class="box",style="width:1.2em"|;>>>
+        &m<\widetilde<&raw<\span|class="box",style="width:1.3em"|;>>>
+        &m<\widetilde<&raw<\span|class="box",style="width:1.4em"|;>>>
+        &m<\widetilde<&raw<\span|class="box",style="width:1.5em"|;>>>
+        &m<\widetilde<&raw<\span|class="box",style="width:1.6em"|;>>>
+        &m<\widetilde<&raw<\span|class="box",style="width:1.7em"|;>>>
+        &m<\widetilde<&raw<\span|class="box",style="width:1.8em"|;>>>
+        &m<\widetilde<&raw<\span|class="box",style="width:1.9em"|;>>>
+        &m<\widetilde<&raw<\span|class="box",style="width:2em"|;>>>
+      >
+      \h2<Stretch (overbrace)>
+      \ul<
+        &m<\overbrace<&raw<\span|class="box",style="width:1em"|;>>>
+        &m<\overbrace<&raw<\span|class="box",style="width:1.1em"|;>>>
+        &m<\overbrace<&raw<\span|class="box",style="width:1.2em"|;>>>
+        &m<\overbrace<&raw<\span|class="box",style="width:1.3em"|;>>>
+        &m<\overbrace<&raw<\span|class="box",style="width:1.4em"|;>>>
+        &m<\overbrace<&raw<\span|class="box",style="width:1.5em"|;>>>
+        &m<\overbrace<&raw<\span|class="box",style="width:1.6em"|;>>>
+        &m<\overbrace<&raw<\span|class="box",style="width:1.7em"|;>>>
+        &m<\overbrace<&raw<\span|class="box",style="width:1.8em"|;>>>
+        &m<\overbrace<&raw<\span|class="box",style="width:1.9em"|;>>>
+        &m<\overbrace<&raw<\span|class="box",style="width:2em"|;>>>
+        &m<\overbrace<&raw<\span|class="box",style="width:2.1em"|;>>>
+        &m<\overbrace<&raw<\span|class="box",style="width:2.2em"|;>>>
+        &m<\overbrace<&raw<\span|class="box",style="width:2.3em"|;>>>
+        &m<\overbrace<&raw<\span|class="box",style="width:2.4em"|;>>>
+        &m<\overbrace<&raw<\span|class="box",style="width:2.5em"|;>>>
+        &m<\overbrace<&raw<\span|class="box",style="width:2.6em"|;>>>
+        &m<\overbrace<&raw<\span|class="box",style="width:2.7em"|;>>>
+        &m<\overbrace<&raw<\span|class="box",style="width:2.8em"|;>>>
+        &m<\overbrace<&raw<\span|class="box",style="width:2.9em"|;>>>
+        &m<\overbrace<&raw<\span|class="box",style="width:3em"|;>>>
+      >
+      \h1<Tables>
+      \h2<Arrays>
+      \ul<
+        &m<
+          \array<
+            \c<`F :> \c<V \otimes; W> \c<\longto;> \c<\bb<K>> \br;
+            \c; \c<v \otimes; w> \c<\longmapsto;> \c<f (v) g (w)>
+          >
+        >
+        &m<
+          \array|align="rcl"|<
+            \cc<\nabla; \cdot; \bf<B>><=><0>
+            \cc<\nabla; \times; \bf<E> + \frac<\partial; \bf<B>><\partial; t>><=><\bfrm<0>>
+            \cc<\nabla; \cdot; \bf<D>><=><`r>
+            \cc<\nabla; \times; \bf<H> - \frac<\partial; \bf<D>><\partial; t>><=><\bf<j>>
+          >
+        >
+      >
+      \h2<Matrices>
+      \ul<
+        &m<
+          \paren<\matrix<
+            \c<1> \c<2> \br;
+            \c<3> \c<4>
+          >>
+        >
+      >
+      \h2<Cases>
+      \ul<
+        &m<
+          \case<
+            \cc<x><(x \geq; 0)>
+            \cc<- x><(x `< 0)>
+          >
+        >
+      >
+      \h2<Stacks>
+      \ul<
+         &m<\prod<\stack<\cc<1 \leq; i \leq; n> \cc<1 \leq; j \leq; n> \cc<i `< j>>>>
+      >
+      \h1<Diagrams>
+      \h2<Basic>
+      \ul<
+        &m<
+          \diag<
+            \v<1> \v<2> \v<3> \br;
+            \v<4> \v<X \oplus; Y> \v<X \otimes; Y \otimes; Z>
+            \ar|s="1",e="2"|<f> \ar|s="1",e="4",inv|<g> \ar|s="1",e="5",inv|<h> \ar|s="1",e="6"|<a + b + c>
+            \ar|s="2",e="3"|<`v> \ar|s="3",e="6"|<\sb<`r><1>> \ar|s="4",e="5",inv|<\sb<`r><2>> \ar|s="5",e="3"|;
+          >
+        >
+      >
+      \h2<Bent arrows>
+      \ul<
+        &m<
+          \diag<
+            \v<X> \v; \v; \br;
+            \v; \v<\sp<f><*> M> \v<M> \br;
+            \v; \v<S> \v<T>
+            \ar|s="8",e="9",inv|<f> \ar|s="5",e="6"|;
+            \ar|s="6",e="9"|<m> \ar|s="5",e="8",inv|<\sp<f><*> m>
+            \ar|s="1",e="6",bend="30"|<p> \ar|s="1",e="8",bend="-30",inv|<q>
+            \ar|s="1",e="5"|<!>
+          >
+        >
+        &m<
+          \diag<
+            \v<\bfrm<Set> \vph<\sb<\bfrm<Sh>><J> (\sp<\bfrm<Set>><\sp<\scr<C>><\circ;>>)>>
+            \v<\sp<\bfrm<Set>><\sp<\scr<C>><\circ;>> \vph<\sb<\bfrm<Sh>><J> (\sp<\bfrm<Set>><\sp<\scr<C>><\circ;>>)>>
+            \v<\sb<\bfrm<Sh>><J> (\sp<\bfrm<Set>><\sp<\scr<C>><\circ;>>)> 
+            \ar|s="1:r40",e="2:l40",bend="40"|<`D> \ar|s="2:l60",e="1:r60",bend="40"|<`G>
+            \ar|s="2:r40",e="3:l40",bend="40"|<\bf<a>> \ar|s="3:l60",e="2:r60",bend="40"|<\bf<i>>           
+          >
+        >
+      >
+      \h2<Shifted arrows>
+      \ul<
+        &m<
+          \diag<
+            \v<\op<Eq> (A, B)> \v<A> \v<B> \br;
+            \v<K> \v; \v;
+            \ar|s="1",e="2"|<e> \ar|s="4",e="2",inv|<k> \ar|s="4",e="1"|;
+            \ar|s="2",e="3",shift="3"|<f> \ar|s="2",e="3",shift="-3",inv|<g>
+          >
+        >
+      >
+      \h2<Label positions>
+      \ul<
+        &m<
+          \diag<
+            \v<1> \v<2> \v<3> \v<4> \br;
+            \ar|s="1",e="2",pos="10"|<A>
+            \ar|s="2",e="3",pos="30"|<B>
+            \ar|s="3",e="4",pos="90"|<C>
+            \ar|s="1",e="3",bend="-30",pos="20",inv|<D>
+            \ar|s="2",e="4",bend="-30",pos="80",inv|<E>
+          >
+        >
+      >
+      \h2<Arrow tips>
+      \ul<
+        &m<
+          \diag<
+            \v<1> \v<2> \br;
+            \v<3> \v<4>
+            \ar|s="1",e="2",tip="hook",shift="3"|;
+            \ar|s="1",e="2",shift="-3"|;
+            \ar|s="3",e="4",tip="varhook,head",shift="-3"|;
+            \ar|s="3",e="4",shift="3"|;
+            \ar|s="2",e="4",tip="tail,none",shift="-3"|;
+            \ar|s="2",e="4",shift="3"|;
+            \ar|s="1",e="3",tip="bar",dash|;
+            \ar|s="1",e="4",line="0",mark|<\circlelarr;>
+          >
+        >
+      >
+      \h2<Double and triple arrows>
+      \ul<
+        &m<
+          \diag<
+            \v; \v<2> \v; \br;
+            \v<4> \v<5> \v<6> \v<7>
+            \ar|s="2",e="5",line="2",dash|; \ar|s="5",e="6",line="2",inv|<Y> \ar|s="2",e="4",bend="-30",line="2"|;
+            \ar|s="4",e="5",line="3",inv|<Z> \ar|s="2",e="6",bend="30",line="3",dash|;
+            \ar|s="6",e="7"|<M> \ar|s="6",e="7",line="0",inv|<R> \ar|s="6",e="7",line="0",pos="10"|<S> \ar|s="6",e="7",line="0",pos="90"|<E>
+          >
+        >
+      >
+      \h2<Cell gaps>
+      \ul<
+        &m<
+          \diag|hor="med,sthk",ver="vthn"|<
+            \v<V> \v; \v; \br;
+            \v; \v<T> \v<S> \br;
+            \v<R> \v; \v;
+            \ar|s="1",e="7",inv|<x> \ar|s="1",e="5"|<y> \ar|s="7",e="5",inv|<`c>
+            \ar|s="5",e="6",inv|<\sb<V><\text<verylong>> + \sb<W><\text<longlong>>>
+          >
+        >
+        &m<
+          \diag|hor="thn,med,thk,36"|<
+            \v<1> \v<2> \v<3> \v<4> \v<5> \br;
+            \v<6> \v<7> \v<8> \v<9> \v<10> \br;
+            \v<11> \v<12> \v<13> \v<14> \v<15> \br;
+            \ar|s="1",e="2"|<\rm<thn>> \ar|s="2",e="3"|<\rm<med>> \ar|s="3",e="4"|<\rm<thk>> \ar|s="4",e="5"|<36>
+            \ar|s="6",e="7"|; \ar|s="7",e="8"|; \ar|s="8",e="9"|; \ar|s="9",e="10"|;
+            \ar|s="11",e="12"|; \ar|s="12",e="13"|; \ar|s="13",e="14"|; \ar|s="14",e="15"|;
+            \ar|s="1",e="6"|; \ar|s="6",e="11"|;
+            \ar|s="2",e="7"|; \ar|s="7",e="12"|;
+            \ar|s="3",e="8"|; \ar|s="8",e="13"|;
+            \ar|s="4",e="9"|; \ar|s="9",e="14"|;
+            \ar|s="5",e="10"|; \ar|s="10",e="15"|;
+          >
+        >
+      >
+      \h2<Specifying nodes by their names>
+      \ul<
+        &m<
+          \diag<
+            \v|name="a"|<a> \v|name="c"|<c> \br;
+            \v|name="b"|<b> \v; \br;
+            \ar|s="a",e="b",inv|<\sb<F><ab>> \ar|s="a",e="c"|<\sb<F><ac>> \ar|s="c",e="b"|<\sb<F><cb>>
+          >
+        >
+        &m<
+          \diag|hor="vthk"|<
+            \v<\scr<C>> \v<\scr<D>>
+            \ar|s="1",e="2",bend="40"|<F> \ar|s="1",e="2",bend="-40",inv|<G>
+            \ar|s="1",e="2",bend="40",pos="30",line="0",name="fl",inv|; \ar|s="1",e="2",bend="-40",pos="30",line="0",name="gl"|;
+            \ar|s="1",e="2",bend="40",pos="70",line="0",name="fr",inv|; \ar|s="1",e="2",bend="-40",pos="70",line="0",name="gr"|;
+            \ar|s="fl:c",e="gl:c",line="2",inv|<`a> \ar|s="fr:c",e="gr:c",line="2"|<`b>
+            \ar|s="fl:c",e="gl:c",line="0",name="a"|; \ar|s="fr:c",e="gr:c",line="0",name="b",inv|;
+            \ar|s="a:c",e="b:c",line="3"|<`J>
+          >
+        >
+      >
+      \h2<Alignments>
+      \ul<
+        &m<
+          P = \tort<\diag|bl|<
+            \v<\bfrm<El> (P)> \v<\scr<S>> \v<\sp<\bfrm<Set>><\sp<\scr<S>><\circ;>>>
+            \ar|s="1",e="2"|; \ar|s="2",e="3"|<\bf<y>>
+          >>
+        >
+        &m<
+          \array|align="rcl"|<
+            \c<\op<Hom> (MX, A)> \c<\diag|bl|<\v< > \v< > \ar|s="1",e="2"|<R \circ; L>>> \c<\op<Hom> (RLMX, RLA)> \br;
+            \c; \c<\diag|bl|<\v; \v; \ar|s="1",e="2"|<\hyphen; \circ; R \sb<`f><X>>>> \c<\op<Hom> (RKMX, RLA)> \br;
+            \c; \c<\diag|bl|<\v; \v; \ar|s="1",e="2"|<\hyphen; \circ; \sb<`h><MX>>>> \c<\op<Hom> (MX, RLA)>
+          >
+        >
+      >
+      \h1<Proof trees>
+      \h2<Basic>
+      \ul<
+        &m<
+          \tree<
+            \infr|n="0"|<A> \axm<B>
+            \infr|n="2"|<A \wedge; B><\wedge|ord|; \rm<I>> \axm<`F>
+            \infr|n="2"|<C><\to|ord|; \rm<E>>
+          >
+        >
+      >
+      \h2<Complicated>
+      \ul<
+        &m<
+          \tree<
+            \axm<`[Aaa`]> \axm<`[Bbb`]>
+            \infr|n="2"|<`[Cc`]> \axm<`[W`]>
+            \infr|n="2"|<`[Ddddd`]><Mmmm>
+            \axm<`[Ppp`]> \axm<`[Qqq`]>
+            \infr|n="1"|<`[R`]>
+            \infr|n="2"|<`[Ee`]><Uuu>
+            \infr|n="1"|<`[Fffff`]> \axm<`[X`]> 
+            \infr|n="2"|<`[Gg`]> \axm<`[Yyy`]>
+            \infr|n="2"|<`[Hhhh`]>
+            \infr|n="2"|<`[Ii`]><Nn><Oooo>
+            \infr|n="1"|<`[J`]>
+          >
+        >
+      >
+      \h1<Phantoms>
+      \h2<Basic>
+      \ul<
+        &m<
+          \array|align="c"|<
+            \cc<A a + B b + C c + D d>
+            \cc<A \ph<a> + B b \ph<+ C c> + D d>
+          >
+        >
+      >
+      \h2<Vertical only>
+      \ul<
+        &m<\paren<a + 1 \vph<\frac<1><2>>> \paren<a + \frac<1><2>>>
+      >
+      \h1<More complicated examples>
+      \h2<`#1>
+      \ul<
+        &m<
+          \frac<`p><2>
+          = \sum<k = 0><\infty;> \frac<(2 k) !><\sp<2><2 k> \sfun; \sp<(k !)><2>> \sfun; \frac<1><2 k + 1>
+          = \prod<k = 1><\infty;> \frac<4 \sp<k><2>><4 \sp<k><2> - 1>
+          = \sp<\paren<\int<0><\infty;> \frac<\sin; x><\sqrt<x>> dx>><2>
+        >
+      >
+      \h2<`#2>
+      \ul<
+        &m<
+          \array|align="rrcl"|<
+            \c<`C:> \c<\set<\paren<\matrix<\cc<a><- b> \cc<b><a>>> \in; \sb<\op<GL>><2> (\bb<R>)><\sp<a><2> + \sp<b><2> = 1>> \c<\longto;> \c<\sp<\bb<S>><1>> \br;
+            \c; \c<\paren<\matrix<\cc<a><- b> \cc<b><a>>>> \c<\longmapsto;> \c<a + b \sqrt<- 1>>
+          >
+        >
+      >
+      \h2<`#3>
+      \ul<
+        &m<
+          \diag<
+            \v<P \sb|bin|<\otimes;><R> \sb<\bracket<P, \bigoplus<i \in; I><> \sb<`[ P, \sb<Y><i> `]><T>>><T>>
+            \v<\bigoplus<i \in; I><> \sb<`[ P, \sb<Y><i> `]><T>> \br;
+            \v<P \sb|bin|<\otimes;><R> \sb<\bracket<P, \sb<\bracket<P, \bigoplus<i \in; I><> \sb<Y><i>>><T>>><T>>
+            \v<\sb<\bracket<P, \bigoplus<i \in; I><> \sb<Y><i>>><T>>
+            \ar|s="1",e="2",line="2",tip="none"|; \ar|s="3",e="4",line="2",tip="none"|;
+            \ar|s="1",e="3",inv|<\rm<id> \otimes; `[ \rm<id>, `l `]> \ar|s="2",e="4"|<`l>
+          >
+        >
+      >
+      \h2<`#4>
+      \ul<
+        &m<
+          \diag<
+            \v<\sb<D><0>> \v<\sb<D><1>> \v<\sb<D><2>> \v<\cdots;> \v<\sb<D><n>> \v<\sb<D><n + 1>> \v<\cdots;> \v<\sb<D><\infty;>>
+            \ar|s="1",e="2",shift="3",pos="70"|<\sbsp<`F><1><0>> \ar|s="2",e="1",shift="3",pos="30"|<\sbsp<`F><0><1>>
+            \ar|s="2",e="3",shift="3",pos="70"|<\sbsp<`F><2><1>> \ar|s="3",e="2",shift="3",pos="30"|<\sbsp<`F><1><2>>
+            \ar|s="3",e="4",shift="3"|; \ar|s="4",e="3",shift="3"|; \ar|s="4",e="5",shift="3"|; \ar|s="5",e="4",shift="3"|;
+            \ar|s="5",e="6",shift="3",pos="70"|<\sbsp<`F><n + 1><n>> \ar|s="6",e="5",shift="3",pos="30"|<\sbsp<`F><n><n + 1>>
+            \ar|s="6",e="7",shift="3"|; \ar|s="7",e="6",shift="3"|;
+            \ar|s="1",e="8",bend="40",pos="15"|<\sbsp<`F><\infty;><0>>
+            \ar|s="2",e="8",tip="none",bend="40",pos="15"|<\sbsp<`F><\infty;><1>>
+            \ar|s="3",e="8",tip="none",bend="40",pos="15"|<\sbsp<`F><\infty;><2>>
+            \ar|s="5",e="8",tip="none",bend="40",pos="15"|<\sbsp<`F><\infty;><n>>
+            \ar|s="6",e="8",tip="none",bend="40",pos="15"|<\sbsp<`F><\infty;><n + 1>>
+            \ar|s="8",e="1",bend="40",pos="85"|<\sbsp<`F><0><\infty;>>
+            \ar|s="8",e="2",bend="40",pos="85"|<\sbsp<`F><1><\infty;>>
+            \ar|s="8",e="3",bend="40",pos="85"|<\sbsp<`F><2><\infty;>>
+            \ar|s="8",e="5",bend="40",pos="85"|<\sbsp<`F><n><\infty;>>
+            \ar|s="8",e="6",bend="40",pos="85"|<\sbsp<`F><n + 1><\infty;>>
+          >
+        >
+      >
+      \h2<`#5>
+      \ul<
+        &m<
+          \tree<
+            \axm<`[p`] \sb<><2>> \axm<`[\neg; p`] \sb<><3>>
+            \infr|n="2"|<\bot;><><\neg; \rm<E>> \axm<`[\neg; q`] \sb<><1>>
+            \infr|n="2"|<\neg; \neg; q><1><\neg; \rm<I>>
+            \infr|n="1"|<q><><\neg; \neg;>
+            \infr|n="1"|<p \to|bin|; q><2><\to|ord|; \rm<I>> \axm<`[(p \to|bin|; q) \to|bin|; p`] \sb<><4>>
+            \infr|n="2"|<p><><\to|ord|; \rm<E>> \axm<`[\neg; p`] \sb<><3>>
+            \infr|n="2"|<\bot;><><\neg; \rm<E>>
+            \infr|n="2"|<\neg; \neg; p><3><\neg; \rm<I>>
+            \infr|n="1"|<p><><\neg; \neg;>
+            \infr|n="1"|<((p \to|bin|; q) \to|bin|; p) \to|bin|; p><4><\to|ord|; \rm<I>>
+          >
+        >
+      >
+    >
+
+  >
+>

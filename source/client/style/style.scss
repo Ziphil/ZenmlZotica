@@ -1,0 +1,692 @@
+@charset "utf-8";
+
+@use "sass:math" as *;
+
+
+@function spacing($value) {
+  $spacing-const: div(1em, 18);
+  @return $value * $spacing-const;
+}
+
+
+@mixin math-font {
+  margin-top: 0.12em;
+  margin-bottom: 0em;
+  line-height: 0.9;
+  font-family: "Zotica Math Web";
+}
+
+@mixin normal-font {
+  margin-top: 0em;
+  margin-bottom: 0em;
+  font-family: inherit;
+}
+
+
+math-n {
+  margin: 0em spacing(0);
+  line-height: 1;
+}
+
+
+math-i {
+  padding-right: spacing(1);
+  line-height: 1;
+  font-style: italic;
+
+  &.rm {
+    padding-right: spacing(0);
+    font-style: normal;
+  }
+
+  &.bf {
+    font-weight: bold;
+  }
+
+  &.tt {
+    font-family: "Consolas";
+    font-style: normal;
+  }
+
+  &.alt {
+    @include math-font;
+    padding-right: spacing(0);
+    font-style: normal;
+  }
+
+}
+
+
+math-o {
+  @include math-font;
+
+  &.txt {
+    @include normal-font;
+  }
+
+  &.sml {
+    @include normal-font;
+    font-variant: all-small-caps;
+  }
+
+  &.int {
+    margin-top: 0.65em;
+    margin-bottom: 0.7em;
+  }
+
+  &.int.inl {
+    margin-top: 0em;
+    margin-bottom: 0.05em;
+  }
+
+  &.sum {
+    margin-top: 0.24em;
+    margin-bottom: 0.24em;
+  }
+
+  &.sum.inl {
+    margin-top: 0.1em;
+    margin-bottom: 0.05em;
+  }
+
+  &.acc {
+    margin-top: 0em;
+    margin-bottom: 0em;
+  }
+
+  math-over >&.acc {
+    margin-top: -0.05em;
+  }
+
+  math-over >&.acc.it {
+    margin-right: -0.15em !important;
+  }
+
+  math-under >&.acc {
+    margin-bottom: -0.05em;
+  }
+
+  math-under >&.acc.it {
+    margin-left: -0.1em !important;
+  }
+
+  math-over >&.wid {
+    margin-top: 0.1em;
+    margin-bottom: 0em;
+  }
+
+  math-under >&.wid {
+    margin-top: 0em;
+    margin-bottom: 0.1em;
+  }
+
+  *:not(.lpres) >&:first-child,
+  *:not(.lpres) >math-strut +& {
+    margin-left: spacing(0);
+    margin-right: spacing(0);
+  }
+
+}
+
+
+math-frac {
+  margin: 0em spacing(2) !important;
+  vertical-align: -0.01em;
+
+  >math-num {
+    margin-bottom: -0.1em;
+    text-align: center;
+    display: block;
+  }
+
+  >math-denwrap {
+    margin: 0.2em 0em 0em 0em;
+    width: 100%;
+    display: inline-table;
+    text-align: center;
+  }
+
+  >math-denwrap >math-line {
+    margin: 0em spacing(-2) 0.18em spacing(-2) !important;
+    padding: 0em spacing(2) !important;
+    width: 100%;
+    height: 0.06em;
+    border-top: 0.06em solid;
+    box-sizing: content-box;
+  }
+
+  >math-denwrap >math-den {
+    margin: 0em 0em;
+    text-align: center;
+    display: block;
+  }
+
+}
+
+
+math-step {
+  margin: 0em !important;
+  vertical-align: -0.01em;
+
+  >math-ant {
+    margin-bottom: -0.1em;
+    text-align: center;
+    display: block;
+  }
+
+  >math-ant >* {
+    margin-left: spacing(24);
+  }
+
+  >math-ant >*:first-child {
+    margin-left: spacing(0);
+  }
+
+  >math-conwrap {
+    margin: 0.2em 0em 0em 0em;
+    width: 100%;
+    display: inline-table;
+    text-align: left;
+  }
+
+  >math-conwrap >math-line {
+    margin: 0em 0em 0.18em 0em !important;
+    padding: 0em 0em !important;
+    width: 0em;
+    height: 0.06em;
+    border-top: 0.06em solid;
+    box-sizing: content-box;
+  }
+
+  >math-conwrap >math-con {
+    margin: 0em 0em;
+    text-align: left;
+    display: block;
+  }
+
+}
+
+
+math-rad {
+
+  >math-sqrt {
+    margin-top: 0em;
+  }
+
+  >math-sqrt >math-surd {
+    margin-top: 0.21em;
+    vertical-align: top;
+  }
+
+  >math-sqrt >math-surd >math-o {
+    margin-top: 0em;
+    margin-bottom: 0em;
+  }
+
+  >math-sqrt >math-cont {
+    margin: 0em spacing(1) 0em spacing(0);
+    padding-top: 0.25em;
+    border-top: 0.06em solid;
+  }
+
+  >math-index {
+    vertical-align: 0.9em;
+    font-size: 64%;
+  }
+
+  >math-index +math-sqrt {
+    margin-left: -0.5em; 
+  }
+
+}
+
+
+math-subsup {
+  
+  >math-base {
+    margin: 0em spacing(0);
+  }
+
+  >math-sub,
+  >math-lsub {
+    margin-bottom: -0em;
+    vertical-align: -0.2969em;
+    font-size: 80%;
+    text-align: left;
+  }
+
+  >math-lsub {
+    text-align: right;
+  }
+
+  >math-sup,
+  >math-lsup {
+    margin-top: -0em;
+    vertical-align: 0.3906em;
+    font-size: 80%;
+    text-align: left;
+  }
+
+  >math-lsup {
+    text-align: right;
+  }
+
+  &.int {
+    margin: 0em spacing(0);
+  }
+
+}
+
+
+math-underover {
+
+  >math-over {
+    margin-bottom: spacing(4);
+    margin-top: -0em;
+    font-size: 80%;
+    text-align: center;
+    display: block;
+  }
+
+  &.acc >math-over {
+    margin-bottom: -0.55em;
+    font-size: 100%;
+  }
+
+  &.wid >math-over {
+    margin-bottom: -0.6em;
+    font-size: 100%;
+  }
+
+  &.wid[data-kind="overbrace"] >math-over {
+    margin-bottom: -0.6em;
+    margin-top: 0.05em;
+  }
+
+  &.wid[data-kind="overline"] >math-over {
+    margin-top: -0.1em;
+  }
+
+  &.wid[data-kind="overrarr"] >math-over,
+  &.wid[data-kind="overlarr"] >math-over {
+    margin-top: -0.05em;
+  }
+  
+  >math-basewrap {
+    margin: 0em 0em;
+    width: 100%;
+    display: inline-table;
+  }
+
+  >math-basewrap >math-base {
+    margin: 0em 0em;
+    text-align: center;
+    display: block;
+  }
+
+  >math-basewrap >math-under {
+    margin-top: spacing(4);
+    margin-bottom: -0em;
+    font-size: 80%;
+    text-align: center;
+    display: block;
+  }
+
+  &.acc >math-basewrap >math-under {
+    margin-top: -0.6em;
+    font-size: 100%;
+  }
+
+  &.wid >math-basewrap >math-under {
+    margin-top: -0.7em;
+    font-size: 100%;
+  }
+
+  &.wid[data-kind="underbrace"] >math-basewrap >math-under {
+    margin-top: -0.6em;
+    margin-bottom: 0.05em;
+  }
+
+  &.wid[data-kind="underline"] >math-basewrap >math-under {
+    margin-bottom: -0.15em;
+  }
+
+  &.wid[data-kind="underrarr"] >math-basewrap >math-under,
+  &.wid[data-kind="underlarr"] >math-basewrap >math-under {
+    margin-bottom: -0.1em;
+  }
+
+}
+
+
+math-vstretch {
+  display: inline-flex !important;
+  flex-direction: column;
+
+  >math-start,
+  >math-barwrap >math-bar,
+  >math-middle,
+  >math-end {
+    height: 1.25em;
+    line-height: 2em;
+    font-family: "Zotica Math Web";
+    display: block;
+  }
+
+  >math-middle {
+    height: 1.9em;
+    line-height: 3.4em;
+  }
+
+  >math-barwrap {
+    overflow: hidden;
+  }
+
+  >math-barwrap >math-bar {
+    transform: scale(1, 100);
+  }
+
+}
+
+
+math-hstretch {
+
+  >math-start,
+  >math-barwrap >math-bar,
+  >math-middle,
+  >math-end {
+    font-family: "Zotica Math Web";
+    line-height: 0.8em;
+  }
+
+  math-over >& >math-start,
+  math-over >& >math-barwrap,
+  math-over >& >math-middle,
+  math-over >& >math-end {
+    padding-top: 0.2em;
+    vertical-align: top;
+  }
+
+  math-under >& >math-start,
+  math-under >& >math-barwrap,
+  math-under >& >math-middle,
+  math-under >& >math-end {
+    padding-bottom: 0.2em;
+    vertical-align: bottom;
+  }
+
+  >math-barwrap {
+    overflow: hidden;
+  }
+
+  >math-barwrap >math-bar {
+    transform: scale(100, 1);
+  }
+
+}
+
+
+math-table {
+  vertical-align: middle;
+  display: inline-grid !important;
+  align-items: baseline;
+
+  &.std {
+    gap: spacing(10) spacing(0);
+  }
+
+  &.stk {
+    gap: spacing(3) spacing(0);
+  }
+
+  &.mat {
+    gap: spacing(6) spacing(15);
+  }
+
+  &.cas {
+    gap: spacing(6) spacing(24);
+  }
+
+  >math-cell {
+    text-align: center;
+  }
+
+}
+
+
+math-diagram {
+  row-gap: spacing(54);
+  column-gap: spacing(72);
+  vertical-align: middle;
+  display: inline-grid !important;
+  align-items: baseline;
+  position: relative;
+
+  $row-gaps: (non: 0, sthn: 9, vthn: 18, thn: 36, med: 54, thk: 72, vthk: 90, sthk: 108, uthk: 126);
+  $column-gaps: (non: 0, sthn: 12, vthn: 24, thn: 48, med: 72, thk: 96, vthk: 120, sthk: 144, uthk: 168);
+
+  @each $name, $gap in $row-gaps {
+    &.v#{$name} {
+      row-gap: spacing($gap);
+    }
+  }
+
+  @each $name, $gap in $column-gaps {
+    &.h#{$name} {
+      column-gap: spacing($gap);
+    }
+  }
+
+  &.baseline {
+    vertical-align: baseline;
+  }
+
+  >math-cellwrap {
+    text-align: center;
+  }
+
+  @each $name, $gap in $row-gaps {
+    >math-cellwrap.v#{$name} {
+      margin-top: spacing($gap);
+    }
+  }
+
+  @each $name, $gap in $column-gaps {
+    >math-cellwrap.h#{$name} {
+      margin-left: spacing($gap);
+    }
+  }
+
+  >math-arrow {
+    font-size: 80%;
+    position: absolute;
+  }
+
+  >svg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: visible;
+    pointer-events: none;
+  }
+
+  >svg path {
+    stroke-width: 0.06;
+    stroke: currentcolor;
+    fill: none;
+  }
+
+  >svg path.double.base {
+    stroke-width: 0.24;
+  }
+
+  >svg path.double.cover {
+    stroke-width: 0.12;
+  }
+
+  >svg path.triple.base {
+    stroke-width: 0.42;
+  }
+
+  >svg path.triple.cover {
+    stroke-width: 0.3;
+  }
+
+  >svg path.triple.front {
+    stroke-width: 0.06;
+  }
+
+  >svg path.dashed {
+    stroke-dasharray: 0.2 0.2;
+  }
+
+  >svg marker {
+    overflow: visible;
+  }
+  
+}
+
+
+math-tree {
+  vertical-align: middle;
+
+  math-infer {
+    vertical-align: bottom;
+    position: relative;
+  }
+
+  math-infer >math-label {
+    font-size: 80%;
+  }
+
+  math-infer >math-label:first-child {
+    padding-right: spacing(3);
+  }
+
+  math-infer >math-label:last-child {
+    padding-left: spacing(3);
+  }
+
+  math-infer >math-label.non {
+    padding-left: spacing(0);
+    padding-right: spacing(0);
+  }
+
+  math-axiom,
+  math-con >math-cont {
+    padding: 0em spacing(5);
+  }
+
+}
+
+
+math-space {
+
+  $margins: (
+    afun: 3, abin: 4, arel: 5, asbin: 8, asrel: 8, amat: 15, acas: 24,
+    sthn: 1, vthn: 2, thn: 3, med: 4, thk: 5, vthk: 6, sthk: 7, uthk: 8, hlf: 9, sgl: 18, ssq: 27, dbl: 36
+  );
+
+  @each $name, $margin in $margins {
+    &.#{$name} {
+      margin-left: spacing($margin) !important;
+    }
+  }
+
+  @each $name, $margin in $margins {
+    &.m#{$name} {
+      margin-left: spacing(-$margin) !important;
+    }
+  }
+
+}
+
+
+math-phantom {
+  visibility: hidden;
+
+  &.hor {
+    height: 0em !important;
+  }
+
+  &.ver {
+    width: 0em !important;
+  }
+
+}
+
+
+math-strut {
+  width: 0em !important;
+  visibility: hidden;
+}
+
+
+math-text {
+  line-height: 0.8;
+  white-space: pre;
+}
+
+
+math-root {
+  line-height: 0;
+  display: inline-block;
+  box-sizing: border-box;
+  white-space: nowrap;
+
+  * {
+    display: inline-block;
+    box-sizing: border-box;
+  }
+
+  $margins: (bin: 4 4, rel: 5 5, sbin: 8 8, srel: 8 8, del: 0 5, fun: 0 3, ord: 0 0, par: 0 0, lpar: 0 0, rpar: 0 0, cpar: 5 5);
+
+  @each $name, $margin in $margins {
+    *.#{$name} {
+      margin-left: spacing(nth($margin, 1));
+      margin-right: spacing(nth($margin, 2));
+    }
+  }
+
+  $small-elements: math-sub, math-sup, math-lsub, math-lsup, math-under, math-over, math-index, math-arrow, math-label;
+  $shrink-names: bin, rel, sbin, srel, del, cpar;
+
+  @each $small-element in $small-elements {
+    @each $shrink-name in $shrink-names {
+      #{$small-element} *.#{$shrink-name} {
+        margin-left: spacing(0) !important;
+        margin-right: spacing(0) !important;
+      }
+    }
+  }
+
+  *.fun +*.par,
+  *.fun +*.lpar {
+    margin-left: spacing(- nth(map-get($margins, fun), 2)) !important;
+  }
+
+  *.not {
+    padding-left: spacing(5);
+    padding-right: spacing(5);
+    margin-left: spacing(-10);
+    margin-right: spacing(0);
+  }
+
+  *:not(.lpres) >*:first-child,
+  *:not(.lpres) >math-strut +* {
+    margin-left: spacing(0);
+  }
+
+  *:not(.rpres) >*:last-child {
+    margin-right: spacing(0);
+  }
+
+}
+
+
+@font-face {
+  font-family: "Zotica Math Web";
+  src: url("__mathfonturl__");
+}
