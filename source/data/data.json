@@ -4,309 +4,6 @@
     "text",
     "bb", "varbb", "cal", "scr", "frak", "varfrak"
   ],
-  "replacement": {
-    "-": "−",
-    "*": "∗"
-  },
-  "fence": {
-    "paren": {
-      "left": {
-        "0": "(",
-        "1": "\uDB80\uDC39", "2": "\uDB80\uDC3A", "3": "\uDB80\uDC3B", "4": "\uDB80\uDC3C", "5": "\uDB80\uDC3D", "6": "\uDB80\uDC3E",
-        "7": "\uDB80\uDC3F", "8": "\uDB80\uDC40", "9": "\uDB80\uDC41", "10": "\uDB80\uDC42", "11": "\uDB80\uDC43", "12": "\uDB80\uDC44",
-        "start": "⎛", "bar": "⎜", "end": "⎝"
-      },
-      "right": {
-        "0": ")",
-        "1": "\uDB80\uDC45", "2": "\uDB80\uDC46", "3": "\uDB80\uDC47", "4": "\uDB80\uDC48", "5": "\uDB80\uDC49", "6": "\uDB80\uDC4A",
-        "7": "\uDB80\uDC4B", "8": "\uDB80\uDC4C", "9": "\uDB80\uDC4D", "10": "\uDB80\uDC4E", "11": "\uDB80\uDC4F", "12": "\uDB80\uDC50",
-        "start": "⎞", "bar":"⎟", "end": "⎠"
-      }
-    },
-    "pparen": {
-      "left": {
-        "0": "⦅",
-        "1": "\uDB80\uDE0A", "2": "\uDB80\uDE0B", "3": "\uDB80\uDE0C", "4": "\uDB80\uDE0D"
-      },
-      "right": {
-        "0": "⦆",
-        "1": "\uDB80\uDE0E", "2": "\uDB80\uDE0F", "3": "\uDB80\uDE10", "4": "\uDB80\uDE11"
-      }
-    },
-    "bracket": {
-      "left": {
-        "0": "[",
-        "1": "\uDB80\uDC51", "2": "\uDB80\uDC52", "3": "\uDB80\uDC53", "4": "\uDB80\uDC54", "5": "\uDB80\uDC55", "6": "\uDB80\uDC56",
-        "7": "\uDB80\uDC57", "8": "\uDB80\uDC58", "9": "\uDB80\uDC59", "10": "\uDB80\uDC5A", "11": "\uDB80\uDC5B", "12": "\uDB80\uDC5C",
-        "start": "⎡", "bar": "⎢", "end": "⎣"
-      },
-      "right": {
-        "0": "]",
-        "1": "\uDB80\uDC5D", "2": "\uDB80\uDC5E", "3": "\uDB80\uDC5F", "4": "\uDB80\uDC60", "5": "\uDB80\uDC61", "6": "\uDB80\uDC62",
-        "7": "\uDB80\uDC63", "8": "\uDB80\uDC64", "9": "\uDB80\uDC65", "10": "\uDB80\uDC66", "11": "\uDB80\uDC67", "12": "\uDB80\uDC68",
-        "start": "⎤", "bar": "⎥", "end": "⎦"
-      }  
-    },
-    "bbracket": {
-      "left": {
-        "0": "⟦",
-        "1": "\uDB80\uDDE8", "2": "\uDB80\uDDE9", "3": "\uDB80\uDDEA", "4": "\uDB80\uDDEB"
-      },
-      "right": {
-        "0": "⟧",
-        "1": "\uDB80\uDDEC", "2": "\uDB80\uDDED", "3": "\uDB80\uDDEE", "4": "\uDB80\uDDEF"
-      }  
-    },
-    "brace": {
-      "left": {
-        "0": "{",
-        "1": "\uDB80\uDC69", "2": "\uDB80\uDC6A", "3": "\uDB80\uDC6B", "4": "\uDB80\uDC6C", "5": "\uDB80\uDC6D", "6": "\uDB80\uDC6E",
-        "7": "\uDB80\uDC6F", "8": "\uDB80\uDC70", "9": "\uDB80\uDC71", "10": "\uDB80\uDC72", "11": "\uDB80\uDC73", "12": "\uDB80\uDC74",
-        "start": "⎧", "bar": "⎪", "middle": "⎨", "end": "⎩"
-      },
-      "right": {
-        "0": "}",
-        "1": "\uDB80\uDC75", "2": "\uDB80\uDC76", "3": "\uDB80\uDC77", "4": "\uDB80\uDC78", "5": "\uDB80\uDC79", "6": "\uDB80\uDC7A",
-        "7": "\uDB80\uDC7B", "8": "\uDB80\uDC7C", "9": "\uDB80\uDC7D", "10": "\uDB80\uDC7E", "11": "\uDB80\uDC7F", "12": "\uDB80\uDC80",
-        "start": "⎫", "bar": "⎪", "middle": "⎬", "end": "⎭"
-      }
-    },
-    "bbrace": {
-      "left": {
-        "0": "⦃",
-        "1": "\uDB80\uDE02", "2": "\uDB80\uDE03", "3": "\uDB80\uDE04", "4": "\uDB80\uDE05"
-      },
-      "right": {
-        "0": "⦄",
-        "1": "\uDB80\uDE06", "2": "\uDB80\uDE07", "3": "\uDB80\uDE08", "4": "\uDB80\uDE09"
-      }
-    },
-    "vert": {
-      "left": {
-        "0": "|",
-        "bar": "|"
-      },
-      "right": {
-        "0": "|",
-        "bar": "|"
-      }
-    },
-    "vvert": {
-      "left": {
-        "0": "‖",
-        "bar": "‖"
-      },
-      "right": {
-        "0": "‖",
-        "bar": "‖"
-      }
-    },
-    "floor": {
-      "left": {
-        "0": "⌊",
-        "1": "\uDB80\uDD99", "2": "\uDB80\uDD9A", "3": "\uDB80\uDD9B", "4": "\uDB80\uDD9C"
-      },
-      "right": {
-        "0": "⌋",
-        "1": "\uDB80\uDD9D", "2": "\uDB80\uDD9E", "3": "\uDB80\uDD9F", "4": "\uDB80\uDDA0"
-      }
-    },
-    "ceil": {
-      "left": {
-        "0": "⌈",
-        "1": "\uDB80\uDD91", "2": "\uDB80\uDD92", "3": "\uDB80\uDD93", "4": "\uDB80\uDD94"
-      },
-      "right": {
-        "0": "⌉",
-        "1": "\uDB80\uDD95", "2": "\uDB80\uDD96", "3": "\uDB80\uDD97", "4": "\uDB80\uDD98"
-      }
-    },
-    "angle": {
-      "left": {
-        "0": "⟨",
-        "1": "\uDB80\uDDF0", "2": "\uDB80\uDDF1", "3": "\uDB80\uDDF2", "4": "\uDB80\uDDF3"
-      },
-      "right": {
-        "0": "⟩",
-        "1": "\uDB80\uDDF4", "2": "\uDB80\uDDF5", "3": "\uDB80\uDDF6", "4": "\uDB80\uDDF7"
-      }
-    },
-    "aangle": {
-      "left": {
-        "0": "⟪",
-        "1": "\uDB80\uDDF8", "2": "\uDB80\uDDF9", "3": "\uDB80\uDDFA", "4": "\uDB80\uDDFB"
-      },
-      "right": {
-        "0": "⟫",
-        "1": "\uDB80\uDDFC", "2": "\uDB80\uDDFD", "3": "\uDB80\uDDFE", "4": "\uDB80\uDDFF"
-      }
-    },
-    "tort": {
-      "left": {
-        "0": "❲",
-        "1": "\uDB80\uDDE0", "2": "\uDB80\uDDE1", "3": "\uDB80\uDDE2", "4": "\uDB80\uDDE3",
-        "start": "\uDB81\uDDA4", "bar": "\uDB81\uDDA5", "end": "\uDB81\uDDA6"
-      },
-      "right": {
-        "0": "❳",
-        "1": "\uDB80\uDDE4", "2": "\uDB80\uDDE5", "3": "\uDB80\uDDE6", "4": "\uDB80\uDDE7",
-        "start": "\uDB81\uDDA7", "bar": "\uDB81\uDDA8", "end": "\uDB81\uDDA9"
-      }
-    }
-  },
-  "integral": {
-    "int": {"inl": "∫", "lrg": "\uDB80\uDD35"},
-    "iint": {"inl": "∬", "lrg": "\uDB80\uDD3A"},
-    "iiint": {"inl": "∭", "lrg": "\uDB80\uDD3F"},
-    "iiiint": {"inl": "⨌", "lrg": "\uDB80\uDE24"},
-    "oint": {"inl": "∮", "lrg": "\uDB80\uDD44"},
-    "oiint": {"inl": "∯", "lrg": "\uDB80\uDD49"},
-    "oiiint": {"inl": "∰", "lrg": "\uDB80\uDD4E"},
-    "intclock": {"inl": "∱", "lrg": "\uDB80\uDD53"},
-    "intanticlock": {"inl": "⨑", "lrg": "\uDB80\uDE3D"},
-    "ointclock": {"inl": "∲", "lrg": "\uDB80\uDD58"},
-    "ointanticlock": {"inl": "∳", "lrg": "\uDB80\uDD5D"},
-    "fint": {"inl": "⨍", "lrg": "\uDB80\uDE29"}
-  },
-  "sum": {
-    "sum": {"inl": "∑", "lrg": "\uDB80\uDD1A"},
-    "prod": {"inl": "∏", "lrg": "\uDB80\uDD16"},
-    "coprod": {"inl": "∐", "lrg": "\uDB80\uDD18"},
-    "bigoplus": {"inl": "⨁", "lrg": "\uDB80\uDE15"},
-    "bigotimes": {"inl": "⨂", "lrg": "\uDB80\uDE16"},
-    "bigodot": {"inl": "⨀", "lrg": "\uDB80\uDE14"},
-    "bigcap": {"inl": "⋂", "lrg": "\uDB80\uDD89"},
-    "bigcup": {"inl": "⋃", "lrg": "\uDB80\uDD8A"},
-    "bigsqcap": {"inl": "⨅", "lrg": "\uDB80\uDE19"},
-    "bigsqcup": {"inl": "⨆", "lrg": "\uDB80\uDE1A"},
-    "bigwedge": {"inl": "⋀", "lrg": "\uDB80\uDD87"},
-    "bigvee": {"inl": "⋁", "lrg": "\uDB80\uDD88"}
-  },
-  "radical": {
-    "0": "√", "1": "\uDB80\uDD1D", "2": "\uDB80\uDD1E", "3": "\uDB80\uDD1F",
-    "height": [1486, 2102, 2623, 3100]
-  },
-  "accent": {
-    "bar": {"un": null, "ov": "\uDB81\uDD04"},
-    "tilde": {"un": null, "ov": "\uDB81\uDD03"},
-    "hat": {"un": null, "ov": "\uDB81\uDD02"},
-    "check": {"un": null, "ov": "\uDB81\uDD0C"},
-    "acute": {"un": null, "ov": "\uDB81\uDD01"},
-    "grave": {"un": null, "ov": "\uDB81\uDD00"},
-    "breve": {"un": null, "ov": "\uDB81\uDD06"},
-    "invbreve": {"un": null, "ov": "\uDB81\uDD11"},
-    "ring": {"un": null, "ov": "\uDB81\uDD0A"},
-    "vec": {"un": null, "ov": "\uDB81\uDD77"},
-    "invvec": {"un": null, "ov": "\uDB81\uDD76"},
-    "dot": {"un": null, "ov": "\uDB81\uDD07"},
-    "ddot": {"un": null, "ov": "\uDB81\uDD08"},
-    "dddot": {"un": null, "ov": "\uDB81\uDD7B"},
-    "ddddot": {"un": null, "ov": "\uDB81\uDD7C"},
-    "barbelow": {"un": "\uDB81\uDD31", "ov": null},
-    "tildebelow": {"un": "\uDB81\uDD30", "ov": null}
-  },
-  "wide": {
-    "widetilde": {
-      "un": null,
-      "ov": {
-        "0": "\uDB80\uDCA1", "1": "\uDB80\uDCA2", "2": "\uDB80\uDCA3", "3": "\uDB80\uDCA4", "4": "\uDB80\uDCA5",
-        "width": [1002, 1495, 1931, 2384, 10000]
-      }
-    },
-    "widehat": {
-      "un": null,
-      "ov": {
-        "0": "\uDB80\uDC97", "1": "\uDB80\uDC98", "2": "\uDB80\uDC99", "3": "\uDB80\uDC9A", "4": "\uDB80\uDC9B",
-        "width": [1002, 1495, 1931, 2384, 10000]
-      }
-    },
-    "widecheck": {
-      "un": null,
-      "ov": {
-        "0": "\uDB80\uDC9C", "1": "\uDB80\uDC9D", "2": "\uDB80\uDC9E", "3": "\uDB80\uDC9F", "4": "\uDB80\uDCA0",
-        "width": [1002, 1495, 1931, 2384, 10000]
-      }
-    },
-    "overline": {
-      "un": null,
-      "ov": {
-        "0": "",
-        "bar": "\uDB80\uDCB5"
-      }
-    },
-    "overrarr": {
-      "un": null,
-      "ov": {
-        "0": "",
-        "bar": "\uDB80\uDCE9", "end": "\uDB80\uDCEA"
-      }
-    },
-    "overlarr": {
-      "un": null,
-      "ov": {
-        "0": "",
-        "end": "\uDB80\uDCE4", "bar": "\uDB80\uDCE9"
-      }
-    },
-    "overbrace": {
-      "un": null,
-      "ov": {
-        "0": "⏞", "1": "\uDB80\uDDC7", "2": "\uDB80\uDDC8", "3": "\uDB80\uDDC9", "4": "\uDB80\uDDCA", "5": "\uDB80\uDDCB",
-        "start": "\uDB80\uDDC4", "bar": "\uDB80\uDDAA", "middle": "\uDB80\uDDC5", "end": "\uDB80\uDDC6",
-        "width": [1000, 1500, 1770, 2180, 2600, 2850]
-      }
-    },
-    "overgroup": {
-      "un": null,
-      "ov": {
-        "0": "",
-        "start": "\uDB80\uDDC4", "bar": "\uDB80\uDDAA", "end": "\uDB80\uDDC6"
-      }
-    },
-    "widetildebelow": {
-      "un": {
-        "0": "\uDB80\uDCA6", "1": "\uDB80\uDCA7", "2": "\uDB80\uDCA8", "3": "\uDB80\uDCA9", "4": "\uDB80\uDCAA",
-        "width": [1002, 1495, 1931, 2384, 10000]
-      },
-      "ov": null
-    },
-    "underline": {
-      "un": {
-        "0": "",
-        "bar": "\uDB80\uDC92"
-      },
-      "ov": null
-    },
-    "underrarr": {
-      "un": {
-        "0": "",
-        "bar": "\uDB80\uDCFE", "end": "\uDB80\uDCFF"
-      },
-      "ov": null
-    },
-    "underlarr": {
-      "un": {
-        "0": "",
-        "start": "\uDB80\uDCF9", "bar": "\uDB80\uDCFE"
-      },
-      "ov": null
-    },
-    "underbrace": {
-      "un": {
-        "0": "⏟", "1": "\uDB80\uDDCF", "2": "\uDB80\uDDD0", "3": "\uDB80\uDDD1", "4": "\uDB80\uDDD2", "5": "\uDB80\uDDD3",
-        "start": "\uDB80\uDDCC", "bar": "\uDB80\uDDB2", "middle": "\uDB80\uDDCD", "end": "\uDB80\uDDCE",
-        "width": [1000, 1500, 1770, 2180, 2600, 2850]
-      },
-      "ov": null
-    },
-    "undergroup": {
-      "un": {
-        "0": "",
-        "start": "\uDB80\uDDCC", "bar": "\uDB80\uDDB2", "end": "\uDB80\uDDCE"
-      },
-      "ov": null
-    }
-  },
   "function": [
     "sin", "cos", "tan", "cot", "sec", "csc", "sinh", "cosh", "tanh",
     "log", "ln", "lg", "exp",
@@ -329,6 +26,10 @@
     "varkoppa": "ϟ", "varcapkoppa": "Ϟ",
     "sampi": "ϡ", "capsampi": "Ϡ",
     "varsampi": "ͳ", "varcapsampi": "Ͳ"
+  },
+  "replacement": {
+    "-": "−",
+    "*": "∗"
   },
   "operator": {
     "plus": {"symbol": "+", "types": ["bin"]}, 
@@ -664,6 +365,305 @@
     "laangle": {"symbol": "⟪", "types": ["lpar"]}, "raangle": {"symbol": "⟫", "types": ["rpar"]},
     "ltort": {"symbol": "❲", "types": ["lpar"]}, "rtort": {"symbol": "❳", "types": ["rpar"]}
   },
+  "radical": {
+    "0": "√", "1": "\uDB80\uDD1D", "2": "\uDB80\uDD1E", "3": "\uDB80\uDD1F",
+    "height": [1486, 2102, 2623, 3100]
+  },
+  "integral": {
+    "int": {"inl": "∫", "lrg": "\uDB80\uDD35"},
+    "iint": {"inl": "∬", "lrg": "\uDB80\uDD3A"},
+    "iiint": {"inl": "∭", "lrg": "\uDB80\uDD3F"},
+    "iiiint": {"inl": "⨌", "lrg": "\uDB80\uDE24"},
+    "oint": {"inl": "∮", "lrg": "\uDB80\uDD44"},
+    "oiint": {"inl": "∯", "lrg": "\uDB80\uDD49"},
+    "oiiint": {"inl": "∰", "lrg": "\uDB80\uDD4E"},
+    "intclock": {"inl": "∱", "lrg": "\uDB80\uDD53"},
+    "intanticlock": {"inl": "⨑", "lrg": "\uDB80\uDE3D"},
+    "ointclock": {"inl": "∲", "lrg": "\uDB80\uDD58"},
+    "ointanticlock": {"inl": "∳", "lrg": "\uDB80\uDD5D"},
+    "fint": {"inl": "⨍", "lrg": "\uDB80\uDE29"}
+  },
+  "sum": {
+    "sum": {"inl": "∑", "lrg": "\uDB80\uDD1A"},
+    "prod": {"inl": "∏", "lrg": "\uDB80\uDD16"},
+    "coprod": {"inl": "∐", "lrg": "\uDB80\uDD18"},
+    "bigoplus": {"inl": "⨁", "lrg": "\uDB80\uDE15"},
+    "bigotimes": {"inl": "⨂", "lrg": "\uDB80\uDE16"},
+    "bigodot": {"inl": "⨀", "lrg": "\uDB80\uDE14"},
+    "bigcap": {"inl": "⋂", "lrg": "\uDB80\uDD89"},
+    "bigcup": {"inl": "⋃", "lrg": "\uDB80\uDD8A"},
+    "bigsqcap": {"inl": "⨅", "lrg": "\uDB80\uDE19"},
+    "bigsqcup": {"inl": "⨆", "lrg": "\uDB80\uDE1A"},
+    "bigwedge": {"inl": "⋀", "lrg": "\uDB80\uDD87"},
+    "bigvee": {"inl": "⋁", "lrg": "\uDB80\uDD88"}
+  },
+  "fence": {
+    "paren": {
+      "left": {
+        "0": "(",
+        "1": "\uDB80\uDC39", "2": "\uDB80\uDC3A", "3": "\uDB80\uDC3B", "4": "\uDB80\uDC3C", "5": "\uDB80\uDC3D", "6": "\uDB80\uDC3E",
+        "7": "\uDB80\uDC3F", "8": "\uDB80\uDC40", "9": "\uDB80\uDC41", "10": "\uDB80\uDC42", "11": "\uDB80\uDC43", "12": "\uDB80\uDC44",
+        "start": "⎛", "bar": "⎜", "end": "⎝"
+      },
+      "right": {
+        "0": ")",
+        "1": "\uDB80\uDC45", "2": "\uDB80\uDC46", "3": "\uDB80\uDC47", "4": "\uDB80\uDC48", "5": "\uDB80\uDC49", "6": "\uDB80\uDC4A",
+        "7": "\uDB80\uDC4B", "8": "\uDB80\uDC4C", "9": "\uDB80\uDC4D", "10": "\uDB80\uDC4E", "11": "\uDB80\uDC4F", "12": "\uDB80\uDC50",
+        "start": "⎞", "bar":"⎟", "end": "⎠"
+      }
+    },
+    "pparen": {
+      "left": {
+        "0": "⦅",
+        "1": "\uDB80\uDE0A", "2": "\uDB80\uDE0B", "3": "\uDB80\uDE0C", "4": "\uDB80\uDE0D"
+      },
+      "right": {
+        "0": "⦆",
+        "1": "\uDB80\uDE0E", "2": "\uDB80\uDE0F", "3": "\uDB80\uDE10", "4": "\uDB80\uDE11"
+      }
+    },
+    "bracket": {
+      "left": {
+        "0": "[",
+        "1": "\uDB80\uDC51", "2": "\uDB80\uDC52", "3": "\uDB80\uDC53", "4": "\uDB80\uDC54", "5": "\uDB80\uDC55", "6": "\uDB80\uDC56",
+        "7": "\uDB80\uDC57", "8": "\uDB80\uDC58", "9": "\uDB80\uDC59", "10": "\uDB80\uDC5A", "11": "\uDB80\uDC5B", "12": "\uDB80\uDC5C",
+        "start": "⎡", "bar": "⎢", "end": "⎣"
+      },
+      "right": {
+        "0": "]",
+        "1": "\uDB80\uDC5D", "2": "\uDB80\uDC5E", "3": "\uDB80\uDC5F", "4": "\uDB80\uDC60", "5": "\uDB80\uDC61", "6": "\uDB80\uDC62",
+        "7": "\uDB80\uDC63", "8": "\uDB80\uDC64", "9": "\uDB80\uDC65", "10": "\uDB80\uDC66", "11": "\uDB80\uDC67", "12": "\uDB80\uDC68",
+        "start": "⎤", "bar": "⎥", "end": "⎦"
+      }  
+    },
+    "bbracket": {
+      "left": {
+        "0": "⟦",
+        "1": "\uDB80\uDDE8", "2": "\uDB80\uDDE9", "3": "\uDB80\uDDEA", "4": "\uDB80\uDDEB"
+      },
+      "right": {
+        "0": "⟧",
+        "1": "\uDB80\uDDEC", "2": "\uDB80\uDDED", "3": "\uDB80\uDDEE", "4": "\uDB80\uDDEF"
+      }  
+    },
+    "brace": {
+      "left": {
+        "0": "{",
+        "1": "\uDB80\uDC69", "2": "\uDB80\uDC6A", "3": "\uDB80\uDC6B", "4": "\uDB80\uDC6C", "5": "\uDB80\uDC6D", "6": "\uDB80\uDC6E",
+        "7": "\uDB80\uDC6F", "8": "\uDB80\uDC70", "9": "\uDB80\uDC71", "10": "\uDB80\uDC72", "11": "\uDB80\uDC73", "12": "\uDB80\uDC74",
+        "start": "⎧", "bar": "⎪", "middle": "⎨", "end": "⎩"
+      },
+      "right": {
+        "0": "}",
+        "1": "\uDB80\uDC75", "2": "\uDB80\uDC76", "3": "\uDB80\uDC77", "4": "\uDB80\uDC78", "5": "\uDB80\uDC79", "6": "\uDB80\uDC7A",
+        "7": "\uDB80\uDC7B", "8": "\uDB80\uDC7C", "9": "\uDB80\uDC7D", "10": "\uDB80\uDC7E", "11": "\uDB80\uDC7F", "12": "\uDB80\uDC80",
+        "start": "⎫", "bar": "⎪", "middle": "⎬", "end": "⎭"
+      }
+    },
+    "bbrace": {
+      "left": {
+        "0": "⦃",
+        "1": "\uDB80\uDE02", "2": "\uDB80\uDE03", "3": "\uDB80\uDE04", "4": "\uDB80\uDE05"
+      },
+      "right": {
+        "0": "⦄",
+        "1": "\uDB80\uDE06", "2": "\uDB80\uDE07", "3": "\uDB80\uDE08", "4": "\uDB80\uDE09"
+      }
+    },
+    "vert": {
+      "left": {
+        "0": "|",
+        "bar": "|"
+      },
+      "right": {
+        "0": "|",
+        "bar": "|"
+      }
+    },
+    "vvert": {
+      "left": {
+        "0": "‖",
+        "bar": "‖"
+      },
+      "right": {
+        "0": "‖",
+        "bar": "‖"
+      }
+    },
+    "floor": {
+      "left": {
+        "0": "⌊",
+        "1": "\uDB80\uDD99", "2": "\uDB80\uDD9A", "3": "\uDB80\uDD9B", "4": "\uDB80\uDD9C"
+      },
+      "right": {
+        "0": "⌋",
+        "1": "\uDB80\uDD9D", "2": "\uDB80\uDD9E", "3": "\uDB80\uDD9F", "4": "\uDB80\uDDA0"
+      }
+    },
+    "ceil": {
+      "left": {
+        "0": "⌈",
+        "1": "\uDB80\uDD91", "2": "\uDB80\uDD92", "3": "\uDB80\uDD93", "4": "\uDB80\uDD94"
+      },
+      "right": {
+        "0": "⌉",
+        "1": "\uDB80\uDD95", "2": "\uDB80\uDD96", "3": "\uDB80\uDD97", "4": "\uDB80\uDD98"
+      }
+    },
+    "angle": {
+      "left": {
+        "0": "⟨",
+        "1": "\uDB80\uDDF0", "2": "\uDB80\uDDF1", "3": "\uDB80\uDDF2", "4": "\uDB80\uDDF3"
+      },
+      "right": {
+        "0": "⟩",
+        "1": "\uDB80\uDDF4", "2": "\uDB80\uDDF5", "3": "\uDB80\uDDF6", "4": "\uDB80\uDDF7"
+      }
+    },
+    "aangle": {
+      "left": {
+        "0": "⟪",
+        "1": "\uDB80\uDDF8", "2": "\uDB80\uDDF9", "3": "\uDB80\uDDFA", "4": "\uDB80\uDDFB"
+      },
+      "right": {
+        "0": "⟫",
+        "1": "\uDB80\uDDFC", "2": "\uDB80\uDDFD", "3": "\uDB80\uDDFE", "4": "\uDB80\uDDFF"
+      }
+    },
+    "tort": {
+      "left": {
+        "0": "❲",
+        "1": "\uDB80\uDDE0", "2": "\uDB80\uDDE1", "3": "\uDB80\uDDE2", "4": "\uDB80\uDDE3",
+        "start": "\uDB81\uDDA4", "bar": "\uDB81\uDDA5", "end": "\uDB81\uDDA6"
+      },
+      "right": {
+        "0": "❳",
+        "1": "\uDB80\uDDE4", "2": "\uDB80\uDDE5", "3": "\uDB80\uDDE6", "4": "\uDB80\uDDE7",
+        "start": "\uDB81\uDDA7", "bar": "\uDB81\uDDA8", "end": "\uDB81\uDDA9"
+      }
+    }
+  },
+  "accent": {
+    "bar": {"un": null, "ov": "\uDB81\uDD04"},
+    "tilde": {"un": null, "ov": "\uDB81\uDD03"},
+    "hat": {"un": null, "ov": "\uDB81\uDD02"},
+    "check": {"un": null, "ov": "\uDB81\uDD0C"},
+    "acute": {"un": null, "ov": "\uDB81\uDD01"},
+    "grave": {"un": null, "ov": "\uDB81\uDD00"},
+    "breve": {"un": null, "ov": "\uDB81\uDD06"},
+    "invbreve": {"un": null, "ov": "\uDB81\uDD11"},
+    "ring": {"un": null, "ov": "\uDB81\uDD0A"},
+    "vec": {"un": null, "ov": "\uDB81\uDD77"},
+    "invvec": {"un": null, "ov": "\uDB81\uDD76"},
+    "dot": {"un": null, "ov": "\uDB81\uDD07"},
+    "ddot": {"un": null, "ov": "\uDB81\uDD08"},
+    "dddot": {"un": null, "ov": "\uDB81\uDD7B"},
+    "ddddot": {"un": null, "ov": "\uDB81\uDD7C"},
+    "barbelow": {"un": "\uDB81\uDD31", "ov": null},
+    "tildebelow": {"un": "\uDB81\uDD30", "ov": null}
+  },
+  "wide": {
+    "widetilde": {
+      "un": null,
+      "ov": {
+        "0": "\uDB80\uDCA1", "1": "\uDB80\uDCA2", "2": "\uDB80\uDCA3", "3": "\uDB80\uDCA4", "4": "\uDB80\uDCA5",
+        "width": [1002, 1495, 1931, 2384, 10000]
+      }
+    },
+    "widehat": {
+      "un": null,
+      "ov": {
+        "0": "\uDB80\uDC97", "1": "\uDB80\uDC98", "2": "\uDB80\uDC99", "3": "\uDB80\uDC9A", "4": "\uDB80\uDC9B",
+        "width": [1002, 1495, 1931, 2384, 10000]
+      }
+    },
+    "widecheck": {
+      "un": null,
+      "ov": {
+        "0": "\uDB80\uDC9C", "1": "\uDB80\uDC9D", "2": "\uDB80\uDC9E", "3": "\uDB80\uDC9F", "4": "\uDB80\uDCA0",
+        "width": [1002, 1495, 1931, 2384, 10000]
+      }
+    },
+    "overline": {
+      "un": null,
+      "ov": {
+        "0": "",
+        "bar": "\uDB80\uDCB5"
+      }
+    },
+    "overrarr": {
+      "un": null,
+      "ov": {
+        "0": "",
+        "bar": "\uDB80\uDCE9", "end": "\uDB80\uDCEA"
+      }
+    },
+    "overlarr": {
+      "un": null,
+      "ov": {
+        "0": "",
+        "end": "\uDB80\uDCE4", "bar": "\uDB80\uDCE9"
+      }
+    },
+    "overbrace": {
+      "un": null,
+      "ov": {
+        "0": "⏞", "1": "\uDB80\uDDC7", "2": "\uDB80\uDDC8", "3": "\uDB80\uDDC9", "4": "\uDB80\uDDCA", "5": "\uDB80\uDDCB",
+        "start": "\uDB80\uDDC4", "bar": "\uDB80\uDDAA", "middle": "\uDB80\uDDC5", "end": "\uDB80\uDDC6",
+        "width": [1000, 1500, 1770, 2180, 2600, 2850]
+      }
+    },
+    "overgroup": {
+      "un": null,
+      "ov": {
+        "0": "",
+        "start": "\uDB80\uDDC4", "bar": "\uDB80\uDDAA", "end": "\uDB80\uDDC6"
+      }
+    },
+    "widetildebelow": {
+      "un": {
+        "0": "\uDB80\uDCA6", "1": "\uDB80\uDCA7", "2": "\uDB80\uDCA8", "3": "\uDB80\uDCA9", "4": "\uDB80\uDCAA",
+        "width": [1002, 1495, 1931, 2384, 10000]
+      },
+      "ov": null
+    },
+    "underline": {
+      "un": {
+        "0": "",
+        "bar": "\uDB80\uDC92"
+      },
+      "ov": null
+    },
+    "underrarr": {
+      "un": {
+        "0": "",
+        "bar": "\uDB80\uDCFE", "end": "\uDB80\uDCFF"
+      },
+      "ov": null
+    },
+    "underlarr": {
+      "un": {
+        "0": "",
+        "start": "\uDB80\uDCF9", "bar": "\uDB80\uDCFE"
+      },
+      "ov": null
+    },
+    "underbrace": {
+      "un": {
+        "0": "⏟", "1": "\uDB80\uDDCF", "2": "\uDB80\uDDD0", "3": "\uDB80\uDDD1", "4": "\uDB80\uDDD2", "5": "\uDB80\uDDD3",
+        "start": "\uDB80\uDDCC", "bar": "\uDB80\uDDB2", "middle": "\uDB80\uDDCD", "end": "\uDB80\uDDCE",
+        "width": [1000, 1500, 1770, 2180, 2600, 2850]
+      },
+      "ov": null
+    },
+    "undergroup": {
+      "un": {
+        "0": "",
+        "start": "\uDB80\uDDCC", "bar": "\uDB80\uDDB2", "end": "\uDB80\uDDCE"
+      },
+      "ov": null
+    }
+  },
   "arrow": {
     "normal": {
       "edge": "end",
@@ -700,6 +700,9 @@
       "x": 0.12, "y": 0, "width": 0.24, "height": 0.3, "extrusion": 0.18,
       "command": "M 0.12 0 A 0.15 0.15 0 0 0 0.12 0.3 L 0.18 0.3"
     }
+  },
+  "space": {
+    "sfun": "afun", "sbin": "abin", "srel": "arel", "ssbin": "asbin", "ssrel": "asrel", "scas": "acas", "quad": "sgl", "qquad": "dbl"
   },
   "alternative": {
     "varbb": {

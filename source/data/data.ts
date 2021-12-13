@@ -1,7 +1,8 @@
 //
 
 import type {
-  ZoticaOperatorType
+  ZoticaOperatorType,
+  ZoticaSpaceType
 } from "../parser/builder";
 import ZOTICA_DATA_JSON from "./data.json";
 
@@ -116,6 +117,15 @@ export class ZoticaData {
     return replacement;
   }
 
+  public isSpaceTagName(tagName: string): boolean {
+    return this.json.space[tagName] !== undefined;
+  }
+
+  public getSpaceType(tagName: string): ZoticaSpaceType | string | null {
+    let type = this.json.space[tagName] ?? null;
+    return type;
+  }
+
   public getAlternativeIdentifierContent(kind: string, content: string): string {
     let nextContent = [...content].map((char) => this.json.alternative[kind]?.[char] ?? "").join("");
     return nextContent;
@@ -144,6 +154,7 @@ export type ZoticaDataJson = {
   identifier: {[K in string]?: string},
   operator: {[K in string]?: {symbol: string, types: Array<string>}},
   arrow: {[K in string]?: {edge: string, x: number, y: number, width: number, height: number, extrusion: number, command: string}},
+  space: {[T in string]?: string},
   alternative: {[K in string]?: {[C in string]?: string}},
   greek: {[C in string]?: string}
 };

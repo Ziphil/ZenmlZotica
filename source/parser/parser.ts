@@ -341,6 +341,29 @@ export class ZoticaParser extends ZenmlParser {
         appendChildren(rightLabelSelf, childrenArgs[1] ?? []);
         appendChildren(leftLabelSelf, childrenArgs[2] ?? []);
       }));
+    } else if (tagName === "g") {
+      let settings = {
+        rotate: (attributes.has("rotate")) ? parseInt(attributes.get("rotate")!) : undefined
+      };
+      nodes.push(this.builder.buildGroup(settings, options, (contentSelf) => {
+        appendChildren(contentSelf, childrenArgs[0] ?? []);
+      }));
+    } else if (tagName === "ph") {
+      let type = attributes.get("t") ?? "bth";
+      nodes.push(this.builder.buildPhantom(type, options, (contentSelf) => {
+        appendChildren(contentSelf, childrenArgs[0] ?? []);
+      }));
+    } else if (tagName === "vph" || tagName === "hph") {
+      let type = (tagName === "vph") ? "ver" : "hor";
+      nodes.push(this.builder.buildPhantom(type, options, (contentSelf) => {
+        appendChildren(contentSelf, childrenArgs[0] ?? []);
+      }));
+    } else if (tagName === "s") {
+      let type = attributes.get("t") ?? "med";
+      nodes.push(this.builder.buildSpace(type, options));
+    } else if (ZOTICA_DATA.isSpaceTagName(tagName)) {
+      let type = ZOTICA_DATA.getSpaceType(tagName)!;
+      nodes.push(this.builder.buildSpace(type, options));
     }
     return nodes;
   }
