@@ -11,7 +11,7 @@ let config = {
     path: path.join(__dirname, "dist"),
     filename: "script.js",
   },
-  mode: "development",
+  mode: "production",
   module: {
     rules: [
       {
@@ -28,6 +28,9 @@ let config = {
   },
   resolve: {
     extensions: [".ts"]
+  },
+  optimization: {
+    minimize: true,
   },
   cache: true
 };
