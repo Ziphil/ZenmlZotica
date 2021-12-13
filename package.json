@@ -8,8 +8,8 @@
   "main": "dist/index.js",
   "scripts": {
     "develop": "ts-node source/index.ts",
-    "build": "run-s build:script build:main",
-    "build:script": "webpack --config webpack-script.ts",
+    "build": "run-s build:client build:main",
+    "build:client": "webpack --config webpack-client.ts",
     "build:main": "webpack --config webpack-main.ts",
     "test": "ts-node -r tsconfig-paths/register test/generate.ts",
     "prepare": "npm run build"

@@ -5,7 +5,7 @@ import path from "path";
 
 let config = {
   entry: {
-    index: ["./source/script/main.ts"]
+    index: ["./source/client/script/index.ts"]
   },
   output: {
     path: path.join(__dirname, "dist"),
@@ -20,7 +20,7 @@ let config = {
         use: {
           loader: "ts-loader",
           options: {
-            configFile: "tsconfig-script.json",
+            configFile: "tsconfig-client.json",
           }
         }
       }

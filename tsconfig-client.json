@@ -17,6 +17,6 @@
     "removeComments": true
   },
   "include": [
-    "source/script/**/*"
+    "source/client/**/*"
   ]
 }
