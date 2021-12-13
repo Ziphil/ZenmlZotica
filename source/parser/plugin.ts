@@ -28,7 +28,6 @@ export class ZoticaZenmlPlugin implements ZenmlPlugin {
     this.pluginFunction = pluginFunction;
   }
 
-  // TODO: ZenML パーサーからプラグイン情報を継承するような処理を追加してください。
   public initialize(zenmlParser: ZenmlParser): void {
     let options = {parentPluginManager: zenmlParser.pluginManager};
     this.zoticaParser = new ZoticaParser(zenmlParser.implementation, options);
