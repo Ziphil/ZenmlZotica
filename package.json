@@ -40,7 +40,6 @@
   },
   "devDependencies": {
     "@types/jest": "^27.0.2",
-    "@types/parsimmon": "^1.10.6",
     "@types/webpack-node-externals": "^2.5.3",
     "@typescript-eslint/eslint-plugin": "^5.1.0",
     "@typescript-eslint/parser": "^5.1.0",
@@ -65,7 +64,6 @@
     "webpack-node-externals": "^3.0.0"
   },
   "dependencies": {
-    "@zenml/zenml": "0.1.0",
-    "parsimmon": "^1.18.0"
+    "@zenml/zenml": "^0.1.0"
   }
 }
