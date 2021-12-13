@@ -1,0 +1,79 @@
+@charset "utf-8";
+
+
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Times New Roman", "IPA P明朝", "YuMincho", "Yu Mincho", serif;
+  font-size: 16px;
+  line-height: 1;
+}
+
+article {
+  width: 700px;
+  margin: 40px auto;
+  padding: 0px;
+}
+
+.title {
+  margin: 40px 0px 0px 0px;
+  font-size: 180%;
+  font-weight: bold;
+  text-align: center;
+}
+
+h1 {
+  margin: 25px 0px 15px 0px;
+  font-size: 130%;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+h1::after {
+  margin: 0px 0px 0px 10px;
+  border-top: 1px hsla(0, 0%, 0%, 0.1) solid;
+  flex-grow: 1;
+  content: "";
+}
+
+h2 {
+  margin: 10px 0px 5px 0px;
+  font-size: 80%;
+  font-weight: normal;
+}
+
+ul {
+  margin: 0px;
+  padding: 0px;
+  gap: 0em 0.7em;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+
+math-root {
+  color: hsl(240, 80%, 50%);
+  background-color: hsl(240, 80%, 96%);
+}
+
+math-root .box {
+  width: 1em;
+  height: 1em;
+  color: hsl(240, 80%, 50%);
+  display: inline-block;
+  vertical-align: middle; 
+  background: linear-gradient(-45deg, currentcolor 25%, transparent 25%, transparent 50%, currentcolor 50%, currentcolor 75%, transparent 75%, transparent);
+  background-size: 4px 4px;
+}
+
+math-root .box::before {
+  line-height: 1;
+  content: "";
+}
+
+math-i:not(.fun):not(.rm)[data-cont="f"] {
+  padding-left: 0.15em;
+  padding-right: 0.1em;
+}
