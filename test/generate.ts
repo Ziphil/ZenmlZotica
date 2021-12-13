@@ -9,6 +9,7 @@ import {
   ZenmlParser
 } from "@zenml/zenml";
 import fs from "fs/promises";
+import path from "path";
 import {
   ZoticaResourceUtils,
   ZoticaZenmlPlugin
@@ -35,29 +36,29 @@ async function generateHtml(): Promise<void> {
     }
     return [element];
   }));
-  let input = await fs.readFile("./test/file/sample.zml", {encoding: "utf-8"});
+  let input = await fs.readFile(path.join(__dirname, "../test/file/sample.zml"), {encoding: "utf-8"});
   let output = serializer.serializeToString(parser.tryParse(input));
   output = output.replace(/<([\w\-]+)([^<>]*?)\/>/g, (match, tagName, innerString) => `<${tagName}${innerString}></${tagName}>`);
-  await fs.mkdir("./out", {recursive: true});
-  await fs.writeFile("./out/index.html", output, {encoding: "utf-8"});
+  await fs.mkdir(path.join(__dirname, "../out"), {recursive: true});
+  await fs.writeFile(path.join(__dirname, "../out/index.html"), output, {encoding: "utf-8"});
 }
 
 async function copyCustomStyle(): Promise<void> {
-  await fs.copyFile("./test/file/sample.css", "./out/style.css");
+  await fs.copyFile(path.join(__dirname, "../test/file/sample.css"), path.join(__dirname, "../out/style.css"));
 }
 
 async function generateZoticaStyle(): Promise<void> {
   let styleString = ZoticaResourceUtils.getStyleString("./math.otf");
-  await fs.writeFile("./out/math.css", styleString, {encoding: "utf-8"});
+  await fs.writeFile(path.join(__dirname, "../out/math.css"), styleString, {encoding: "utf-8"});
 }
 
 async function generateZoticaScript(): Promise<void> {
   let scriptString = ZoticaResourceUtils.getScriptString();
-  await fs.writeFile("./out/math.js", scriptString, {encoding: "utf-8"});
+  await fs.writeFile(path.join(__dirname, "../out/math.js"), scriptString, {encoding: "utf-8"});
 }
 
 async function copyZoticaFont(): Promise<void> {
-  await fs.copyFile("./source/client/font/font.otf", "./out/math.otf");
+  await fs.copyFile(path.join(__dirname, "../source/client/font/font.otf"), path.join(__dirname, "../out/math.otf"));
 }
 
 generate();
