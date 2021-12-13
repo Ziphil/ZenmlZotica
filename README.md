@@ -30,7 +30,7 @@ npm i @zenml/zotica
 
 ## About the math font
 The math font used in Zotica is a modified version of [STIX Two Math](https://www.stixfonts.org/) (version 2.00 b137) for use in HTML.
-It is available [here](https://github.com/Ziphil/ZenithalMathWeb/tree/master/source/zotica/resource/font.otf) and you are free to use it under [SIL Open Font License](http://scripts.sil.org/OFL).
+It is available [here](source/client/font/font.otf) and you are free to use it under [SIL Open Font License](http://scripts.sil.org/OFL).
 You can also obtain the same font by making the following modifications to the original font:
 
 First, in order to give special codepoints to the additionally registered glyphs (`.notdef`–`zeroinferior.per`), copy these glyphs to U+F0000–U+F04DB.
