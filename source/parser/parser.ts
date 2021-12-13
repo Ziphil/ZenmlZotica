@@ -257,8 +257,8 @@ export class ZoticaParser extends ZenmlParser {
         appendChildren(tableSelf, childrenArgs[0] ?? []);
       }));
     } else if (tagName === "array") {
-      let alignConfig = attributes.get("align") ?? null;
-      nodes.push(this.builder.buildTable("std", alignConfig, true, options, (tableSelf) => {
+      let alignCharsString = attributes.get("align") ?? null;
+      nodes.push(this.builder.buildTable("std", alignCharsString, true, options, (tableSelf) => {
         appendChildren(tableSelf, childrenArgs[0] ?? []);
       }));
     } else if (tagName === "matrix") {
@@ -268,8 +268,8 @@ export class ZoticaParser extends ZenmlParser {
     } else if (tagName === "case") {
       let leftSymbol = ZOTICA_DATA.getLeftFenceSymbol("brace", 0) ?? "";
       let rightSymbol = ZOTICA_DATA.getRightFenceSymbol("none", 0) ?? "";
-      nodes.push(this.builder.buildFence("brace", "none", leftSymbol, rightSymbol, true, options, (self) => {
-        self.appendChild(this.builder.buildTable("cas", "ll", false, options, (tableSelf) => {
+      nodes.push(this.builder.buildFence("brace", "none", leftSymbol, rightSymbol, true, options, (contentSelf) => {
+        contentSelf.appendChild(this.builder.buildTable("cas", "ll", false, options, (tableSelf) => {
           appendChildren(tableSelf, childrenArgs[0] ?? []);
         }));
       }));
