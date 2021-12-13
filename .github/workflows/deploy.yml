@@ -1,0 +1,28 @@
+on: 
+  - push
+  - pull_request
+
+jobs:
+  deploy:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Setup Node 14.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+      - name: Install packages
+        run: npm ci
+      - name: Build
+        run: npm run build
+      - name: Generate
+        run: npm run test
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          external_repository: Ziphil/ZenmlZoticaDemo
+          publish_dir: ./out
+          publish_branch: master
+          commit_message: Deploy
