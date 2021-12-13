@@ -384,8 +384,7 @@ export class ZoticaParser extends ZenmlParser {
   });
 
   public readonly fullNodes: StateParser<Nodes, ZenmlParserState> = create((state) => {
-    let anyState = state as any;
-    if (anyState.leaf) {
+    if (state.leaf) {
       let parser = this.leafText;
       return parser;
     } else {
@@ -420,7 +419,7 @@ export class ZoticaParser extends ZenmlParser {
   }
 
   protected determineNextState(state: ZenmlParserState, tagName: string, marks: ZenmlMarks, attributes: ZenmlAttributes, macro: boolean): ZenmlParserState {
-    let nextState = super.determineNextState(state, tagName, marks, attributes, macro) as any;
+    let nextState = super.determineNextState(state, tagName, marks, attributes, macro);
     if (ZOTICA_DATA.isLeafKind(tagName)) {
       nextState = {...nextState, leaf: true};
     }
