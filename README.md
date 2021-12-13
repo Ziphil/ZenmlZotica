@@ -18,7 +18,9 @@ The main differences from these engines are the following three points:
 - The structure of the output HTML is relatively simple
 - The spacing between elements can be customized easily by simply overriding CSS
 
-This packages provide a Zotica processor and some relevant extra utilities.
+If you are interested in how mathematical expressions are rendered, see the [rendering test page](https://ziphil.github.io/ZenmlZoticaDemo/).
+
+This package provides a Zotica processor and a plugin for a ZenML parser which enables you to embed Zotica expressions in your ZenML documents.
 
 This is a part of the [ZenML](https://github.com/Ziphil/Zenml) infrastructure.
 
@@ -45,6 +47,6 @@ To save the repositioned accent symbols to different codepoints, first copy the 
 Then for each glyph copied, set the X coordinate of the left edge of the glyph to 0, and set the character width to match the glyph width.
 For example, move the entire glyph at U+F0500 to the right by 338, and set the character width to 162.
 
-## Implementaion notes (for my future self)
+## Implementation notes (for my future self)
 `builder.ts` と `data.ts` の型定義部分に `| string` が書かれている箇所がいくつかありますが、これは厳密な型チェックの実装を後回しにしてとりあえずコンパイルが通るようにするための暫定的な記述です。
 将来的には、厳密な型チェックを実装するなり、設計を見直すなりして、`| string` は削除すべきです。
