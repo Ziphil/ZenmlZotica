@@ -41,7 +41,7 @@ import {
 
 
 export type ZoticaParserOptions = ZenmlParserOptions & {
-  parentPluginManager?: ZenmlPluginManager;
+  parentPluginManager?: ZenmlPluginManager
 };
 
 
@@ -364,6 +364,15 @@ export class ZoticaParser extends ZenmlParser {
     } else if (ZOTICA_DATA.isSpaceTagName(tagName)) {
       let type = ZOTICA_DATA.getSpaceType(tagName)!;
       nodes.push(this.builder.buildSpace(type, options));
+    } else {
+      nodes.push(this.builder.createElement(tagName, (self) => {
+        for (let [attributeName, attributeValue] of attributes) {
+          self.setAttribute(attributeName, attributeValue);
+        }
+        for (let child of childrenArgs[0] ?? []) {
+          self.appendChild(child);
+        }
+      }));
     }
     return nodes;
   }
