@@ -1,6 +1,6 @@
 {
   "name": "@zenml/zotica",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Ziphil",
   "description": "Web rendering engine for mathematical formulae",
   "homepage": "https://github.com/Ziphil/ZenmlZotica",
