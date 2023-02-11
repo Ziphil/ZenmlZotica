@@ -31,7 +31,7 @@ function modifyStretch(contentElement: Element, parentElement: Element, kind: st
   symbolElement.textContent = ZOTICA_DATA_JSON.wide[kind][position][stretchLevel];
 }
 
-function appendStretch(contentElement, parentElement, kind, position) {
+function appendStretch(contentElement: Element, parentElement: Element, kind: string, position: "un" | "ov"): void {
   const stretchElement = document.createElement("math-hstretch");
   const hasStart = !!ZOTICA_DATA_JSON.wide[kind][position].start;
   const hasEnd = !!ZOTICA_DATA_JSON.wide[kind][position].end;
