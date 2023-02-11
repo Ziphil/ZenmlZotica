@@ -77,7 +77,7 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
   }
 
   public buildNumber(content: string, options: ZoticaBuilderOptions): DocumentFragment {
-    let self = this.createDocumentFragment();
+    const self = this.createDocumentFragment();
     let element = null as Element | null;
     this.appendElement(self, "math-n", (self) => {
       this.appendTextNode(self, content);
@@ -89,9 +89,9 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
   }
 
   public buildIdentifier(content: string, types: Array<ZoticaIdentifierType | string>, options: ZoticaBuilderOptions): DocumentFragment {
-    let self = this.createDocumentFragment();
+    const self = this.createDocumentFragment();
     let element = null as Element | null;
-    let fontType = (types.includes("alt")) ? "math" : "main" as ZoticaFontType;
+    const fontType = (types.includes("alt")) ? "math" : "main" as ZoticaFontType;
     this.appendElement(self, "math-i", (self) => {
       self.setAttribute("class", types.join(" "));
       self.setAttribute("data-cont", content);
@@ -104,9 +104,9 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
   }
 
   public buildOperator(symbol: string, types: Array<ZoticaOperatorType | string>, options: ZoticaBuilderOptions): DocumentFragment {
-    let self = this.createDocumentFragment();
+    const self = this.createDocumentFragment();
     let element = null as Element | null;
-    let fontType = (types.includes("txt")) ? "main" : "math" as ZoticaFontType;
+    const fontType = (types.includes("txt")) ? "main" : "math" as ZoticaFontType;
     this.appendElement(self, "math-o", (self) => {
       self.setAttribute("class", types.join(" "));
       self.setAttribute("data-cont", symbol);
@@ -119,7 +119,7 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
   }
 
   public buildText(content: string, options: ZoticaBuilderOptions): DocumentFragment {
-    let self = this.createDocumentFragment();
+    const self = this.createDocumentFragment();
     this.appendElement(self, "math-text", (self) => {
       this.appendTextNode(self, content);
     });
@@ -128,10 +128,10 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
   }
 
   public buildStrut(type: ZoticaStrutType, options: ZoticaBuilderOptions): DocumentFragment {
-    let self = this.createDocumentFragment();
+    const self = this.createDocumentFragment();
     this.appendElement(self, "math-strut", (self) => {
       let style = self.getAttribute("style") ?? "";
-      let [bottomMargin, topMargin] = options.fonts.main.getMetrics(72) ?? [0, 0];
+      const [bottomMargin, topMargin] = options.fonts.main.getMetrics(72) ?? [0, 0];
       if (type === "upper" || type === "dupper") {
         style += "margin-bottom: -0.5em;";
       } else if (type === "dlower" || type === "dfull") {
@@ -161,7 +161,7 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
   }
 
   public buildSubsuper(options: ZoticaBuilderOptions, callback?: ZoticaSubsuperCallback): DocumentFragment {
-    let self = this.createDocumentFragment();
+    const self = this.createDocumentFragment();
     let baseElement = null as Element | null;
     let subElement = null as Element | null;
     let superElement = null as Element | null;
@@ -209,7 +209,7 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
   }
 
   public buildUnderover(options: ZoticaBuilderOptions, callback?: ZoticaUnderoverCallback): DocumentFragment {
-    let self = this.createDocumentFragment();
+    const self = this.createDocumentFragment();
     let baseElement = null as Element | null;
     let underElement = null as Element | null;
     let overElement = null as Element | null;
@@ -245,7 +245,7 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
   }
 
   public buildFraction(options: ZoticaBuilderOptions, callback?: ZoticaFractionCallback): DocumentFragment {
-    let self = this.createDocumentFragment();
+    const self = this.createDocumentFragment();
     let numeratorElement = null as Element | null;
     let denominatorElement = null as Element | null;
     this.appendElement(self, "math-frac", (self) => {
@@ -271,7 +271,7 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
   }
 
   public buildRadical(symbol: string, modify: boolean, options: ZoticaBuilderOptions, callback?: ZoticaRadicalCallback): DocumentFragment {
-    let self = this.createDocumentFragment();
+    const self = this.createDocumentFragment();
     let contentElement = null as Element | null;
     let indexElement = null as Element | null;
     this.appendElement(self, "math-rad", (self) => {
@@ -306,7 +306,7 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
   }
 
   public buildIntegral(symbol: string, size: ZoticaSymbolSize, options: ZoticaBuilderOptions, callback?: ZoticaIntegralCallback): DocumentFragment {
-    let self = this.createDocumentFragment();
+    const self = this.createDocumentFragment();
     let baseElement = null as Element | null;
     let subElement = null as Element | null;
     let superElement = null as Element | null;
@@ -339,7 +339,7 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
   }
 
   public buildSum(symbol: string, size: ZoticaSymbolSize, options: ZoticaBuilderOptions, callback?: ZoticaSumCallback): DocumentFragment {
-    let self = this.createDocumentFragment();
+    const self = this.createDocumentFragment();
     if (size === "lrg") {
       let underElement = null as Element | null;
       let overElement = null as Element | null;
@@ -391,7 +391,7 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
   }
 
   public buildFence(leftKind: string, rightKind: string, leftSymbol: string, rightSymbol: string, modify: boolean, options: ZoticaBuilderOptions, callback?: ZoticaFenceCallback): DocumentFragment {
-    let self = this.createDocumentFragment();
+    const self = this.createDocumentFragment();
     let contentElement = null as Element | null;
     this.appendElement(self, "math-fence", (self) => {
       self.setAttribute("class", "par");
@@ -420,7 +420,7 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
   }
 
   public buildSet(leftKind: string, rightKind: string, centerKind: string, leftSymbol: string, rightSymbol: string, centerSymbol: string, modify: boolean, options: ZoticaBuilderOptions, callback?: ZoticaSetCallback): DocumentFragment {
-    let self = this.createDocumentFragment();
+    const self = this.createDocumentFragment();
     let leftElement = null as Element | null;
     let rightElement = null as Element | null;
     this.appendElement(self, "math-fence", (self) => {
@@ -460,7 +460,7 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
   }
 
   public buildAccent(underSymbol: string | null, overSymbol: string | null, options: ZoticaBuilderOptions, callback?: ZoticaAccentCallback): DocumentFragment {
-    let self = this.document.createDocumentFragment();
+    const self = this.document.createDocumentFragment();
     let baseElement = null as Element | null;
     let underElement = null as Element | null;
     let overElement = null as Element | null;
@@ -501,14 +501,14 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
   }
 
   private modifyAccent(baseElement: Element, underElement: Element, overElement: Element): void {
-    let children = baseElement.childNodes;
+    const children = baseElement.childNodes;
     if (children.length === 1) {
-      let child = children.item(0);
+      const child = children.item(0);
       if (isElement(child)) {
-        let classNames = child.getAttribute("class")?.split(" ") ?? [];
+        const classNames = child.getAttribute("class")?.split(" ") ?? [];
         if (child.tagName === "math-i" && classNames.every((className) => className !== "rm" && className !== "alt")) {
-          let underSymbolElement = underElement.childNodes.item(0);
-          let overSymbolElement = overElement.childNodes.item(0);
+          const underSymbolElement = underElement.childNodes.item(0);
+          const overSymbolElement = overElement.childNodes.item(0);
           if (underSymbolElement && isElement(underSymbolElement)) {
             addAttribute(underSymbolElement, "class", " it");
           }
@@ -521,7 +521,7 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
   }
 
   public buildWide(kind: string, underSymbol: string | null, overSymbol: string | null, modify: boolean, options: ZoticaBuilderOptions, callback?: ZoticaWideCallback): DocumentFragment {
-    let self = this.createDocumentFragment();
+    const self = this.createDocumentFragment();
     let baseElement = null as Element | null;
     let underElement = null as Element | null;
     let overElement = null as Element | null;
@@ -565,7 +565,7 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
   }
 
   public buildTable(type: ZoticaTableType | string, alignCharsString: string | null, raw: boolean, options: ZoticaBuilderOptions, callback?: ZoticaTableCallback): DocumentFragment {
-    let self = this.createDocumentFragment();
+    const self = this.createDocumentFragment();
     let tableElement = null as Element | null;
     this.appendElement(self, "math-table", (self) => {
       self.setAttribute("class", type);
@@ -578,12 +578,12 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
   }
 
   private modifyTable(tableElement: Element, type: ZoticaTableType | string, alignCharsString: string | null, raw: boolean, options: ZoticaBuilderOptions): void {
-    let alignChars = (alignCharsString !== null) ? [...alignCharsString] : null;
-    let children = Array.from(tableElement.childNodes).filter((child) => isElement(child)) as Array<Element>;
+    const alignChars = (alignCharsString !== null) ? [...alignCharsString] : null;
+    const children = Array.from(tableElement.childNodes).filter((child) => isElement(child)) as Array<Element>;
     let column = 0;
     let row = 0;
     for (let index = 0 ; index < children.length ; index ++) {
-      let child = children[index];
+      const child = children[index];
       if (child.tagName === "math-cell" || child.tagName === "math-cellwrap") {
         if (raw) {
           let extraClass = "";
@@ -597,8 +597,8 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
         }
         addAttribute(child, "style", `grid-row: ${row + 1}; grid-column: ${column + 1};`);
         if (alignChars !== null) {
-          let alignChar = alignChars[column];
-          let align = (alignChar === "c") ? "center" : (alignChar === "r") ? "right" : "left";
+          const alignChar = alignChars[column];
+          const align = (alignChar === "c") ? "center" : (alignChar === "r") ? "right" : "left";
           addAttribute(child, "style", `text-align: ${align};`);
         }
         if (type !== "stk" && type !== "diag") {
@@ -614,7 +614,7 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
   }
 
   public buildTableCell(options: ZoticaBuilderOptions, callback?: ZoticaTableCellCallback): DocumentFragment {
-    let self = this.createDocumentFragment();
+    const self = this.createDocumentFragment();
     let cellElement = null as Element | null;
     this.appendElement(self, "math-cell", (self) => {
       cellElement = self;
@@ -625,13 +625,13 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
   }
 
   public buildTableBreak(options: ZoticaBuilderOptions): DocumentFragment {
-    let self = this.createDocumentFragment();
+    const self = this.createDocumentFragment();
     this.appendElement(self, "math-sys-br");
     return self;
   }
 
   public buildDiagram(verticalGapsString: string | null, horizontalGapsString: string | null, alignBaseline: boolean, options: ZoticaBuilderOptions, callback?: ZoticaDiagramCallback): DocumentFragment {
-    let self = this.createDocumentFragment();
+    const self = this.createDocumentFragment();
     let diagramElement = null as Element | null;
     this.appendElement(self, "math-diagram", (self) => {
       diagramElement = self;
@@ -653,15 +653,15 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
   }
 
   private modifyDiagram(diagramElement: Element, verticalGapsString: string | null, horizontalGapsString: string | null): void {
-    let children = Array.from(diagramElement.childNodes).filter((child) => isElement(child)) as Array<Element>;
-    let verticalGaps = verticalGapsString?.split(/\s*,\s*/) ?? null;
-    let horizontalGaps = horizontalGapsString?.split(/\s*,\s*/) ?? null;
+    const children = Array.from(diagramElement.childNodes).filter((child) => isElement(child)) as Array<Element>;
+    const verticalGaps = verticalGapsString?.split(/\s*,\s*/) ?? null;
+    const horizontalGaps = horizontalGapsString?.split(/\s*,\s*/) ?? null;
     let column = 0;
     let row = 0;
-    for (let child of children) {
+    for (const child of children) {
       if (child.tagName === "math-cellwrap") {
-        let verticalGap = (verticalGaps !== null) ? verticalGaps[row - 1] ?? verticalGaps[verticalGaps.length - 1] : null;
-        let horizontalGap = (horizontalGaps !== null) ? horizontalGaps[column - 1] ?? horizontalGaps[horizontalGaps.length - 1] : null;
+        const verticalGap = (verticalGaps !== null) ? verticalGaps[row - 1] ?? verticalGaps[verticalGaps.length - 1] : null;
+        const horizontalGap = (horizontalGaps !== null) ? horizontalGaps[column - 1] ?? horizontalGaps[horizontalGaps.length - 1] : null;
         if (verticalGap !== null && row > 0) {
           if (verticalGap.match(/^\-?\d+$/)) {
             addAttribute(child, "style", `margin-top: ${parseInt(verticalGap) / 18}em;`);
@@ -685,7 +685,7 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
   }
 
   public buildDiagramVertex(name: string | null, options: ZoticaBuilderOptions, callback?: ZoticaDiagramVertexCallback): DocumentFragment {
-    let self = this.createDocumentFragment();
+    const self = this.createDocumentFragment();
     let vertexElement = null as Element | null;
     this.appendElement(self, "math-cellwrap", (self) => {
       if (name !== null) {
@@ -701,7 +701,7 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
   }
 
   public buildArrow(name: string | null, settings: ZoticaArrowSettings, options: ZoticaBuilderOptions, callback?: ZoticaArrowCallback): DocumentFragment {
-    let self = this.createDocumentFragment();
+    const self = this.createDocumentFragment();
     let labelElement = null as Element | null;
     this.appendElement(self, "math-arrow", (self) => {
       labelElement = self;
@@ -741,7 +741,7 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
   }
 
   public buildTree(options: ZoticaBuilderOptions, callback?: ZoticaTreeCallback): DocumentFragment {
-    let self = this.createDocumentFragment();
+    const self = this.createDocumentFragment();
     let contentElement = null as Element | null;
     this.appendElement(self, "math-tree", (self) => {
       contentElement = self;
@@ -753,37 +753,37 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
   }
 
   private modifyTree(element: Element, options: ZoticaBuilderOptions): void {
-    let stack = [];
-    let children = Array.from(element.childNodes).filter((child) => isElement(child)) as Array<Element>;
-    for (let child of children) {
+    const stack = [];
+    const children = Array.from(element.childNodes).filter((child) => isElement(child)) as Array<Element>;
+    for (const child of children) {
       if (child.tagName === "math-axiom") {
         this.insertStrut(child, "dlower", options);
         stack.push(child);
       } else if (child.tagName === "math-sys-infer") {
-        let number = parseInt(child.getAttribute("data-num") ?? "0");
-        let leftLabelElement = getChildElement(child, "math-sys-llabel")!;
-        let rightLabelElement = getChildElement(child, "math-sys-rlabel")!;
-        let antecedentElements = (number > 0) ? stack.splice(-number) : [];
-        let inferenceElement = this.createElement("math-infer", (self) => {
+        const number = parseInt(child.getAttribute("data-num") ?? "0");
+        const leftLabelElement = getChildElement(child, "math-sys-llabel")!;
+        const rightLabelElement = getChildElement(child, "math-sys-rlabel")!;
+        const antecedentElements = (number > 0) ? stack.splice(-number) : [];
+        const inferenceElement = this.createElement("math-infer", (self) => {
           this.appendElement(self, "math-label", (self) => {
-            let leftLabelChildren = Array.from(leftLabelElement.childNodes);
+            const leftLabelChildren = Array.from(leftLabelElement.childNodes);
             if (leftLabelChildren.length <= 0) {
               self.setAttribute("class", "non");
             }
-            for (let leftLabelChild of leftLabelChildren) {
+            for (const leftLabelChild of leftLabelChildren) {
               self.appendChild(leftLabelChild);
             }
           });
           this.appendElement(self, "math-step", (self) => {
             this.appendElement(self, "math-ant", (self) => {
-              for (let antecedentElement of antecedentElements) {
+              for (const antecedentElement of antecedentElements) {
                 self.appendChild(antecedentElement);
               }
             });
             this.appendElement(self, "math-conwrap", (self) => {
               this.appendElement(self, "math-line");
               this.appendElement(self, "math-con", (self) => {
-                let contentElement = getChildElement(child, "math-cont")!;
+                const contentElement = getChildElement(child, "math-cont")!;
                 self.appendChild(contentElement);
                 this.insertStrut(self, "dlower", options);
                 this.insertStrut(self, "upper", options);
@@ -791,11 +791,11 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
             });
           });
           this.appendElement(self, "math-label", (self) => {
-            let rightLabelChildren = Array.from(rightLabelElement.childNodes);
+            const rightLabelChildren = Array.from(rightLabelElement.childNodes);
             if (rightLabelChildren.length <= 0) {
               self.setAttribute("class", "non");
             }
-            for (let rightLabelChild of rightLabelChildren) {
+            for (const rightLabelChild of rightLabelChildren) {
               self.appendChild(rightLabelChild);
             }
           });
@@ -812,7 +812,7 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
   }
 
   public buildTreeAxiom(options: ZoticaBuilderOptions, callback?: ZoticaTreeAxiomCallback): DocumentFragment {
-    let self = this.createDocumentFragment();
+    const self = this.createDocumentFragment();
     let contentElement = null as Element | null;
     this.appendElement(self, "math-axiom", (self) => {
       contentElement = self;
@@ -823,7 +823,7 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
   }
 
   public buildTreeInference(number: number, options: ZoticaBuilderOptions, callback?: ZoticaTreeInferenceCallback): DocumentFragment {
-    let self = this.createDocumentFragment();
+    const self = this.createDocumentFragment();
     let contentElement = null as Element | null;
     let rightLabelElement = null as Element | null;
     let leftLabelElement = null as Element | null;
@@ -845,11 +845,11 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
   }
 
   public buildGroup(settings: ZoticaGroupSettings, options: ZoticaBuilderOptions, callback?: ZoticaGroupCallback): DocumentFragment {
-    let self = this.createDocumentFragment();
+    const self = this.createDocumentFragment();
     let contentElement = null as Element | null;
     this.appendElement(self, "math-group", (self) => {
       contentElement = self;
-      let transforms = [];
+      const transforms = [];
       if (settings.rotate !== undefined) {
         transforms.push(`rotate(${settings.rotate}deg)`);
       }
@@ -863,7 +863,7 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
   }
 
   public buildSpace(type: ZoticaSpaceType | string, options: ZoticaBuilderOptions): DocumentFragment {
-    let self = this.createDocumentFragment();
+    const self = this.createDocumentFragment();
     this.appendElement(self, "math-space", (self) => {
       if (type.match(/^\-?\d+$/)) {
         addAttribute(self, "style", `margin-left: ${parseInt(type) / 18}em !important;`);
@@ -880,7 +880,7 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
   }
 
   public buildPhantom(type: ZoticaPhantomType | string, options: ZoticaBuilderOptions, callback?: ZoticaPhantomCallback): DocumentFragment {
-    let self = this.createDocumentFragment();
+    const self = this.createDocumentFragment();
     let contentElement = null as Element | null;
     this.appendElement(self, "math-phantom", (self) => {
       contentElement = self;
@@ -895,14 +895,14 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
   }
 
   private inheritRole(targetElement: Element, sourceElement: Element): void {
-    let sourceChildren = sourceElement.childNodes;
+    const sourceChildren = sourceElement.childNodes;
     if (sourceChildren.length === 1) {
-      let sourceChild = sourceChildren.item(0);
+      const sourceChild = sourceChildren.item(0);
       if (isElement(sourceChild)) {
-        let sourceClassNames = sourceChild.getAttribute("class")?.split(" ") ?? [];
-        let sourceRole = sourceClassNames.find((className) => ZOTICA_ROLES.includes(className));
+        const sourceClassNames = sourceChild.getAttribute("class")?.split(" ") ?? [];
+        const sourceRole = sourceClassNames.find((className) => ZOTICA_ROLES.includes(className));
         if (sourceRole !== undefined) {
-          let targetClasses = targetElement.getAttribute("class")?.split(" ") ?? [];
+          const targetClasses = targetElement.getAttribute("class")?.split(" ") ?? [];
           if (targetClasses.every((className) => !ZOTICA_ROLES.includes(className))) {
             targetElement.setAttribute("class", [...targetClasses, sourceRole].join(" "));
           }
@@ -913,11 +913,11 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
 
   private applyOptions(nodes: DocumentFragment, options: ZoticaBuilderOptions): void {
     for (let i = 0 ; i < nodes.childNodes.length ; i ++) {
-      let node = nodes.childNodes.item(i);
+      const node = nodes.childNodes.item(i);
       if (isElement(node)) {
         if (options.role !== undefined) {
-          let classNames = node.getAttribute("class")?.split(" ") ?? [];
-          let nextClassNames = [...classNames.filter((className) => !ZOTICA_ROLES.includes(className)), options.role];
+          const classNames = node.getAttribute("class")?.split(" ") ?? [];
+          const nextClassNames = [...classNames.filter((className) => !ZOTICA_ROLES.includes(className)), options.role];
           node.setAttribute("class", nextClassNames.join(" "));
         }
         if (options.className !== undefined) {
@@ -931,12 +931,12 @@ export class ZoticaBuilder extends BaseBuilder<Document> {
   }
 
   private modifyVerticalMargins(element: Element, fontType: ZoticaFontType, options: ZoticaBuilderOptions): void {
-    let content = element.textContent ?? "";
+    const content = element.textContent ?? "";
     let maxTopMargin = -2;
     let maxBottomMargin = -2;
-    for (let char of content) {
-      let codePoint = char.codePointAt(0)!;
-      let [bottomMargin, topMargin] = options.fonts[fontType].getMetrics(codePoint) ?? [0, 0];
+    for (const char of content) {
+      const codePoint = char.codePointAt(0)!;
+      const [bottomMargin, topMargin] = options.fonts[fontType].getMetrics(codePoint) ?? [0, 0];
       if (topMargin > maxTopMargin) {
         maxTopMargin = topMargin;
       }

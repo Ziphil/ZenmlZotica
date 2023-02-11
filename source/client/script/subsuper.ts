@@ -1,6 +1,5 @@
 // @ts-nocheck
 
-import ZOTICA_DATA_JSON from "../../data/data.json";
 import {
   getChildElement,
   getFontSize,
@@ -12,25 +11,25 @@ import {
 
 
 export default function modify(element: HTMLElement): void {
-  let baseElement = getChildElement(element, "math-base");
-  let subElement = getChildElement(element, "math-sub");
-  let superElement = getChildElement(element, "math-sup");
-  let leftSubElement = getChildElement(element, "math-lsub");
-  let leftSuperElement = getChildElement(element, "math-lsup");
+  const baseElement = getChildElement(element, "math-base");
+  const subElement = getChildElement(element, "math-sub");
+  const superElement = getChildElement(element, "math-sup");
+  const leftSubElement = getChildElement(element, "math-lsub");
+  const leftSuperElement = getChildElement(element, "math-lsup");
   modifySide(element, baseElement, subElement, superElement, "right");
   modifySide(element, baseElement, leftSubElement, leftSuperElement, "left");
 }
 
 function modifySide(element: Element, baseElement: Element, subElement: HTMLElement, superElement: HTMLElement, side: "left" | "right"): void {
-  let bothShifts = calcBothShifts(baseElement, subElement, superElement);
-  let subShift = bothShifts.sub;
-  let superShift = bothShifts.super;
+  const bothShifts = calcBothShifts(baseElement, subElement, superElement);
+  const subShift = bothShifts.sub;
+  const superShift = bothShifts.super;
   let subMargin = 0;
   let superMargin = (subElement) ? -getWidth(subElement) : 0;
   let subWidth = (subElement) ? getWidth(subElement) : 0;
-  let superWidth = (superElement) ? getWidth(superElement) : 0;
+  const superWidth = (superElement) ? getWidth(superElement) : 0;
   if (side === "right" && element.classList.contains("int")) {
-    let slope = (element.classList.contains("inl")) ? 0.3 : 0.6;
+    const slope = (element.classList.contains("inl")) ? 0.3 : 0.6;
     subWidth -= slope;
     subMargin -= slope;
     if (subElement) {
@@ -57,8 +56,8 @@ function calcBothShifts(baseElement: Element, subElement: Element, superElement:
   let subShift = (subElement) ? calcSubShift(baseElement, subElement) : 0;
   let superShift = (superElement) ? calcSuperShift(baseElement, superElement) : 0;
   if (subElement && superElement) {
-    let subHeight = getHeight(subElement);
-    let gap = -subShift + superShift - subHeight;
+    const subHeight = getHeight(subElement);
+    const gap = -subShift + superShift - subHeight;
     if (gap < 0.2) {
       subShift -= (0.2 - gap) / 2;
       superShift += (0.2 - gap) / 2;
@@ -68,7 +67,7 @@ function calcBothShifts(baseElement: Element, subElement: Element, superElement:
 }
 
 function calcSubShift(baseElement: Element, subElement: Element): number {
-  let fontRatio = getFontSize(baseElement) / getFontSize(subElement);
+  const fontRatio = getFontSize(baseElement) / getFontSize(subElement);
   let height = getLowerHeight(baseElement);
   if (height < 0.4875) {
     height = 0.4875;
@@ -77,12 +76,12 @@ function calcSubShift(baseElement: Element, subElement: Element): number {
   if (baseElement.parentNode.classList.contains("int") && !baseElement.parentNode.classList.contains("inl")) {
     shiftConst = -0.15;
   }
-  let shift = (height + shiftConst) * fontRatio;
+  const shift = (height + shiftConst) * fontRatio;
   return -shift;
 }
 
 function calcSuperShift(baseElement: Element, superElement: Element): number {
-  let fontRatio = getFontSize(baseElement) / getFontSize(superElement);
+  const fontRatio = getFontSize(baseElement) / getFontSize(superElement);
   let height = getUpperHeight(baseElement);
   if (height < 0.5125) {
     height = 0.5125;
@@ -91,6 +90,6 @@ function calcSuperShift(baseElement: Element, superElement: Element): number {
   if (baseElement.parentNode.classList.contains("int") && !baseElement.parentNode.classList.contains("inl")) {
     shiftConst = -0.1;
   }
-  let shift = (height + shiftConst) * fontRatio;
+  const shift = (height + shiftConst) * fontRatio;
   return shift;
 }

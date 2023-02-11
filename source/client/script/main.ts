@@ -11,7 +11,7 @@ import modifyWide from "./wide";
 
 export default function modify(): void {
   console.info("[Zotica] Start");
-  let startDate = new Date();
+  const startDate = new Date();
   let elements = [];
   elements.push(...document.querySelectorAll("math-subsup"));
   elements.push(...document.querySelectorAll("math-underover"));
@@ -21,7 +21,7 @@ export default function modify(): void {
   elements.push(...document.querySelectorAll("math-step"));
   elements = elements.sort((first, second) => getDepth(second) - getDepth(first));
   elements.forEach((element) => {
-    let name = element.localName;
+    const name = element.localName;
     if (name === "math-subsup") {
       modifySubsuper(element);
     } else if (name === "math-underover") {
@@ -39,18 +39,18 @@ export default function modify(): void {
       modifyTree(element);
     }
   });
-  let finishDate = new Date();
-  let elapsedTime = (finishDate.getTime() - startDate.getTime()) / 1000;
+  const finishDate = new Date();
+  const elapsedTime = (finishDate.getTime() - startDate.getTime()) / 1000;
   console.info("[Zotica] Finish (" + elements.length + " elements, " + elapsedTime.toFixed(4) + " seconds)");
 }
 
 function getDepth(element: Node): number {
   let depth = 0;
-  let castElement = element as Node & {zoticaDepth?: number};
+  const castElement = element as Node & {zoticaDepth?: number};
   if (castElement.zoticaDepth !== undefined) {
     depth = castElement.zoticaDepth;
   } else {
-    let parent = castElement.parentNode;
+    const parent = castElement.parentNode;
     if (parent) {
       depth = getDepth(parent) + 1;
     } else {

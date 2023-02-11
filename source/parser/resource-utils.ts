@@ -7,7 +7,7 @@ import ZOTICA_STYLE_STRING from "../client/style/style.scss";
 export class ZoticaResourceUtils {
 
   public static getScriptString(): string {
-    let string = ZOTICA_SCRIPT_STRING;
+    const string = ZOTICA_SCRIPT_STRING;
     return string;
   }
 

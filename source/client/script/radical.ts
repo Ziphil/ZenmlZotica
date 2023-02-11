@@ -10,12 +10,12 @@ import {
 
 
 export default function modify(element: HTMLElement): void {
-  let squareElement = getChildElement(element, "math-sqrt");
-  let indexElement = getChildElement(element, "math-index");
-  let surdElement = getChildElement(squareElement, "math-surd");
-  let contentElement = getChildElement(squareElement, "math-cont");
-  let surdSymbolElement = surdElement.children[0];
-  let stretchLevel = calcLevel(contentElement);
+  const squareElement = getChildElement(element, "math-sqrt");
+  const indexElement = getChildElement(element, "math-index");
+  const surdElement = getChildElement(squareElement, "math-surd");
+  const contentElement = getChildElement(squareElement, "math-cont");
+  const surdSymbolElement = surdElement.children[0];
+  const stretchLevel = calcLevel(contentElement);
   surdSymbolElement.textContent = ZOTICA_DATA_JSON.radical[stretchLevel];
   if (indexElement) {
     modifyIndex(element, indexElement);
@@ -23,16 +23,16 @@ export default function modify(element: HTMLElement): void {
 }
 
 function modifyIndex(element: Element, indexElement: HTMLElement): void {
-  let width = getWidth(indexElement);
-  let fontRatio = getFontSize(element) / getFontSize(indexElement);
+  const width = getWidth(indexElement);
+  const fontRatio = getFontSize(element) / getFontSize(indexElement);
   if (width / fontRatio < 0.5) {
-    let margin = 0.5 * fontRatio - width;
+    const margin = 0.5 * fontRatio - width;
     indexElement.style.marginLeft = "" + margin + "em";
   }
 }
 
 function calcLevel(element: Element): number {
-  let heightAbs = getHeight(element) * 1000;
+  const heightAbs = getHeight(element) * 1000;
   let level = null;
   for (let i = 0 ; i <= 3 ; i ++) {
     if (heightAbs <= ZOTICA_DATA_JSON.radical.height[i]) {

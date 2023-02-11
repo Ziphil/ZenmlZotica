@@ -16,22 +16,22 @@ const ARROW_MARGIN = 8 * UNIT;
 const LABEL_DISTANCE = 5 * UNIT;
 
 export default function modify(element: HTMLElement): void {
-  let arrowElements = getChildElements(element, "math-arrow");
-  let cellElements = getChildElements(element, "math-cellwrap").map((child) => child.children[0]);
-  let backgroundColor = getBackgroundColor(element);
-  let graphic = createGraphic(element);
+  const arrowElements = getChildElements(element, "math-arrow");
+  const cellElements = getChildElements(element, "math-cellwrap").map((child) => child.children[0]);
+  const backgroundColor = getBackgroundColor(element);
+  const graphic = createGraphic(element);
   element.appendChild(graphic);
-  for (let arrowElement of arrowElements) {
-    let arrowSpec = determineArrowSpec(graphic, arrowElement, cellElements, arrowElements);
-    let arrows = createArrows(arrowSpec, backgroundColor);
+  for (const arrowElement of arrowElements) {
+    const arrowSpec = determineArrowSpec(graphic, arrowElement, cellElements, arrowElements);
+    const arrows = createArrows(arrowSpec, backgroundColor);
     graphic.append(...arrows);
-    let labelPoint = determineLabelPoint(graphic, arrowElement, arrowSpec);
-    let fontRatio = getFontSize(graphic) / getFontSize(arrowElement);
+    const labelPoint = determineLabelPoint(graphic, arrowElement, arrowSpec);
+    const fontRatio = getFontSize(graphic) / getFontSize(arrowElement);
     arrowElement.style.left = "" + (labelPoint[0] * fontRatio) + "em";
     arrowElement.style.top = "" + (labelPoint[1] * fontRatio) + "em";
   }
-  let pathElements = Array.from(graphic.children).filter((child) => child.localName === "path");
-  let extrusion = calcExtrusion(graphic, arrowElements.concat(pathElements));
+  const pathElements = Array.from(graphic.children).filter((child) => child.localName === "path");
+  const extrusion = calcExtrusion(graphic, arrowElements.concat(pathElements));
   element.style.marginTop = "" + extrusion.top + "em";
   element.style.marginBottom = "" + extrusion.bottom + "em";
   element.style.marginLeft = "" + extrusion.left + "em";
@@ -39,24 +39,24 @@ export default function modify(element: HTMLElement): void {
 }
 
 function determineArrowSpec(graphic: SVGElement, arrowElement: Element, cellElements: Array<Element>, arrowElements: Array<Element>): any {
-  let spec = {};
-  let startPositionString = arrowElement.getAttribute("data-start");
-  let endPositionString = arrowElement.getAttribute("data-end");
-  let startPosition = parseEdgePosition(startPositionString, graphic, cellElements, arrowElements);
-  let endPosition = parseEdgePosition(endPositionString, graphic, cellElements, arrowElements);
+  const spec = {};
+  const startPositionString = arrowElement.getAttribute("data-start");
+  const endPositionString = arrowElement.getAttribute("data-end");
+  const startPosition = parseEdgePosition(startPositionString, graphic, cellElements, arrowElements);
+  const endPosition = parseEdgePosition(endPositionString, graphic, cellElements, arrowElements);
   if (startPosition && endPosition) {
-    let bendAngleString = arrowElement.getAttribute("data-bend");
+    const bendAngleString = arrowElement.getAttribute("data-bend");
     if (bendAngleString) {
       spec.bendAngle = parseFloat(bendAngleString) * Math.PI / 180;
     }
-    let shiftString = arrowElement.getAttribute("data-shift");
+    const shiftString = arrowElement.getAttribute("data-shift");
     if (shiftString) {
       spec.shift = parseFloat(shiftString) * UNIT;
     }
-    let startElement = startPosition.element;
-    let endElement = endPosition.element;
-    let startDimension = startPosition.dimension;
-    let endDimension = endPosition.dimension;
+    const startElement = startPosition.element;
+    const endElement = endPosition.element;
+    const startDimension = startPosition.dimension;
+    const endDimension = endPosition.dimension;
     if (startPosition.point) {
       spec.startPoint = startPosition.point;
     } else {
@@ -71,27 +71,27 @@ function determineArrowSpec(graphic: SVGElement, arrowElement: Element, cellElem
     spec.startPoint = [0, 0];
     spec.endPoint = [0, 0];
   }
-  let labelPositionString = arrowElement.getAttribute("data-pos");
+  const labelPositionString = arrowElement.getAttribute("data-pos");
   if (labelPositionString) {
     spec.labelPosition = parseFloat(labelPositionString) / 100;
   }
-  let lineCountString = arrowElement.getAttribute("data-line");
+  const lineCountString = arrowElement.getAttribute("data-line");
   if (lineCountString) {
     spec.lineCount = parseInt(lineCountString);
   }
-  let dashed = !!arrowElement.getAttribute("data-dash");
+  const dashed = !!arrowElement.getAttribute("data-dash");
   if (dashed) {
     spec.dashed = true;
   }
-  let inverted = !!arrowElement.getAttribute("data-inv");
+  const inverted = !!arrowElement.getAttribute("data-inv");
   if (inverted) {
     spec.inverted = true;
   }
-  let mark = !!arrowElement.getAttribute("data-mark");
+  const mark = !!arrowElement.getAttribute("data-mark");
   if (mark) {
     spec.mark = true;
   }
-  let tipKindsString = arrowElement.getAttribute("data-tip");
+  const tipKindsString = arrowElement.getAttribute("data-tip");
   spec.tipKinds = parseTipKinds(tipKindsString, spec.lineCount);
   spec.intrudedStartPoint = calcIntrudedPoint(spec.startPoint, spec.endPoint, spec.bendAngle, spec.tipKinds.start);
   spec.intrudedEndPoint = calcIntrudedPoint(spec.endPoint, spec.startPoint, -spec.bendAngle, spec.tipKinds.end);
@@ -99,24 +99,24 @@ function determineArrowSpec(graphic: SVGElement, arrowElement: Element, cellElem
 }
 
 function determineLabelPoint(graphic: SVGElement, labelElement: Element, arrowSpec: any): [number, number] {
-  let labelDimension = calcDimension(graphic, labelElement);
-  let startPoint = arrowSpec.startPoint;
-  let endPoint = arrowSpec.endPoint;
-  let bendAngle = arrowSpec.bendAngle;
-  let position = (arrowSpec.labelPosition === undefined) ? 0.5 : arrowSpec.labelPosition;
+  const labelDimension = calcDimension(graphic, labelElement);
+  const startPoint = arrowSpec.startPoint;
+  const endPoint = arrowSpec.endPoint;
+  const bendAngle = arrowSpec.bendAngle;
+  const position = (arrowSpec.labelPosition === undefined) ? 0.5 : arrowSpec.labelPosition;
   let basePoint = [0, 0];
   let angle = 0;
   if (bendAngle !== undefined) {
-    let controlPoint = calcControlPoint(startPoint, endPoint, bendAngle);
-    let basePointX = (1 - position) * (1 - position) * startPoint[0] + 2 * (1 - position) * position * controlPoint[0] + position * position * endPoint[0];
-    let basePointY = (1 - position) * (1 - position) * startPoint[1] + 2 * (1 - position) * position * controlPoint[1] + position * position * endPoint[1];
-    let speedX = -2 * (1 - position) * startPoint[0] + 2 * (1 - 2 * position) * controlPoint[0] + 2 * position * endPoint[0];
-    let speedY = -2 * (1 - position) * startPoint[1] + 2 * (1 - 2 * position) * controlPoint[1] + 2 * position * endPoint[1];
+    const controlPoint = calcControlPoint(startPoint, endPoint, bendAngle);
+    const basePointX = (1 - position) * (1 - position) * startPoint[0] + 2 * (1 - position) * position * controlPoint[0] + position * position * endPoint[0];
+    const basePointY = (1 - position) * (1 - position) * startPoint[1] + 2 * (1 - position) * position * controlPoint[1] + position * position * endPoint[1];
+    const speedX = -2 * (1 - position) * startPoint[0] + 2 * (1 - 2 * position) * controlPoint[0] + 2 * position * endPoint[0];
+    const speedY = -2 * (1 - position) * startPoint[1] + 2 * (1 - 2 * position) * controlPoint[1] + 2 * position * endPoint[1];
     basePoint = [basePointX, basePointY];
     angle = calcAngle([0, 0], [speedX, speedY]) + Math.PI / 2;
   } else {
-    let basePointX = (1 - position) * startPoint[0] + position * endPoint[0];
-    let basePointY = (1 - position) * startPoint[1] + position * endPoint[1];
+    const basePointX = (1 - position) * startPoint[0] + position * endPoint[0];
+    const basePointY = (1 - position) * startPoint[1] + position * endPoint[1];
     basePoint = [basePointX, basePointY];
     angle = calcAngle(startPoint, endPoint) + Math.PI / 2;
   }
@@ -126,8 +126,8 @@ function determineLabelPoint(graphic: SVGElement, labelElement: Element, arrowSp
   angle = normalizeAngle(angle);
   let point;
   if (arrowSpec.mark) {
-    let pointX = basePoint[0] + labelDimension.northWest[0] - labelDimension.center[0];
-    let pointY = basePoint[1] + labelDimension.northWest[0] - labelDimension.center[1];
+    const pointX = basePoint[0] + labelDimension.northWest[0] - labelDimension.center[0];
+    const pointY = basePoint[1] + labelDimension.northWest[0] - labelDimension.center[1];
     point = [pointX, pointY];
   } else {
     point = calcLabelPoint(basePoint, labelDimension, angle, arrowSpec.lineCount);
@@ -136,13 +136,13 @@ function determineLabelPoint(graphic: SVGElement, labelElement: Element, arrowSp
 }
 
 function calcEdgePoint(baseDimension: any, destinationDimension: any, bendAngle: number, shift: number): [number, number] {
-  let margin = ARROW_MARGIN;
+  const margin = ARROW_MARGIN;
   let angle = calcAngle(baseDimension.center, destinationDimension.center) + (bendAngle || 0);
   let shiftAngle = angle + Math.PI / 2;
-  let southWestAngle = calcAngle(baseDimension.center, baseDimension.southWestMargined);
-  let southEastAngle = calcAngle(baseDimension.center, baseDimension.southEastMargined);
-  let northEastAngle = calcAngle(baseDimension.center, baseDimension.northEastMargined);
-  let northWestAngle = calcAngle(baseDimension.center, baseDimension.northWestMargined);
+  const southWestAngle = calcAngle(baseDimension.center, baseDimension.southWestMargined);
+  const southEastAngle = calcAngle(baseDimension.center, baseDimension.southEastMargined);
+  const northEastAngle = calcAngle(baseDimension.center, baseDimension.northEastMargined);
+  const northWestAngle = calcAngle(baseDimension.center, baseDimension.northWestMargined);
   let x = 0;
   let y = 0;
   angle = normalizeAngle(angle);
@@ -170,11 +170,11 @@ function calcEdgePoint(baseDimension: any, destinationDimension: any, bendAngle:
 function calcIntrudedPoint(basePoint: [number, number], destinationPoint: [number, number], bendAngle: number, tipKind: any): [number, number] {
   if (tipKind !== "none") {
     let angle = calcAngle(basePoint, destinationPoint) + (bendAngle || 0);
-    let distance = ZOTICA_DATA_JSON.arrow[tipKind].extrusion;
+    const distance = ZOTICA_DATA_JSON.arrow[tipKind].extrusion;
     angle = normalizeAngle(angle);
-    let intrudedPointX = basePoint[0] + distance * Math.cos(angle);
-    let intrudedPointY = basePoint[1] - distance * Math.sin(angle);
-    let intrudedPoint = [intrudedPointX, intrudedPointY];
+    const intrudedPointX = basePoint[0] + distance * Math.cos(angle);
+    const intrudedPointY = basePoint[1] - distance * Math.sin(angle);
+    const intrudedPoint = [intrudedPointX, intrudedPointY];
     return intrudedPoint;
   } else {
     return basePoint;
@@ -182,7 +182,7 @@ function calcIntrudedPoint(basePoint: [number, number], destinationPoint: [numbe
 }
 
 function calcLabelPoint(basePoint: [number, number], labelDimension: any, angle: number, lineCount: number): [number, number] {
-  let distance = LABEL_DISTANCE + ((lineCount || 1) - 1) * 0.09;
+  const distance = LABEL_DISTANCE + ((lineCount || 1) - 1) * 0.09;
   let direction = "east";
   if (angle <= -Math.PI + ANGLE_EPSILON) {
     direction = "east";
@@ -203,26 +203,26 @@ function calcLabelPoint(basePoint: [number, number], labelDimension: any, angle:
   } else {
     direction = "east";
   }
-  let x = basePoint[0] + Math.cos(angle) * distance + labelDimension.northWest[0] - labelDimension[direction][0];
-  let y = basePoint[1] - Math.sin(angle) * distance + labelDimension.northWest[1] - labelDimension[direction][1];
+  const x = basePoint[0] + Math.cos(angle) * distance + labelDimension.northWest[0] - labelDimension[direction][0];
+  const y = basePoint[1] - Math.sin(angle) * distance + labelDimension.northWest[1] - labelDimension[direction][1];
   return [x, y];
 }
 
 function parseEdgePosition(string: string, graphic: SVGElement, cellElements: Array<Element>, arrowElements: Array<Element>): any {
   let config = null;
-  let match = string.match(/(?:(\d+)|([A-Za-z]\w*))(?:\:(\w+))?/);
+  const match = string.match(/(?:(\d+)|([A-Za-z]\w*))(?:\:(\w+))?/);
   if (match) {
     let element = null;
     if (match[1]) {
-      let number = parseInt(match[1]) - 1;
+      const number = parseInt(match[1]) - 1;
       element = cellElements[number];
     } else if (match[2]) {
-      let candidates = cellElements.map((candidate) => candidate.parentNode).concat(arrowElements);
-      let name = match[2];
+      const candidates = cellElements.map((candidate) => candidate.parentNode).concat(arrowElements);
+      const name = match[2];
       element = candidates.find((candidate) => candidate.getAttribute("data-name") === name);
     }
     if (element) {
-      let dimension = calcDimension(graphic, element);
+      const dimension = calcDimension(graphic, element);
       let point = null;
       if (match[3]) {
         point = parseEdgePoint(match[3], dimension);
@@ -257,8 +257,8 @@ function parseEdgePoint(string: string, dimension: any): [number, number] {
       point = dimension.center;
     }
   } else if (match = string.match(/^(t|r|b|l)([\d.]+)$/)) {
-    let direction = match[1];
-    let position = parseFloat(match[2]) / 100;
+    const direction = match[1];
+    const position = parseFloat(match[2]) / 100;
     let pointX = null;
     let pointY = null;
     if (direction === "t") {
@@ -282,11 +282,11 @@ function parseEdgePoint(string: string, dimension: any): [number, number] {
 }
 
 function parseTipKinds(string: string | null, lineCount: number): any {
-  let tipKinds = {start: "none", end: "normal"};
+  const tipKinds = {start: "none", end: "normal"};
   if (string !== null) {
-    let specifiedTipKinds = string.split(/\s*,\s*/);
-    for (let specifiedTipKind of specifiedTipKinds) {
-      let spec = ZOTICA_DATA_JSON.arrow[specifiedTipKind];
+    const specifiedTipKinds = string.split(/\s*,\s*/);
+    for (const specifiedTipKind of specifiedTipKinds) {
+      const spec = ZOTICA_DATA_JSON.arrow[specifiedTipKind];
       if (spec) {
         tipKinds[spec.edge] = specifiedTipKind;
       }
@@ -314,32 +314,32 @@ function parseTipKinds(string: string | null, lineCount: number): any {
 }
 
 function calcAngle(basePoint: [number, number], destinationPoint: [number, number]): number {
-  let x = destinationPoint[0] - basePoint[0];
-  let y = destinationPoint[1] - basePoint[1];
-  let angle = -Math.atan2(y, x);
+  const x = destinationPoint[0] - basePoint[0];
+  const y = destinationPoint[1] - basePoint[1];
+  const angle = -Math.atan2(y, x);
   return angle;
 }
 
 function normalizeAngle(angle: number): number {
-  let normalizedAngle = (angle + Math.PI) % (Math.PI * 2) - Math.PI;
+  const normalizedAngle = (angle + Math.PI) % (Math.PI * 2) - Math.PI;
   return normalizedAngle;
 }
 
 function createArrows(arrowSpec: any, backgroundColor: string): Array<SVGElement> {
-  let startPoint = arrowSpec.intrudedStartPoint;
-  let endPoint = arrowSpec.intrudedEndPoint;
-  let bendAngle = arrowSpec.bendAngle;
-  let lineCount = (arrowSpec.lineCount === undefined) ? 1 : arrowSpec.lineCount;
+  const startPoint = arrowSpec.intrudedStartPoint;
+  const endPoint = arrowSpec.intrudedEndPoint;
+  const bendAngle = arrowSpec.bendAngle;
+  const lineCount = (arrowSpec.lineCount === undefined) ? 1 : arrowSpec.lineCount;
   let command = "M " + startPoint[0] + " " + startPoint[1];
   if (bendAngle !== undefined) {
-    let controlPoint = calcControlPoint(startPoint, endPoint, bendAngle);
+    const controlPoint = calcControlPoint(startPoint, endPoint, bendAngle);
     command += " Q " + controlPoint[0] + " " + controlPoint[1] + ", " + endPoint[0] + " " + endPoint[1];
   } else {
     command += " L " + endPoint[0] + " " + endPoint[1];
   }
-  let arrows = [];
+  const arrows = [];
   for (let i = 0 ; i < lineCount ; i ++) {
-    let arrow = createSvgElement("path");
+    const arrow = createSvgElement("path");
     arrow.setAttribute("d", command);
     if (arrowSpec.tipKinds.start !== "none" && i === lineCount - 1) {
       arrow.setAttribute("marker-start", "url(#tip-" + arrowSpec.tipKinds.start + ")");
@@ -369,27 +369,27 @@ function createArrows(arrowSpec: any, backgroundColor: string): Array<SVGElement
 }
 
 function calcControlPoint(startPoint: [number, number], endPoint: [number, number], bendAngle: number): [number, number] {
-  let x = (endPoint[0] + startPoint[0] + (endPoint[1] - startPoint[1]) * Math.tan(bendAngle)) / 2;
-  let y = (endPoint[1] + startPoint[1] - (endPoint[0] - startPoint[0]) * Math.tan(bendAngle)) / 2;
+  const x = (endPoint[0] + startPoint[0] + (endPoint[1] - startPoint[1]) * Math.tan(bendAngle)) / 2;
+  const y = (endPoint[1] + startPoint[1] - (endPoint[0] - startPoint[0]) * Math.tan(bendAngle)) / 2;
   return [x, y];
 }
 
 function calcExtrusion(graphic: SVGElement, elements: Array<Element>): any {
-  let fontSize = getFontSize(graphic);
-  let xOffset =  window.pageXOffset;
-  let yOffset =  window.pageYOffset;
-  let graphicRect = graphic.getBoundingClientRect();
-  let graphicTop = graphicRect.top + yOffset;
-  let graphicBottom = graphicRect.bottom + yOffset;
-  let graphicLeft = graphicRect.left + xOffset;
-  let graphicRight = graphicRect.right + xOffset;
-  let extrusion = {top: 0, bottom: 0, left: 0, right: 0};
-  for (let element of elements) {
-    let rect = element.getBoundingClientRect();
-    let topExtrusion = -(rect.top + yOffset - graphicTop) / fontSize;
-    let bottomExtrusion = (rect.bottom + yOffset - graphicBottom) / fontSize;
-    let leftExtrusion = -(rect.left + xOffset - graphicLeft) / fontSize;
-    let rightExtrusion = (rect.right + xOffset - graphicRight) / fontSize;
+  const fontSize = getFontSize(graphic);
+  const xOffset = window.pageXOffset;
+  const yOffset = window.pageYOffset;
+  const graphicRect = graphic.getBoundingClientRect();
+  const graphicTop = graphicRect.top + yOffset;
+  const graphicBottom = graphicRect.bottom + yOffset;
+  const graphicLeft = graphicRect.left + xOffset;
+  const graphicRight = graphicRect.right + xOffset;
+  const extrusion = {top: 0, bottom: 0, left: 0, right: 0};
+  for (const element of elements) {
+    const rect = element.getBoundingClientRect();
+    const topExtrusion = -(rect.top + yOffset - graphicTop) / fontSize;
+    const bottomExtrusion = (rect.bottom + yOffset - graphicBottom) / fontSize;
+    const leftExtrusion = -(rect.left + xOffset - graphicLeft) / fontSize;
+    const rightExtrusion = (rect.right + xOffset - graphicRight) / fontSize;
     if (topExtrusion > extrusion.top) {
       extrusion.top = topExtrusion;
     }
@@ -407,16 +407,16 @@ function calcExtrusion(graphic: SVGElement, elements: Array<Element>): any {
 }
 
 function createGraphic(element: HTMLElement): SVGElement {
-  let width = getWidth(element);
-  let height = getHeight(element);
-  let graphic = createSvgElement("svg");
+  const width = getWidth(element);
+  const height = getHeight(element);
+  const graphic = createSvgElement("svg");
   graphic.setAttribute("viewBox", "0 0 " + width + " " + height);
-  let definitionElement = createSvgElement("defs");
-  let tipSpecKeys = Object.keys(ZOTICA_DATA_JSON.arrow);
-  for (let tipSpecKey of tipSpecKeys) {
-    let tipSpec = ZOTICA_DATA_JSON.arrow[tipSpecKey];
-    let markerElement = createSvgElement("marker");
-    let markerPathElement = createSvgElement("path");
+  const definitionElement = createSvgElement("defs");
+  const tipSpecKeys = Object.keys(ZOTICA_DATA_JSON.arrow);
+  for (const tipSpecKey of tipSpecKeys) {
+    const tipSpec = ZOTICA_DATA_JSON.arrow[tipSpecKey];
+    const markerElement = createSvgElement("marker");
+    const markerPathElement = createSvgElement("path");
     markerElement.setAttribute("id", "tip-" + tipSpecKey);
     markerElement.setAttribute("refX", tipSpec["x"]);
     markerElement.setAttribute("refY", tipSpec["y"]);
@@ -433,21 +433,21 @@ function createGraphic(element: HTMLElement): SVGElement {
 }
 
 function createSvgElement(name: string): SVGElement {
-  let element = document.createElementNS("http://www.w3.org/2000/svg", name);
+  const element = document.createElementNS("http://www.w3.org/2000/svg", name);
   return element;
 }
 
 function calcDimension(graphic: SVGElement, element: Element): any {
-  let dimension = {};
-  let margin = ARROW_MARGIN;
-  let fontSize = getFontSize(graphic);
-  let graphicTop = graphic.getBoundingClientRect().top + window.pageYOffset;
-  let graphicLeft = graphic.getBoundingClientRect().left + window.pageXOffset;
-  let top = (element.getBoundingClientRect().top + window.pageYOffset - graphicTop) / fontSize;
-  let left = (element.getBoundingClientRect().left + window.pageXOffset - graphicLeft) / fontSize;
-  let width = getWidth(element, graphic);
-  let height = getHeight(element, graphic);
-  let lowerHeight = getLowerHeight(element, graphic);
+  const dimension = {};
+  const margin = ARROW_MARGIN;
+  const fontSize = getFontSize(graphic);
+  const graphicTop = graphic.getBoundingClientRect().top + window.pageYOffset;
+  const graphicLeft = graphic.getBoundingClientRect().left + window.pageXOffset;
+  const top = (element.getBoundingClientRect().top + window.pageYOffset - graphicTop) / fontSize;
+  const left = (element.getBoundingClientRect().left + window.pageXOffset - graphicLeft) / fontSize;
+  const width = getWidth(element, graphic);
+  const height = getHeight(element, graphic);
+  const lowerHeight = getLowerHeight(element, graphic);
   dimension.northWest = [left, top];
   dimension.north = [left + width / 2, top];
   dimension.northEast = [left + width, top];
@@ -473,7 +473,7 @@ function getBackgroundColor(element: Node): string {
   let currentElement = element as Node | null;
   let color = "white";
   while (currentElement && currentElement instanceof Element) {
-    let currentColor = window.getComputedStyle(currentElement).backgroundColor;
+    const currentColor = window.getComputedStyle(currentElement).backgroundColor;
     if (currentColor !== "rgba(0, 0, 0, 0)" && currentColor !== "transparent") {
       color = currentColor;
       break;

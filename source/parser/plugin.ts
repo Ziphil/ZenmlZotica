@@ -29,7 +29,7 @@ export class ZoticaZenmlPlugin implements ZenmlPlugin {
   }
 
   public initialize(zenmlParser: ZenmlParser): void {
-    let options = {parentPluginManager: zenmlParser.pluginManager};
+    const options = {parentPluginManager: zenmlParser.pluginManager};
     this.zoticaParser = new ZoticaParser(zenmlParser.implementation, options);
   }
 
