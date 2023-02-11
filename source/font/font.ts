@@ -13,7 +13,7 @@ export class ZoticaFont {
   }
 
   public getMetrics(codePoint: number): [number, number] | null {
-    let rawMetrics = this.json[codePoint];
+    const rawMetrics = this.json[codePoint];
     if (rawMetrics !== undefined && rawMetrics.length === 2) {
       return [rawMetrics[0], rawMetrics[1]];
     } else {

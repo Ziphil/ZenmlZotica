@@ -28,7 +28,7 @@ export class ZoticaData {
   }
 
   public getIdentifierChar(kind: string): string | null {
-    let char = this.json.identifier[kind] ?? null;
+    const char = this.json.identifier[kind] ?? null;
     return char;
   }
 
@@ -37,18 +37,18 @@ export class ZoticaData {
   }
 
   public getOperatorSymbolSpec(kind: string): ZoticaOperatorSymbolSpec | null {
-    let symbolSpec = this.json.operator[kind] ?? null;
+    const symbolSpec = this.json.operator[kind] ?? null;
     return symbolSpec;
   }
 
   public getOperatorSymbolSpecByChar(char: string): ZoticaOperatorSymbolSpec | null {
-    let operatorEntries = Object.entries(this.json.operator);
-    let symbol = operatorEntries.find(([, symbolSpec]) => char === symbolSpec?.symbol)?.[1] ?? null;
+    const operatorEntries = Object.entries(this.json.operator);
+    const symbol = operatorEntries.find(([, symbolSpec]) => char === symbolSpec?.symbol)?.[1] ?? null;
     return symbol;
   }
 
   public getRadicalSymbol(level: number): string | null {
-    let symbol = this.json.radical[level] ?? null;
+    const symbol = this.json.radical[level] ?? null;
     return symbol;
   }
 
@@ -57,7 +57,7 @@ export class ZoticaData {
   }
 
   public getIntegralSymbol(kind: string, size: "inl" | "lrg"): string | null {
-    let symbol = this.json.integral[kind]?.[size] ?? null;
+    const symbol = this.json.integral[kind]?.[size] ?? null;
     return symbol;
   }
 
@@ -66,7 +66,7 @@ export class ZoticaData {
   }
 
   public getSumSymbol(kind: string, size: "inl" | "lrg"): string | null {
-    let symbol = this.json.sum[kind]?.[size] ?? null;
+    const symbol = this.json.sum[kind]?.[size] ?? null;
     return symbol;
   }
 
@@ -75,12 +75,12 @@ export class ZoticaData {
   }
 
   public getLeftFenceSymbol(kind: string, level: number): string | null {
-    let symbol = this.json.fence[kind]?.left?.[level] ?? null;
+    const symbol = this.json.fence[kind]?.left?.[level] ?? null;
     return symbol;
   }
 
   public getRightFenceSymbol(kind: string, level: number): string | null {
-    let symbol = this.json.fence[kind]?.left?.[level] ?? null;
+    const symbol = this.json.fence[kind]?.left?.[level] ?? null;
     return symbol;
   }
 
@@ -89,12 +89,12 @@ export class ZoticaData {
   }
 
   public getUnderAccentSymbol(kind: string): string | null {
-    let symbol = this.json.accent[kind]?.un ?? null;
+    const symbol = this.json.accent[kind]?.un ?? null;
     return symbol;
   }
 
   public getOverAccentSymbol(kind: string): string | null {
-    let symbol = this.json.accent[kind]?.ov ?? null;
+    const symbol = this.json.accent[kind]?.ov ?? null;
     return symbol;
   }
 
@@ -103,12 +103,12 @@ export class ZoticaData {
   }
 
   public getUnderWideSymbol(kind: string, level: number): string | null {
-    let symbol = this.json.wide[kind]?.un?.[level] ?? null;
+    const symbol = this.json.wide[kind]?.un?.[level] ?? null;
     return symbol;
   }
 
   public getOverWideSymbol(kind: string, level: number): string | null {
-    let symbol = this.json.wide[kind]?.ov?.[level] ?? null;
+    const symbol = this.json.wide[kind]?.ov?.[level] ?? null;
     return symbol;
   }
 
@@ -117,7 +117,7 @@ export class ZoticaData {
   }
 
   public getSpaceType(tagName: string): ZoticaSpaceType | string | null {
-    let type = this.json.space[tagName] ?? null;
+    const type = this.json.space[tagName] ?? null;
     return type;
   }
 
@@ -126,22 +126,22 @@ export class ZoticaData {
   }
 
   public getAlternativeChar(kind: string, char: string): string | null {
-    let nextChar = this.json.alternative[kind]?.[char] ?? null;
+    const nextChar = this.json.alternative[kind]?.[char] ?? null;
     return nextChar;
   }
 
   public getAlternativeContent(kind: string, content: string): string {
-    let nextContent = [...content].map((char) => this.getAlternativeChar(kind, char) ?? "").join("");
+    const nextContent = [...content].map((char) => this.getAlternativeChar(kind, char) ?? "").join("");
     return nextContent;
   }
 
   public getReplacedChar(char: string): string | null {
-    let nextChar = this.json.replaced[char] ?? null;
+    const nextChar = this.json.replaced[char] ?? null;
     return nextChar;
   }
 
   public getGreekChar(char: string): string | null {
-    let greekChar = this.json.greek[char] ?? null;
+    const greekChar = this.json.greek[char] ?? null;
     return greekChar;
   }
 

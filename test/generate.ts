@@ -21,22 +21,22 @@ async function generate(): Promise<void> {
 }
 
 async function generateHtml(): Promise<void> {
-  let implementation = new DOMImplementation();
-  let serializer = new XMLSerializer();
-  let parser = new ZenmlParser(implementation);
+  const implementation = new DOMImplementation();
+  const serializer = new XMLSerializer();
+  const parser = new ZenmlParser(implementation);
   parser.registerPlugin("raw", new SimpleZenmlPlugin((builder, tagName, marks, attributes, childrenArgs) => {
-    let nodes = childrenArgs[0] ?? [];
+    const nodes = childrenArgs[0] ?? [];
     return nodes;
   }));
   parser.registerPlugin("m", new ZoticaZenmlPlugin((builder, tagName, marks, attributes, childrenArgs) => {
-    let element = builder.createElement("li");
+    const element = builder.createElement("li");
     element.setAttribute("class", "math");
-    for (let child of childrenArgs[0]) {
+    for (const child of childrenArgs[0]) {
       element.appendChild(child);
     }
     return [element];
   }));
-  let input = await fs.readFile("./test/file/sample.zml", {encoding: "utf-8"});
+  const input = await fs.readFile("./test/file/sample.zml", {encoding: "utf-8"});
   let output = serializer.serializeToString(parser.tryParse(input));
   output = output.replace(/<([\w\-]+)([^<>]*?)\/>/g, (match, tagName, innerString) => `<${tagName}${innerString}></${tagName}>`);
   await fs.writeFile("./out/index.html", output, {encoding: "utf-8"});
@@ -47,12 +47,12 @@ async function copyCustomStyle(): Promise<void> {
 }
 
 async function generateZoticaStyle(): Promise<void> {
-  let styleString = ZoticaResourceUtils.getStyleString("./math.otf");
+  const styleString = ZoticaResourceUtils.getStyleString("./math.otf");
   await fs.writeFile("./out/math.css", styleString, {encoding: "utf-8"});
 }
 
 async function generateZoticaScript(): Promise<void> {
-  let scriptString = ZoticaResourceUtils.getScriptString();
+  const scriptString = ZoticaResourceUtils.getScriptString();
   await fs.writeFile("./out/math.js", scriptString, {encoding: "utf-8"});
 }
 

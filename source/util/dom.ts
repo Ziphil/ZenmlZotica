@@ -10,7 +10,7 @@ export function isText(node: Node): node is Text {
 }
 
 export function insertFirst(parent: Node, child: Node): void {
-  let firstChild = parent.childNodes.item(0);
+  const firstChild = parent.childNodes.item(0);
   if (firstChild) {
     parent.insertBefore(child, firstChild);
   } else {
@@ -19,7 +19,7 @@ export function insertFirst(parent: Node, child: Node): void {
 }
 
 export function appendChildren(parent: Node, children: Array<Node>): void {
-  for (let child of children) {
+  for (const child of children) {
     parent.appendChild(child);
   }
 }
@@ -29,9 +29,9 @@ export function addAttribute(element: Element, name: string, value: string): voi
 }
 
 export function getChildElement(element: Element, tagName: string): Element | null {
-  let nodes = element.childNodes;
+  const nodes = element.childNodes;
   for (let i = 0 ; i < nodes.length ; i ++) {
-    let node = nodes.item(i)!;
+    const node = nodes.item(i)!;
     if (isElement(node) && node.tagName === tagName) {
       return node;
     }
