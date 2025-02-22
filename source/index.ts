@@ -6,4 +6,4 @@ export * from "./parser/resource-utils";
 export * from "./parser/plugin";
 
 
-export const VERSION = "1.1.0";
+export const VERSION = "1.2.0";
