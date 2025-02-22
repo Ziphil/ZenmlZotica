@@ -53,11 +53,11 @@
       \h1<Operators>
       \h2<Binary operators>
       \ul<
-        &m<x \pm; 7> &m<U \otimes; V \oplus; W> &m<A \sqcup; B \ssqcap; C> &m<\mp; 5>
+        &m<x \pm; 7> &m<U \otimes; V \oplus; W> &m<A \sqcup; B \xsqcap; C> &m<p \wedge; (q \xvee; r \varxwedge; s)> &m<\mp; 5>
       >
       \h2<Binary relators>
       \ul<
-        &m<s \approx; 2> &m<z \nleq; Z \gggt; 0> &m<H \waverarr; K \curverarr; G>
+        &m<s \approx; 2> &m<z \nleq; Z \xxgt; 0> &m<H \waverarr; K \curverarr; G>
       >
       \h2<Binary operators with wide margins>
       \ul<
@@ -200,7 +200,7 @@
       \h1<Set-like fences>
       \h2<General>
       \ul<
-        &m<\set<x \in; X><x `> \frac<1><3>>> &m<\set|l="aangle",c="vvert",r="floor"|<\frac<a><b>><\frac<c><d>>>
+        &m<\set<x \in; X><x `> \frac<1><3>>> &m<\set|l="xangle",c="vvert",r="floor"|<\frac<a><b>><\frac<c><d>>>
       >
       \h2<Complicated>
       \ul<
